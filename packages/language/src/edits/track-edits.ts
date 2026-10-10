@@ -107,6 +107,8 @@ export function removeTrackParameters(source: string, track: string, parameters:
  * no line break, so it can never add another modifier or line.
  */
 const VALUE_TEXT_RULE = /^[a-z0-9.()/-]+( -?[0-9.]+\.\.-?[0-9.]+)?$/;
+/** Longer than any value the grammar reads; checked first so the rule never scans a pasted wall of text. */
+const VALUE_TEXT_MAX_LENGTH = 64;
 
 /**
  * Like setTrackParameter, with the value as text: replaces the value of the effective
@@ -114,7 +116,7 @@ const VALUE_TEXT_RULE = /^[a-z0-9.()/-]+( -?[0-9.]+\.\.-?[0-9.]+)?$/;
  */
 export function setTrackModifier(source: string, track: string, name: string, value: string | null): EditResult {
   if (!isWellFormedName(name)) return failure("INVALID_NAME");
-  if (value !== null && !VALUE_TEXT_RULE.test(value)) return failure("INVALID_VALUE");
+  if (value !== null && (value.length > VALUE_TEXT_MAX_LENGTH || !VALUE_TEXT_RULE.test(value))) return failure("INVALID_VALUE");
   return withTrack(source, track, (_, found) => {
     const existing = found.syntax.modifiers.filter((modifier) => modifier.name.text === name).at(-1);
     const written = value === null ? "" : ` ${value}`;
@@ -254,7 +256,7 @@ export function duplicateTrack(source: string, track: string): NamedEditResult {
   const document = new EditableSource(source);
   const found = document.track(track);
   if (found === null) return failure("UNKNOWN_TRACK");
-  const base = track.replace(/\d+$/, "") || track;
+  const base = withoutTrailingDigits(track) || track;
   const name = nextFreeName(base, document.trackNames());
   if (!isWellFormedName(name)) return failure("INVALID_NAME");
   const { syntax } = found;
@@ -323,4 +325,10 @@ export function deleteTrack(source: string, track: string): EditResult {
     const pins = pinShiftedNames(document, found, (candidate) => (candidate === found ? null : declarationOf(candidate)));
     return applyChanges(source, [document.removeLine(found.syntax.line), ...pins, ...references]);
   });
+}
+/** "hat23" -> "hat", in one pass: /\d+$/ retried from every digit of a long run. */
+function withoutTrailingDigits(name: string): string {
+  let end = name.length;
+  while (end > 0 && name.charCodeAt(end - 1) >= 48 && name.charCodeAt(end - 1) <= 57) end -= 1;
+  return name.slice(0, end);
 }

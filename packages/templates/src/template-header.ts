@@ -17,14 +17,15 @@ export interface TemplateHeader {
   readonly isDefault: boolean;
 }
 
-const NAME = /^\/\/\s*template:\s*(\S.*?)\s*$/m;
+// One unambiguous capture, trimmed after: "\s*(\S.*?)\s*$" backtracked over long runs of spaces.
+const NAME = /^\/\/[ \t]*template:(.*)$/m;
 const ORDER = /^\/\/\s*order:\s*(\d+)\s*$/m;
 const DEFAULT = /^\/\/\s*default:\s*true\s*$/m;
 
 /** The header of a template text, or null when a line is missing. */
 export function parseTemplateHeader(text: string): TemplateHeader | null {
-  const name = NAME.exec(text)?.[1];
+  const name = NAME.exec(text)?.[1]?.trim();
   const order = ORDER.exec(text)?.[1];
-  if (name === undefined || order === undefined) return null;
+  if (name === undefined || name === "" || order === undefined) return null;
   return { name, order: Number(order), isDefault: DEFAULT.test(text) };
 }

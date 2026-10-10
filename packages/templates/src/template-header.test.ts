@@ -19,4 +19,11 @@ describe("template header", () => {
     expect(parseTemplateHeader("// order: 1\n")).toBeNull();
     expect(parseTemplateHeader("// template: x\n// order: first\n")).toBeNull();
   });
+  it("rejects an empty name and stays linear on a long run of spaces", () => {
+    expect(parseTemplateHeader("// template:   \n// order: 1\n")).toBeNull();
+    const spaces = " ".repeat(50_000);
+    const started = performance.now();
+    expect(parseTemplateHeader(`// template:${spaces}x${spaces}\n// order: 1\n`)?.name).toBe("x");
+    expect(performance.now() - started).toBeLessThan(200);
+  });
 });

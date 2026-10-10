@@ -205,6 +205,11 @@ describe("add and duplicate", () => {
     expect(duplicateTrack("hat x\nhat2: hat x.", "hat2").ok && "hat3").toBe("hat3");
   });
 
+  it("names the copy of a track ending in a long run of digits without stalling", () => {
+    const name = `hat${"1".repeat(20)}`;
+    const result = duplicateTrack(`${name}: hat x.`, name);
+    expect(result.ok && result.name).toBe("hat");
+  });
   it("duplicates an unnamed track", () => {
     expect(applied(duplicateTrack("hat ..x.", "hat"))).toBe("hat ..x.\nhat2: hat ..x.");
   });
