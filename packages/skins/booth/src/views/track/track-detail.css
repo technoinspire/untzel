@@ -1,0 +1,65 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The track detail view, views/track-detail.ts. */
+.ui-pill--danger {
+  box-shadow: inset 0 0 0 1.5px var(--ember);
+}
+
+.ui-sheet--detail {
+  --sheet-top: 96px;
+  padding-bottom: 64px;
+}
+
+.ui-sheet--detail .ui-sheet__header {
+  min-height: 74px;
+}
+
+.ui-detail__toggles {
+  display: flex;
+  gap: 8px;
+}
+
+.ui-detail__toggles .ui-pill {
+  flex: 1 1 0;
+  padding: 0 8px;
+}
+
+.ui-detail__label {
+  margin: 20px 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ui-detail__params {
+  display: grid;
+  gap: 2px;
+}
+
+.ui-detail__footer {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  height: 64px;
+  padding: 10px 16px;
+  background: var(--surface);
+}
+
+.ui-sheet--detail .ui-sheet__close {
+  order: 2;
+  margin-left: 8px;
+}
+
+.ui-sheet--detail .ui-detail__meta {
+  order: 3;
+  flex-basis: 100%;
+  margin-top: -6px;
+}
+
+@media (min-width: 1200px) {
+  .ui-sheet--detail .ui-sheet__title {
+    font-size: 22px;
+  }
+}

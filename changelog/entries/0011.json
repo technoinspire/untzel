@@ -1,0 +1,15 @@
+{
+  "category": "fixed",
+  "date": "2026-10-04",
+  "refs": [
+    11
+  ],
+  "title": {
+    "en": "Solo silences every other track",
+    "pt-BR": "O solo silencia todas as outras faixas"
+  },
+  "body": {
+    "en": "Solo now also silences a track whose volume moves on its own.",
+    "pt-BR": "O solo agora também silencia uma faixa cujo volume se move sozinho."
+  }
+}

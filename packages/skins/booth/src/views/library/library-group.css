@@ -1,0 +1,10 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The library group view, views/library-group.ts. */
+/* Show all: a full-width outlined pill under the group. */
+.ui-library__more {
+  width: 100%;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1.5px var(--raised);
+  font-weight: 400;
+}

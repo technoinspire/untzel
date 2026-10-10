@@ -1,0 +1,15 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The track detail header view, views/track-detail-header.ts. */
+.ui-detail__meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* "Preview sounds" in the track detail's header: name, switch and × on the first row,
+   the track's instrument and line under them. */
+.ui-detail__preview {
+  order: 1;
+  margin-left: auto;
+  font-size: 13px;
+}

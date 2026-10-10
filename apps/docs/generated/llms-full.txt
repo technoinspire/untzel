@@ -1,0 +1,3017 @@
+# Untzel: full reference
+
+> Untzel is a music instrument in the browser by Techno Inspire: you tap to play a loop, then change it by touch or by editing a small text language that is analyzed, never executed.
+
+## Start here
+
+Untzel is a music instrument that runs in your browser. You tap once and a loop starts, picked from a template library by music style; then you change it with your fingers or by editing a short text, and the music never stops while you do.
+
+### What Untzel is
+
+Every sound you hear is one line of a small text language. The track tiles, the song timeline and the code editor all edit that same text, so whatever you build by touch you can read as code, and whatever you write as code shows up as tiles.
+
+The sound is made on your device: a sound engine written in Rust runs as WebAssembly inside the browser's audio thread, and the light on the stage follows the same events the engine plays. Nothing is streamed and you need no account.
+
+The text is analyzed, never executed. There is no JavaScript inside it, no functions and no imports, so it is safe to paste text that someone else wrote, or that an assistant wrote for you ([Using AI](https://untzel.com/docs/en/ai/)).
+
+### Tap to play
+
+Open [app.untzel.com](https://app.untzel.com/) and tap **Tap to play**. Browsers only allow sound after a gesture, so that first tap is what starts the audio. The music starts on the next bar, in loop mode.
+
+This is the text the app plays first, exactly as this build ships it:
+
+```untzel
+// template: Midnight Bloom
+// order: 1
+// default: true
+title "Midnight Bloom"
+tempo 124
+key a minor
+
+kick:   kick       boom    x... x... x... x... | gain 0.9
+sub:    sub        warm    a1 . . . a1 . . . / f1 . . . f1 . . . / d1 . . . d1 . . . / e1 . . . e1 . . .   | duck 0.6
+bass:   bass       rolling . a2 a2 a2 . a2 c3 a2 / . f2 f2 f2 . f2 a2 f2 / . d2 d2 d2 . d2 f2 d2 / . e2 e2 e2 . g2 e2 b2   | duck 0.5 | comp 0.3 | pan 0.1 | gain 1.48
+hat:    hat        tight   . x x?0.6 x . x x?0.6 x . x x?0.6 x . x x?0.7 x     | gain 0.6 | swing 0.1 | pan -0.15
+ohat:   hat        open    ..x. ..x. ..x. ..x. | pan 0.15 | gain 0.85
+shaker: shaker     bright  x x?0.7 x x?0.8 x x?0.7 x x?0.8 x x?0.7 x x?0.8 x x?0.7 X x?0.8   | swing 0.16 | gain 0.34 | pan 0.3
+conga:  conga      open    . . x . x . . x . . x . x . x?0.4 x?0.5               | swing 0.16 | pan -0.35 | reverb room | gain 0.75
+rim:    rim        click   .... ..x. .... .x.x                                   | pan 0.4 | delay 3/16 | gain 1
+perc:   perc       ping    .... .... ..x. .x..                                   | pan -0.2 | delay 1/8 | reverb room
+clap:   clap       tight   .... x... .... x...                                   | reverb room | gain 1
+pad:    pad        noir    Am9 ~ ~ ~ / Fmaj9 ~ ~ ~ / Dm9 ~ ~ ~ / Em7 ~ ~ ~       | voicing spread | brightness sine(16) 0.3..0.7 | duck 0.5 | reverb hall | gain 0.48
+pluck:  pluck      muted   Am9 ~ ~ ~ / Fmaj9 ~ ~ ~ / Dm9 ~ ~ ~ / Em7 ~ ~ ~       | arp updown | arp-rate 1/16 | arp-octaves 2 | highpass 300 | delay 3/16 | gain 0.6
+keys:   epiano     soft    . Am7 . . Am7 . . . / . Fmaj7 . . Fmaj7 . . . / . Dm7 . . Dm7 . . . / . Em7 . . Em7! . . .   | voicing open | chorus 0.25 | reverb wide | gain 0.5
+lead:   lead       noir    e4 ~ ~ . c4 ~ d4 ~ / a3 ~ ~ ~ ~ ~ . . / c4 ~ ~ . d4 ~ e4 ~ / g4 ~ ~ ~ e4 ~ ~ .   | legato | glide 0.08 | delay 1/4 | reverb plate | gain 0.53
+answer: square     hollow  . . e5 . . . c5 . / . . a4 . . . . . / . . d5 . . . f5 . / . . e5 . . . b4 .   | delay 3/16 | reverb hall | pan -0.25 | gain 0.4
+choir:  choir      monk    Am ~ ~ ~ / F ~ ~ ~ / Dm ~ ~ ~ / Em ~ ~ ~              | vowel sine(8) 0.2..0.6 | eq-high 3 | reverb hall | gain 0.5
+rise:   noise      white   x~~~ ~~~~ ~~~~ ~~~~                                   | cutoff saw(8) 300..9000 | gain saw(8) 0.15..0.5
+riser:  riser      noise   x... / .... / .... / .... / .... / .... / .... / ....   | length 15.5 | gain 0.6
+down:   downlifter noise   x~~~ ~~~~ ~~~~ ~~~~ / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.8
+impact: impact     deep    x... / .... / .... / .... / .... / .... / .... / ....   | reverb sea | gain 0.9
+
+section intro   kick hat shaker conga rim pad
+section groove  kick sub bass hat ohat shaker conga rim perc clap pad keys | loop
+section build   kick sub hat ohat shaker conga perc clap pad pluck rise
+section break   pad pluck keys choir down
+section lift    hat pad pluck choir riser
+section drop    kick sub bass hat ohat shaker conga rim perc clap pad pluck lead answer choir impact
+section groove2 kick sub bass hat ohat shaker conga rim perc clap keys pluck
+section break2  pad keys choir lead down
+section drop2   kick sub bass hat ohat shaker conga rim perc clap pad pluck keys lead answer choir impact
+section outro   kick hat shaker conga rim pad
+
+song intro 16, groove 32, build 8, break 16, lift 8, drop 32, groove2 16, break2 16, lift 8, drop2 32, outro 16
+```
+
+### Your first loop in 2 minutes
+
+1. Tap **Code**, next to **Drop**. On a phone the code opens as a sheet; on a computer it opens in the side panel.
+2. Select all of the text and replace it with this:
+
+```untzel
+// my first loop
+tempo 124
+key a minor
+
+kick: kick x... x... x... x...
+hat:  hat  ..x. ..x. ..x. ..x.   | swing 0.1
+bass: bass a1 . . a1 . . e2 .    | cutoff 500
+```
+
+3. Stop typing. On the next bar the new text plays.
+4. Change one number, for example `cutoff 500` to `cutoff 1200`. A change to a plain number sounds right away; a change to a pattern waits for the next bar.
+5. Break something on purpose: delete a letter of `kick`. The line gets an error mark with a message, and the previous version keeps playing. Invalid code never stops the music.
+
+### Where to go next
+
+- [Using the app](https://untzel.com/docs/en/app/): every screen, gesture and keyboard shortcut.
+- [Language guide](https://untzel.com/docs/en/language/): the language, one idea at a time, each with an example you can paste.
+- [Cookbook](https://untzel.com/docs/en/cookbook/): grooves, builds and a whole song with the instruments that exist today.
+- [Using AI](https://untzel.com/docs/en/ai/): a ready prompt that teaches an assistant to write Untzel for you.
+
+Source: https://untzel.com/docs/en/
+
+## Using the app
+
+Untzel is one page: tracks, song, code and track details open as tabs and sheets over the stage, so moving around never interrupts the sound. The labels below are the ones the app shows in the language of this page.
+
+### The screen
+
+- **Top bar**, over the stage: the Untzel logo, linked to untzel.com, a divider and the title of the song ([Projects and the song title](#projects)). On a computer **Saved** next to the title says the project is stored on this device. At the right, **Export** and **Menu** ([The menu](#menu)). Export stays inactive until the first tap: it acts on the music that plays.
+- **Stage**: the light. It reacts to the notes as they play and is decorative for screen readers.
+- **Transport**: play and stop, tempo, key, the mode and the position. Then the button that hides the controls, **Code** and **Drop**. On a computer the transport is one line with the `Loop` / `Song` switch. Under it, in both modes, the play range and its ruler ([Play range](#play-range)); in Loop mode the **Length** chip sits next to them ([Loop length](#loop-length)). The CPU meter is in the transport from 1024 px wide; on a narrower screen it moves to the footer of the instrument library.
+- **Tracks**: a grid of tiles on a phone, a table on a computer.
+- **Song**: the parts of the song as a list, in the order they play. A tab on a phone; on a computer, next to the tracks in Song mode.
+- **Code**: the text itself.
+- **Footer**: the line "Powered by Untzel · Techno Inspire", across the whole width and always on screen. Nothing the app opens covers it.
+
+### Waiting screen and templates
+
+Before the first tap the stage shows a slow haze and the **Tap to play** button. Below it, **Start from a template** shows the template library: the **Style** list, with every music style in alphabetical order and the number of projects of each, and below it the projects of the open style as cards with their name, tempo and key, read from the text itself. On the keyboard, type the first letters of a style to jump to it. Tap a card, then **Tap to play**, and that project plays; everything in a template can be changed: add tracks, edit every step and sound, build a whole song. With no choice, the first tap plays the template marked as the first one.
+
+When this device already has a project, the waiting screen also offers **Continue** followed by the title of the project you edited last, which opens it ([Projects and the song title](#projects)).
+
+The **Blank** card comes before the style list. Pick it and the button becomes **Start from scratch**: it turns the sound on and opens an empty project without playing. With no track, the tracks area says **Start with a sound** and offers **Add track** and four starters (kick, bass, hats, chords): each one enters with a ready pattern, in the key of the project, and starts the music.
+
+The library of this build, generated from its template folder. The project names are names, not copy, so they read the same in every language:
+
+| Style | Template | Tempo | Key | Tracks | Song |
+| --- | --- | --- | --- | --- | --- |
+| Melodic techno | Midnight Bloom | 124 | a minor | 20 | 200 bars |
+| Melodic techno | Night Petals | 122 | d minor | 20 | 216 bars |
+| Melodic techno | After Hours | 122 | c minor | 20 | 184 bars |
+| Afro house | Red Earth | 121 | e dorian | 22 | 208 bars |
+| Indie dance | Coastline | 118 | eb major | 27 | 168 bars |
+| House | Sunday Piano | 125 | f major | 17 | 176 bars |
+| House | Disco Lights | 118 | g major | 19 | 176 bars |
+| House | Golden Hour | 121 | eb major | 19 | 176 bars |
+| Psytrance | Full Moon | 145 | f# phrygian | 16 | 232 bars |
+| Trance | Eternal Horizon | 138 | d minor | 20 | 224 bars |
+| Deep house | Night Garden | 115 | d dorian | 7 | loop only |
+| Downtempo | Blue Lounge | 96 | g minor | 9 | loop only |
+| Acid techno | Warehouse | 138 | f minor | 14 | 144 bars |
+| Tech house | Low Ceiling | 126 | g minor | 14 | 176 bars |
+| Amapiano | Velvet Rooftop | 113 | f minor | 20 | 176 bars |
+| Hip hop | Crate Digger | 90 | d minor | 14 | 96 bars |
+| outside the styles | Blank | 124 | a minor | 0 | loop only |
+
+Available now: Template library by style. A Style list on the waiting screen, in alphabetical order with the number of projects of each; every project can be changed completely.
+
+Available now: Continue where you left off. Continue on the waiting screen opens the project you edited last on this device.
+
+### The menu
+
+**Menu**, at the right of the top bar, opens one menu for the whole app: a sheet on a phone, a panel under the button on a computer. The arrow keys walk every item in reading order, `Home` and `End` go to the ends, a letter jumps to the next item that starts with it, and `Esc` closes the menu and returns focus to the button. The groups, in this order:
+
+- **Project**: **New project…** (blank or from a template), **Open project…**, **Rename song**, **Duplicate**, **Save file**, **Open file…** and **Delete project**, which you can undo for 10 seconds. With no project open, only the items that do not need one are there.
+- **Share and export**: **Share link…** and **Export video or audio…** ([Share and Export](#share-export)). The group appears only with a project open. Like **Export**, both stay inactive until the first tap, and their hint says why.
+- **Settings**: **Language**, with Português and English, changes every label at once without reloading; the choice is saved on this device. **Preview sounds** plays the notes while you edit them. **Reduced motion** follows the system until you change it here, and then says it is set on this device. The switches and the language keep the menu open.
+- **Help**: **Documentation**, which opens these pages in a new tab, **Keyboard shortcuts** and **About and licence**.
+
+These docs and the app live on different addresses, so the language picked on these pages does not carry over to the app: pick it in the app's menu.
+
+### Projects and the song title
+
+Every project has a title. The title is the `title` line of the text ([Language guide](https://untzel.com/docs/en/language/#title)): the top bar shows it, the browser tab reads `<title> · Untzel`, and it names the files you save and export. Tap the title in the top bar, or choose **Rename song** in the menu, to rename the song: `Enter` or leaving the field renames, `Esc` gives up. A new project is called **Untitled**, a template keeps the template's name, a received link opens as **Remix of** followed by its title, and a duplicate adds **(copy)**.
+
+Projects are saved in this browser, on this device, and never leave it. A project is stored one second after your first edit, and again one second after each later one; a template you only played creates nothing. `Mod+S` saves at once, without a dialog. **Open project…** lists the projects of this device, the one edited last first, each with when it was edited, its tempo and how many tracks it has; its buttons rename, duplicate, save as a file or delete it, and a search appears above eight projects. Opening, creating, duplicating or deleting a project stops the music cleanly and goes back to the waiting screen; nothing you were editing is lost on the way.
+
+Clearing the browser's data deletes the projects: **Save file** keeps a copy. Where the browser refuses to store anything (a private window, a full disk), the app says so and the open project keeps playing; it is just not saved.
+
+Available now: Projects on this device and the project menu. Every project saved in this browser one second after an edit, with open, rename, duplicate and delete with undo, all from one menu.
+
+Available now: Song title. The title line names the song in the top bar, the browser tab, the files and the exported video.
+
+### Tracks
+
+Each track is a tile with its name, its instrument, a 16-step preview and an adjust button.
+
+| Gesture on a tile | What happens | When |
+|---|---|---|
+| tap | turns the track on or off | on the next bar; a ring fills until then |
+| drag up or down | moves the track's `tone` | immediately |
+| hold | solo while you hold | immediately |
+| adjust button | opens the track detail | |
+
+On a computer the table shows the name, the pattern, `M` (mute), `S` (solo) and `tone` for every track.
+
+Every name the app shows can be edited where it appears: a track in the head of its detail, or with a double-click and the pencil in the table; a part in the pencil of its row and in the head of its editor. Lowercase letters, numbers, `-` or `_`, starting with a letter, up to 24 characters; the words of the language are not names. `Enter` or leaving the field renames, `Esc` or **Cancel** gives up, and a wrong name is explained under the field and never written. Renaming a track also renames it in every `section`; renaming a part renames it in the `song`. One edit, one undo step, and the music keeps playing.
+
+### Adding a track
+
+The last tile is always **Add track**. It opens the instrument library: a search over names, model names, sounds, descriptions and tags, the chips **All** and nine categories (Drums, Bass, Keys, Plucks, Pads, Brass, Leads, Voices, FX), and the instruments grouped, each with its model name, how many tracks already use it, its description and its number of sounds. A group shows three instruments until you ask for all of them.
+
+The play button of a row previews the instrument in the key of your music while the music keeps playing; its sounds appear as chips, and tapping one switches the preview. The add button adds the instrument with the sound you are hearing. The new track gets the next free name (`hat2`, `bass3`), the instrument's default pattern, and starts on the next bar; the sheet closes and the new track's detail opens. You can pick the same instrument as many times as you like: each track is its own instance. When nothing matches, the sheet suggests up to three close names.
+
+`piano`, `strings`, `harp`, `mallet`, `bell`, `kalimba` and `choir` play recordings, and so do the `ooh` and `aah` sounds of `vox` ([Instruments](https://untzel.com/docs/en/instruments/), [Credits](https://untzel.com/docs/en/credits/)). A recording is downloaded only when a track uses it; until it arrives, the instrument plays its synthesized voice, so the music never waits.
+
+Available now: Recorded voices for vox and choir. The ooh and aah sounds of vox and choir play recorded singers from VocalSet (CC BY 4.0), loaded only when a track uses them.
+
+Available now: Recorded piano, strings, harp, mallet, bell and kalimba. Recordings from Salamander Grand Piano (CC BY 3.0), VSCO 2 Community Edition and the Versilian Community Sample Library (CC0), downloaded only when a track uses them.
+
+Available now: Instrument library with search and preview. Nine categories, from drums to FX; search, preview a sound before adding it, and add the same instrument as often as you like.
+
+### Track detail
+
+The detail shows everything about one track: solo and mute, the length of its pattern, the steps per bar, the bars of the pattern, the step grid, its sound, its effects and its mix. **Duplicate** and **Delete** sit at the bottom.
+
+- The **Pattern** chip picks how many bars the pattern has; new bars repeat the last one. **Steps per bar**, `8 · 16 · 32`, rewrites every bar of the track; the steps that exist keep their place in time.
+- The bar thumbnails show the steps of each bar; the one you edit has an orange outline and the one playing a white mark. The arrows, or a swipe on the grid, change the bar you edit, and **Copy bar**, **Paste here** and **Clear bar** act on it.
+- On a drum, tapping a step turns it on or off. On an instrument with notes, tapping a step selects it and opens the note picker: any note of the instrument's range, a hold or a rest, chords on a chord instrument, and **Scale lock**, which keeps the step in the scale of your music. With **Preview sounds** on, here or in the menu, the notes play as you edit them.
+- **Sound**: the sound picker lists the instrument's sounds with their descriptions, and below it one control for every parameter of the instrument ([Instruments](https://untzel.com/docs/en/instruments/)).
+- **Effects · play in this order**: the insert effects in chain order, each with its controls and a ×; **Add effect** adds one at the end of the chain.
+- **Patterns**, under solo and mute: the instrument's ready patterns as chips, the current one marked. A tap previews the pattern in the track itself, from the next bar for 16 bars, without changing the text; a second tap, or **Use**, writes it. The patterns enter already in the key of your music.
+- **Change sound**, next to **Sound**, swaps the instrument and keeps the pattern: the library opens listing only the instruments that can play it, and says what is kept and what is dropped.
+- **Tone** is one knob over several parameters. When the text writes one of them (`open`, `cutoff`), that parameter wins: the knob says who sets it and **Use Tone** takes the written parameter out, with an Undo.
+- **Mix**: `gain` is a fader in dB, from Off through −60 dB to +6 dB, with 0 dB at three quarters of the travel; a double tap returns to 0 dB. The text keeps `gain` as a plain number (`gain 1` is 0 dB). Then `pan`, `reverb` and `duck`.
+
+Every change here becomes a small edit of the text, which you can undo.
+
+### Transport and Drop
+
+**Drop**, in loop mode, turns every muted track on in one edit, on the next bar. In song mode it stays in place but does nothing.
+
+The tempo and the key in the transport are buttons. The tempo opens `−`, a field and `+` from 40 to 300 BPM, and **Tap tempo** (four taps, or `T` on a keyboard). The key opens the twelve tonics and the scales `minor`, `major`, `dorian`, `phrygian` and `chromatic`; notes outside the new scale move to the nearest note in it. The key is written in lowercase, as in the text (`a minor`), in every language. Both enter on the next bar. In Song mode, when the part playing has its own `| tempo`, the button shows the tempo that sounds and the editor, **Song tempo**, still edits the `tempo` line.
+
+**Undo** and **Redo** sit in the transport on a phone and in the head of the Code panel on a computer, and say what they took back. On a keyboard, `Ctrl+Z` and `Ctrl+Shift+Z` (`Command` on a Mac).
+
+The CPU meter shows how much of the device the music uses. The language has no limit on tracks; the device does, and the meter is how you see it. From 1024 px wide it sits in the transport; on a narrower screen it is in the footer of the instrument library, and above 80% the library warns that the device is near its limit.
+
+### Loop length
+
+In Loop mode the transport has the **Length** chip. It opens the length choice, 1, 2, 4, 8 or 16 bars; a tap picks one and closes it, and `[` and `]` step through the same lengths on a keyboard. The chip writes `loop <bars>` in the text ([Language guide](https://untzel.com/docs/en/language/#loop-length)) and the new length enters on the next bar, without stopping the music. Any other length, up to 16, is written in the Code panel, and the chip then shows it as written. The chip is hidden in Song mode, where the song decides the length.
+
+Available now: Loop length in bars. loop <bars> sets how many bars one pass of loop mode lasts; the Length chip of the transport writes it.
+
+### Play range
+
+Under the transport a ruler shows the loop, one segment per bar, or the song, one block per part, with the bar that is playing lit. On it you choose the play range: the stretch that repeats while you work, from one bar up to all of them.
+
+- Drag one of the two handles, or tap a first bar and then a last one. The row above the ruler says what is chosen, `Range: bars 3–6`; its × (`Clear range`) goes back to the whole loop or song.
+- On a keyboard, a focused handle moves one bar with the arrows and four with `Shift` or `PageUp` and `PageDown`; `Home` and `End` go to the ends.
+- The position follows the range: `Loop · bars 3–6 of 8 · bar 4`.
+- The range enters on the next bar and the music never stops. Outside the new range, the music jumps to its start at that bar; inside it, it goes on without a jump.
+
+In Loop mode the range always repeats. In Song mode the row has a **Cycle** switch: on, the range repeats; off, the music starts there and plays on into the rest of the song.
+
+The range is how you play, not what the music is, like play, stop and the mode. It is never written into the text, so undo does not undo it, and for now it is not kept in the link or the file either: it lasts while the app is open. Each mode keeps its own.
+
+Available now: Play range in Loop and Song. Choose the bars or parts that repeat, play one part alone, and export the same range. Never written into the text.
+
+### Loop and Song
+
+In **Loop** mode every track without `mute` plays forever. In **Song** mode the sections play in the order of the `song` line ([Language guide](https://untzel.com/docs/en/language/#sections)). Switching modes while playing takes effect on the next 4-bar phrase, and entering Song starts from the first part.
+
+In Song mode the parts of the song are a list, in the order they play: each with its name, its length and how many tracks it has; the one playing fills as it goes. Each row has its own play button, `Play <part> only`: it sets the range to that part with **Cycle** on, and the part plays alone, round and round, from the next bar; a second tap while the music plays clears the range. The bracket button of a row sets the range to start at that part, and **To here** extends it to another one.
+
+Open a part to choose its tracks, its length, **Play from here**, **Duplicate** and **Move**. **Play from here** moves the start of the range to that part, or, with no range, plays the song from there, on the next bar. **Add part from what is playing** writes a new section with the tracks that sound and adds it to the end of the song. That is how you build and play a finished song live.
+
+### The Code panel
+
+**Code**, next to **Drop**, opens the text. Tap it again to close it. While the music plays, the words that are sounding light up in orange.
+
+- When you stop typing, the text is analyzed. If it is valid, it plays from the next bar; a line under the editor shows how long until then.
+- If it is invalid, the wrong part is underlined, the message appears in the language of the app with its stable English code, and the previous version keeps playing. Nothing stops.
+- When a gesture changes the text, the changed line is highlighted for a moment.
+
+The editor reads the text as the Untzel language: keywords, instruments, notes, numbers and comments each have their colour, and every track line carries the colour of its track in the margin, the same colour as its light on the stage and its dot in the tracks. On a phone a long line only wraps before a `|`, so a modifier never sits alone. On a computer the panel's left edge is a divider: drag it, or focus it and use the arrows, to make the panel wider; a double-click returns to the default width.
+
+- **Completion.** `Ctrl+Space` lists what fits where the cursor is: instruments and statements at the start of a line, notes and chords of your key in a pattern, parameters after `|`, signals with the parameter's whole range, tonics and scales after `key`, tracks after `section`, sections after `song`. The arrows choose, `Enter` or `Tab` accept, `Esc` closes.
+- **Help under the cursor.** Resting on a word, or `Alt+I` on a keyboard, shows what it is: a parameter with its range, default and unit, an instrument with its group and parameters, a signal with its shape and period.
+- **Quick fixes.** An error with a known fix shows a button under the message, for example `Change to kick` for `kik`, next to **Ignore**. `Mod+.` applies the fix under the cursor, or the first one of the text. A fix touches only the part it names, and the music keeps playing.
+- `Esc` says how to leave: right after it, `Tab` moves out of the editor, and `Esc` again closes the panel.
+
+Available now: Commands under the code. A command line in the Code panel that makes the same minimal edits as the controls, with a preview before anything destructive.
+
+Under the code, the **Commands** button opens a command line, closed by default. Each command makes the same minimal edit as the controls do, through the same text: it is read, never executed, and the music never stops. A change that removes something, or touches more than one line, first shows a preview of the lines that change with **Apply** and **Cancel**; nothing changes until you apply. While the music plays, a change enters on the next bar and the line says so, then says from which bar it plays.
+
+- `Enter` runs the line. `Tab` completes with the chosen suggestion, `Alt+↓` and `Alt+↑` choose another, `↑` and `↓` walk the history. `Esc` closes the suggestions or cancels a preview, and `Mod+Enter` applies it.
+- A command with a typo answers with the closest one: `mute kik` offers `mute kick` as a chip, and a tap writes it on the line.
+- `help` lists the commands, `help <command>` explains one, and `explain` says in plain words what a line or a track does. Results and help read in the language of the app; the commands themselves are words of the language and stay as written.
+- The divider between the code and the commands moves with a drag or, focused, with the arrows.
+
+| Command | What it does | Example |
+| --- | --- | --- |
+| `help [command]` | list the commands, or explain one | `help set` |
+| `add <instrument> [name]` | a new track | `add bass` |
+| `duplicate <track>` | copy a track under the next free name | `duplicate bass` |
+| `remove <track>` | delete a track and its name in the sections | `remove ride` |
+| `rename <track> <new>` | rename a track and the sections that use it | `rename bass acid` |
+| `mute <track>` | turn a track off on the next bar | `mute hat` |
+| `unmute <track>` | turn a track on on the next bar | `unmute hat` |
+| `solo <track>` | hear one track alone; again to release | `solo bass` |
+| `tempo <bpm>` | 40 to 300 | `tempo 124` |
+| `key <tonic> <scale>` | the key notes snap to | `key a minor` |
+| `loop <bars>` | bars of one pass in loop mode, 1 to 16 | `loop 8` |
+| `set <track> <param> <value>` | a number, or a signal with its range | `set bass cutoff sine(8) 300..2400` |
+| `tone <track> <value>` | the track's tone, 0 to 1 | `tone bass 0.7` |
+| `steps <track> <8\|16\|32>` | steps per bar | `steps hat 32` |
+| `bars <track> <n>` | bars of the pattern, 1 to 16 | `bars bass 4` |
+| `section <name> <tracks…>` | create a section or change its tracks | `section drop kick hat bass` |
+| `song <part bars, …>` | write the song | `song intro 8, drop 16` |
+| `play` | start the music | `play` |
+| `stop` | stop the music | `stop` |
+| `drop` | turn every track on, in loop mode | `drop` |
+| `fix` | apply every safe quick fix | `fix` |
+| `explain <line\|track>` | what a line or a track does, in plain words | `explain bass` |
+| `undo` | undo the last change | `undo` |
+| `redo` | redo what was undone | `redo` |
+| `clear` | clear the results | `clear` |
+
+### Hide the controls
+
+The round button in the transport hides everything under it, so the stage fills the screen; `H` does the same on a keyboard. The transport stays with play, the position, **Code** and **Drop**; the top bar and the footer with the attribution stay as they are. The choice is saved on the device and the music never stops while you switch.
+
+### Keyboard shortcuts
+
+| Key | Action | Where |
+| --- | --- | --- |
+| `Space` | Play or stop | outside the code editor |
+| `1–9` | Turn one of the first nine tracks on or off | outside the code editor |
+| `A` | Add a track | outside the code editor |
+| `D` | Drop, in loop mode | outside the code editor |
+| `H` | Hide or show the controls; the stage fills the screen | outside the code editor |
+| `[ ]` | The previous or next loop length (1, 2, 4, 8, 16 bars), in loop mode | outside the code editor |
+| `Esc` | Close the open sheet and return focus; from the code editor, press it twice | anywhere, also in the editor |
+| `Mod+Z` | Undo | anywhere, also in the editor |
+| `Mod+Shift+Z` | Redo | anywhere, also in the editor |
+| `Mod+Enter` | Apply the text now, on the next bar, without waiting | anywhere, also in the editor |
+| `Mod+.` | Stop | outside the code editor |
+| `Mod+S` | Save the project on this device now, without a dialog | anywhere, also in the editor |
+
+Mod is Cmd on macOS and Ctrl elsewhere.
+
+### When a change plays
+
+A change to a plain number, such as `gain 0.6` to `gain 0.4`, sounds immediately. Everything else waits for the next bar: patterns, tracks, `mute`, signals, tempo, key, sections and the song. That is why the music never jumps.
+
+A pattern can be up to 64 bars long, the loop from 1 to 16 bars, and a part of the song from 1 to 256 bars.
+
+### Sheets
+
+Every sheet and the side panel close with the × button and with `Esc`, and focus returns to the control that opened them. On a phone, a sheet with a handle also closes when you drag it down.
+
+### Share and Export
+
+**Share link…**, in the menu, opens the share sheet, which sends your music as a link; when the song is too long for a link, it offers a `.untzel` file instead. **Save file** and **Open file…**, in the menu, save and open a `.untzel` file at any time, and a file dropped on the stage opens too.
+
+**Export**, in the top bar, opens the export sheet. Opening it renders nothing: you choose first, then press **Render**.
+
+- **Format**: **Story** 9:16, **Video** 16:9 or **Audio** WAV, each with the length the file will have, closing card included.
+- **Range**: with a play range, **Selected range** is chosen. It starts as a copy of the play range on the same ruler as the transport, and its two handles move by steps (1/16 of a note; **Fine**, Shift or Alt for 1/64), so a video can start and end on any step. The start and the end show as time and bar.beat. The Story takes up to 1:00, video and audio up to 10:00, 4K up to 4:21; a handle stops at the limit and the line under the ruler says why. Editing it never changes what plays, and **Use play range** returns to the copy. **Listen**, next to **Fine**, plays the range from its first bar and stops after its last; pressed again, as **Stop**, it stops at once. The play range stays as it was, the export ruler shows the bar that sounds, and closing the sheet does not stop the music. Without a play range, the Story starts on **Now playing**, about 15 seconds from the bar that sounds, and video and audio on the loop or the song, with **Selected range** one tap away. In the song, **From** and **To** pick the parts, and in the loop, **Bars** picks 8, 16, 32 or 64 bars.
+- **Quality**, for video: **HD** and **4K**, each with its resolution, HD chosen. Render checks this device first. If it cannot take 4K, it renders HD. After that test, 4K shows only on a device that can render it in time, with about how long the render takes.
+- The preview shows what the file will contain: the light in the format's shape, the Techno Inspire | Untzel logo and the address untzel.com, apart from the logo, on every frame, the song's title on a card for the first 1.5 seconds and then as a caption, and the 2-second closing card with only the logo and the address.
+
+Videos are MP4 files with H.264 video and AAC sound, 12 Mbit/s in HD and 30 Mbit/s in 4K; where the browser cannot encode AAC the sound is Opus, and the line that says the file is ready adds **Opus audio**. The song's title names the file and goes into its metadata, in MP4 and in WAV. On a device that cannot encode H.264, Story and Video are inactive and the sheet suggests the WAV export or another browser. When the video encoder does not answer in time, the sheet says so and shows **Try again**, which starts the same render again.
+
+While it renders, the sheet shows the progress and the time left, with **Cancel**, and the music keeps playing. When it is done the preview becomes the file itself, and **Download** saves it; where the system accepts files, **Share** sends it. The logo and the closing card are a condition of the license and have no option to remove them.
+
+Available now: Share as a link. The whole text in the link fragment; a file when it is too long.
+
+Available now: Export: story, video and WAV. Rendered offline: a 9:16 story up to 1:00 (about 15 s of what is playing without a play range), a 16:9 video or WAV audio up to 10:00, from the play range, the loop or the song. The music keeps playing.
+
+Available now: Export in HD or 4K. HD and 4K from the first time the sheet opens; Render tests the device first and renders HD where it cannot take 4K. After that test, 4K shows only where it passed.
+
+Source: https://untzel.com/docs/en/app/
+
+## Language guide
+
+Untzel code is a small, closed language for music. It is analyzed, never executed: there are no functions, variables, loops or imports, so the same text always plays the same music, in the app and anywhere else it is opened. Keywords, instrument names, parameters and error codes are in English; the app shows each error message in its own language.
+
+Every example on this page plays as it is. Copy it, paste it into the Code panel and change it.
+
+### The structure of a text
+
+A text has four parts, in this order, and every part is optional:
+
+1. globals: `title`, `tempo`, `key`, `swing` and `loop`;
+2. tracks, one per line;
+3. sections, with `section`;
+4. at most one `song`.
+
+Empty lines are ignored and `//` starts a comment that runs to the end of the line.
+
+```untzel
+// globals first, then tracks, then sections, then the song
+tempo 124
+key a minor
+swing 0.08
+
+kick: kick x... x... x... x...
+hat:  hat  ..x. ..x. ..x. ..x.
+bass: bass a1 . . a1 . . c2 .
+
+section intro kick hat
+section main  kick hat bass
+
+song intro 8, main 16 | loop
+```
+
+Without a `song`, every track that is not muted plays in a loop.
+
+### Tempo, key, swing and loop
+
+`tempo` sets the beats per minute, from 40 to 300; without it the text plays at 132. A value outside the range is an error, never a silent correction.
+
+`key` takes a tonic, `a` to `g` with an optional `b` or `#`, and a scale: `minor`, `major`, `dorian`, `phrygian` or `chromatic`. Without it the key is `c minor`.
+
+`swing` delays the even eighths, from 0 up to 0.5. Each global can appear once.
+
+```untzel
+tempo 126
+key d dorian
+swing 0.12
+
+hat:  hat  x.x. x.x. x.x. x.x.
+bass: bass d2 . f2 . a2 . c3 .
+```
+
+#### Loop length
+
+`loop` sets how many bars one pass of Loop mode lasts, a whole number from 1 to 16. On every pass all patterns and signals start again from bar 1: a 2-bar pattern plays 4 times in `loop 8`, and a pattern longer than the loop plays only its first bars. Without `loop`, every pattern repeats on its own length, as before.
+
+```untzel
+// 8 bars per pass: the 2-bar bass plays 4 times and the cutoff rises across the pass
+tempo 124
+key c minor
+loop 8
+kick: kick x... x... x... x...
+hat:  hat  ..x. ..x. ..x. ..x.
+bass: bass . c2 . c2 . c2 . eb2 / . ab1 . ab1 . c2 . g1 | cutoff saw(8) 300..2400
+```
+
+A new length enters on the next bar and the music never stops. Song mode ignores `loop`: there the sections and the `song` line decide. `loop` is still a valid track name and the word at the end of `song … | loop`. The **Length** chip of the transport writes this line for you ([Using the app](https://untzel.com/docs/en/app/#loop-length)).
+
+#### Song title
+`title "Midnight Coast"` names the song: up to 60 characters between double quotes, where `\"` writes a quote and `\\` a backslash. It never changes the sound. The app shows it in the top bar and in the browser tab, and it goes into the file names, the exported video and the shared link. Renaming the song in the app writes this line ([Using the app](https://untzel.com/docs/en/app/#projects)). An empty title or one longer than 60 characters is a warning, not an error: the music keeps playing, without a title or with its first 60 characters. A second `title` line is an error, like a second `tempo`. `title` is still a valid track name.
+
+```untzel
+// the title names the song; it never changes the sound
+title "Midnight Coast"
+tempo 122
+key f minor
+kick: kick  x... x... x... x...
+keys: piano Fm7 ~ ~ ~ / Dbmaj7 ~ ~ ~
+```
+
+### Tracks with names
+
+A track line is an optional name and a colon, an instrument, a pattern, and modifiers after `|`. The name is how sections, tiles and messages refer to the track. Names are lower case, start with a letter, and have at most 24 characters.
+
+Two tracks can use the same instrument with different patterns and sounds: each track is an independent instance. A track without a name takes the instrument's name, or the next free number.
+
+```untzel
+// two bass tracks: two independent instances
+sub:  bass c1 . . . c1 . . .   | cutoff 160
+bass: bass . . c2 . . . eb2 .  | cutoff 900 | pan 0.2
+
+// without a name, a track takes the instrument's: hat, then hat2
+hat ..x. ..x. ..x. ..x.
+hat x.x. x.x. x.x. x.x.        | gain 0.4
+```
+
+The order of the lines is the order of the tracks on screen.
+
+### Patterns: the mini-notation
+
+A pattern describes one bar; `/` separates the bars of a longer pattern, which repeats when it ends. The steps of a bar divide it equally.
+
+| Write | Means |
+|---|---|
+| `x` `X` `.` | a hit, an accented hit, a rest. In a run like `x...` every character is a step |
+| `~` | holds the previous step one step longer: `x~~~` holds a hit for four steps |
+| `c2` `eb2` `f#1` | a note with its octave, for instruments that play notes |
+| `[x x]` | a group: subdivides one step |
+| `x?` `x?0.3` | plays with a chance; without a number the chance is 0.5 |
+| `x*4` `[c2 g1]*2` | repeats inside the same step |
+| `/` | the next bar of the pattern |
+
+```untzel
+kick:  kick X... x... X... x...
+clap:  hat  .... x~.. .... x~..   | open 0.4
+roll:  hat  x x [x x] x*2         | decay 0.03
+ghost: hat  x?0.3 x? x? x?        | gain 0.5
+fill:  kick x... x... x... x... / x... x... x.x. xxxx
+```
+
+#### Counting steps
+
+Spaces separate elements, but in a run of hits each character is already a step, so `x... x...` and `x...x...` are the same eight steps. `x... x... x... x...` is a bar of 16 steps, each a sixteenth; `c2 . eb2 c3 . c2 g1 .` is 8 steps, each an eighth. A bar has at most 64 steps and groups nest at most 4 deep.
+
+### Notes and chords
+
+Instruments that play notes take lower-case note names with an octave: `c1`, `eb2`, `f#1`. A `.` is a rest and `~` holds the note.
+
+```untzel
+key c minor
+
+sub:  bass c1 ~ . c1 ~ . c1 .         | cutoff 180
+line: bass c2 eb2 g2 bb2 c3 . g2 .    | cutoff 1200 | decay 0.2
+```
+
+Notes joined by `+` sound together in one step, as a stack you voice yourself: `c3+eb3+g3`. A `!` after a hit or a note accents it, like `X` on a drum.
+
+```untzel
+key c minor
+keys: piano c3+eb3+g3 ~ ~ . bb2+d3+f3 ~ . . | reverb wide
+kick: kick x . . . x . . . x . . . x! . x .
+lead: lead c4! . eb4 . g4 . bb4! .      | cutoff 2000
+```
+
+Chord names start with a capital letter, as in `Cm7`, `Abmaj7` or `Gsus4`, and need an instrument of kind chord. Writing a chord for an instrument that plays notes is the error `PATTERN_KIND_MISMATCH` ([reference](https://untzel.com/docs/en/reference/#error-pattern-kind-mismatch)).
+
+Available now: Chords. Chord names such as Cm7 need an instrument of kind chord.
+
+### The scale lock
+
+With a key, every note outside the scale moves to the nearest degree of it, so a wrong note is impossible. `| free` turns the lock off for one track, and `key c chromatic` turns it off for the whole text.
+
+```untzel
+key c minor
+
+// in c minor, e2 plays eb2 and b2 plays bb2
+locked: bass c2 e2 g2 b2
+// free plays every note as written
+loose:  bass c2 e2 g2 b2   | free
+```
+
+### Modifiers
+
+Modifiers come after the pattern, each after a `|`, and are read from left to right. If the same modifier appears twice, the last one wins and the earlier one gets the warning `DUPLICATE_MODIFIER`; a warning never stops the music.
+
+There are general modifiers every track accepts (`gain`, `pan`, `tone`, `reverb`, `delay`, `duck`, `transpose`, `swing`, `shift`, `mute`, `free`) and the parameters of each instrument, such as `cutoff` on `bass` or `open` on `hat`. The full table with every range is in the [reference](https://untzel.com/docs/en/reference/#general-modifiers), and every instrument parameter is on the [Instruments](https://untzel.com/docs/en/instruments/) page.
+
+```untzel
+kick: kick x... x... x... x...       | drive 0.4
+bass: bass c2 . c2 . c2 . eb2 .      | duck 0.7 | tone 0.6
+echo: bass . . g2 . . . c3 .         | delay 3/16 | reverb sea | gain 0.5 | pan -0.4
+up:   bass c2 . . . c2 . . .         | transpose 12 | shift 2 | mute
+```
+
+When `tone` and a parameter it moves appear together, the explicit parameter wins.
+
+### Signals
+
+Any numeric parameter that allows it can take a slow wave instead of a number: a shape, a period in bars and a range. The range is required and stays inside the parameter's limits; the period is at most 256 bars.
+
+| Shape | Moves |
+|---|---|
+| `sine(8)` | smoothly up and down |
+| `tri(4)` | in straight lines up and down |
+| `saw(4)` | up, then starts again |
+| `square(2)` | between the two ends |
+| `rand(1)` | to a new value every period, the same on every play |
+
+```untzel
+bass: bass c2 . c2 . c2 . eb2 .   | cutoff sine(8) 300..2400
+hat:  hat  x.x. x.x. x.x. x.x.    | open tri(4) 0..0.8 | pan rand(1) -0.5..0.5
+rise: hat  x x x x x x x x        | gain saw(4) 0.1..0.8
+gate: hat  x*4 x*4 x*4 x*4        | gain square(2) 0.2..0.6
+```
+
+In a song, a signal starts again at the start of every section, so `saw(4)` in a 4-bar section rises exactly across it ([Cookbook](https://untzel.com/docs/en/cookbook/#saw-build)).
+
+### Sections and the song
+
+`section` names a set of tracks that play together; a track can be in as many sections as you like. A section can change the `tempo` from its start and the `gain` of all its tracks. `song` plays sections in order, each for a number of bars, from 1 to 256; the same section can come back.
+
+```untzel
+tempo 124
+key a minor
+
+kick: kick x... x... x... x...
+hat:  hat  ..x. ..x. ..x. ..x.
+sub:  bass a1 . . a1 . . a1 .     | cutoff 180
+bass: bass . a2 . a2 . c3 . e2    | cutoff saw(4) 300..1800
+
+section intro kick hat
+section build kick hat sub bass   | gain 0.8
+section drop  kick hat sub bass   | tempo 126
+
+song intro 8, build 4, drop 16, intro 4
+```
+
+#### Looping the song
+
+A song stops at its end. With `| loop` at the end of the `song` line it starts again.
+
+```untzel
+kick: kick x... x... x... x...
+bass: bass c2 . . c2 . . g1 .
+
+section a kick
+section b kick bass
+
+song a 4, b 8 | loop
+```
+
+#### Sections without a song
+
+```untzel
+kick: kick x... x... x... x...
+hat:  hat  ..x. ..x. ..x. ..x.
+
+// no song: in Song mode each section plays 8 bars, in order, in a cycle
+section first  kick
+section second kick hat
+```
+
+### Loop and Song modes
+
+The mode is not written in the text: it is a switch of the transport, like play and stop. In Loop mode every track without `mute` plays forever, in passes of `loop <bars>` when the text has it, and sections are ignored. In Song mode the parts play in order; with sections but no song, each section plays 8 bars in order, in a cycle. `mute` silences a track in both modes, even inside a section. The play range is not written either: choosing which bars or parts repeat changes how you play, never the text ([Using the app](https://untzel.com/docs/en/app/#play-range)).
+
+### Limits
+
+The language has no limit on tracks, tracks per instrument, sections or song parts; the device does, and the CPU meter shows how much is in use. The fixed limits protect the analyzer and keep a text readable: a text has at most 65,536 characters, a pattern at most 64 bars. Every limit is in the [reference](https://untzel.com/docs/en/reference/#limits).
+
+### Determinism
+
+Chance (`?`) and `rand` are drawn from a seed made of the text itself, the track name and the bar. The same text plays the same notes every time, on every device. Change one character of the text and the draw changes; the `title` line is the exception, so renaming a song never changes what it plays.
+
+Source: https://untzel.com/docs/en/language/
+
+## Language reference
+
+The complete language on one page: order, statements, values, every modifier, every limit, the grammar and every error with its message and fix. Numbers in the tables come from the analyzer of this build. The [guide](https://untzel.com/docs/en/language/) explains the same things with examples.
+
+### Order of a text
+
+Globals, then tracks, then sections, then the song. Each global (`title`, `tempo`, `key`, `swing`, `loop`) at most once, and at most one `song`. Text out of this order is the error `OUT_OF_ORDER`.
+
+| Statement | Form |
+|---|---|
+| title | `title "<text>"`, up to 60 characters; `\"` writes a quote and `\\` a backslash |
+| tempo | `tempo <bpm>` |
+| key | `key <tonic> <scale>`, tonic `a` to `g` with optional `b` or `#`; scale `minor`, `major`, `dorian`, `phrygian` or `chromatic` |
+| swing | `swing <amount>` |
+| loop | `loop <bars>`, a whole number |
+| track | `[<name>:] <instrument> <pattern> ( \| <modifier> [value] )*` |
+| section | `section <name> <track> <track>... ( \| tempo <bpm> ) ( \| gain <value> )` |
+| song | `song <section> <bars>, <section> <bars>... [ \| loop ]` |
+
+Tempo goes from 40 to 300 with 132 as default; swing from 0 to 0.5; loop from 1 to 16 bars, absent by default; the default key is `c minor`.
+
+### Names
+
+Track and section names follow `[a-z][a-z0-9_-]*`, at most 24 characters, unique among tracks and unique among sections. A track without a name takes the instrument's name, or `<instrument><n>` with the next free number from 2: explicit names are reserved first, then unnamed tracks are numbered in text order. Only repeated explicit names are the error `DUPLICATE_TRACK_NAME`.
+
+### Pattern elements
+
+| Element | Example | Meaning |
+|---|---|---|
+| hits | `x...`, `X.x~` | each character a step: hit, accent, rest, hold |
+| note | `c2`, `eb2`, `f#1` | lower case, optional `b` or `#`, octave digit |
+| chord | `Cm7`, `Abmaj7` | capital root, optional `b` or `#`, quality `m`, `7`, `m7`, `maj7`, `sus2`, `sus4` or `dim` (none is major) |
+| rest | `.` | one silent step |
+| hold | `~` | the previous element one step longer |
+| group | `[x x]` | subdivides one step; nests at most 4 deep |
+| chance | `x?`, `c2?0.3` | plays with that chance, 0.5 without a number |
+| repeat | `x*4` | whole number from 1 to 16, inside the same step |
+| bar | `/` | the next bar of the pattern |
+
+Drum instruments play hits, pitched instruments play notes, chord instruments play chords; anything else is `PATTERN_KIND_MISMATCH`.
+
+### General modifiers
+
+Every track accepts these, whatever its instrument. The parameters of each instrument are on the [Instruments](https://untzel.com/docs/en/instruments/) page.
+
+| Modifier | Value | Effect |
+| --- | --- | --- |
+| `mute` | no value | silences the track |
+| `free` | no value | turns the scale lock off for this track |
+| `legato` | no value | one-voice instruments glide from note to note without a new attack |
+| `gain` | 0 to 2, or a signal | volume |
+| `pan` | -1 to 1, or a signal | position in the stereo field, left to right |
+| `duck` | 0 to 1, or a signal | how much the track dips when the kick plays (sidechain) |
+| `tone` | 0 to 1, or a signal | one-finger timbre macro: moves the parameters the instrument maps to it |
+| `reverb` | small, wide, sea, room, plate, hall, and dub, or 0 to 1 | send to a reverb space by name (send 0.3), or a send amount to wide |
+| `transpose` | whole number, -24 to 24 | semitones, still under the scale lock |
+| `swing` | 0 to 0.5 | swing of this track, replacing the global one |
+| `shift` | whole number, -1024 to 1024 | moves the pattern by steps of the first bar |
+| `velocity` | 0 to 1 | how hard every note of the track plays |
+| `glide` | 0 to 2 | seconds a legato note takes to slide to the next pitch |
+| `inversion` | whole number, 0 to 3 | which chord note goes on top: 0 root position, 1 to 3 inversions |
+| `arp-octaves` | whole number, 1 to 3 | how many octaves the arpeggio climbs |
+| `delay` | one of 1/8, 3/16, and 1/4 | send 0.35 to the delay line of that division |
+| `voicing` | one of close, open, spread, and drop2 | how a chord instrument spreads the notes of each chord |
+| `arp` | one of up, down, updown, random, and played | plays a chord instrument's chords one note at a time, in this order |
+| `arp-rate` | one of 1/4, 1/8, 3/16, 1/12, 1/16, 1/24, and 1/32 | the length of each arpeggio note, as a division of the bar |
+| `lowpass` | 20 to 20,000, or a signal | low-pass filter cutoff, in Hz: lower is darker |
+| `lowpass-q` | 0 to 1, or a signal | resonance of the low-pass filter |
+| `highpass` | 20 to 20,000, or a signal | high-pass filter cutoff, in Hz: higher is thinner |
+| `highpass-q` | 0 to 1, or a signal | resonance of the high-pass filter |
+| `distort` | 0 to 1, or a signal | drive into a soft distortion |
+| `crush` | 0 to 1, or a signal | bitcrush: fewer bits and a lower sample rate |
+| `chorus` | 0 to 1, or a signal | chorus depth: a thicker, wider copy |
+| `chorus-rate` | 0.05 to 5, or a signal | speed of the chorus, in Hz |
+| `phaser` | 0 to 1, or a signal | phaser depth: a sweeping notch |
+| `phaser-rate` | 0.05 to 5, or a signal | speed of the phaser, in Hz |
+| `eq-low` | -18 to 18, or a signal | low shelf of the EQ, in dB |
+| `eq-mid` | -18 to 18, or a signal | mid band of the EQ, in dB |
+| `eq-mid-freq` | 200 to 8000, or a signal | centre of the EQ's mid band, in Hz |
+| `eq-high` | -18 to 18, or a signal | high shelf of the EQ, in dB |
+| `comp` | 0 to 1, or a signal | compressor amount: louder, more even |
+| `gate` | 0 to 1, or a signal | gate amount: cuts the tail between notes |
+
+`reverb` and `delay` send to shared buses: the reverb spaces named in the table and three delay lines. The spaces are presets of an algorithmic reverb, not recordings of places.
+
+### Section modifiers
+
+| Modifier | Value | Effect |
+| --- | --- | --- |
+| `tempo` | 40 to 300 | tempo from this section on |
+| `gain` | 0 to 1 | volume of every track of the section |
+
+### Values and signals
+
+A value is a number, a name (`sea`), a division (`3/16`) or a signal with a range: `sine(8) 300..2400`. Signal shapes are `sine`, `tri`, `saw`, `square` and `rand`. The range is required and must fit the parameter; the period is above 0 and at most 256 bars. A signal restarts at the start of each section of a song.
+
+### When changes play
+
+A change to a constant number plays immediately. Every other change, structural, waits for the next bar not yet scheduled. In Song mode, a queued part and a mode switch wait for the next 4-bar phrase.
+
+### Limits
+
+| Limit | Value | Meaning |
+| --- | --- | --- |
+| `MAX_SOURCE_LENGTH` | 65,536 | characters in a text |
+| `MAX_NAME_LENGTH` | 24 | characters in a track or section name |
+| `MAX_STEPS_PER_BAR` | 64 | steps in one bar |
+| `MAX_BARS_PER_PATTERN` | 64 | bars in one pattern |
+| `MAX_GROUP_DEPTH` | 4 | nesting depth of [ ] groups |
+| `MIN_REPEAT` | 1 | smallest *n repeat |
+| `MAX_REPEAT` | 16 | largest *n repeat |
+| `MAX_SHIFT` | 1024 | largest shift, in steps, either way |
+| `MAX_TRANSPOSE` | 24 | largest transpose, in semitones, either way |
+| `MIN_TEMPO` | 40 | lowest tempo, in BPM |
+| `MAX_TEMPO` | 300 | highest tempo, in BPM |
+| `DEFAULT_TEMPO` | 132 | tempo when the text has none |
+| `MAX_SWING` | 0.5 | largest swing |
+| `MAX_SIGNAL_PERIOD` | 256 | longest signal period, in bars |
+| `MIN_PART_BARS` | 1 | shortest song part, in bars |
+| `MAX_PART_BARS` | 256 | longest song part, in bars |
+| `DEFAULT_PROBABILITY` | 0.5 | chance of ? without a number |
+| `MIN_LOOP_BARS` | 1 | shortest loop <bars> |
+| `MAX_LOOP_BARS` | 16 | longest loop <bars> |
+
+### Grammar
+
+The normative grammar is the Lezer grammar the app's parser is generated from. Keywords extend names, so `sine:` and `loop:` are still valid track names, and a track without a pattern parses and then fails with `EMPTY_PATTERN`.
+
+```text
+
+// Normative Lezer grammar of the Untzel language. The conformance test checks that
+// the reference examples of the language analyze without errors.
+
+@top Source { (Line? newline)* Line? }
+
+Line { TitleStatement | TempoStatement | KeyStatement | SwingStatement | LoopStatement | Track | SectionDecl | SongDecl }
+
+TitleStatement { kw<"title"> String }
+TempoStatement { kw<"tempo"> Number }
+KeyStatement { kw<"key"> Tonic Name }
+SwingStatement { kw<"swing"> Number }
+LoopStatement { kw<"loop"> Number }
+
+Track { (TrackName ":")? InstrumentName Preset? Pattern? ("|" Modifier)* }
+
+Preset { PresetName }
+TrackName { Name }
+InstrumentName { Name }
+
+SectionDecl { kw<"section"> Name Name+ ("|" Modifier)* }
+SongDecl { kw<"song"> Part ("," Part)* ("|" kw<"loop">)? }
+Part { Name Number }
+
+Pattern { Bar ("/" Bar)* }
+Bar { Element+ }
+Element { Atom Accent? Probability? Repeat? }
+
+Accent { "!" }
+Probability { "?" Number? }
+Repeat { "*" Number }
+Atom { Hits | Note | Stack | Chord | Sustain | Group }
+
+Stack { Note ("+" Note)+ }
+Group { "[" Element+ "]" }
+
+Modifier { ModifierName Value? }
+ModifierName { Name | kw<"swing"> | kw<"tempo"> }
+Value { Number | Signal Range? | Division | Name }
+Signal { SignalShape "(" (Number | Division) ")" }
+SignalShape { kw<"sine"> | kw<"tri"> | kw<"saw"> | kw<"square"> | kw<"rand"> | kw<"env"> }
+Range { Number ".." Number }
+Division { Number "/" Number }
+
+kw<term> { @extend[@name={term}]<Name, term> }
+
+@skip { space | Comment }
+
+@tokens {
+  space { $[ \t]+ }
+  newline { "\r"? "\n" }
+  Comment { "//" ![\n]* }
+  Number { "-"? @digit+ ("." @digit+)? }
+  // The song title: one line, \" and \\ are the only escapes.
+  String { '"' (![\\\n"] | "\\" $["\\])* '"' }
+  Name { $[a-z] $[a-z0-9_\-]* }
+  Hits { $[xX.] $[xX.~]* }
+  Sustain { "~" }
+  Note { $[a-g] $[b#]? @digit }
+  Tonic { $[a-g] $[b#]? }
+  // A preset never starts with "x" (a hit) nor reads like a note or a tonic.
+  PresetName { $[h-wyz] $[a-z0-9\-]* | $[a-g] $[ac-z\-] $[a-z0-9\-]* | $[a-g] "b" $[a-z\-] $[a-z0-9\-]* }
+  Chord { $[A-G] $[b#]? ("maj7" | "m7" | "m" | "7" | "sus2" | "sus4" | "dim" | "6" | "m6" | "9"
+          | "m9" | "maj9" | "add9" | "madd9" | "aug" | "dim7" | "m7b5" | "7sus4" | "11" | "m11" | "13")? }
+  @precedence { Comment, "/" }
+  ":" "|" "," "/" "?" "*" "[" "]" "(" ")" ".." "!" "+"
+}
+```
+
+### Errors
+
+Analysis never throws: it returns the program or a list of diagnostics, each with a position, a stable code and a message, which the app shows in its language (the English text is the source). Syntax errors give one diagnostic per line. The codes are a stable contract; the messages may change. The messages below are the ones the app shows today in English; the Portuguese page shows the Portuguese ones.
+
+| Code | Severity | Message | How to fix |
+| --- | --- | --- | --- |
+| `UNKNOWN_INSTRUMENT` | error | Unknown instrument "kik". Did you mean "kick"? | Use one of the instruments on the Instruments page; the message suggests the closest name. |
+| `DUPLICATE_TRACK_NAME` | error | A track named "bass" already exists on line 1. | Give each track its own name before the colon, for example bass2. |
+| `UNKNOWN_TRACK` | error | Section "drop" uses "acid", but no track has that name. | List only track names that exist above the section, or add the missing track. |
+| `UNKNOWN_SECTION` | error | The song uses "chorus", but no section has that name. | Use a section name declared with section, or declare it. |
+| `DUPLICATE_SECTION_NAME` | error | A section named "drop" already exists on line 3. | Rename one of the sections; names are unique among sections. |
+| `UNKNOWN_MODIFIER` | error | "bass" has no parameter "cutof". Did you mean "cutoff"? | Use a general modifier or a parameter of that instrument; the message suggests the closest one. |
+| `OUT_OF_RANGE` | error | tempo must be between 40 and 300. | Bring the value inside the range the message gives. |
+| `EMPTY_PATTERN` | error | This track has no steps. | Write at least one step after the instrument name, for example x... x... x... x... |
+| `INVALID_NOTE` | error | "b9" is not a note. | Write a lower-case note with its octave, a to g, optional b or #, then a digit: c2, eb2, f#1. |
+| `SIGNAL_NEEDS_RANGE` | error | sine(8) needs a range, for example 40..8000. | Follow the signal with a range inside the parameter's limits, for example 300..2400. |
+| `SOURCE_TOO_LONG` | error | A song can have at most 65,536 characters. | Split the music or remove repeated lines: a text has a size limit. |
+| `SYNTAX_ERROR` | error | Unexpected "]". | Check the line against the grammar: a stray bracket, bar or comma is the usual cause. |
+| `INTERNAL_ERROR` | error | Something went wrong while reading this text. | Not caused by your text. The last valid version keeps playing; reload the page if it repeats. |
+| `UNKNOWN_SCALE` | error | Unknown scale "minr". Did you mean "minor"? | Use one of the scales listed in the reference; the message suggests the closest one. |
+| `NAME_TOO_LONG` | error | A name can have at most 24 characters. | Shorten the track or section name. |
+| `TOO_MANY_STEPS` | error | A bar can have at most 64 steps. | Use fewer steps in the bar, or groups in brackets to subdivide a step. |
+| `TOO_MANY_BARS` | error | A pattern can have at most 64 bars. | Use fewer bars in the pattern, or sections and a song for longer music. |
+| `PATTERN_KIND_MISMATCH` | error | "bass" plays notes, not chords. | Drums play hits (x . ~), pitched instruments play notes (c2). Check the instrument's kind. |
+| `MISSING_VALUE` | error | gain needs a value, for example gain 0.8. | Give the modifier a value, as in the example the message shows. |
+| `DUPLICATE_SONG` | error | A text can have only one song. | Keep one song line and join the parts with commas. |
+| `OUT_OF_ORDER` | error | Sections come after tracks. | Order the text: tempo, key, swing and loop first, then tracks, then sections, then the song. |
+| `DUPLICATE_STATEMENT` | error | tempo is already set on line 1. | Keep one title, one tempo, one key, one swing and one loop line; the first one counts. |
+| `DUPLICATE_MODIFIER` | warning | gain is set twice; the last one wins. | A warning, not an error: remove the earlier copy; the last one wins. |
+| `UNKNOWN_PRESET` | error | "piano" has no sound "brigth". Did you mean "bright"? | Use one of the instrument's sounds listed on the Instruments page; the message suggests the closest one. |
+| `UNKNOWN_CHOICE` | error | "wave" can be saw, square, triangle or sine. | Use one of the names the message lists. |
+| `SIGNAL_NEEDS_NUMBER` | error | "wave" takes a name, not a signal. | Write one of the parameter's names: a signal only moves numbers. |
+| `NO_EFFECT` | warning | legato needs a one-voice instrument; "bass" plays several voices. | A warning, not an error: the modifier is ignored. Use it on the kind of instrument the message names, or add what it needs. |
+| `TOO_MANY_MODULATORS` | error | A track can have at most 8 fast signals. | Give some parameters a slow signal (a period of 1 bar or more) or a fixed value; the message gives the limit per track. |
+| `DUPLICATE_LOOP_SECTION` | error | Only one section can be the loop; "groove" already is on line 3. | Keep \| loop on one section only: it is the one loop mode plays. |
+| `EMPTY_TITLE` | warning | The song title is empty; the last title stays. | A warning, not an error: write the name between the quotes, or remove the title line; the music keeps playing. |
+| `TITLE_TOO_LONG` | warning | A song title can have at most 60 characters. | A warning, not an error: shorten the title to 60 characters; the first 60 are kept. |
+| `SIGNAL_NOT_ALLOWED` | error | swing takes a number, not a signal. | Write a number: this value holds for the whole track or section. |
+| `NOTHING_TO_PLAY` | warning | Nothing to play: add a track. | A warning, not an error: add a track. |
+
+Source: https://untzel.com/docs/en/reference/
+
+## Instruments
+
+Every instrument of this build, generated from its manifest: the same file the analyzer, the track detail and the sound engine read. If it is not on this page, the app does not have it.
+
+Each parameter is a modifier of the track: `| cutoff 900`. Its value can be a number inside the range or a signal ([Language guide](https://untzel.com/docs/en/language/#signals)). An exponential curve moves evenly through the octaves of the range, as an ear hears frequency and time. `tone` is the one-finger macro of a tile: from 0 to 1 it moves the parameters listed under each instrument between the two values shown. An explicit parameter in the text wins over `tone`.
+
+Some instruments play recordings. On `piano`, `strings`, `harp`, `mallet`, `bell`, `kalimba` and `choir` the `source` parameter is `samples` by default, and `| source synth` plays the synthesized voice instead; on `vox`, the `ooh` and `aah` sounds play recorded singers. A recording is downloaded only when a track uses it, and until it arrives the synthesized voice plays, so the music never waits ([Credits](https://untzel.com/docs/en/credits/)). The model name next to each instrument is the name the library shows; the word you write in the text is always the one in the heading.
+
+The kind decides what a pattern may contain: drums play hits (`x . ~`), pitched instruments play notes (`c2`), chord instruments play chords (`Cm7`).
+
+Available now: Instrument library with search and preview. Nine categories, from drums to FX; search, preview a sound before adding it, and add the same instrument as often as you like.
+
+### acid
+
+Squelchy resonant mono bass
+
+Model: NEON B3. Group: Bass. Kind: pitched: plays notes. Voices: 1. Default duck: 0.6.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `classic` (default) | The classic squelch |
+| `squelch` | More resonance and accent |
+| `square` | Hollow square wave |
+| `soft` | Round, a saw and a triangle in a 12 dB filter |
+
+Default pattern: `acid: acid c2 c2 c3 c2 eb2 c2 bb1 c2`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `cutoff` | 40 | 12,000 | 700 | Hz | exponential |
+| `resonance` | 0 | 1 | 0.6 | none | linear |
+| `accent` | 0 | 1 | 0.6 | none | linear |
+| `wave` | `saw` | `square` | `saw` | one of saw and square |  |
+| `decay` | 0.05 | 2 | 0.25 | s | exponential |
+| `wave2` | `saw` | `sine` | `saw` | one of saw, square, triangle, and sine |  |
+| `mix` | 0 | 1 | 0 | none | linear |
+| `sync` | 0 | 1 | 0 | none | linear |
+| `filter` | `lp12` | `hp` | `lp24` | one of lp12, lp24, bp, and hp |  |
+| `filter-attack` | 0.001 | 4 | 0.001 | s | exponential |
+| `drive` | 0 | 1 | 0 | none | linear |
+| `spread` | 0 | 1 | 0 | none | linear |
+| `sub` | 0 | 1 | 0 | none | linear |
+| `noise` | 0 | 1 | 0 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `cutoff` | 150 | 6000 |
+| `resonance` | 0.2 | 0.95 |
+
+### bass
+
+Saw bass with a plucked filter
+
+Model: FLUX B24. Group: Bass. Kind: pitched: plays notes. Voices: 2. Default duck: 0.6.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `round` (default) | Round and warm |
+| `bright` | Brighter filter |
+| `dirty` | Driven |
+| `rolling` | Short rolling notes |
+
+Default pattern: `bass: bass c2 . . c2 . . c2 .`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `cutoff` | 40 | 8000 | 600 | Hz | exponential |
+| `decay` | 0.05 | 2 | 0.3 | s | exponential |
+| `drive` | 0 | 1 | 0.1 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `cutoff` | 120 | 3000 |
+
+### bell
+
+Bells, tubular to toy
+
+Model: HALO Bells. Group: Plucks. Kind: chord: plays chords. Voices: 8. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `tubular` (default) | Tubular bell |
+| `glass` | Glass chime |
+| `toy` | Toy piano bell |
+
+Default pattern: `bell: bell c4 ~ ~ ~ g4 ~ ~ ~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `brightness` | 0 | 1 | 0.5 | none | linear |
+| `feedback` | 0 | 1 | 0.1 | none | linear |
+| `decay` | 0.1 | 8 | 3 | s | exponential |
+| `release` | 0.01 | 8 | 1.5 | s | exponential |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+| `level` | 0.05 | 8 | 1.29 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `brightness` | 0 | 1 |
+
+### bongo
+
+Pair of small hand drums, high and low
+
+Model: TERRA Hands. Group: Drums. Kind: drum: plays hits. Voices: 4. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `high` (default) | Small drum, high |
+| `low` | Large drum, low |
+| `slap` | Dry slap: skin noise and high modes |
+
+Default pattern: `bongo: bongo x.x. .x.x x.x. .xx.`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `tune` | 0 | 1 | 0.6 | none | linear |
+| `decay` | 0.05 | 1 | 0.18 | s | exponential |
+| `hardness` | 0 | 1 | 0.6 | none | linear |
+| `slap` | 0 | 1 | 0 | none | linear |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `tune` | 0 | 1 |
+
+### boom
+
+Long booming tuned kick bass
+
+Model: ORBIT K8. Group: Bass. Kind: pitched: plays notes. Voices: 1. Default duck: 0.4.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `long` (default) | Long sustained boom with some grit |
+| `short` | Punchy and short |
+| `dirty` | Saturated hard, a deeper drop |
+
+Default pattern: `boom: boom c2 ~ ~ . . . c2 . / . . eb2 ~ ~ ~ . .`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `decay` | 0.1 | 8 | 1.2 | s | exponential |
+| `tune` | 0 | 1 | 0.5 | none | linear |
+| `bend` | 0 | 1 | 0.3 | none | linear |
+| `color` | 0 | 1 | 0.45 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `decay` | 0.3 | 4 |
+
+### brass
+
+Synth brass section
+
+Model: ARC Brass. Group: Brass. Kind: chord: plays chords. Voices: 8. Default duck: 0.3.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `section` (default) | Brass section with a blat and a scoop |
+| `soft` | Soft, round horns |
+| `horn` | Single bright, driven horn |
+
+Default pattern: `brass: brass Cm ~ ~ ~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `cutoff` | 200 | 12,000 | 700 | Hz | exponential |
+| `contour` | 0 | 1 | 0.85 | none | linear |
+| `attack` | 0.001 | 2 | 0.04 | s | exponential |
+| `release` | 0.01 | 4 | 0.2 | s | exponential |
+| `detune` | 0 | 1 | 0.2 | none | linear |
+| `wave2` | `saw` | `sine` | `square` | one of saw, square, triangle, and sine |  |
+| `mix` | 0 | 1 | 0.25 | none | linear |
+| `sync` | 0 | 1 | 0 | none | linear |
+| `filter` | `lp12` | `hp` | `lp12` | one of lp12, lp24, bp, and hp |  |
+| `filter-attack` | 0.001 | 4 | 0.08 | s | exponential |
+| `filter-decay` | 0.01 | 8 | 0.6 | s | exponential |
+| `drive` | 0 | 1 | 0.5 | none | linear |
+| `spread` | 0 | 1 | 0 | none | linear |
+| `sub` | 0 | 1 | 0 | none | linear |
+| `noise` | 0 | 1 | 0.06 | none | linear |
+| `scoop` | 0 | 1 | 0.6 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `cutoff` | 400 | 8000 |
+| `contour` | 0 | 1 |
+
+### choir
+
+Choir of recorded singers
+
+Model: AETHER Choir. Group: Voices. Kind: chord: plays chords. Voices: 8. Default duck: 0.3.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `aah` (default) | Open aah, recorded ensemble |
+| `ooh` | Round ooh, recorded ensemble |
+| `dark` | Dark and low |
+| `chant` | Open chant, call and response |
+| `gospel` | House: bright open gospel voices |
+| `ethereal` | Trance: airy voices that swell in |
+| `monk` | Melodic techno: low closed chant |
+
+Default pattern: `choir: choir Cm ~ ~ ~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `vowel` | 0 | 1 | 0 | none | linear |
+| `breath` | 0 | 1 | 0.25 | none | linear |
+| `brightness` | 0 | 1 | 0.5 | none | linear |
+| `attack` | 0.01 | 8 | 0.5 | s | exponential |
+| `release` | 0.01 | 8 | 1 | s | exponential |
+| `detune` | 0 | 1 | 0.4 | none | linear |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `vowel` | 0 | 1 |
+| `brightness` | 0 | 1 |
+
+### clap
+
+Hand clap, tight to roomy
+
+Model: VOLTA K9. Group: Drums. Kind: drum: plays hits. Voices: 4. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `tight` (default) | Short and close |
+| `roomy` | Longer tail, wider bursts |
+| `snap` | Bright and sharp |
+
+Default pattern: `clap: clap .... x... .... x...`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `decay` | 0.05 | 1 | 0.18 | s | exponential |
+| `spread` | 0 | 1 | 0.4 | none | linear |
+| `color` | 0 | 1 | 0.5 | none | linear |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `decay` | 0.08 | 0.6 |
+| `spread` | 0.1 | 0.9 |
+
+### conga
+
+Hand drum, open, slap and muted
+
+Model: TERRA Hands. Group: Drums. Kind: drum: plays hits. Voices: 4. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `open` (default) | Open tone |
+| `slap` | Sharp slap: skin noise and ringing high modes |
+| `muted` | Palm-muted |
+| `low` | Low conga (tumba) |
+| `high` | High conga (quinto) |
+
+Default pattern: `conga: conga ..x. x..x ..x. x.x.`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `tune` | 0 | 1 | 0.5 | none | linear |
+| `decay` | 0.05 | 2 | 0.3 | s | exponential |
+| `bend` | 0 | 1 | 0.1 | none | linear |
+| `hardness` | 0 | 1 | 0.5 | none | linear |
+| `slap` | 0 | 1 | 0 | none | linear |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `tune` | 0 | 1 |
+
+### cowbell
+
+Cowbell, classic and bright
+
+Model: TERRA Hands. Group: Drums. Kind: drum: plays hits. Voices: 2. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `classic` (default) | Two-tone bell |
+| `bright` | Higher and shorter |
+
+Default pattern: `cowbell: cowbell ..x. ..x. ..x. ..x.`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `tune` | 0 | 1 | 0.5 | none | linear |
+| `decay` | 0.02 | 1 | 0.22 | s | exponential |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `tune` | 0 | 1 |
+
+### crash
+
+Crash cymbal
+
+Model: VOLTA K9. Group: Drums. Kind: drum: plays hits. Voices: 2. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `wide` (default) | Big open crash |
+| `short` | Choked crash |
+
+Default pattern: `crash: crash x... .... .... ....`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `decay` | 0.2 | 8 | 1.8 | s | exponential |
+| `color` | 0 | 1 | 0.5 | none | linear |
+| `size` | 0 | 1 | 0.6 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `color` | 0 | 1 |
+
+### djembe
+
+Goblet hand drum: bass, tone and slap
+
+Model: TERRA Hands. Group: Drums. Kind: drum: plays hits. Voices: 4. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `tone` (default) | Open tone at the edge, a touch of slap |
+| `bass` | Deep bass in the middle |
+| `slap` | Sharp slap |
+
+Default pattern: `djembe: djembe x..x ..x. x.x. ..x.`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `tune` | 0 | 1 | 0.45 | none | linear |
+| `decay` | 0.05 | 2 | 0.35 | s | exponential |
+| `bend` | 0 | 1 | 0.05 | none | linear |
+| `hardness` | 0 | 1 | 0.55 | none | linear |
+| `slap` | 0 | 1 | 0.25 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `tune` | 0 | 1 |
+
+### downlifter
+
+Falling sweep after a peak
+
+Model: PULSAR FX. Group: FX. Kind: drum: plays hits. Voices: 2. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `noise` (default) | Noise and a falling tone, sweeping down |
+| `tone` | Falling tone |
+| `both` | Bright noise, half tone |
+
+Default pattern: `downlifter: downlifter x~~~ ~~~~ ~~~~ ~~~~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `length` | 0 | 30 | 0 | s | linear |
+| `cutoff` | 200 | 16,000 | 8000 | Hz | exponential |
+| `resonance` | 0 | 1 | 0.4 | none | linear |
+| `color` | 0 | 1 | 0.5 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `color` | 0 | 1 |
+
+### epiano
+
+Electric piano, FM tines
+
+Model: OPAL Keys. Group: Keys. Kind: chord: plays chords. Voices: 12. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `tine` (default) | Classic tines with the suitcase autopan |
+| `bell` | Bell-like and clear, a loud tine |
+| `soft` | Mellow and warm |
+| `bark` | Driven and barking, short |
+
+Default pattern: `epiano: epiano Cm7 ~ ~ ~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `brightness` | 0 | 1 | 0.55 | none | linear |
+| `decay` | 0.1 | 8 | 2 | s | exponential |
+| `release` | 0.01 | 8 | 0.4 | s | exponential |
+| `detune` | 0 | 1 | 0.3 | none | linear |
+| `tine` | 0 | 1 | 0.7 | none | linear |
+| `tremolo` | 0 | 1 | 0.4 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `brightness` | 0 | 1 |
+
+### fm-bass
+
+FM bass, plucky to metallic
+
+Model: OPAL B6. Group: Bass. Kind: pitched: plays notes. Voices: 1. Default duck: 0.6.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `pluck` (default) | Plucked, growling digital bass |
+| `metal` | Hard and metallic |
+| `round` | Soft and round |
+
+Default pattern: `fm-bass: fm-bass c2 . c2 . eb2 . c2 g1`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `brightness` | 0 | 1 | 0.45 | none | linear |
+| `feedback` | 0 | 1 | 0.4 | none | linear |
+| `decay` | 0.05 | 4 | 0.35 | s | exponential |
+| `release` | 0.01 | 2 | 0.1 | s | exponential |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `brightness` | 0 | 1 |
+
+### fm-lead
+
+FM lead, bright to flute
+
+Model: OPAL F6. Group: Leads. Kind: pitched: plays notes. Voices: 1. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `bright` (default) | Bright digital lead |
+| `brass` | Brassy |
+| `flute` | Breathy flute |
+
+Default pattern: `fm-lead: fm-lead c4 ~ eb4 . g4 ~ ~ .`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `brightness` | 0 | 1 | 0.5 | none | linear |
+| `feedback` | 0 | 1 | 0.2 | none | linear |
+| `attack` | 0.001 | 2 | 0.01 | s | exponential |
+| `release` | 0.01 | 4 | 0.25 | s | exponential |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `brightness` | 0 | 1 |
+
+### harp
+
+Harp, two strings per note
+
+Model: SILK Harp. Group: Plucks. Kind: chord: plays chords. Voices: 12. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `concert` (default) | Concert harp |
+| `soft` | Soft and dark, plucked near the middle, shorter |
+| `glass` | Glassy shimmer |
+
+Default pattern: `harp: harp c3 g3 eb4 g3`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `brightness` | 0 | 1 | 0.5 | none | linear |
+| `decay` | 0.1 | 20 | 4 | s | exponential |
+| `position` | 0 | 1 | 0.4 | none | linear |
+| `detune` | 0 | 1 | 0.3 | none | linear |
+| `release` | 0.01 | 4 | 0.6 | s | exponential |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+| `level` | 0.05 | 8 | 1 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `brightness` | 0 | 1 |
+
+### hat
+
+Hi-hat, closed to open
+
+Model: VOLTA K9. Group: Drums. Kind: drum: plays hits. Voices: 4. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `closed` (default) | Closed hat |
+| `open` | Open hat |
+| `tight` | Very short and thin, a boxed band |
+| `dusty` | Dark and dusty |
+| `metal` | Bright metal |
+
+Default pattern: `hat: hat ..x. ..x. ..x. ..x.`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `open` | 0 | 1 | 0 | none | linear |
+| `decay` | 0.01 | 0.5 | 0.06 | s | exponential |
+| `color` | 0 | 1 | 0.5 | none | linear |
+| `band` | 0 | 1 | 0 | none | linear |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `open` | 0 | 1 |
+
+### impact
+
+Hit for section changes
+
+Model: PULSAR FX. Group: FX. Kind: drum: plays hits. Voices: 2. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `hit` (default) | A dropping sub and a washed noise burst |
+| `deep` | Deep sub drop, a dark short tail |
+| `metal` | Metallic crash hit in a long wash |
+
+Default pattern: `impact: impact x... .... .... ....`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `decay` | 0.1 | 4 | 3.2 | s | exponential |
+| `size` | 0 | 1 | 0.5 | none | linear |
+| `color` | 0 | 1 | 0.1 | none | linear |
+| `tail` | 0 | 1 | 0.6 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `size` | 0 | 1 |
+
+### kalimba
+
+Thumb piano, metal tines on a box
+
+Model: TERRA Kalimba. Group: Plucks. Kind: chord: plays chords. Voices: 6. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `tine` (default) | Warm metal tines |
+| `bright` | Hard thumb, glassy upper partials, long ring |
+| `soft` | Soft thumb, dark and round |
+| `box` | Woody box resonance and a buzzing tine |
+
+Default pattern: `kalimba: kalimba c4 . eb4 . g4 . bb4 . / g4 . eb4 . c5 . g4 .`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `hardness` | 0 | 1 | 0.6 | none | linear |
+| `brightness` | 0 | 1 | 0.5 | none | linear |
+| `decay` | 0.1 | 6 | 1.1 | s | exponential |
+| `body` | 0 | 1 | 0.4 | none | linear |
+| `noise` | 0 | 1 | 0 | none | linear |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+| `level` | 0.05 | 8 | 1.306 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `brightness` | 0 | 1 |
+
+### kick
+
+Kick drum, punchy to booming
+
+Model: VOLTA K9. Group: Drums. Kind: drum: plays hits. Voices: 2. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `punch` (default) | Punchy club kick |
+| `tight` | Short and tight: a fast small sweep, a loud click and grit |
+| `boom` | Long and booming, a low body with a rumble |
+| `hard` | Hard and driven, clicky and gritty |
+| `deep` | Deep and round, a soft click |
+| `warm` | Short and warm: a round body, a soft sweep |
+| `sharp` | Short and sharp: a tuned body and a loud tick |
+| `bright` | Driven and hollow, with an airy click on top |
+| `rumble` | Deep and long, with a crisp skin on the body |
+| `dark` | Deep and saturated, with a long, wide sweep |
+| `crisp` | Driven and dry, with a soft, airy click |
+| `round` | Saturated and hollow, with a bright tick |
+
+Default pattern: `kick: kick x... x... x... x...`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `decay` | 0.05 | 1.5 | 0.45 | s | exponential |
+| `drive` | 0 | 1 | 0.2 | none | linear |
+| `pitch` | 30 | 80 | 48 | Hz | exponential |
+| `click` | 0 | 1 | 0.3 | none | linear |
+| `sweep` | 0 | 6 | 3.5 | none | linear |
+| `sweep-time` | 0.005 | 0.2 | 0.025 | s | exponential |
+| `overtone` | 0 | 1 | 0 | none | linear |
+| `click-tone` | 100 | 8000 | 1500 | Hz | exponential |
+| `grit` | 0 | 1 | 0 | none | linear |
+| `level` | 0.05 | 2 | 1 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `decay` | 0.15 | 0.9 |
+| `drive` | 0 | 0.7 |
+
+### lead
+
+Mono synth lead
+
+Model: FLUX M24. Group: Leads. Kind: pitched: plays notes. Voices: 1. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `classic` (default) | Bright saw and synced square |
+| `soft` | Soft triangle |
+| `sync` | Hard sync, edgy |
+| `screamer` | Psytrance: synced saws, hot resonant filter snapping shut |
+| `anthem` | Trance: wide detuned saw and pulse with a late vibrato |
+| `noir` | Melodic techno: dark resonant saw that blooms on each note |
+| `glass` | Organic melodic: breathy triangle with a soft tail |
+| `juno` | Indie dance: chorused narrow pulse, round and warm |
+| `rave` | Acid techno: squelchy square, short and driven |
+
+Default pattern: `lead: lead c4 . eb4 . g4 . bb4 .`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `cutoff` | 100 | 12,000 | 3500 | Hz | exponential |
+| `detune` | 0 | 1 | 0.2 | none | linear |
+| `wave` | `saw` | `sine` | `saw` | one of saw, square, triangle, and sine |  |
+| `attack` | 0.001 | 2 | 0.005 | s | exponential |
+| `release` | 0.01 | 4 | 0.25 | s | exponential |
+| `wave2` | `saw` | `sine` | `square` | one of saw, square, triangle, and sine |  |
+| `mix` | 0 | 1 | 0.5 | none | linear |
+| `sync` | 0 | 1 | 0.45 | none | linear |
+| `filter` | `lp12` | `hp` | `lp12` | one of lp12, lp24, bp, and hp |  |
+| `filter-attack` | 0.001 | 4 | 0.001 | s | exponential |
+| `drive` | 0 | 1 | 0.35 | none | linear |
+| `spread` | 0 | 1 | 0 | none | linear |
+| `sub` | 0 | 1 | 0 | none | linear |
+| `noise` | 0 | 1 | 0 | none | linear |
+| `resonance` | 0 | 0.95 | 0.2 | none | linear |
+| `contour` | 0 | 1 | 0.25 | none | linear |
+| `decay` | 0.02 | 8 | 0.8 | s | exponential |
+| `sustain` | 0 | 1 | 0.75 | none | linear |
+| `width` | 0.05 | 0.95 | 0.5 | none | linear |
+| `vibrato` | 0 | 1 | 0 | none | linear |
+| `level` | 0.05 | 8 | 1.15 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `cutoff` | 300 | 9000 |
+
+### mallet
+
+Marimba, vibes and wood
+
+Model: LUMA Mallets. Group: Plucks. Kind: chord: plays chords. Voices: 8. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `marimba` (default) | Wooden marimba |
+| `vibes` | Vibraphone: metal bars, soft mallets, motor tremolo |
+| `wood` | Short, dry hollow bar |
+
+Default pattern: `mallet: mallet c4 . eb4 . g4 . eb4 .`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `hardness` | 0 | 1 | 0.5 | none | linear |
+| `brightness` | 0 | 1 | 0.65 | none | linear |
+| `decay` | 0.1 | 12 | 1 | s | exponential |
+| `tune` | 0 | 1 | 0.5 | none | linear |
+| `material` | `wood` | `hollow` | `wood` | one of wood, metal, and hollow |  |
+| `tremolo` | 0 | 1 | 0 | none | linear |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+| `level` | 0.05 | 8 | 1.567 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `hardness` | 0 | 1 |
+
+### noise
+
+Filtered noise, white to wind
+
+Model: PULSAR FX. Group: FX. Kind: drum: plays hits. Voices: 2. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `white` (default) | Bright white noise |
+| `pink` | Softer pink noise |
+| `wind` | Resonant wind |
+
+Default pattern: `noise: noise x~~~ ~~~~ ~~~~ ~~~~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `cutoff` | 40 | 16,000 | 4000 | Hz | exponential |
+| `resonance` | 0 | 1 | 0.3 | none | linear |
+| `color` | 0 | 1 | 1 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `cutoff` | 200 | 12,000 |
+
+### organ
+
+Drawbar organ
+
+Model: AXIS O9. Group: Keys. Kind: chord: plays chords. Voices: 12. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `full` (default) | Full drawbars |
+| `soft` | Soft flutes |
+| `perc` | Percussive click |
+| `church` | Big and slow |
+
+Default pattern: `organ: organ Cm ~ ~ ~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `low` | 0 | 1 | 0.8 | none | linear |
+| `mid` | 0 | 1 | 0.6 | none | linear |
+| `high` | 0 | 1 | 0.3 | none | linear |
+| `percussion` | 0 | 1 | 0 | none | linear |
+| `attack` | 0.001 | 2 | 0.005 | s | exponential |
+| `release` | 0.01 | 4 | 0.08 | s | exponential |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `high` | 0 | 1 |
+| `percussion` | 0 | 1 |
+
+### pad
+
+Warm analog pad
+
+Model: PRISMA P6. Group: Pads. Kind: chord: plays chords. Voices: 8. Default duck: 0.5.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `warm` (default) | Warm detuned saws, soft filter, a little drive |
+| `dark` | Dark: saw and pulse in a resonant 24 dB ladder |
+| `bright` | Open saws, wide and airy |
+| `sea` | Slow, wide and hollow |
+| `noir` | Melodic techno: resonant saws that open slowly |
+| `hypnotic` | Melodic techno: synced, pulsing chord pad |
+| `dusk` | Afro house: soft warm triangle chords |
+| `void` | Psytrance: band-passed, resonant, slowly moving air |
+
+Default pattern: `pad: pad Cm7 ~ ~ ~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `brightness` | 0 | 1 | 0.6 | none | linear |
+| `attack` | 0.01 | 8 | 0.8 | s | exponential |
+| `release` | 0.01 | 8 | 1.8 | s | exponential |
+| `detune` | 0 | 1 | 0.4 | none | linear |
+| `wave2` | `saw` | `sine` | `saw` | one of saw, square, triangle, and sine |  |
+| `mix` | 0 | 1 | 0.35 | none | linear |
+| `sync` | 0 | 1 | 0 | none | linear |
+| `filter` | `lp12` | `hp` | `lp12` | one of lp12, lp24, bp, and hp |  |
+| `filter-attack` | 0.001 | 4 | 1.5 | s | exponential |
+| `filter-decay` | 0.01 | 8 | 4 | s | exponential |
+| `drive` | 0 | 1 | 0.15 | none | linear |
+| `spread` | 0 | 1 | 0.8 | none | linear |
+| `sub` | 0 | 1 | 0 | none | linear |
+| `noise` | 0 | 1 | 0 | none | linear |
+| `resonance` | 0 | 0.95 | 0.15 | none | linear |
+| `contour` | 0 | 1 | 0.3 | none | linear |
+| `decay` | 0.05 | 8 | 2 | s | exponential |
+| `sustain` | 0 | 1 | 0.85 | none | linear |
+| `level` | 0.05 | 8 | 1 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `brightness` | 0 | 1 |
+
+### perc
+
+Tuned hits, blocks and pings
+
+Model: TERRA Hands. Group: Drums. Kind: drum: plays hits. Voices: 4. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `block` (default) | Wooden block |
+| `ping` | Bright metal ping |
+| `drop` | Falling water drop |
+
+Default pattern: `perc: perc ..x. .x.. ...x .x..`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `tune` | 0 | 1 | 0.5 | none | linear |
+| `decay` | 0.05 | 2 | 0.22 | s | exponential |
+| `bend` | 0 | 1 | 0 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `tune` | 0 | 1 |
+
+### piano
+
+Modeled grand piano, no samples
+
+Model: AURA Grand. Group: Keys. Kind: chord: plays chords. Voices: 16. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `grand` (default) | Balanced concert grand, open and long |
+| `bright` | Hard hammers, bright attack |
+| `felt` | Soft felt, muffled, with the thump of the hammer |
+| `upright` | Short and boxy, a strong second partial |
+| `honky` | Out-of-tune saloon, beating string pairs |
+| `house` | House: bright, short, chorused stab piano |
+
+Default pattern: `piano: piano Cm7 ~ ~ ~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `hardness` | 0 | 1 | 0.5 | none | linear |
+| `brightness` | 0 | 1 | 0.5 | none | linear |
+| `decay` | 0.5 | 12 | 5 | s | exponential |
+| `release` | 0.05 | 2 | 0.3 | s | exponential |
+| `detune` | 0 | 1 | 0.3 | none | linear |
+| `body` | 0 | 1 | 0.5 | none | linear |
+| `noise` | 0 | 1 | 0 | none | linear |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+| `level` | 0.05 | 8 | 1.128 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `brightness` | 0.1 | 0.9 |
+| `hardness` | 0.1 | 0.9 |
+
+### pluck
+
+Plucked string, bright to muted
+
+Model: SILK Pluck. Group: Plucks. Kind: chord: plays chords. Voices: 12. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `bright` (default) | Bright pick |
+| `nylon` | Warm nylon |
+| `muted` | Palm-muted |
+| `steel` | Steel strings |
+
+Default pattern: `pluck: pluck c3 eb3 g3 c4 g3 eb3 c3 bb2`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `brightness` | 0 | 1 | 0.6 | none | linear |
+| `decay` | 0.1 | 20 | 2.5 | s | exponential |
+| `position` | 0 | 1 | 0.3 | none | linear |
+| `body` | 0 | 1 | 0.4 | none | linear |
+| `release` | 0.01 | 4 | 0.15 | s | exponential |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `brightness` | 0 | 1 |
+
+### reese
+
+Detuned rolling bass
+
+Model: SHADE R2. Group: Bass. Kind: pitched: plays notes. Voices: 1. Default duck: 0.6.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `wide` (default) | Four saws drifting apart |
+| `dark` | Low-passed, heavy ladder |
+| `growl` | Resonant, driven and moving |
+
+Default pattern: `reese: reese c2 ~ ~ ~ eb2 ~ g1 ~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `cutoff` | 40 | 8000 | 900 | Hz | exponential |
+| `resonance` | 0 | 1 | 0.2 | none | linear |
+| `detune` | 0 | 1 | 0.75 | none | linear |
+| `release` | 0.01 | 2 | 0.15 | s | exponential |
+| `wave2` | `saw` | `sine` | `saw` | one of saw, square, triangle, and sine |  |
+| `mix` | 0 | 1 | 0 | none | linear |
+| `sync` | 0 | 1 | 0 | none | linear |
+| `filter` | `lp12` | `hp` | `lp12` | one of lp12, lp24, bp, and hp |  |
+| `filter-attack` | 0.001 | 4 | 0.001 | s | exponential |
+| `filter-decay` | 0.01 | 8 | 0.5 | s | exponential |
+| `drive` | 0 | 1 | 0.5 | none | linear |
+| `spread` | 0 | 1 | 0 | none | linear |
+| `sub` | 0 | 1 | 0.35 | none | linear |
+| `noise` | 0 | 1 | 0 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `cutoff` | 150 | 4000 |
+| `detune` | 0.2 | 0.9 |
+
+### ride
+
+Ride cymbal, ping and wash
+
+Model: VOLTA K9. Group: Drums. Kind: drum: plays hits. Voices: 2. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `ping` (default) | Clear bell ping |
+| `wash` | Dark wash |
+
+Default pattern: `ride: ride x.x. x.x. x.x. x.x.`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `decay` | 0.2 | 8 | 2.2 | s | exponential |
+| `color` | 0 | 1 | 0.5 | none | linear |
+| `size` | 0 | 1 | 0.4 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `color` | 0 | 1 |
+
+### rim
+
+Rim shot and wood clicks
+
+Model: VOLTA K9. Group: Drums. Kind: drum: plays hits. Voices: 4. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `click` (default) | Short bright rim |
+| `wood` | Hollow wood block |
+
+Default pattern: `rim: rim ..x. ...x ..x. ....`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `tune` | 0 | 1 | 0.5 | none | linear |
+| `decay` | 0.01 | 0.5 | 0.05 | s | exponential |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `tune` | 0 | 1 |
+
+### riser
+
+Rising sweep before a drop
+
+Model: PULSAR FX. Group: FX. Kind: drum: plays hits. Voices: 2. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `noise` (default) | Noise sweeping up |
+| `tone` | Rising tone |
+| `both` | Noise and tone |
+
+Default pattern: `riser: riser x~~~ ~~~~ ~~~~ ~~~~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `length` | 0 | 30 | 0 | s | linear |
+| `cutoff` | 200 | 16,000 | 12,000 | Hz | exponential |
+| `resonance` | 0 | 1 | 0.05 | none | linear |
+| `color` | 0 | 1 | 0 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `color` | 0 | 1 |
+
+### shaker
+
+Shaker and maracas
+
+Model: TERRA Hands. Group: Drums. Kind: drum: plays hits. Voices: 4. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `soft` (default) | Gentle grains |
+| `bright` | Crisp and airy |
+
+Default pattern: `shaker: shaker xxxx xxxx xxxx xxxx`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `decay` | 0.01 | 0.5 | 0.08 | s | exponential |
+| `color` | 0 | 1 | 0.25 | none | linear |
+| `spread` | 0 | 1 | 0.5 | none | linear |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `color` | 0 | 1 |
+
+### snare
+
+Snare drum, tone and wires
+
+Model: VOLTA K9. Group: Drums. Kind: drum: plays hits. Voices: 4. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `snap` (default) | Crisp wires |
+| `fat` | Lower and longer |
+| `boom` | Deep body, few wires |
+| `brush` | Soft swept wires |
+
+Default pattern: `snare: snare .... x... .... x...`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `decay` | 0.05 | 1 | 0.2 | s | exponential |
+| `tune` | 0 | 1 | 0.5 | none | linear |
+| `snap` | 0 | 1 | 0.6 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `snap` | 0.2 | 1 |
+
+### square
+
+Square and pulse lead
+
+Model: FLUX P8. Group: Leads. Kind: pitched: plays notes. Voices: 1. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `hollow` (default) | Hollow square |
+| `chip` | Bright chip tune |
+| `pwm` | Thin pulse |
+
+Default pattern: `square: square c4 . g4 . eb4 . g4 .`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `cutoff` | 100 | 12,000 | 3000 | Hz | exponential |
+| `width` | 0 | 1 | 0.5 | none | linear |
+| `attack` | 0.001 | 2 | 0.005 | s | exponential |
+| `release` | 0.01 | 4 | 0.15 | s | exponential |
+| `wave2` | `saw` | `sine` | `saw` | one of saw, square, triangle, and sine |  |
+| `mix` | 0 | 1 | 0 | none | linear |
+| `sync` | 0 | 1 | 0 | none | linear |
+| `filter` | `lp12` | `hp` | `lp12` | one of lp12, lp24, bp, and hp |  |
+| `filter-attack` | 0.001 | 4 | 0.001 | s | exponential |
+| `filter-decay` | 0.01 | 8 | 0.3 | s | exponential |
+| `drive` | 0 | 1 | 0 | none | linear |
+| `spread` | 0 | 1 | 0 | none | linear |
+| `sub` | 0 | 1 | 0 | none | linear |
+| `noise` | 0 | 1 | 0 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `width` | 0.1 | 0.5 |
+
+### stab
+
+Chord stabs, classic and rave
+
+Model: PRISMA ST. Group: Brass. Kind: chord: plays chords. Voices: 8. Default duck: 0.4.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `classic` (default) | Classic house stab |
+| `rave` | Driven rave stab, hollow and wide |
+| `short` | Very short |
+
+Default pattern: `stab: stab . Cm7 . . . Cm7 . .`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `cutoff` | 200 | 12,000 | 2500 | Hz | exponential |
+| `decay` | 0.05 | 2 | 0.25 | s | exponential |
+| `detune` | 0 | 1 | 0.3 | none | linear |
+| `wave2` | `saw` | `sine` | `saw` | one of saw, square, triangle, and sine |  |
+| `mix` | 0 | 1 | 0 | none | linear |
+| `sync` | 0 | 1 | 0 | none | linear |
+| `filter` | `lp12` | `hp` | `lp12` | one of lp12, lp24, bp, and hp |  |
+| `filter-attack` | 0.001 | 4 | 0.001 | s | exponential |
+| `drive` | 0 | 1 | 0 | none | linear |
+| `spread` | 0 | 1 | 0 | none | linear |
+| `sub` | 0 | 1 | 0 | none | linear |
+| `noise` | 0 | 1 | 0 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `cutoff` | 400 | 9000 |
+
+### strings
+
+String ensemble
+
+Model: ARC Strings. Group: Pads. Kind: chord: plays chords. Voices: 8. Default duck: 0.4.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `ensemble` (default) | Full section in an ensemble, with vibrato |
+| `slow` | Slow, dark swell |
+| `tremolo` | Bowed tremolo, woody |
+| `high` | High and thin |
+
+Default pattern: `strings: strings Cm ~ ~ ~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `brightness` | 0 | 1 | 0.7 | none | linear |
+| `attack` | 0.01 | 8 | 0.35 | s | exponential |
+| `release` | 0.01 | 8 | 0.8 | s | exponential |
+| `detune` | 0 | 1 | 0.35 | none | linear |
+| `width` | 0 | 1 | 0.5 | none | linear |
+| `wave2` | `saw` | `sine` | `saw` | one of saw, square, triangle, and sine |  |
+| `mix` | 0 | 1 | 0 | none | linear |
+| `sync` | 0 | 1 | 0 | none | linear |
+| `filter` | `lp12` | `hp` | `lp12` | one of lp12, lp24, bp, and hp |  |
+| `filter-attack` | 0.001 | 4 | 0.001 | s | exponential |
+| `filter-decay` | 0.01 | 8 | 4 | s | exponential |
+| `drive` | 0 | 1 | 0 | none | linear |
+| `spread` | 0 | 1 | 0.3 | none | linear |
+| `sub` | 0 | 1 | 0 | none | linear |
+| `noise` | 0 | 1 | 0 | none | linear |
+| `vibrato` | 0 | 1 | 0.6 | none | linear |
+| `ensemble` | 0 | 1 | 0.8 | none | linear |
+| `body` | 0 | 1 | 0.8 | none | linear |
+| `level` | 0.05 | 8 | 1 | none | linear |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `brightness` | 0 | 1 |
+
+### sub
+
+Pure low sub bass
+
+Model: FLUX S1. Group: Bass. Kind: pitched: plays notes. Voices: 1. Default duck: 0.7.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `pure` (default) | Clean sine |
+| `warm` | Triangle with a little edge |
+
+Default pattern: `sub: sub c1 . . c1 . . c1 .`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `wave` | `triangle` | `sine` | `sine` | one of triangle and sine |  |
+| `attack` | 0.001 | 1 | 0.004 | s | exponential |
+| `release` | 0.01 | 2 | 0.12 | s | exponential |
+| `cutoff` | 40 | 2000 | 400 | Hz | exponential |
+| `drive` | 0 | 1 | 0 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `cutoff` | 100 | 1500 |
+
+### supersaw
+
+Seven detuned saws
+
+Model: SOLAR S7. Group: Leads. Kind: chord: plays chords. Voices: 8. Default duck: 0.4.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `anthem` (default) | Big, wide anthem lead |
+| `thin` | Narrow and focused |
+| `wide` | Very wide, bright and buzzing |
+
+Default pattern: `supersaw: supersaw Cm ~ ~ ~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `cutoff` | 200 | 16,000 | 5000 | Hz | exponential |
+| `detune` | 0 | 1 | 0.6 | none | linear |
+| `attack` | 0.001 | 4 | 0.01 | s | exponential |
+| `release` | 0.01 | 4 | 0.4 | s | exponential |
+| `wave2` | `saw` | `sine` | `saw` | one of saw, square, triangle, and sine |  |
+| `mix` | 0 | 1 | 0 | none | linear |
+| `sync` | 0 | 1 | 0 | none | linear |
+| `filter` | `lp12` | `hp` | `lp12` | one of lp12, lp24, bp, and hp |  |
+| `filter-attack` | 0.001 | 4 | 0.001 | s | exponential |
+| `filter-decay` | 0.01 | 8 | 1 | s | exponential |
+| `drive` | 0 | 1 | 0 | none | linear |
+| `spread` | 0 | 1 | 0.8 | none | linear |
+| `sub` | 0 | 1 | 0 | none | linear |
+| `noise` | 0 | 1 | 0 | none | linear |
+| `low-cut` | 0 | 1 | 0.2 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `cutoff` | 600 | 12,000 |
+| `detune` | 0.1 | 0.9 |
+
+### sweep
+
+Filter sweep, up, down or notch
+
+Model: PULSAR FX. Group: FX. Kind: drum: plays hits. Voices: 2. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `up` (default) | Band sweeping up |
+| `down` | Band sweeping down |
+| `notch` | Notch sweeping up |
+
+Default pattern: `sweep: sweep x~~~ ~~~~ ~~~~ ~~~~`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `length` | 0 | 30 | 0 | s | linear |
+| `cutoff` | 200 | 16,000 | 6000 | Hz | exponential |
+| `resonance` | 0 | 1 | 0.97 | none | linear |
+| `bend` | 0 | 1 | 0 | none | linear |
+| `color` | 0 | 1 | 0 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `resonance` | 0 | 1 |
+
+### tom
+
+Toms, floor to high
+
+Model: VOLTA K9. Group: Drums. Kind: drum: plays hits. Voices: 4. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `floor` (default) | Low floor tom |
+| `high` | High rack tom |
+| `boom` | Big and long |
+| `electronic` | Synth tom with a pitch drop |
+
+Default pattern: `tom: tom x... .... x.x. ....`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `tune` | 0 | 1 | 0.35 | none | linear |
+| `decay` | 0.05 | 2 | 0.55 | s | exponential |
+| `bend` | 0 | 1 | 0.25 | none | linear |
+| `hardness` | 0 | 1 | 0.5 | none | linear |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `tune` | 0 | 1 |
+
+### vox
+
+Singing synth voice
+
+Model: AETHER Voice. Group: Voices. Kind: pitched: plays notes. Voices: 1. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `talk` (default) | Talking vowel |
+| `ooh` | Sung ooh, recorded singer |
+| `aah` | Sung aah, recorded singer |
+| `robot` | Robotic, no breath |
+
+Default pattern: `vox: vox c4 ~ eb4 ~ g4 ~ ~ .`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `vowel` | 0 | 1 | 0 | none | linear |
+| `breath` | 0 | 1 | 0.15 | none | linear |
+| `brightness` | 0 | 1 | 0.6 | none | linear |
+| `attack` | 0.001 | 2 | 0.02 | s | exponential |
+| `release` | 0.01 | 4 | 0.2 | s | exponential |
+| `source` | `synth` | `samples` | `synth` | one of synth and samples |  |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `vowel` | 0 | 1 |
+
+### woodblock
+
+Hollow wooden block, clicks and knocks
+
+Model: TERRA Hands. Group: Drums. Kind: drum: plays hits. Voices: 2. Default duck: 0.
+
+#### Sounds
+
+| Sound | What it is |
+| --- | --- |
+| `high` (default) | Small block, high |
+| `low` | Large block, low |
+| `hollow` | Hollow and longer |
+
+Default pattern: `woodblock: woodblock ..x. ..x. .x.. x...`
+
+| Parameter | Min | Max | Default | Unit | Curve |
+| --- | --- | --- | --- | --- | --- |
+| `tune` | 0 | 1 | 0.6 | none | linear |
+| `decay` | 0.02 | 1 | 0.12 | s | exponential |
+| `hardness` | 0 | 1 | 0.7 | none | linear |
+| `source` | `synth` | `samples` | `samples` | one of synth and samples |  |
+
+#### What tone moves
+
+| Parameter | At tone 0 | At tone 1 |
+| --- | --- | --- |
+| `tune` | 0 | 1 |
+
+Source: https://untzel.com/docs/en/instruments/
+
+## Cookbook
+
+Recipes that play as they are, written only with the instruments of this build ([Instruments](https://untzel.com/docs/en/instruments/)). Paste one into the Code panel, let it play, then change one thing at a time.
+
+### A 124 BPM melodic groove
+
+A steady kick, two hat layers and a sub, under a bass melody that walks through four chords of A minor, one per bar. The melody's filter opens and closes over 16 bars with `sine(16)`, and `delay 3/16` with `reverb wide` gives it space. `duck` makes the sub and the melody dip under every kick.
+
+```untzel
+// 124 BPM melodic groove in A minor: a bass melody over a steady kick
+tempo 124
+key a minor
+swing 0.06
+
+kick:   kick x... x... x... x...                     | decay 0.55 | drive 0.25 | pitch 46
+hat:    hat  ..x. ..x. ..x. ..x.                     | open 0.3 | color 0.6 | gain 0.5
+ticks:  hat  x.x. x.x. x.x. x.x.                     | decay 0.02 | gain 0.25 | pan 0.35
+sub:    bass a1 ~ . . a1 ~ . . a1 ~ . . g1 ~ . .     | cutoff 160 | duck 0.6
+melody: bass a2 . c3 . e3 . c3 . / g2 . b2 . d3 . b2 . / f2 . a2 . c3 . a2 . / e2 . g2 . b2 . e3 . | cutoff sine(16) 500..2200 | decay 0.35 | delay 3/16 | reverb wide | gain 0.55 | duck 0.4
+```
+
+Try `swing 0.12` for a looser feel, or `pitch 42` on the kick for a deeper one.
+
+### Rolling bass with duck
+
+The bass plays three sixteenths after every kick and stays out of the kick's way with `duck 0.85`: the higher the value, the deeper it dips when the kick hits. A short `decay` keeps the notes tight.
+
+```untzel
+// rolling bass: off-beat sixteenths that dip under every kick
+tempo 126
+key f minor
+
+kick: kick x... x... x... x...                                  | drive 0.3 | decay 0.4
+roll: bass . f1 f1 f1 . f1 f1 f1 . f1 f1 f1 . f1 ab1 c2         | cutoff 650 | decay 0.12 | drive 0.35 | duck 0.85
+hat:  hat  ..x. ..x. ..x. ..x.                                  | open 0.2 | gain 0.45
+```
+
+Try `cutoff 1200` for a brighter roll, or change the last three notes of the bar for a different turn.
+
+### Percussion with swing and chance
+
+The global `swing` shuffles every track; the shaker overrides it with its own `swing 0.2`. `x?0.3` on the ghost kick and `x?0.5` inside the shaker group play only some of the time, and `pan rand(2)` moves the shaker to a new place every two bars. The draws are deterministic: the same text always plays the same.
+
+```untzel
+// percussion: a swung shuffle where some hits only happen by chance
+tempo 124
+swing 0.14
+
+kick:   kick x... x... x... x...
+ghost:  kick . . . . . . x?0.3 . . . . . . . x?0.2 .   | gain 0.45 | decay 0.2 | pitch 60
+hat:    hat  ..x. ..x. ..x. ..x.                       | open 0.45 | color 0.7
+shaker: hat  [x x?0.5]*8                               | decay 0.02 | gain 0.3 | swing 0.2 | pan rand(2) -0.4..0.4
+```
+
+Try raising a chance to `x?0.8`, or `[x x?0.5]*4` for a slower shaker.
+
+### Builds with saw
+
+In a song, a signal starts again at the start of each section, so `saw(4)` in a 4-bar section rises exactly from its first bar to its last. Here the hats open, the roll gets louder and the bass filter climbs until the drop, which starts the cycle again.
+
+```untzel
+// a 4-bar build: every saw(4) restarts with the section and rises exactly across it
+tempo 126
+key a minor
+
+kick: kick x... x... x... x...                         | drive saw(4) 0.1..0.6
+hat:  hat  x.x. x.x. x.x. x.x.                         | open saw(4) 0..0.9 | gain saw(4) 0.3..0.7
+roll: hat  x*4 x*4 x*4 x*4 / x*4 x*4 x*8 x*8           | decay 0.03 | gain saw(4) 0.1..0.8
+bass: bass a1 . a1 . a1 . a1 . a1 . a1 . a1 . a1 .     | cutoff saw(4) 200..4000 | duck 0.5
+
+section build kick hat roll bass
+section drop  kick hat bass
+
+song build 4, drop 8 | loop
+```
+
+Try `build 8` with `saw(8)` for a longer build.
+
+### A whole song with sections
+
+The groove of the first recipe as a song: an intro, a build, a drop, a break, another build and drop, and an outro. Sections choose which tracks play; the song decides how many bars each lasts. Switch the transport to `Song` to hear it from the start.
+
+```untzel
+// a whole song: intro, build, drop, break, build, drop, outro
+tempo 124
+key a minor
+swing 0.05
+
+kick:   kick x... x... x... x...                     | decay 0.5 | drive 0.25
+hat:    hat  ..x. ..x. ..x. ..x.                     | open 0.3 | gain 0.5
+ticks:  hat  x.x. x.x. x.x. x.x.                     | decay 0.02 | gain 0.25 | pan 0.3
+roll:   hat  x*4 x*4 x*4 x*4                         | decay 0.03 | gain saw(4) 0.1..0.7
+sub:    bass a1 ~ . . a1 ~ . . a1 ~ . . g1 ~ . .     | cutoff 160 | duck 0.6
+melody: bass a2 . c3 . e3 . c3 . / g2 . b2 . d3 . b2 . / f2 . a2 . c3 . a2 . / e2 . g2 . b2 . e3 . | cutoff sine(16) 500..2200 | decay 0.35 | delay 3/16 | reverb wide | gain 0.55 | duck 0.4
+
+section intro kick hat ticks
+section build kick hat ticks roll sub
+section drop  kick hat ticks sub melody
+section break ticks melody                           | gain 0.8
+section outro kick ticks
+
+song intro 8, build 4, drop 16, break 8, build 4, drop 16, outro 8
+```
+
+Try another order in the `song` line, or `| loop` at its end.
+
+Source: https://untzel.com/docs/en/cookbook/
+
+## Using AI
+
+An assistant such as ChatGPT, Claude or Gemini can write Untzel code for you, if it knows the language first. The prompt below teaches it everything it needs: the syntax, the instruments of this build with every parameter and range, the limits and the errors. Then you ask for music in your own words and paste the answer into the app.
+
+### How it works
+
+1. Copy the prompt below and paste it at the start of a conversation with the assistant.
+2. Ask for what you want to hear: a style, a tempo, a mood, a structure.
+3. The assistant answers with one block of Untzel code. Copy only the code.
+4. Paste it into the Code panel. It plays on the next bar.
+
+The prompt is generated from the same sources as these pages, so it always lists the instruments and limits of this build. It is in English because the code is; the assistant answers in the language you write in. The same text is in [llms-full.txt](https://untzel.com/docs/llms-full.txt), for tools that read it directly.
+
+### The prompt
+
+### Example requests
+
+Three requests and an answer that follows the prompt. Each answer plays as it is.
+
+#### A melodic groove
+
+"Write a 124 BPM loop in A minor, deep and hypnotic, with a bass melody."
+
+```untzel
+// deep melodic loop, 124 BPM, A minor
+tempo 124
+key a minor
+swing 0.06
+
+kick:   kick x... x... x... x...                       | decay 0.55 | drive 0.2 | pitch 45
+hat:    hat  ..x. ..x. ..x. ..x.                       | open 0.35 | color 0.55 | gain 0.5
+shaker: hat  [x x?0.6]*8                               | decay 0.02 | gain 0.22 | pan rand(2) -0.3..0.3
+sub:    bass a1 ~ . . a1 ~ . . a1 ~ . . a1 ~ . .       | cutoff 150 | duck 0.7
+melody: bass e3 . a2 . c3 . e3 . / d3 . g2 . b2 . d3 . | cutoff sine(8) 600..2000 | decay 0.3 | delay 3/16 | reverb sea | gain 0.5 | duck 0.4
+```
+
+#### A build before the drop
+
+"Add a 4-bar build before the drop that rolls the hats and opens the filter."
+
+```untzel
+// the loop with a 4-bar build before the drop
+tempo 124
+key a minor
+swing 0.06
+
+kick:   kick x... x... x... x...                       | decay 0.55 | drive 0.2 | pitch 45
+hat:    hat  ..x. ..x. ..x. ..x.                       | open 0.35 | color 0.55 | gain 0.5
+shaker: hat  [x x?0.6]*8                               | decay 0.02 | gain 0.22 | pan rand(2) -0.3..0.3
+sub:    bass a1 ~ . . a1 ~ . . a1 ~ . . a1 ~ . .       | cutoff 150 | duck 0.7
+melody: bass e3 . a2 . c3 . e3 . / d3 . g2 . b2 . d3 . | cutoff sine(8) 600..2000 | decay 0.3 | delay 3/16 | reverb sea | gain 0.5 | duck 0.4
+// build only: these rise across its 4 bars
+roll:   hat  x*4 x*4 x*4 x*4                           | decay 0.03 | gain saw(4) 0.1..0.75
+lift:   bass a2 . a2 . a2 . a2 . a2 . a2 . a2 . a2 .   | cutoff saw(4) 200..5000 | gain 0.4 | duck 0.5
+
+section build kick hat roll lift sub
+section drop  kick hat shaker sub melody
+
+song build 4, drop 16 | loop
+```
+
+#### A whole song
+
+"Turn it into a whole song of about three minutes, with an intro, two drops and a break."
+
+```untzel
+// a whole song of about three minutes: 92 bars at 124 BPM
+tempo 124
+key a minor
+swing 0.06
+
+kick:   kick x... x... x... x...                       | decay 0.55 | drive 0.2 | pitch 45
+hat:    hat  ..x. ..x. ..x. ..x.                       | open 0.35 | color 0.55 | gain 0.5
+shaker: hat  [x x?0.6]*8                               | decay 0.02 | gain 0.22 | pan rand(2) -0.3..0.3
+sub:    bass a1 ~ . . a1 ~ . . a1 ~ . . a1 ~ . .       | cutoff 150 | duck 0.7
+melody: bass e3 . a2 . c3 . e3 . / d3 . g2 . b2 . d3 . | cutoff sine(8) 600..2000 | decay 0.3 | delay 3/16 | reverb sea | gain 0.5 | duck 0.4
+roll:   hat  x*4 x*4 x*4 x*4                           | decay 0.03 | gain saw(4) 0.1..0.75
+lift:   bass a2 . a2 . a2 . a2 . a2 . a2 . a2 . a2 .   | cutoff saw(4) 200..5000 | gain 0.4 | duck 0.5
+pad:    bass a2 ~ ~ ~ c3 ~ ~ ~ / g2 ~ ~ ~ b2 ~ ~ ~     | cutoff 900 | decay 1.5 | reverb sea | gain 0.35
+
+section intro kick hat shaker
+section build kick hat roll lift sub
+section drop  kick hat shaker sub melody
+section break shaker pad melody                        | gain 0.8
+section outro kick shaker
+
+song intro 16, build 4, drop 16, break 16, build 4, drop 24, outro 12
+```
+
+### Paste into the Code panel
+
+Open **Code**, next to **Drop**, select all the text, and paste the answer over it. Copy only what is inside the code block: the lines before and after it are the assistant talking. When you stop typing the text is analyzed, and if it is valid it plays on the next bar. In Song mode the song starts from its first part.
+
+### Reading the errors
+
+If the answer has a mistake, the app underlines it and shows a code and a message, such as `UNKNOWN_MODIFIER` with `"bass" has no parameter "cutof". Did you mean "cutoff"?`. The previous version keeps playing. Copy the message back to the assistant and ask it to fix exactly that; the prompt teaches it every code. The [reference](https://untzel.com/docs/en/reference/#errors) lists every error with its fix.
+
+### Good requests
+
+- Say the tempo and the key, or ask the assistant to choose them.
+- Name the parts you want: a loop, or a song with intro, build, drop, break.
+- Ask for one change at a time once you like the music: "more swing on the hats", "a darker bass".
+- Ask for instruments the app has. If you ask for one it does not have, the prompt tells the assistant to say so and use the closest one.
+
+Source: https://untzel.com/docs/en/ai/
+
+## For developers
+
+How Untzel is built, for people who want to understand it, extend it or embed it. The design is documented; the source code is not public yet.
+
+### The source code
+
+The repository is private while the first version is finished. The source code will be published later, under the license below. Until then this page describes the architecture, the instrument contract and the rules every contribution will follow.
+
+### Packages and the dependency rule
+
+Untzel is a TypeScript monorepo with a Rust sound engine. Dependencies point inward only: the core knows nothing about the browser, Web Audio, the DOM or any interface library, and a tool checks the rule on every change.
+
+| Layer | Packages | Responsibility |
+|---|---|---|
+| domain | `core`, `templates` | exact rational time, events, patterns, signals, scales, the program model, the instrument manifest contract; the template library by style |
+| language | `language`, `commands` | grammar, analysis into a program, diagnostics, minimal text edits; the command line of the Code panel, which plans the same minimal edits |
+| application | `transport`, `session` | scheduling ahead, bar-boundary changes, the song position and the play range; the use cases, the project library and their ports |
+| adapters | `audio`, `dsp`, `visual`, `editor`, `controls`, `share`, `export` | Web Audio and the worker, the Rust DSP, the light, the code editor, the touch and keyboard controls; links, files and projects in the browser; the offline render of story, video and WAV |
+| base | `i18n` | the one translation component, without DOM in its core |
+| composition | the web app | the page at `app.untzel.com`, which wires everything |
+| tools | `tools/sim`, `tools/docs`, `tools/release`, `tools/samples` | the simulator, these docs, the release package and the recorded instrument packs; never imported by the app |
+
+The source text is the single source of truth of a session. Tiles, the song timeline and the editor are views that edit the same text; no gesture changes the music without going through it.
+
+### Threads
+
+| Thread | Runs | Talks through |
+|---|---|---|
+| main | interface, editor, controls, light rendering | a `MessagePort` to the worker |
+| transport worker | the transport, querying the program 120 ms ahead | `MessagePort`s to the worklet and to the main thread |
+| audio (`AudioWorklet`) | the DSP, compiled from Rust to WebAssembly with no imports, scheduling by sample | a `MessagePort` to the worker |
+
+Sound is scheduled in the worker, so a main thread busy with typing or graphics does not delay it. Time is exact fractions, never floating point, so loops do not drift. The same events drive the sound and the light.
+
+### The instrument contract
+
+An instrument is a folder with a manifest and a voice:
+
+```text
+instruments/<name>/
+  manifest.json   name, model, group, kind, engine, range, description, tags,
+                  voices, allocation, steal, costPerVoice, patterns (name, text),
+                  preview, defaultDuck, parameters (name, min, max, default, unit,
+                  curve, or choices), tone mapping, toneLevelDb, presets,
+                  defaultPreset, light
+  voice.rs        implements the Voice trait of the DSP crate
+  samples/v1/     pack.json and pack.opus, only for an instrument that plays recordings
+  README.md       what it sounds like, parameters, credits
+```
+
+`patterns` holds one to six named starting patterns; the first is the one **Add track** writes, and the track detail offers them all. `model` is the name the library shows next to the language word, 3 to 20 letters, digits, spaces or hyphens, never a third party's brand. An instrument that plays recordings has a `source` parameter with the choices `synth` and `samples`, and its pack lists every source file it was built from.
+
+The manifest is the only source of each parameter: the analyzer validates against it, the track detail draws a control for each parameter, and the [Instruments](https://untzel.com/docs/en/instruments/) page is generated from it. A parameter cannot reuse a general modifier name, an exponential curve needs a minimum above 0, and every manifest is validated when the app is built.
+
+### Local harness
+
+Every change is verified locally before it is reported. The commands, for contributors with access to the source:
+
+```sh
+pnpm check          # types, unit tests, Rust tests, layer rules, license headers, docs
+pnpm check:full     # check, then production build, budgets, golden files, simulator, browser tests
+pnpm sim song.untzel --bars 16    # the real language, transport and DSP in Node, to WAV
+pnpm test:browser   # Playwright in the installed Chrome, with screenshots
+pnpm docs:check     # rebuilds these docs and fails on any drift from the code
+```
+
+The simulator renders a text to WAV without a browser and fails on any NaN, clipping or kick drift.
+
+### Releases
+
+A version is published only by a tag: `vX.Y.Z`, a stable version on a commit that is already on the main branch. A merge publishes nothing. The tag runs the checks and the production build, then makes one package, `untzel-<version>.tar.gz`, with `app/` (the app), `docs/` (these pages) and, at its root, `LICENSE`, `ATTRIBUTION.md` and `TRADEMARKS.md`, which the license asks to travel with every copy. The package is deterministic: the same commit gives the same bytes. Next to it, `untzel-<version>.manifest.json` lists every file with its size and SHA-256. Each release is announced to the project's site, which serves the app at `app.untzel.com` and these docs at `untzel.com/docs/`; `untzel.com` is the site itself.
+
+### Hosting a copy
+
+The `app/` folder of a release is a static site. A copy you host yourself needs two things from the server. The first is the type `application/wasm` for the `.wasm` file: without it the sound engine loads by a slower path. The second is the app's Content-Security-Policy, the same on every response:
+
+```text
+default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-ancestors 'self'
+```
+
+It is static: no nonce, no hash and no `'unsafe-inline'`. The code editor builds its styles as constructed stylesheets, which the policy allows, so nothing in the page needs an inline style or script. The docs in `docs/` run under a stricter static policy of their own, with no WebAssembly, workers or `blob:`.
+
+### License and attribution
+
+The code is under CPAL-1.0, the Common Public Attribution License, an OSI-approved open source license: you may use, study, modify and share it. In return, every copy that runs for someone, including a fork, a modified or self-hosted copy and a page that embeds the player, must show the attribution: the Untzel logo, unmodified, at least 16 px high and linked to untzel.com, in the top bar; the line "Powered by Untzel · Techno Inspire", always on screen, in the footer; and the notice "Copyright (c) 2026 Techno Inspire", in the about or legal notice. Every exported video must end with the closing card of the Techno Inspire | Untzel logo and the address untzel.com. The attribution must stay legible and is never hidden, covered, cropped or made transparent. This is a condition of the license, not a request. The app itself goes further than the license asks: its videos also carry the logo and the address on every frame, and the closing card lasts 2 seconds ([Share and Export](https://untzel.com/docs/en/app/#share-export)). Third-party material the app bundles keeps its own license and credit ([Credits](https://untzel.com/docs/en/credits/)).
+
+### Trademarks
+
+"Untzel", "Techno Inspire", the Untzel logo and the Techno Inspire logo are trademarks of Techno Inspire, and the code license does not grant them beyond the attribution it requires. The model names of the instruments (AURA Grand, VOLTA K9 and the others on the [Instruments](https://untzel.com/docs/en/instruments/) page) are Techno Inspire's names too and follow the same rules. Without asking, you may show the attribution, say truthfully that your project is based on or compatible with Untzel, and link to untzel.com. A fork keeps the attribution and takes its own name: "MyName, based on Untzel by Techno Inspire" is fine, "Untzel Pro" is not. Presenting a modified version as the official one, changing the logo, or using the names to advertise your own events or products needs written permission.
+
+### What exists today
+
+| Feature | Status | What it is |
+| --- | --- | --- |
+| Chords | Available now | Chord names such as Cm7 need an instrument of kind chord. |
+| Instrument library with search and preview | Available now | Nine categories, from drums to FX; search, preview a sound before adding it, and add the same instrument as often as you like. |
+| Instrument presets | Available now | Named sounds per instrument, previewed and chosen in the library and in the track's detail. |
+| Template library by style | Available now | A Style list on the waiting screen, in alphabetical order with the number of projects of each; every project can be changed completely. |
+| Loop length in bars | Available now | loop <bars> sets how many bars one pass of loop mode lasts; the Length chip of the transport writes it. |
+| Share as a link | Available now | The whole text in the link fragment; a file when it is too long. |
+| Continue where you left off | Available now | Continue on the waiting screen opens the project you edited last on this device. |
+| Remix this, when opening a link | Available now | A link opens with a notice and plays on the first tap. |
+| Export: story, video and WAV | Available now | Rendered offline: a 9:16 story up to 1:00 (about 15 s of what is playing without a play range), a 16:9 video or WAV audio up to 10:00, from the play range, the loop or the song. The music keeps playing. |
+| Recorded voices for vox and choir | Available now | The ooh and aah sounds of vox and choir play recorded singers from VocalSet (CC BY 4.0), loaded only when a track uses them. |
+| Export in HD or 4K | Available now | HD and 4K from the first time the sheet opens; Render tests the device first and renders HD where it cannot take 4K. After that test, 4K shows only where it passed. |
+| Commands under the code | Available now | A command line in the Code panel that makes the same minimal edits as the controls, with a preview before anything destructive. |
+| Play range in Loop and Song | Available now | Choose the bars or parts that repeat, play one part alone, and export the same range. Never written into the text. |
+| Projects on this device and the project menu | Available now | Every project saved in this browser one second after an edit, with open, rename, duplicate and delete with undo, all from one menu. |
+| Song title | Available now | The title line names the song in the top bar, the browser tab, the files and the exported video. |
+| Recorded piano, strings, harp, mallet, bell and kalimba | Available now | Recordings from Salamander Grand Piano (CC BY 3.0), VSCO 2 Community Edition and the Versilian Community Sample Library (CC0), downloaded only when a track uses them. |
+
+Source: https://untzel.com/docs/en/developers/
+
+## What exists today
+
+Untzel is in development. This page says what this build has and what is designed but not built yet. The marks are not written by hand: each one comes from a check on the build itself, so they change on their own when a feature arrives.
+
+### Features
+
+| Feature | Status | What it is |
+| --- | --- | --- |
+| Chords | Available now | Chord names such as Cm7 need an instrument of kind chord. |
+| Instrument library with search and preview | Available now | Nine categories, from drums to FX; search, preview a sound before adding it, and add the same instrument as often as you like. |
+| Instrument presets | Available now | Named sounds per instrument, previewed and chosen in the library and in the track's detail. |
+| Template library by style | Available now | A Style list on the waiting screen, in alphabetical order with the number of projects of each; every project can be changed completely. |
+| Loop length in bars | Available now | loop <bars> sets how many bars one pass of loop mode lasts; the Length chip of the transport writes it. |
+| Share as a link | Available now | The whole text in the link fragment; a file when it is too long. |
+| Continue where you left off | Available now | Continue on the waiting screen opens the project you edited last on this device. |
+| Remix this, when opening a link | Available now | A link opens with a notice and plays on the first tap. |
+| Export: story, video and WAV | Available now | Rendered offline: a 9:16 story up to 1:00 (about 15 s of what is playing without a play range), a 16:9 video or WAV audio up to 10:00, from the play range, the loop or the song. The music keeps playing. |
+| Recorded voices for vox and choir | Available now | The ooh and aah sounds of vox and choir play recorded singers from VocalSet (CC BY 4.0), loaded only when a track uses them. |
+| Export in HD or 4K | Available now | HD and 4K from the first time the sheet opens; Render tests the device first and renders HD where it cannot take 4K. After that test, 4K shows only where it passed. |
+| Commands under the code | Available now | A command line in the Code panel that makes the same minimal edits as the controls, with a preview before anything destructive. |
+| Play range in Loop and Song | Available now | Choose the bars or parts that repeat, play one part alone, and export the same range. Never written into the text. |
+| Projects on this device and the project menu | Available now | Every project saved in this browser one second after an edit, with open, rename, duplicate and delete with undo, all from one menu. |
+| Song title | Available now | The title line names the song in the top bar, the browser tab, the files and the exported video. |
+| Recorded piano, strings, harp, mallet, bell and kalimba | Available now | Recordings from Salamander Grand Piano (CC BY 3.0), VSCO 2 Community Edition and the Versilian Community Sample Library (CC0), downloaded only when a track uses them. |
+
+### What a mark means
+
+**Available now** means this build has the feature. **Planned** means it is designed, but this build does not have it: a button for it may be on screen and do nothing yet. Nothing on these pages is promised with a date.
+
+### One release, two addresses
+
+The app at `app.untzel.com` and these docs at `untzel.com/docs/` come from the same release, made from one version tag ([For developers](https://untzel.com/docs/en/developers/#releases)). The marks on this page therefore describe the app you open from its button.
+
+### Instruments of this build
+
+The [Instruments](https://untzel.com/docs/en/instruments/) page is generated from this build, so it lists exactly the instruments you can use today, and the [Cookbook](https://untzel.com/docs/en/cookbook/) and the AI prompt use only those.
+
+Source: https://untzel.com/docs/en/status/
+
+## Credits
+
+Untzel's code is Techno Inspire's, under CPAL-1.0 ([For developers](https://untzel.com/docs/en/developers/#license)). Some material the app ships is not: it keeps its own license, and the credit that license asks for travels with every copy, here, in `THIRD_PARTY.md` and in `credits.json` of the repository. This page is generated from `credits.json`, so it lists exactly what this build bundles.
+
+### What the app bundles
+
+Untzel plays recordings in fifteen instruments. The recorded sounds of `choir` and the `ooh` and `aah` sounds of `vox` are sung vowels from VocalSet, cut into held notes, tuned to each zone of the keyboard and, for the choir, summed into small ensembles. `piano` plays the Salamander Grand Piano; `strings` and `harp` play VSCO 2 Community Edition; `mallet`, `bell`, `kalimba`, `conga`, `bongo`, `cowbell`, `woodblock`, `shaker`, `clap` and `hat` play the Versilian Community Sample Library. Each recording is downloaded only when a track uses it, and the instrument plays its synthesized voice until it arrives. Every other sound of Untzel is synthesized on your device. The interface uses two fonts, Hanken Grotesk and Jost, under the SIL Open Font License, with the license text bundled next to each.
+
+### VocalSet: A Singing Voice Dataset
+
+| Field | Value |
+| --- | --- |
+| Authors | Julia Wilkins, Prem Seetharaman, Alison Wahl, and Bryan Pardo |
+| Performers | The 20 professional singers of VocalSet (anonymous: f1–f9, m1–m11) |
+| License | Creative Commons Attribution 4.0 International |
+| Source | https://zenodo.org/records/1442513 |
+| DOI | 10.5281/zenodo.1442513 |
+| Used in | vox and choir |
+| Changes made | Held notes cut from the straight long tones, moved to each zone root by pitch-synchronous overlap-add (and resampling past 7 semitones), summed into ensembles for the choir, band-limited to 16 kHz, levelled, looped with a baked crossfade and encoded as Opus. |
+
+> Julia Wilkins, Prem Seetharaman, Alison Wahl and Bryan Pardo. VocalSet: A Singing Voice Dataset. In Proceedings of the 19th International Society for Music Information Retrieval Conference (ISMIR), Paris, 2018.
+
+### Salamander Grand Piano V3
+
+| Field | Value |
+| --- | --- |
+| Authors | Alexander Holm |
+| License | Creative Commons Attribution 3.0 Unported |
+| Source | https://github.com/sfzinstruments/SalamanderGrandPiano |
+| Used in | piano |
+| Changes made | Cut at the onset, mixed to mono, resampled to 48 kHz, levelled, peak-limited, looped (sustained notes) or faded into silence (one-shots) and encoded as Opus. |
+
+> "Salamander Grand Piano V3" by Alexander Holm, licensed under CC BY 3.0, modified as described under Changes made.
+
+### VSCO 2 Community Edition
+
+| Field | Value |
+| --- | --- |
+| Authors | Versilian Studios LLC |
+| License | Creative Commons Zero 1.0 Universal |
+| Source | https://github.com/sgossner/VSCO-2-CE |
+| Used in | strings and harp |
+| Changes made | Cut at the onset, mixed to mono, resampled to 48 kHz, levelled, peak-limited, looped (sustained notes) or faded into silence (one-shots) and encoded as Opus. |
+
+### Versilian Community Sample Library
+
+| Field | Value |
+| --- | --- |
+| Authors | Versilian Studios LLC |
+| License | Creative Commons Zero 1.0 Universal |
+| Source | https://github.com/sgossner/VCSL |
+| Used in | mallet, bell, kalimba, conga, bongo, cowbell, woodblock, shaker, clap, and hat |
+| Changes made | Cut at the onset, mixed to mono, resampled to 48 kHz, levelled, peak-limited, looped (sustained notes) or faded into silence (one-shots) and encoded as Opus. |
+
+### Hanken Grotesk
+
+| Field | Value |
+| --- | --- |
+| Authors | The Hanken Grotesk Project Authors |
+| License | SIL Open Font License 1.1 |
+| Source | https://github.com/marcologous/hanken-grotesk |
+| Used in | interface |
+| Changes made | Subset to Latin and served as WOFF2. |
+
+### Jost
+
+| Field | Value |
+| --- | --- |
+| Authors | The Jost Project Authors |
+| License | SIL Open Font License 1.1 |
+| Source | https://github.com/indestructible-type/Jost |
+| Used in | interface |
+| Changes made | Subset to Latin and served as WOFF2. |
+
+### Accepted licenses
+
+Material bundled with Untzel must be in the public domain, CC0 or CC BY. Licenses that forbid changes or commercial use, ask the same license of everything around them, or are not clear, are not accepted. The recordings are not endorsed by their authors, singers or players.
+
+Source: https://untzel.com/docs/en/credits/
+
+## Prompt
+
+You write music in Untzel, the small text language of the Untzel app by Techno Inspire (https://app.untzel.com/). The person pastes your answer into the Code panel of the app, where it starts playing on the next bar.
+
+### Rules
+- Answer with exactly one fenced code block whose info string is untzel, then at most three short lines about what you wrote. Write those lines in the language the person uses; code, keywords, instrument names and parameter names stay in English.
+- Write only the syntax on this page. Untzel is analyzed, never executed: it has no JavaScript, no functions, no variables, no imports, no for or while loops, no arithmetic and no expressions. Do not borrow syntax from Strudel, TidalCycles, Sonic Pi or any other tool.
+- Use only these instruments: acid, bass, bell, bongo, boom, brass, choir, clap, conga, cowbell, crash, djembe, downlifter, epiano, fm-bass, fm-lead, harp, hat, impact, kalimba, kick, lead, mallet, noise, organ, pad, perc, piano, pluck, reese, ride, rim, riser, shaker, snare, square, stab, strings, sub, supersaw, sweep, tom, vox, woodblock. Use only the parameters listed for each, inside their ranges. If the person asks for an instrument that is not listed, say so and use the closest one listed.
+- Every name is lower case: [a-z][a-z0-9_-]*, at most 24 characters. Comments start with // and run to the end of the line.
+
+### Structure
+A text has, in this order, each part optional:
+1. globals, each at most once: title "<text>" (at most 60 characters, never changes the sound); tempo <bpm> (40..300, default 132); key <tonic> <scale> (tonic a..g with optional b or #; scales minor, major, dorian, phrygian, chromatic; default c minor); swing <amount> (0..0.5, default 0); loop <bars> (whole number 1..16; absent by default): in loop mode one pass lasts that many bars and every pattern restarts at its start, so a 4-bar pattern plays 4 times in loop 16; without it every pattern repeats on its own length. Song mode ignores it;
+2. tracks, one per line: [<name>:] <instrument> <pattern> ( | <modifier> [value] )*. Two tracks may use the same instrument; each is its own instance;
+3. sections: section <name> <track> <track> ... ( | tempo <bpm> ) ( | gain <0..1> );
+4. at most one song: song <section> <bars>, <section> <bars> ... [ | loop ].
+Without a song every track that is not muted plays in a loop. With sections and no song, each section plays 8 bars, in order, in a cycle.
+```untzel
+// globals first, then tracks, then sections, then the song
+tempo 124
+key a minor
+swing 0.08
+
+kick: kick x... x... x... x...
+hat:  hat  ..x. ..x. ..x. ..x.
+bass: bass a1 . . a1 . . c2 .
+
+section intro kick hat
+section main  kick hat bass
+
+song intro 8, main 16 | loop
+```
+
+### Patterns
+- A pattern is one bar; / separates bars of a longer pattern, which repeats when it ends. The steps of a bar divide it equally.
+- Hits for drum instruments: x hit, X accent, . rest, ~ holds the previous step one more step. In a run of hits every character is a step, so x... x... is 8 steps.
+- [ ] subdivides one step; ? plays with a chance (default 0.5), as in x?0.3; *n repeats inside the same step, as in x*4.
+```untzel
+kick:  kick X... x... X... x...
+clap:  hat  .... x~.. .... x~..   | open 0.4
+roll:  hat  x x [x x] x*2         | decay 0.03
+ghost: hat  x?0.3 x? x? x?        | gain 0.5
+fill:  kick x... x... x... x... / x... x... x.x. xxxx
+```
+
+### Notes and the scale lock
+- Pitched instruments play notes: lower-case letter, optional b or #, octave digit: c1, eb2, f#1. . is a rest and ~ holds the note.
+- With a key, notes outside the scale move to the nearest degree of it; | free turns that off for one track, and key c chromatic turns it off everywhere.
+- Chord names (Cm7, Abmaj7) need an instrument of kind chord; none of the listed instruments is one, so write notes.
+```untzel
+key c minor
+
+sub:  bass c1 ~ . c1 ~ . c1 .         | cutoff 180
+line: bass c2 eb2 g2 bb2 c3 . g2 .    | cutoff 1200 | decay 0.2
+```
+
+### General modifiers (every instrument)
+Chained with |, read left to right; when one repeats, the last wins (warning DUPLICATE_MODIFIER). A change to a constant number sounds immediately; everything else enters on the next bar.
+- mute (no value): silences the track
+- free (no value): turns the scale lock off for this track
+- legato (no value): one-voice instruments glide from note to note without a new attack
+- gain 0..2, or a signal: volume
+- pan -1..1, or a signal: position in the stereo field, left to right
+- duck 0..1, or a signal: how much the track dips when the kick plays (sidechain)
+- tone 0..1, or a signal: one-finger timbre macro: moves the parameters the instrument maps to it
+- reverb small | wide | sea | room | plate | hall | dub | 0..1: send to a reverb space by name (send 0.3), or a send amount to wide
+- transpose whole number -24..24: semitones, still under the scale lock
+- swing 0..0.5: swing of this track, replacing the global one
+- shift whole number -1024..1024: moves the pattern by steps of the first bar
+- velocity 0..1: how hard every note of the track plays
+- glide 0..2: seconds a legato note takes to slide to the next pitch
+- inversion whole number 0..3: which chord note goes on top: 0 root position, 1 to 3 inversions
+- arp-octaves whole number 1..3: how many octaves the arpeggio climbs
+- delay 1/8 | 3/16 | 1/4: send 0.35 to the delay line of that division
+- voicing close | open | spread | drop2: how a chord instrument spreads the notes of each chord
+- arp up | down | updown | random | played: plays a chord instrument's chords one note at a time, in this order
+- arp-rate 1/4 | 1/8 | 3/16 | 1/12 | 1/16 | 1/24 | 1/32: the length of each arpeggio note, as a division of the bar
+- lowpass 20..20,000, or a signal: low-pass filter cutoff, in Hz: lower is darker
+- lowpass-q 0..1, or a signal: resonance of the low-pass filter
+- highpass 20..20,000, or a signal: high-pass filter cutoff, in Hz: higher is thinner
+- highpass-q 0..1, or a signal: resonance of the high-pass filter
+- distort 0..1, or a signal: drive into a soft distortion
+- crush 0..1, or a signal: bitcrush: fewer bits and a lower sample rate
+- chorus 0..1, or a signal: chorus depth: a thicker, wider copy
+- chorus-rate 0.05..5, or a signal: speed of the chorus, in Hz
+- phaser 0..1, or a signal: phaser depth: a sweeping notch
+- phaser-rate 0.05..5, or a signal: speed of the phaser, in Hz
+- eq-low -18..18, or a signal: low shelf of the EQ, in dB
+- eq-mid -18..18, or a signal: mid band of the EQ, in dB
+- eq-mid-freq 200..8000, or a signal: centre of the EQ's mid band, in Hz
+- eq-high -18..18, or a signal: high shelf of the EQ, in dB
+- comp 0..1, or a signal: compressor amount: louder, more even
+- gate 0..1, or a signal: gate amount: cuts the tail between notes
+
+### Signals
+Every numeric parameter that allows it takes a slow wave instead of a number: <shape>(<bars>) <from>..<to>. Shapes: sine, tri, saw, square, rand, env. The range is required and stays inside the parameter's limits. The period is above 0 and at most 256 bars. In a song, a signal restarts at the start of every section, so saw(4) in a 4-bar section rises exactly across it.
+```untzel
+bass: bass c2 . c2 . c2 . eb2 .   | cutoff sine(8) 300..2400
+hat:  hat  x.x. x.x. x.x. x.x.    | open tri(4) 0..0.8 | pan rand(1) -0.5..0.5
+rise: hat  x x x x x x x x        | gain saw(4) 0.1..0.8
+gate: hat  x*4 x*4 x*4 x*4        | gain square(2) 0.2..0.6
+```
+
+### Sections and song
+```untzel
+tempo 124
+key a minor
+
+kick: kick x... x... x... x...
+hat:  hat  ..x. ..x. ..x. ..x.
+sub:  bass a1 . . a1 . . a1 .     | cutoff 180
+bass: bass . a2 . a2 . c3 . e2    | cutoff saw(4) 300..1800
+
+section intro kick hat
+section build kick hat sub bass   | gain 0.8
+section drop  kick hat sub bass   | tempo 126
+
+song intro 8, build 4, drop 16, intro 4
+```
+
+### Instruments
+Per instrument: its group and kind (drum plays hits, pitched plays notes, chord plays chords); each parameter as name min..max=default unit, or name=default when it runs 0..1, or name choice|choice=default; what tone moves; its sounds, the default first (write a sound's name right after the instrument's name); its default pattern.
+- acid: Bass, pitched. Parameters: cutoff 40..12,000=700 Hz; resonance=0.6; accent=0.6; wave saw|square=saw; decay 0.05..2=0.25 s; wave2 saw|square|triangle|sine=saw; mix=0; sync=0; filter lp12|lp24|bp|hp=lp24; filter-attack 0.001..4=0.001 s; drive=0; spread=0; sub=0; noise=0. tone: cutoff 150→6000, resonance 0.2→0.95. Sounds: classic, squelch, square, soft. Pattern: c2 c2 c3 c2 eb2 c2 bb1 c2
+- bass: Bass, pitched. Parameters: cutoff 40..8000=600 Hz; decay 0.05..2=0.3 s; drive=0.1. tone: cutoff 120→3000. Sounds: round, bright, dirty, rolling. Pattern: c2 . . c2 . . c2 .
+- bell: Plucks, chord. Parameters: brightness=0.5; feedback=0.1; decay 0.1..8=3 s; release 0.01..8=1.5 s. tone: brightness 0→1. Sounds: tubular, glass, toy. Pattern: c4 ~ ~ ~ g4 ~ ~ ~
+- bongo: Drums, drum. Parameters: tune=0.6; decay 0.05..1=0.18 s; hardness=0.6; slap=0. tone: tune 0→1. Sounds: high, low, slap. Pattern: x.x. .x.x x.x. .xx.
+- boom: Bass, pitched. Parameters: decay 0.1..8=1.2 s; tune=0.5; bend=0.3; color=0.45. tone: decay 0.3→4. Sounds: long, short, dirty. Pattern: c2 ~ ~ . . . c2 . / . . eb2 ~ ~ ~ . .
+- brass: Brass, chord. Parameters: cutoff 200..12,000=700 Hz; contour=0.85; attack 0.001..2=0.04 s; release 0.01..4=0.2 s; detune=0.2; wave2 saw|square|triangle|sine=square; mix=0.25; sync=0; filter lp12|lp24|bp|hp=lp12; filter-attack 0.001..4=0.08 s; filter-decay 0.01..8=0.6 s; drive=0.5; spread=0; sub=0; noise=0.06; scoop=0.6. tone: cutoff 400→8000, contour 0→1. Sounds: section, soft, horn. Pattern: Cm ~ ~ ~
+- choir: Voices, chord. Parameters: vowel=0; breath=0.25; brightness=0.5; attack 0.01..8=0.5 s; release 0.01..8=1 s; detune=0.4. tone: vowel 0→1, brightness 0→1. Sounds: aah, ooh, dark, chant, gospel, ethereal, monk. Pattern: Cm ~ ~ ~
+- clap: Drums, drum. Parameters: decay 0.05..1=0.18 s; spread=0.4; color=0.5. tone: decay 0.08→0.6, spread 0.1→0.9. Sounds: tight, roomy, snap. Pattern: .... x... .... x...
+- conga: Drums, drum. Parameters: tune=0.5; decay 0.05..2=0.3 s; bend=0.1; hardness=0.5; slap=0. tone: tune 0→1. Sounds: open, slap, muted, low, high. Pattern: ..x. x..x ..x. x.x.
+- cowbell: Drums, drum. Parameters: tune=0.5; decay 0.02..1=0.22 s. tone: tune 0→1. Sounds: classic, bright. Pattern: ..x. ..x. ..x. ..x.
+- crash: Drums, drum. Parameters: decay 0.2..8=1.8 s; color=0.5; size=0.6. tone: color 0→1. Sounds: wide, short. Pattern: x... .... .... ....
+- djembe: Drums, drum. Parameters: tune=0.45; decay 0.05..2=0.35 s; bend=0.05; hardness=0.55; slap=0.25. tone: tune 0→1. Sounds: tone, bass, slap. Pattern: x..x ..x. x.x. ..x.
+- downlifter: FX, drum. Parameters: length 0..30=0 s; cutoff 200..16,000=8000 Hz; resonance=0.4; color=0.5. tone: color 0→1. Sounds: noise, tone, both. Pattern: x~~~ ~~~~ ~~~~ ~~~~
+- epiano: Keys, chord. Parameters: brightness=0.55; decay 0.1..8=2 s; release 0.01..8=0.4 s; detune=0.3; tine=0.7; tremolo=0.4. tone: brightness 0→1. Sounds: tine, bell, soft, bark. Pattern: Cm7 ~ ~ ~
+- fm-bass: Bass, pitched. Parameters: brightness=0.45; feedback=0.4; decay 0.05..4=0.35 s; release 0.01..2=0.1 s. tone: brightness 0→1. Sounds: pluck, metal, round. Pattern: c2 . c2 . eb2 . c2 g1
+- fm-lead: Leads, pitched. Parameters: brightness=0.5; feedback=0.2; attack 0.001..2=0.01 s; release 0.01..4=0.25 s. tone: brightness 0→1. Sounds: bright, brass, flute. Pattern: c4 ~ eb4 . g4 ~ ~ .
+- harp: Plucks, chord. Parameters: brightness=0.5; decay 0.1..20=4 s; position=0.4; detune=0.3; release 0.01..4=0.6 s. tone: brightness 0→1. Sounds: concert, soft, glass. Pattern: c3 g3 eb4 g3
+- hat: Drums, drum. Parameters: open=0; decay 0.01..0.5=0.06 s; color=0.5; band=0. tone: open 0→1. Sounds: closed, open, tight, dusty, metal. Pattern: ..x. ..x. ..x. ..x.
+- impact: FX, drum. Parameters: decay 0.1..4=3.2 s; size=0.5; color=0.1; tail=0.6. tone: size 0→1. Sounds: hit, deep, metal. Pattern: x... .... .... ....
+- kalimba: Plucks, chord. Parameters: hardness=0.6; brightness=0.5; decay 0.1..6=1.1 s; body=0.4; noise=0. tone: brightness 0→1. Sounds: tine, bright, soft, box. Pattern: c4 . eb4 . g4 . bb4 . / g4 . eb4 . c5 . g4 .
+- kick: Drums, drum. Parameters: decay 0.05..1.5=0.45 s; drive=0.2; pitch 30..80=48 Hz; click=0.3; sweep 0..6=3.5; sweep-time 0.005..0.2=0.025 s; overtone=0; click-tone 100..8000=1500 Hz; grit=0. tone: decay 0.15→0.9, drive 0→0.7. Sounds: punch, tight, boom, hard, deep, warm, sharp, bright, rumble, dark, crisp, round. Pattern: x... x... x... x...
+- lead: Leads, pitched. Parameters: cutoff 100..12,000=3500 Hz; detune=0.2; wave saw|square|triangle|sine=saw; attack 0.001..2=0.005 s; release 0.01..4=0.25 s; wave2 saw|square|triangle|sine=square; mix=0.5; sync=0.45; filter lp12|lp24|bp|hp=lp12; filter-attack 0.001..4=0.001 s; drive=0.35; spread=0; sub=0; noise=0; resonance 0..0.95=0.2; contour=0.25; decay 0.02..8=0.8 s; sustain=0.75; width 0.05..0.95=0.5; vibrato=0. tone: cutoff 300→9000. Sounds: classic, soft, sync, screamer, anthem, noir, glass, juno, rave. Pattern: c4 . eb4 . g4 . bb4 .
+- mallet: Plucks, chord. Parameters: hardness=0.5; brightness=0.65; decay 0.1..12=1 s; tune=0.5; material wood|metal|hollow=wood; tremolo=0. tone: hardness 0→1. Sounds: marimba, vibes, wood. Pattern: c4 . eb4 . g4 . eb4 .
+- noise: FX, drum. Parameters: cutoff 40..16,000=4000 Hz; resonance=0.3; color=1. tone: cutoff 200→12,000. Sounds: white, pink, wind. Pattern: x~~~ ~~~~ ~~~~ ~~~~
+- organ: Keys, chord. Parameters: low=0.8; mid=0.6; high=0.3; percussion=0; attack 0.001..2=0.005 s; release 0.01..4=0.08 s. tone: high 0→1, percussion 0→1. Sounds: full, soft, perc, church. Pattern: Cm ~ ~ ~
+- pad: Pads, chord. Parameters: brightness=0.6; attack 0.01..8=0.8 s; release 0.01..8=1.8 s; detune=0.4; wave2 saw|square|triangle|sine=saw; mix=0.35; sync=0; filter lp12|lp24|bp|hp=lp12; filter-attack 0.001..4=1.5 s; filter-decay 0.01..8=4 s; drive=0.15; spread=0.8; sub=0; noise=0; resonance 0..0.95=0.15; contour=0.3; decay 0.05..8=2 s; sustain=0.85. tone: brightness 0→1. Sounds: warm, dark, bright, sea, noir, hypnotic, dusk, void. Pattern: Cm7 ~ ~ ~
+- perc: Drums, drum. Parameters: tune=0.5; decay 0.05..2=0.22 s; bend=0. tone: tune 0→1. Sounds: block, ping, drop. Pattern: ..x. .x.. ...x .x..
+- piano: Keys, chord. Parameters: hardness=0.5; brightness=0.5; decay 0.5..12=5 s; release 0.05..2=0.3 s; detune=0.3; body=0.5; noise=0. tone: brightness 0.1→0.9, hardness 0.1→0.9. Sounds: grand, bright, felt, upright, honky, house. Pattern: Cm7 ~ ~ ~
+- pluck: Plucks, chord. Parameters: brightness=0.6; decay 0.1..20=2.5 s; position=0.3; body=0.4; release 0.01..4=0.15 s. tone: brightness 0→1. Sounds: bright, nylon, muted, steel. Pattern: c3 eb3 g3 c4 g3 eb3 c3 bb2
+- reese: Bass, pitched. Parameters: cutoff 40..8000=900 Hz; resonance=0.2; detune=0.75; release 0.01..2=0.15 s; wave2 saw|square|triangle|sine=saw; mix=0; sync=0; filter lp12|lp24|bp|hp=lp12; filter-attack 0.001..4=0.001 s; filter-decay 0.01..8=0.5 s; drive=0.5; spread=0; sub=0.35; noise=0. tone: cutoff 150→4000, detune 0.2→0.9. Sounds: wide, dark, growl. Pattern: c2 ~ ~ ~ eb2 ~ g1 ~
+- ride: Drums, drum. Parameters: decay 0.2..8=2.2 s; color=0.5; size=0.4. tone: color 0→1. Sounds: ping, wash. Pattern: x.x. x.x. x.x. x.x.
+- rim: Drums, drum. Parameters: tune=0.5; decay 0.01..0.5=0.05 s. tone: tune 0→1. Sounds: click, wood. Pattern: ..x. ...x ..x. ....
+- riser: FX, drum. Parameters: length 0..30=0 s; cutoff 200..16,000=12,000 Hz; resonance=0.05; color=0. tone: color 0→1. Sounds: noise, tone, both. Pattern: x~~~ ~~~~ ~~~~ ~~~~
+- shaker: Drums, drum. Parameters: decay 0.01..0.5=0.08 s; color=0.25; spread=0.5. tone: color 0→1. Sounds: soft, bright. Pattern: xxxx xxxx xxxx xxxx
+- snare: Drums, drum. Parameters: decay 0.05..1=0.2 s; tune=0.5; snap=0.6. tone: snap 0.2→1. Sounds: snap, fat, boom, brush. Pattern: .... x... .... x...
+- square: Leads, pitched. Parameters: cutoff 100..12,000=3000 Hz; width=0.5; attack 0.001..2=0.005 s; release 0.01..4=0.15 s; wave2 saw|square|triangle|sine=saw; mix=0; sync=0; filter lp12|lp24|bp|hp=lp12; filter-attack 0.001..4=0.001 s; filter-decay 0.01..8=0.3 s; drive=0; spread=0; sub=0; noise=0. tone: width 0.1→0.5. Sounds: hollow, chip, pwm. Pattern: c4 . g4 . eb4 . g4 .
+- stab: Brass, chord. Parameters: cutoff 200..12,000=2500 Hz; decay 0.05..2=0.25 s; detune=0.3; wave2 saw|square|triangle|sine=saw; mix=0; sync=0; filter lp12|lp24|bp|hp=lp12; filter-attack 0.001..4=0.001 s; drive=0; spread=0; sub=0; noise=0. tone: cutoff 400→9000. Sounds: classic, rave, short. Pattern: . Cm7 . . . Cm7 . .
+- strings: Pads, chord. Parameters: brightness=0.7; attack 0.01..8=0.35 s; release 0.01..8=0.8 s; detune=0.35; width=0.5; wave2 saw|square|triangle|sine=saw; mix=0; sync=0; filter lp12|lp24|bp|hp=lp12; filter-attack 0.001..4=0.001 s; filter-decay 0.01..8=4 s; drive=0; spread=0.3; sub=0; noise=0; vibrato=0.6; ensemble=0.8; body=0.8. tone: brightness 0→1. Sounds: ensemble, slow, tremolo, high. Pattern: Cm ~ ~ ~
+- sub: Bass, pitched. Parameters: wave triangle|sine=sine; attack 0.001..1=0.004 s; release 0.01..2=0.12 s; cutoff 40..2000=400 Hz; drive=0. tone: cutoff 100→1500. Sounds: pure, warm. Pattern: c1 . . c1 . . c1 .
+- supersaw: Leads, chord. Parameters: cutoff 200..16,000=5000 Hz; detune=0.6; attack 0.001..4=0.01 s; release 0.01..4=0.4 s; wave2 saw|square|triangle|sine=saw; mix=0; sync=0; filter lp12|lp24|bp|hp=lp12; filter-attack 0.001..4=0.001 s; filter-decay 0.01..8=1 s; drive=0; spread=0.8; sub=0; noise=0; low-cut=0.2. tone: cutoff 600→12,000, detune 0.1→0.9. Sounds: anthem, thin, wide. Pattern: Cm ~ ~ ~
+- sweep: FX, drum. Parameters: length 0..30=0 s; cutoff 200..16,000=6000 Hz; resonance=0.97; bend=0; color=0. tone: resonance 0→1. Sounds: up, down, notch. Pattern: x~~~ ~~~~ ~~~~ ~~~~
+- tom: Drums, drum. Parameters: tune=0.35; decay 0.05..2=0.55 s; bend=0.25; hardness=0.5. tone: tune 0→1. Sounds: floor, high, boom, electronic. Pattern: x... .... x.x. ....
+- vox: Voices, pitched. Parameters: vowel=0; breath=0.15; brightness=0.6; attack 0.001..2=0.02 s; release 0.01..4=0.2 s. tone: vowel 0→1. Sounds: talk, ooh, aah, robot. Pattern: c4 ~ eb4 ~ g4 ~ ~ .
+- woodblock: Drums, drum. Parameters: tune=0.6; decay 0.02..1=0.12 s; hardness=0.7. tone: tune 0→1. Sounds: high, low, hollow. Pattern: ..x. ..x. .x.. x...
+
+### Limits
+- characters in a text: 65,536
+- characters in a track or section name: 24
+- steps in one bar: 64
+- bars in one pattern: 64
+- nesting depth of [ ] groups: 4
+- smallest *n repeat: 1
+- largest *n repeat: 16
+- largest shift, in steps, either way: 1024
+- largest transpose, in semitones, either way: 24
+- lowest tempo, in BPM: 40
+- highest tempo, in BPM: 300
+- tempo when the text has none: 132
+- largest swing: 0.5
+- longest signal period, in bars: 256
+- shortest song part, in bars: 1
+- longest song part, in bars: 256
+- chance of ? without a number: 0.5
+- shortest loop <bars>: 1
+- longest loop <bars>: 16
+
+### Errors
+Invalid text never stops the music: the app keeps playing the last valid version and shows the code and message. If the person pastes an error back, fix exactly what it names.
+- UNKNOWN_INSTRUMENT: Unknown instrument "kik". Did you mean "kick"? Use one of the instruments on the Instruments page; the message suggests the closest name.
+- DUPLICATE_TRACK_NAME: A track named "bass" already exists on line 1. Give each track its own name before the colon, for example bass2.
+- UNKNOWN_TRACK: Section "drop" uses "acid", but no track has that name. List only track names that exist above the section, or add the missing track.
+- UNKNOWN_SECTION: The song uses "chorus", but no section has that name. Use a section name declared with section, or declare it.
+- DUPLICATE_SECTION_NAME: A section named "drop" already exists on line 3. Rename one of the sections; names are unique among sections.
+- UNKNOWN_MODIFIER: "bass" has no parameter "cutof". Did you mean "cutoff"? Use a general modifier or a parameter of that instrument; the message suggests the closest one.
+- OUT_OF_RANGE: tempo must be between 40 and 300. Bring the value inside the range the message gives.
+- EMPTY_PATTERN: This track has no steps. Write at least one step after the instrument name, for example x... x... x... x...
+- INVALID_NOTE: "b9" is not a note. Write a lower-case note with its octave, a to g, optional b or #, then a digit: c2, eb2, f#1.
+- SIGNAL_NEEDS_RANGE: sine(8) needs a range, for example 40..8000. Follow the signal with a range inside the parameter's limits, for example 300..2400.
+- SOURCE_TOO_LONG: A song can have at most 65,536 characters. Split the music or remove repeated lines: a text has a size limit.
+- SYNTAX_ERROR: Unexpected "]". Check the line against the grammar: a stray bracket, bar or comma is the usual cause.
+- INTERNAL_ERROR: Something went wrong while reading this text. Not caused by your text. The last valid version keeps playing; reload the page if it repeats.
+- UNKNOWN_SCALE: Unknown scale "minr". Did you mean "minor"? Use one of the scales listed in the reference; the message suggests the closest one.
+- NAME_TOO_LONG: A name can have at most 24 characters. Shorten the track or section name.
+- TOO_MANY_STEPS: A bar can have at most 64 steps. Use fewer steps in the bar, or groups in brackets to subdivide a step.
+- TOO_MANY_BARS: A pattern can have at most 64 bars. Use fewer bars in the pattern, or sections and a song for longer music.
+- PATTERN_KIND_MISMATCH: "bass" plays notes, not chords. Drums play hits (x . ~), pitched instruments play notes (c2). Check the instrument's kind.
+- MISSING_VALUE: gain needs a value, for example gain 0.8. Give the modifier a value, as in the example the message shows.
+- DUPLICATE_SONG: A text can have only one song. Keep one song line and join the parts with commas.
+- OUT_OF_ORDER: Sections come after tracks. Order the text: tempo, key, swing and loop first, then tracks, then sections, then the song.
+- DUPLICATE_STATEMENT: tempo is already set on line 1. Keep one title, one tempo, one key, one swing and one loop line; the first one counts.
+- DUPLICATE_MODIFIER: gain is set twice; the last one wins. A warning, not an error: remove the earlier copy; the last one wins.
+- UNKNOWN_PRESET: "piano" has no sound "brigth". Did you mean "bright"? Use one of the instrument's sounds listed on the Instruments page; the message suggests the closest one.
+- UNKNOWN_CHOICE: "wave" can be saw, square, triangle or sine. Use one of the names the message lists.
+- SIGNAL_NEEDS_NUMBER: "wave" takes a name, not a signal. Write one of the parameter's names: a signal only moves numbers.
+- NO_EFFECT: legato needs a one-voice instrument; "bass" plays several voices. A warning, not an error: the modifier is ignored. Use it on the kind of instrument the message names, or add what it needs.
+- TOO_MANY_MODULATORS: A track can have at most 8 fast signals. Give some parameters a slow signal (a period of 1 bar or more) or a fixed value; the message gives the limit per track.
+- DUPLICATE_LOOP_SECTION: Only one section can be the loop; "groove" already is on line 3. Keep | loop on one section only: it is the one loop mode plays.
+- EMPTY_TITLE: The song title is empty; the last title stays. A warning, not an error: write the name between the quotes, or remove the title line; the music keeps playing.
+- TITLE_TOO_LONG: A song title can have at most 60 characters. A warning, not an error: shorten the title to 60 characters; the first 60 are kept.
+- SIGNAL_NOT_ALLOWED: swing takes a number, not a signal. Write a number: this value holds for the whole track or section.
+- NOTHING_TO_PLAY: Nothing to play: add a track. A warning, not an error: add a track.
+Examples of common mistakes:
+UNKNOWN_MODIFIER:
+```untzel
+bass: bass c2 . c2 . | cutof 400
+```
+SIGNAL_NEEDS_RANGE:
+```untzel
+bass: bass c2 . c2 . | cutoff sine(8)
+```
+PATTERN_KIND_MISMATCH:
+```untzel
+pad: bass Cm7 ~ ~ ~ / Abmaj7 ~ ~ ~
+```
+OUT_OF_ORDER:
+```untzel
+kick: kick x... x... x... x...
+section drop kick
+hat: hat ..x. ..x. ..x. ..x.
+```
+
+### Answer
+Start with tempo and key and give every track a name. Add sections and a song only when the person asks for a whole song with parts; otherwise write a loop.

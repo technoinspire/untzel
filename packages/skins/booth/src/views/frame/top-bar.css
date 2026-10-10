@@ -1,0 +1,153 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The top bar view, views/top-bar.ts. */
+.ui-topbar {
+  position: absolute;
+  inset: 0 0 auto;
+  /* Above the backdrop (10) and the sheets (20), which start below the bar: the
+     attribution is never dimmed or covered. */
+  z-index: 25;
+  display: flex;
+  align-items: flex-start;
+  height: 76px;
+  padding: 8px 8px 0 16px;
+  /* Transparent: the stage runs under the bar. */
+  background: none;
+  /* Where the scrim holds its strength (the text ends above it) and where it is gone.
+     The title's 44 px target pushed the phrase down: the solid part ends under it. */
+  --scrim-solid: 76px;
+  --scrim-end: 120px;
+}
+
+/* The only thing behind the bar's text: stage colour from the top, fading to nothing.
+   No glass, no blur. 82% is what the worst case needs: a pure white spark behind the
+   11 px muted attribution phrase still leaves 4.8:1 (tests/skins/booth/timing/topbar-contrast.browser.ts,
+   which samples the composited pixels; 80% would drop it to 4.4:1). */
+.ui-topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: var(--scrim-end);
+  /* Eased fade, so the end of the solid band leaves no visible edge. */
+  --scrim-fade: calc(var(--scrim-end) - var(--scrim-solid));
+  background: linear-gradient(
+    to bottom,
+    rgb(11 11 12 / 82%) 0,
+    rgb(11 11 12 / 82%) var(--scrim-solid),
+    rgb(11 11 12 / 74%) calc(var(--scrim-solid) + var(--scrim-fade) * 0.15),
+    rgb(11 11 12 / 57%) calc(var(--scrim-solid) + var(--scrim-fade) * 0.3),
+    rgb(11 11 12 / 34%) calc(var(--scrim-solid) + var(--scrim-fade) * 0.5),
+    rgb(11 11 12 / 15%) calc(var(--scrim-solid) + var(--scrim-fade) * 0.7),
+    rgb(11 11 12 / 5%) calc(var(--scrim-solid) + var(--scrim-fade) * 0.85),
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* The Untzel wordmark (the Graphic Image), divider, title and Saved on one row.
+   The Attribution Phrase lives in the footer (attribution.css). */
+.ui-topbar__brand {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.ui-topbar__divider {
+  width: 1px;
+  height: 22px;
+  margin: 0 11px 0 9px;
+  background: var(--raised);
+}
+
+.ui-topbar__actions {
+  display: flex;
+  flex: none;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.ui-topbar__action {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background: var(--surface);
+}
+
+.ui-topbar__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.ui-topbar[data-renaming="true"] .ui-topbar__action--export {
+  display: none;
+}
+
+.ui-topbar__saved {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .ui-topbar[data-renaming="true"] .ui-topbar__action--export {
+    display: inline-flex;
+  }
+
+  .ui-topbar__saved:not([hidden]) {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 12px;
+    color: var(--muted);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .ui-topbar__saved .ui-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .ui-topbar {
+    grid-area: 1 / 1;
+  }
+
+  .ui-topbar {
+    position: relative;
+    align-self: start;
+    align-items: flex-start;
+    height: 88px;
+    padding: 16px 20px 0 32px;
+    --scrim-solid: 88px;
+    --scrim-end: 144px;
+  }
+
+  .ui-topbar__divider {
+    height: 28px;
+    margin: 0 14px 0 10px;
+  }
+
+  .ui-topbar__actions {
+    gap: 12px;
+  }
+
+  .ui-topbar__action {
+    display: inline-flex;
+    gap: 8px;
+    width: auto;
+    padding: 0 22px;
+    font-weight: 600;
+  }
+
+  .ui-topbar__label {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+  }
+}

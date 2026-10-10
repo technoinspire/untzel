@@ -1,0 +1,16 @@
+{
+  "category": "new",
+  "date": "2026-10-04",
+  "refs": [
+    13
+  ],
+  "docs": "/docs/app/waiting",
+  "title": {
+    "en": "Template library",
+    "pt-BR": "Biblioteca de templates"
+  },
+  "body": {
+    "en": "Start from a template: a tab per style, each with named projects you can play and change.",
+    "pt-BR": "Comece de um template: uma aba por estilo, cada uma com projetos nomeados que você toca e muda."
+  }
+}

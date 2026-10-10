@@ -1,0 +1,50 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The tab bar view, views/tab-bar.ts. */
+.ui-tabs {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 48px;
+  border-top: 1px solid var(--raised);
+  background: var(--stage);
+}
+
+/* Inert until the first tap: every label in opaque text-muted (8.04:1 on
+   stage) and the icons dimmed; 45% on the label measured 2.47:1 for Song. */
+.ui-tabs[inert] .ui-tabs__tab {
+  color: var(--muted);
+}
+.ui-tabs[inert] .ui-icon {
+  opacity: 0.45;
+}
+
+.ui-tabs__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.ui-tabs__tab .ui-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.ui-tabs__tab[aria-current="page"] {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.ui-tabs__tab[aria-current="page"] .ui-icon {
+  color: var(--flare);
+}
+
+@media (min-width: 1200px) {
+  .ui-tabs {
+    display: none;
+  }
+}

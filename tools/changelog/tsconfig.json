@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "types": ["node"],
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/changelog",
+    "tsBuildInfoFile": "../../.cache/tsc/changelog.tsbuildinfo"
+  },
+  "include": ["src"]
+}

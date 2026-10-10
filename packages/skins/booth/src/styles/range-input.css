@@ -1,0 +1,67 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The range input (ui-range) every slider and fader shares. */
+/* The rail keeps its 28 px row; the input reaches 8 px over and under it, a 44 px target,
+   over the labels around it, which take no taps. */
+.ui-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  --track-fill: linear-gradient(to right, var(--flare) calc(var(--fill, 0) * 100%), var(--raised) 0);
+}
+
+.ui-range::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--track-fill);
+}
+
+.ui-range::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--track-fill);
+}
+
+.ui-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -6px;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+.ui-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+/* A signal shows its range in translucent flare on the rail; the thumb is flare. */
+.has-signal .ui-range {
+  --track-fill: linear-gradient(
+    to right,
+    var(--raised) calc(var(--signal-from, 0) * 100%),
+    rgb(246 93 0 / 45%) 0 calc(var(--signal-to, 0) * 100%),
+    var(--raised) 0
+  );
+}
+
+.has-signal .ui-range::-webkit-slider-thumb {
+  background: var(--flare);
+}
+
+.has-signal .ui-range::-moz-range-thumb {
+  background: var(--flare);
+}
+
+.ui-range:focus-visible {
+  outline-offset: 3px;
+  border-radius: 4px;
+}

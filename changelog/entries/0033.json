@@ -1,0 +1,15 @@
+{
+  "category": "new",
+  "date": "2026-10-05",
+  "refs": [
+    33
+  ],
+  "title": {
+    "en": "A scene for every instrument",
+    "pt-BR": "Uma cena para cada instrumento"
+  },
+  "body": {
+    "en": "Each instrument draws its own light on the stage, rendered on the GPU.",
+    "pt-BR": "Cada instrumento desenha a própria luz no palco, renderizada na GPU."
+  }
+}

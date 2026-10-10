@@ -1,0 +1,37 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The icons, icons.ts. */
+.ui-icon {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+
+.ui-icon__stroke {
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ui-icon__fill {
+  fill: currentcolor;
+}
+
+.ui-icon__knob {
+  fill: var(--surface);
+  stroke: currentcolor;
+  stroke-width: 2;
+}
+
+.ui-icon--pause .ui-icon__stroke {
+  stroke-width: 3;
+}
+
+@media (min-width: 1200px) {
+  .ui-topbar__action .ui-icon--export {
+    width: 20px;
+    height: 20px;
+  }
+}

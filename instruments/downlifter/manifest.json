@@ -1,0 +1,36 @@
+{
+  "name": "downlifter",
+  "group": "fx",
+  "kind": "drum",
+  "engine": "percussion",
+  "description": "Falling sweep after a peak",
+  "model": "PULSAR FX",
+  "tags": ["downlifter", "fall", "transition"],
+  "voices": 2,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.59,
+  "patterns": [
+    { "name": "Whole bar", "text": "x~~~ ~~~~ ~~~~ ~~~~" },
+    { "name": "Half bar", "text": "x~~~ ~~~~ .... ...." },
+    { "name": "Upbeat", "text": ".... .... x~~~ ~~~~" }
+  ],
+  "preview": "x~~~ ~~~~ ~~~~ ~~~~",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "length", "min": 0, "max": 30, "default": 0, "unit": "s", "curve": "linear" },
+    { "name": "cutoff", "min": 200, "max": 16000, "default": 8000, "unit": "Hz", "curve": "exponential" },
+    { "name": "resonance", "min": 0, "max": 1, "default": 0.4, "unit": "", "curve": "linear" },
+    { "name": "color", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "color", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "noise", "description": "Noise and a falling tone, sweeping down", "values": {} },
+    { "name": "tone", "description": "Falling tone", "values": {"color": 1} },
+    { "name": "both", "description": "Bright noise, half tone", "values": {"color": 0.6, "cutoff": 14000, "resonance": 0.1} }
+  ],
+  "defaultPreset": "noise",
+  "scene": {"family": "sweep", "variant": {"shape": "fall"}, "drive": "envelope"}
+}

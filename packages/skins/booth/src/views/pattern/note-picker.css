@@ -1,0 +1,85 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The note picker view, views/note-picker.ts. */
+/*
+ * The note picker (views/note-picker.ts). Two octaves of keys,
+ * every key at least 44 × 44 px, scrolling sideways when they do not fit. Contrast:
+ * label stage on a white key 19.67:1; stage on flare (chosen key) 6.07:1; stage on muted
+ * (out of the key while Scale lock is on) 7.90:1; the flare dot of a key of the scale is
+ * 3.24:1 on white and 5.54:1 on surface (non-text, 3:1). Selectors start at .ui-piano or
+ * .ui-picker: this file is imported before the button reset of styles/controls.css, which
+ * has the specificity of one class.
+ */
+.ui-picker {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--stage);
+}
+
+.ui-picker__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ui-picker__title {
+  font-weight: 600;
+}
+
+.ui-picker__states .ui-segmented__option {
+  flex: 1;
+  min-width: 0;
+}
+
+.ui-picker__states {
+  display: flex;
+  background: var(--surface);
+}
+
+.ui-picker__octaves {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ui-picker__lock {
+  margin-left: auto;
+}
+
+/* An octave button with pressed keys past it: a small flare dot on its corner. */
+.ui-picker .ui-picker__octave {
+  position: relative;
+}
+
+.ui-picker .ui-picker__octave[data-more="true"]::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--flare);
+}
+
+.ui-picker__holds {
+  margin-top: 2px;
+  color: var(--muted);
+  font: 600 13px/1 var(--font-mono);
+}
+
+.ui-picker__warning {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.ui-picker__warning:empty {
+  display: none;
+}
+
+.ui-picker__choose {
+  width: 100%;
+}

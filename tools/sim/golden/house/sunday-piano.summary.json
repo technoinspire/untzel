@@ -1,0 +1,105 @@
+{
+  "template": "house/sunday-piano",
+  "runs": {
+    "loop": {
+      "bars": 16,
+      "events": 864,
+      "eventsPerTrack": {
+        "kick": 65,
+        "clap": 32,
+        "hat": 229,
+        "ohat": 64,
+        "shaker": 221,
+        "conga": 88,
+        "bell": 0,
+        "bass": 84,
+        "piano": 81,
+        "organ": 0,
+        "strings": 0,
+        "voice": 0,
+        "choir": 0,
+        "rise": 0,
+        "riser": 0,
+        "down": 0,
+        "crash": 0
+      },
+      "songEnded": false,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -15.07,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": null,
+          "clap": null,
+          "hat": null,
+          "ohat": null,
+          "shaker": null,
+          "conga": null,
+          "bell": null,
+          "bass": null,
+          "piano": null,
+          "organ": null,
+          "strings": null,
+          "voice": null,
+          "choir": null,
+          "rise": null,
+          "riser": null,
+          "down": null,
+          "crash": null
+        }
+      }
+    },
+    "song": {
+      "bars": 177,
+      "events": 8563,
+      "eventsPerTrack": {
+        "kick": 640,
+        "clap": 256,
+        "hat": 2249,
+        "ohat": 448,
+        "shaker": 2178,
+        "conga": 888,
+        "bell": 192,
+        "bass": 588,
+        "piano": 640,
+        "organ": 96,
+        "strings": 64,
+        "voice": 216,
+        "choir": 80,
+        "rise": 16,
+        "riser": 2,
+        "down": 2,
+        "crash": 8
+      },
+      "songEnded": true,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -15.57,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": null,
+          "clap": null,
+          "hat": null,
+          "ohat": null,
+          "shaker": null,
+          "conga": null,
+          "bell": null,
+          "bass": null,
+          "piano": null,
+          "organ": null,
+          "strings": null,
+          "voice": null,
+          "choir": null,
+          "rise": null,
+          "riser": null,
+          "down": null,
+          "crash": null
+        }
+      }
+    }
+  }
+}

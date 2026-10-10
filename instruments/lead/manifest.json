@@ -1,0 +1,62 @@
+{
+  "name": "lead",
+  "group": "leads",
+  "kind": "pitched",
+  "range": { "lowest": "c3", "highest": "c7" },
+  "engine": "va",
+  "description": "Mono synth lead",
+  "model": "FLUX M24",
+  "tags": ["lead", "mono", "synth", "melody"],
+  "voices": 1,
+  "allocation": "mono",
+  "steal": "oldest",
+  "costPerVoice": 2.48,
+  "patterns": [
+    { "name": "Arp up", "text": "c4 . eb4 . g4 . bb4 ." },
+    { "name": "Hook", "text": "g4 ~ eb4 . c4 ~ eb4 . / f4 ~ eb4 . d4 ~ ~ ." },
+    { "name": "Long notes", "text": "c5 ~ ~ ~ ~ ~ ~ ~ / bb4 ~ ~ ~ g4 ~ ~ ~" },
+    { "name": "Stabs", "text": ". c5 . . . c5 . bb4" }
+  ],
+  "preview": "c4 ~ eb4 . g4 ~ bb4 ~ / g4 ~ ~ ~ eb4 ~ ~ .",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "cutoff", "min": 100, "max": 12000, "default": 3500, "unit": "Hz", "curve": "exponential" },
+    { "name": "detune", "min": 0, "max": 1, "default": 0.2, "unit": "", "curve": "linear" },
+    { "name": "wave", "choices": ["saw", "square", "triangle", "sine"], "default": "saw" },
+    { "name": "attack", "min": 0.001, "max": 2, "default": 0.005, "unit": "s", "curve": "exponential" },
+    { "name": "release", "min": 0.01, "max": 4, "default": 0.25, "unit": "s", "curve": "exponential" },
+    { "name": "wave2", "choices": ["saw", "square", "triangle", "sine"], "default": "square" },
+    { "name": "mix", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "sync", "min": 0, "max": 1, "default": 0.45, "unit": "", "curve": "linear" },
+    { "name": "filter", "choices": ["lp12", "lp24", "bp", "hp"], "default": "lp12" },
+    { "name": "filter-attack", "min": 0.001, "max": 4, "default": 0.001, "unit": "s", "curve": "exponential" },
+    { "name": "drive", "min": 0, "max": 1, "default": 0.35, "unit": "", "curve": "linear" },
+    { "name": "spread", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "sub", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "noise", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "resonance", "min": 0, "max": 0.95, "default": 0.2, "unit": "", "curve": "linear" },
+    { "name": "contour", "min": 0, "max": 1, "default": 0.25, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.02, "max": 8, "default": 0.8, "unit": "s", "curve": "exponential" },
+    { "name": "sustain", "min": 0, "max": 1, "default": 0.75, "unit": "", "curve": "linear" },
+    { "name": "width", "min": 0.05, "max": 0.95, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "vibrato", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "level", "min": 0.05, "max": 8, "default": 1.15, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "cutoff", "from": 300, "to": 9000 }
+  ],
+  "toneLevelDb": 8.47,
+  "presets": [
+    { "name": "classic", "description": "Bright saw and synced square", "values": {} },
+    { "name": "soft", "description": "Soft triangle", "values": {"cutoff": 1200, "wave": "triangle", "attack": 0.03, "mix": 0, "drive": 0, "sync": 0, "level": 1.12} },
+    { "name": "sync", "description": "Hard sync, edgy", "values": {"cutoff": 5000, "detune": 0.6, "wave2": "saw", "mix": 1, "sync": 0.8, "drive": 0.3} },
+    { "name": "screamer", "description": "Psytrance: synced saws, hot resonant filter snapping shut", "values": {"wave": "saw", "wave2": "saw", "mix": 0.7, "sync": 0.85, "detune": 0.08, "filter": "lp24", "cutoff": 1400, "resonance": 0.65, "contour": 0.85, "decay": 0.22, "sustain": 0.55, "release": 0.12, "drive": 0.65, "level": 2.6} },
+    { "name": "anthem", "description": "Trance: wide detuned saw and pulse with a late vibrato", "values": {"wave": "saw", "wave2": "square", "mix": 0.4, "sync": 0, "detune": 0.45, "spread": 0.7, "cutoff": 8500, "resonance": 0.2, "contour": 0.3, "attack": 0.004, "decay": 1.5, "sustain": 0.85, "release": 0.7, "vibrato": 0.45, "drive": 0.15, "level": 0.85} },
+    { "name": "noir", "description": "Melodic techno: dark resonant saw that blooms on each note", "values": {"wave": "saw", "wave2": "square", "mix": 0.3, "sync": 0, "detune": 0.15, "filter": "lp24", "cutoff": 900, "resonance": 0.55, "contour": 0.75, "decay": 0.9, "sustain": 0.4, "release": 0.9, "drive": 0.3, "spread": 0.4, "level": 1.7} },
+    { "name": "glass", "description": "Organic melodic: breathy triangle with a soft tail", "values": {"wave": "triangle", "wave2": "sine", "mix": 0.5, "sync": 0, "cutoff": 4000, "resonance": 0.1, "contour": 0.1, "attack": 0.01, "decay": 0.7, "sustain": 0.25, "release": 1.4, "vibrato": 0.25, "spread": 0.5, "noise": 0.04, "drive": 0, "level": 1.7} },
+    { "name": "juno", "description": "Indie dance: chorused narrow pulse, round and warm", "values": {"wave": "square", "width": 0.38, "wave2": "saw", "mix": 0.25, "sync": 0, "detune": 0.3, "spread": 0.8, "cutoff": 2600, "resonance": 0.3, "contour": 0.4, "decay": 0.6, "sustain": 0.6, "release": 0.45, "vibrato": 0.15, "drive": 0.1} },
+    { "name": "rave", "description": "Acid techno: squelchy square, short and driven", "values": {"wave": "square", "wave2": "saw", "mix": 0.5, "sync": 0.3, "filter": "lp24", "cutoff": 1800, "resonance": 0.75, "contour": 0.8, "decay": 0.25, "sustain": 0.4, "release": 0.1, "drive": 0.7, "level": 3.5} }
+  ],
+  "defaultPreset": "classic",
+  "scene": {"family": "ribbon", "variant": {"shape": "single"}, "drive": "cutoff"}
+}

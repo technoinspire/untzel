@@ -1,0 +1,11 @@
+{
+  "category": "improved",
+  "title": {
+    "en": "The music starts sooner, and many tracks stay smooth",
+    "pt-BR": "A música começa mais cedo, e muitas faixas seguem fluidas"
+  },
+  "body": {
+    "en": "On a slow connection the first beat comes about 0.7 s sooner after the tap, and the first screen shows just as fast. With 64 tracks the screen keeps a steady 60 frames per second, on a phone too.",
+    "pt-BR": "Numa conexão lenta, a primeira batida chega cerca de 0,7 s mais cedo depois do toque, e a primeira tela aparece tão rápido quanto antes. Com 64 faixas a tela mantém 60 quadros por segundo, no celular também."
+  }
+}

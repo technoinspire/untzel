@@ -1,0 +1,11 @@
+{
+  "category": "fixed",
+  "title": {
+    "en": "Commands keep their result in view on a phone",
+    "pt-BR": "Os comandos mostram o resultado no celular"
+  },
+  "body": {
+    "en": "With Commands open in the Code sheet, the command you ran, its result and the bar it plays from stay in view, and a preview shows Apply and Cancel inside the sheet.",
+    "pt-BR": "Com Commands aberto na folha Code, o comando que você rodou, o resultado e o compasso em que ele toca ficam à vista, e a prévia mostra Apply e Cancel dentro da folha."
+  }
+}

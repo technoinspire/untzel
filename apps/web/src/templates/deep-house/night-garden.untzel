@@ -1,0 +1,14 @@
+// template: Night Garden
+// order: 1
+title "Night Garden"
+tempo 115
+key d dorian
+loop 8
+
+kick:   kick    warm   x... x... x... x... | gain 0.95
+hat:    hat     dusty  ..x. ..x. ..x. ..x?0.5x | swing 0.12 | pan 0.2 | gain 1.99
+shaker: shaker  bright x x?0.6 x x?0.6 x x?0.6 x x?0.6 x x?0.6 x x?0.6 x x?0.6 x x?0.6   | swing 0.14 | pan -0.25 | gain 0.83
+bass:   fm-bass round  d2 . . . d2 . . . / c2 . . . c2 . . . / bb1 . . . bb1 . . . / c2 . . . a1 . . .   | duck 0.6 | gain 1.25
+organ:  organ   perc   . Dm9 . . . Dm9 . . / . C . . . C . . / . Bbmaj7 . . . Bbmaj7 . . / . C . . . Am7 . .   | voicing open | chorus 0.3 | reverb room | duck 0.4 | gain 0.88
+pad:    strings tremolo Dm9 ~ ~ ~ / C ~ ~ ~ / Bbmaj7 ~ ~ ~ / C ~ Am7 ~        | voicing spread | brightness sine(8) 0.25..0.5 | reverb small | gain 0.18
+bell:   mallet  vibes  . . d4 . . a4 . . / . e4 . . . g4 . . / . . f4 . . d4 . . / . e4 . c4 . . . .   | delay 1/4 | reverb plate | pan 0.3 | gain 0.8

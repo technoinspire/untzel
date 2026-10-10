@@ -1,0 +1,16 @@
+{
+  "category": "improved",
+  "date": "2026-10-05",
+  "refs": [
+    26
+  ],
+  "docs": "/docs/app/share-export",
+  "title": {
+    "en": "HD and 4K right when the export opens",
+    "pt-BR": "HD e 4K assim que o export abre"
+  },
+  "body": {
+    "en": "Both resolutions are offered at once; if the device can't do 4K, it renders in HD instead.",
+    "pt-BR": "As duas resoluções aparecem na hora; se o aparelho não consegue 4K, renderiza em HD."
+  }
+}

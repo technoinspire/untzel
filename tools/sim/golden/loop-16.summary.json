@@ -1,0 +1,31 @@
+{
+  "template": "loop-16",
+  "runs": {
+    "loop": {
+      "bars": 16,
+      "events": 387,
+      "eventsPerTrack": {
+        "kick": 65,
+        "hat": 80,
+        "ride": 129,
+        "sub": 49,
+        "bass": 64
+      },
+      "songEnded": false,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -16.13,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": -17.33,
+          "hat": -41.57,
+          "ride": -37.34,
+          "sub": -24.08,
+          "bass": -23.05
+        }
+      }
+    }
+  }
+}

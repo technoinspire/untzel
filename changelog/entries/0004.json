@@ -1,0 +1,16 @@
+{
+  "category": "new",
+  "date": "2026-10-04",
+  "refs": [
+    4
+  ],
+  "docs": "/docs",
+  "title": {
+    "en": "Public documentation",
+    "pt-BR": "Documentação pública"
+  },
+  "body": {
+    "en": "The guide, the language reference and the instrument catalog, in English and Portuguese.",
+    "pt-BR": "O guia, a referência da linguagem e o catálogo de instrumentos, em português e inglês."
+  }
+}

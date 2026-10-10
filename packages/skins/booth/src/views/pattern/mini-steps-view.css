@@ -1,0 +1,33 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The mini steps view view, views/mini-steps-view.ts. */
+/* 16-slot miniature */
+.ui-mini {
+  display: grid;
+  grid-template-columns: repeat(16, 6px);
+  column-gap: 2px;
+  height: 8px;
+}
+
+.ui-mini__cell {
+  align-self: end;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--raised);
+}
+
+.ui-mini__cell[data-cell="hit"] {
+  height: 8px;
+  border-radius: 1.5px;
+  background: var(--muted);
+  opacity: 0.55;
+}
+
+.ui-mini__cell[data-cell="hold"] {
+  align-self: center;
+  height: 3px;
+  margin-left: -2px;
+  border-radius: 0;
+  background: var(--muted);
+  opacity: 0.35;
+}

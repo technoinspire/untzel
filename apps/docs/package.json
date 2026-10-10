@@ -1,0 +1,17 @@
+{
+  "name": "@untzel/docs",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@untzel/core": "workspace:*",
+    "@untzel/i18n": "workspace:*",
+    "@untzel/language": "workspace:*",
+    "@untzel/skin-contract": "workspace:*"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "vite": "8.3.2"
+  }
+}

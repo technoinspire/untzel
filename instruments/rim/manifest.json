@@ -1,0 +1,34 @@
+{
+  "name": "rim",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "modal",
+  "description": "Rim shot and wood clicks",
+  "model": "VOLTA K9",
+  "tags": ["rim", "click", "wood"],
+  "voices": 4,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 3.1,
+  "patterns": [
+    { "name": "Syncopated", "text": "..x. ...x ..x. ...." },
+    { "name": "Late", "text": "...x ..x. ...x ..x." },
+    { "name": "Sparse", "text": "x... ..x. .x.. ...." },
+    { "name": "Skip", "text": "..x. .x.. ..x. .x.x" }
+  ],
+  "preview": "..x. ...x ..x. .x..",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "tune", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.01, "max": 0.5, "default": 0.05, "unit": "s", "curve": "exponential" }
+  ],
+  "tone": [
+    { "parameter": "tune", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "click", "description": "Short bright rim", "values": {} },
+    { "name": "wood", "description": "Hollow wood block", "values": {"tune": 0.3, "decay": 0.12} }
+  ],
+  "defaultPreset": "click",
+  "scene": {"family": "mark", "variant": {"shape": "dash-pair"}, "drive": "attack"}
+}

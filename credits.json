@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "about": "Third-party material bundled with Untzel: the source of the credits page of the docs site (apps/docs/content/credits.md, the credits directive of tools/docs). Human-readable: THIRD_PARTY.md.",
+  "credits": [
+    {
+      "id": "vocalset",
+      "title": "VocalSet: A Singing Voice Dataset",
+      "recordVersion": "1.2",
+      "archive": "VocalSet11.zip",
+      "authors": ["Julia Wilkins", "Prem Seetharaman", "Alison Wahl", "Bryan Pardo"],
+      "performers": "The 20 professional singers of VocalSet (anonymous: f1–f9, m1–m11)",
+      "license": { "id": "CC-BY-4.0", "name": "Creative Commons Attribution 4.0 International", "url": "https://creativecommons.org/licenses/by/4.0/" },
+      "url": "https://zenodo.org/records/1442513",
+      "doi": "10.5281/zenodo.1442513",
+      "citation": "Julia Wilkins, Prem Seetharaman, Alison Wahl and Bryan Pardo. VocalSet: A Singing Voice Dataset. In Proceedings of the 19th International Society for Music Information Retrieval Conference (ISMIR), Paris, 2018.",
+      "usedBy": ["vox", "choir"],
+      "changes": "Held notes cut from the straight long tones, moved to each zone root by pitch-synchronous overlap-add (and resampling past 7 semitones), summed into ensembles for the choir, band-limited to 16 kHz, levelled, looped with a baked crossfade and encoded as Opus.",
+      "files": ["instruments/vox/samples/v1/pack.json", "instruments/choir/samples/v1/pack.json"]
+    },
+    {
+      "id": "salamander",
+      "title": "Salamander Grand Piano V3",
+      "authors": ["Alexander Holm"],
+      "performers": null,
+      "license": { "id": "CC-BY-3.0", "name": "Creative Commons Attribution 3.0 Unported", "url": "https://creativecommons.org/licenses/by/3.0/" },
+      "url": "https://github.com/sfzinstruments/SalamanderGrandPiano",
+      "doi": null,
+      "citation": "\"Salamander Grand Piano V3\" by Alexander Holm, licensed under CC BY 3.0, modified as described under Changes made.",
+      "usedBy": ["piano"],
+      "changes": "Cut at the onset, mixed to mono, resampled to 48 kHz, levelled, peak-limited, looped (sustained notes) or faded into silence (one-shots) and encoded as Opus.",
+      "files": ["instruments/piano/samples/v1/pack.json"]
+    },
+    {
+      "id": "vsco-2-ce",
+      "title": "VSCO 2 Community Edition",
+      "authors": ["Versilian Studios LLC"],
+      "performers": null,
+      "license": { "id": "CC0-1.0", "name": "Creative Commons Zero 1.0 Universal", "url": "https://creativecommons.org/publicdomain/zero/1.0/" },
+      "url": "https://github.com/sgossner/VSCO-2-CE",
+      "doi": null,
+      "citation": null,
+      "usedBy": ["strings", "harp"],
+      "changes": "Cut at the onset, mixed to mono, resampled to 48 kHz, levelled, peak-limited, looped (sustained notes) or faded into silence (one-shots) and encoded as Opus.",
+      "files": ["instruments/strings/samples/v1/pack.json", "instruments/harp/samples/v1/pack.json"]
+    },
+    {
+      "id": "vcsl",
+      "title": "Versilian Community Sample Library",
+      "authors": ["Versilian Studios LLC"],
+      "performers": null,
+      "license": { "id": "CC0-1.0", "name": "Creative Commons Zero 1.0 Universal", "url": "https://creativecommons.org/publicdomain/zero/1.0/" },
+      "url": "https://github.com/sgossner/VCSL",
+      "doi": null,
+      "citation": null,
+      "usedBy": ["mallet", "bell", "kalimba", "conga", "bongo", "cowbell", "woodblock", "shaker", "clap", "hat"],
+      "changes": "Cut at the onset, mixed to mono, resampled to 48 kHz, levelled, peak-limited, looped (sustained notes) or faded into silence (one-shots) and encoded as Opus.",
+      "files": ["instruments/mallet/samples/v1/pack.json", "instruments/bell/samples/v1/pack.json", "instruments/kalimba/samples/v1/pack.json", "instruments/conga/samples/v1/pack.json", "instruments/bongo/samples/v1/pack.json", "instruments/cowbell/samples/v1/pack.json", "instruments/woodblock/samples/v1/pack.json", "instruments/shaker/samples/v1/pack.json", "instruments/clap/samples/v1/pack.json", "instruments/hat/samples/v1/pack.json"]
+    },
+    {
+      "id": "hanken-grotesk",
+      "title": "Hanken Grotesk",
+      "authors": ["The Hanken Grotesk Project Authors"],
+      "performers": null,
+      "license": { "id": "OFL-1.1", "name": "SIL Open Font License 1.1", "url": "https://openfontlicense.org/open-font-license-official-text/" },
+      "url": "https://github.com/marcologous/hanken-grotesk",
+      "doi": null,
+      "citation": null,
+      "usedBy": ["interface"],
+      "changes": "Subset to Latin and served as WOFF2.",
+      "files": ["apps/web/public/fonts/hanken-grotesk-400-600-latin.woff2", "apps/web/public/fonts/OFL-Hanken-Grotesk.txt"]
+    },
+    {
+      "id": "jost",
+      "title": "Jost",
+      "authors": ["The Jost Project Authors"],
+      "performers": null,
+      "license": { "id": "OFL-1.1", "name": "SIL Open Font License 1.1", "url": "https://openfontlicense.org/open-font-license-official-text/" },
+      "url": "https://github.com/indestructible-type/Jost",
+      "doi": null,
+      "citation": null,
+      "usedBy": ["interface"],
+      "changes": "Subset to Latin and served as WOFF2.",
+      "files": ["apps/web/public/fonts/jost-normal-400-latin.woff2", "apps/web/public/fonts/OFL-Jost.txt"]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "reese",
+  "group": "bass",
+  "kind": "pitched",
+  "range": { "lowest": "c1", "highest": "c4" },
+  "engine": "va",
+  "description": "Detuned rolling bass",
+  "model": "SHADE R2",
+  "tags": ["reese", "bass", "detune", "dnb"],
+  "voices": 1,
+  "allocation": "mono",
+  "steal": "oldest",
+  "costPerVoice": 2.71,
+  "patterns": [
+    { "name": "Drift", "text": "c2 ~ ~ ~ eb2 ~ g1 ~" },
+    { "name": "Long notes", "text": "c2 ~ ~ ~ ~ ~ ~ ~ / ab1 ~ ~ ~ ~ ~ ~ ~" },
+    { "name": "Offbeat", "text": ". c2 . c2 . c2 . c2" },
+    { "name": "Break", "text": "c2 ~ . c2 . . eb2 ~" }
+  ],
+  "preview": "c2 ~ ~ ~ eb2 ~ g1 ~",
+  "defaultDuck": 0.6,
+  "parameters": [
+    { "name": "cutoff", "min": 40, "max": 8000, "default": 900, "unit": "Hz", "curve": "exponential" },
+    { "name": "resonance", "min": 0, "max": 1, "default": 0.2, "unit": "", "curve": "linear" },
+    { "name": "detune", "min": 0, "max": 1, "default": 0.75, "unit": "", "curve": "linear" },
+    { "name": "release", "min": 0.01, "max": 2, "default": 0.15, "unit": "s", "curve": "exponential" },
+    { "name": "wave2", "choices": ["saw", "square", "triangle", "sine"], "default": "saw" },
+    { "name": "mix", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "sync", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "filter", "choices": ["lp12", "lp24", "bp", "hp"], "default": "lp12" },
+    { "name": "filter-attack", "min": 0.001, "max": 4, "default": 0.001, "unit": "s", "curve": "exponential" },
+    { "name": "filter-decay", "min": 0.01, "max": 8, "default": 0.5, "unit": "s", "curve": "exponential" },
+    { "name": "drive", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "spread", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "sub", "min": 0, "max": 1, "default": 0.35, "unit": "", "curve": "linear" },
+    { "name": "noise", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "cutoff", "from": 150, "to": 4000 },
+    { "parameter": "detune", "from": 0.2, "to": 0.9 }
+  ],
+  "presets": [
+    { "name": "wide", "description": "Four saws drifting apart", "values": {} },
+    { "name": "dark", "description": "Low-passed, heavy ladder", "values": {"cutoff": 350, "filter": "lp24"} },
+    { "name": "growl", "description": "Resonant, driven and moving", "values": {"resonance": 0.6, "cutoff": 2200, "detune": 0.7, "filter": "lp24", "drive": 0.2} }
+  ],
+  "defaultPreset": "wide",
+  "scene": {"family": "floor", "variant": {"shape": "rolling"}, "drive": "cutoff"}
+}

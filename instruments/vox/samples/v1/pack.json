@@ -1,0 +1,653 @@
+{
+ "format": 1,
+ "instrument": "vox",
+ "version": 1,
+ "sampleRate": 48000,
+ "frames": 1746236,
+ "audio": {
+  "file": "pack.opus",
+  "codec": "opus",
+  "bitrate": "64k",
+  "bytes": 360517,
+  "sha256": "e589d981ed5c356c419b4e527a2671ce9ebd646b6e2649e76dfcbd81de77b8f0"
+ },
+ "license": {
+  "id": "CC-BY-4.0",
+  "name": "Creative Commons Attribution 4.0 International",
+  "url": "https://creativecommons.org/licenses/by/4.0/",
+  "changes": "Held notes cut from the straight long tones, moved to each zone root by pitch-synchronous overlap-add (and resampling past 7 semitones), summed into ensembles for the choir, band-limited to 16 kHz, levelled, looped with a baked crossfade and encoded as Opus."
+ },
+ "source": {
+  "dataset": "VocalSet",
+  "recordVersion": "1.2",
+  "archive": "VocalSet11.zip",
+  "record": "https://zenodo.org/records/1442513",
+  "doi": "10.5281/zenodo.1442513",
+  "citation": "Julia Wilkins, Prem Seetharaman, Alison Wahl and Bryan Pardo. VocalSet: A Singing Voice Dataset. In Proceedings of the 19th International Society for Music Information Retrieval Conference (ISMIR), Paris, 2018. Dataset: https://doi.org/10.5281/zenodo.1442513 (Zenodo record 1442513, version 1.2, archive VocalSet11.zip).",
+  "singers": "20 professional singers, anonymous in the dataset (ids f1–f9, m1–m11)",
+  "files": [
+   {
+    "file": "FULL/female8/long_tones/straight/f8_long_straight_a.wav",
+    "singer": "f8",
+    "sha256": "4878a0446f28957dc908a096af6ffe44d6d7a5ab6680282992396f1afe9093d8"
+   },
+   {
+    "file": "FULL/female8/long_tones/straight/f8_long_straight_u.wav",
+    "singer": "f8",
+    "sha256": "5d33137547b96a05e1a94755627782a087a1d48666f85db498c0040569b1ed58"
+   },
+   {
+    "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+    "singer": "m6",
+    "sha256": "0b131c19f7fba2dd377ad68b245d453bdb2eba51c912a0dc20880860c46c42c6"
+   },
+   {
+    "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+    "singer": "m6",
+    "sha256": "98e026f84c2e863da1e83e70a7668d29df9412aa705afc42eadc434516a36c49"
+   }
+  ]
+ },
+ "zones": [
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 36.0,
+   "lowest": 0.0,
+   "highest": 37.5,
+   "pan": 0.0,
+   "start": 1024,
+   "loopStart": 15435,
+   "loopEnd": 57363,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 48.38,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 39.0,
+   "lowest": 37.5,
+   "highest": 40.5,
+   "pan": 0.0,
+   "start": 58387,
+   "loopStart": 72820,
+   "loopEnd": 114872,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 48.38,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 42.0,
+   "lowest": 40.5,
+   "highest": 43.5,
+   "pan": 0.0,
+   "start": 115896,
+   "loopStart": 130285,
+   "loopEnd": 172921,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 48.38,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 45.0,
+   "lowest": 43.5,
+   "highest": 46.5,
+   "pan": 0.0,
+   "start": 173945,
+   "loopStart": 188337,
+   "loopEnd": 230756,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 48.38,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 48.0,
+   "lowest": 46.5,
+   "highest": 49.5,
+   "pan": 0.0,
+   "start": 231780,
+   "loopStart": 246206,
+   "loopEnd": 288856,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 48.38,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 51.0,
+   "lowest": 49.5,
+   "highest": 52.5,
+   "pan": 0.0,
+   "start": 289880,
+   "loopStart": 304285,
+   "loopEnd": 346952,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 48.38,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 54.0,
+   "lowest": 52.5,
+   "highest": 55.5,
+   "pan": 0.0,
+   "start": 347976,
+   "loopStart": 362366,
+   "loopEnd": 405258,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 48.38,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 57.0,
+   "lowest": 55.5,
+   "highest": 58.5,
+   "pan": 0.0,
+   "start": 406282,
+   "loopStart": 420655,
+   "loopEnd": 463594,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 60.16,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 60.0,
+   "lowest": 58.5,
+   "highest": 61.5,
+   "pan": 0.0,
+   "start": 464618,
+   "loopStart": 479045,
+   "loopEnd": 521934,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 60.16,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 63.0,
+   "lowest": 61.5,
+   "highest": 64.5,
+   "pan": 0.0,
+   "start": 522958,
+   "loopStart": 537368,
+   "loopEnd": 580343,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 65.27,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 66.0,
+   "lowest": 64.5,
+   "highest": 67.5,
+   "pan": 0.0,
+   "start": 581367,
+   "loopStart": 595762,
+   "loopEnd": 638786,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 65.27,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 69.0,
+   "lowest": 67.5,
+   "highest": 70.5,
+   "pan": 0.0,
+   "start": 639810,
+   "loopStart": 654256,
+   "loopEnd": 697247,
+   "singers": [
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_a.wav",
+     "heldMidi": 72.24,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 72.0,
+   "lowest": 70.5,
+   "highest": 73.5,
+   "pan": 0.0,
+   "start": 698271,
+   "loopStart": 712647,
+   "loopEnd": 755752,
+   "singers": [
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_a.wav",
+     "heldMidi": 72.24,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 75.0,
+   "lowest": 73.5,
+   "highest": 76.5,
+   "pan": 0.0,
+   "start": 756776,
+   "loopStart": 771140,
+   "loopEnd": 814237,
+   "singers": [
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_a.wav",
+     "heldMidi": 77.41,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 78.0,
+   "lowest": 76.5,
+   "highest": 127.0,
+   "pan": 0.0,
+   "start": 815261,
+   "loopStart": 829660,
+   "loopEnd": 872784,
+   "singers": [
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_a.wav",
+     "heldMidi": 77.41,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 36.0,
+   "lowest": 0.0,
+   "highest": 37.5,
+   "pan": 0.0,
+   "start": 873808,
+   "loopStart": 888166,
+   "loopEnd": 930078,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 48.44,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 39.0,
+   "lowest": 37.5,
+   "highest": 40.5,
+   "pan": 0.0,
+   "start": 931102,
+   "loopStart": 945488,
+   "loopEnd": 987506,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 48.44,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 42.0,
+   "lowest": 40.5,
+   "highest": 43.5,
+   "pan": 0.0,
+   "start": 988530,
+   "loopStart": 1002916,
+   "loopEnd": 1045505,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 48.44,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 45.0,
+   "lowest": 43.5,
+   "highest": 46.5,
+   "pan": 0.0,
+   "start": 1046529,
+   "loopStart": 1060941,
+   "loopEnd": 1103315,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 48.44,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 48.0,
+   "lowest": 46.5,
+   "highest": 49.5,
+   "pan": 0.0,
+   "start": 1104339,
+   "loopStart": 1118766,
+   "loopEnd": 1161377,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 48.44,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 51.0,
+   "lowest": 49.5,
+   "highest": 52.5,
+   "pan": 0.0,
+   "start": 1162401,
+   "loopStart": 1176835,
+   "loopEnd": 1219445,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 48.44,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 54.0,
+   "lowest": 52.5,
+   "highest": 55.5,
+   "pan": 0.0,
+   "start": 1220469,
+   "loopStart": 1234848,
+   "loopEnd": 1277694,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 48.44,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 57.0,
+   "lowest": 55.5,
+   "highest": 58.5,
+   "pan": 0.0,
+   "start": 1278718,
+   "loopStart": 1293186,
+   "loopEnd": 1336106,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 60.52,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 60.0,
+   "lowest": 58.5,
+   "highest": 61.5,
+   "pan": 0.0,
+   "start": 1337130,
+   "loopStart": 1351504,
+   "loopEnd": 1394410,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 60.52,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 63.0,
+   "lowest": 61.5,
+   "highest": 64.5,
+   "pan": 0.0,
+   "start": 1395434,
+   "loopStart": 1409864,
+   "loopEnd": 1452821,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 65.3,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 66.0,
+   "lowest": 64.5,
+   "highest": 67.5,
+   "pan": 0.0,
+   "start": 1453845,
+   "loopStart": 1468235,
+   "loopEnd": 1511243,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 65.3,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 69.0,
+   "lowest": 67.5,
+   "highest": 70.5,
+   "pan": 0.0,
+   "start": 1512267,
+   "loopStart": 1526715,
+   "loopEnd": 1569694,
+   "singers": [
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_u.wav",
+     "heldMidi": 72.27,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 72.0,
+   "lowest": 70.5,
+   "highest": 73.5,
+   "pan": 0.0,
+   "start": 1570718,
+   "loopStart": 1585110,
+   "loopEnd": 1628172,
+   "singers": [
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_u.wav",
+     "heldMidi": 72.27,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 75.0,
+   "lowest": 73.5,
+   "highest": 76.5,
+   "pan": 0.0,
+   "start": 1629196,
+   "loopStart": 1643605,
+   "loopEnd": 1686667,
+   "singers": [
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_u.wav",
+     "heldMidi": 77.44,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 78.0,
+   "lowest": 76.5,
+   "highest": 127.0,
+   "pan": 0.0,
+   "start": 1687691,
+   "loopStart": 1702091,
+   "loopEnd": 1745212,
+   "singers": [
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_u.wav",
+     "heldMidi": 77.44,
+     "delayMs": 0.0,
+     "detuneCents": 0.0
+    }
+   ]
+  }
+ ]
+}

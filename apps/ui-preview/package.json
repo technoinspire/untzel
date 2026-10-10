@@ -1,0 +1,31 @@
+{
+  "name": "@untzel/ui-preview",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@untzel/core": "workspace:*",
+    "@untzel/editor": "workspace:*",
+    "@untzel/i18n": "workspace:*",
+    "@untzel/language": "workspace:*",
+    "@untzel/light": "workspace:*",
+    "@untzel/presentation": "workspace:*",
+    "@untzel/scene": "workspace:*",
+    "@untzel/session": "workspace:*",
+    "@untzel/skin-booth": "workspace:*",
+    "@untzel/skin-contract": "workspace:*"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "vite": "8.3.2"
+  },
+  "exports": {
+    "./mount": "./src/mount.ts",
+    "./page-flags": "./src/page-flags.ts"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@untzel/presentation",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./view-model": "./src/view-model/index.ts",
+    "./waiting": "./src/waiting-view.ts",
+    "./testing": "./src/testing/session-fixture.ts"
+  },
+  "dependencies": {
+    "@untzel/core": "workspace:*",
+    "@untzel/session": "workspace:*"
+  },
+  "devDependencies": {
+    "@untzel/instrument-index": "workspace:*",
+    "@untzel/language": "workspace:*"
+  }
+}

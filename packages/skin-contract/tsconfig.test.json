@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/skin-contract-test",
+    "tsBuildInfoFile": "../../.cache/tsc/skin-contract-test.tsbuildinfo"
+  },
+  "include": ["src/**/*.test.ts"],
+  "references": [{ "path": "." }]
+}

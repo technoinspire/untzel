@@ -1,0 +1,11 @@
+{
+  "category": "fixed",
+  "title": {
+    "en": "Space plays and pauses after a click",
+    "pt-BR": "O Espaço toca e pausa depois de um clique"
+  },
+  "body": {
+    "en": "After you click a button or a slider, Space plays and pauses again. A button reached with Tab still answers Space.",
+    "pt-BR": "Depois de clicar num botão ou num controle deslizante, o Espaço volta a tocar e pausar. Um botão alcançado com Tab continua respondendo ao Espaço."
+  }
+}

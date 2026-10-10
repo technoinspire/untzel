@@ -1,0 +1,37 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "ES2023",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [],
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/editor",
+    "tsBuildInfoFile": "../../.cache/tsc/editor.tsbuildinfo"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "src/**/*.test.ts"
+  ],
+  "references": [
+    {
+      "path": "../i18n"
+    },
+    {
+      "path": "../language"
+    },
+    {
+      "path": "../transport"
+    },
+    {
+      "path": "../session"
+    },
+    {
+      "path": "../commands"
+    }
+  ]
+}

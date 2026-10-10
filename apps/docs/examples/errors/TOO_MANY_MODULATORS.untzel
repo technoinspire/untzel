@@ -1,0 +1,1 @@
+lead: lead c4 . eb4 . | cutoff sine(1/8) 300..900 | detune sine(1/4) 0..1 | attack tri(1/2) 0.01..0.1 | release saw(1/2) 0.1..1 | gain sine(1/8) 0.2..0.8 | pan sine(1/4) -0.5..0.5 | lowpass sine(1/8) 500..5000 | highpass sine(1/8) 50..500 | distort sine(1/8) 0..0.5

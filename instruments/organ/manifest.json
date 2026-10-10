@@ -1,0 +1,42 @@
+{
+  "name": "organ",
+  "group": "keys",
+  "kind": "chord",
+  "range": { "lowest": "c1", "highest": "c7" },
+  "engine": "additive",
+  "description": "Drawbar organ",
+  "model": "AXIS O9",
+  "tags": ["organ", "drawbar", "keys", "church"],
+  "voices": 12,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.96,
+  "patterns": [
+    { "name": "Held", "text": "Cm ~ ~ ~" },
+    { "name": "Stabs", "text": ". Cm . Cm . Cm . Cm" },
+    { "name": "Progression", "text": "Cm ~ ~ ~ / Ab ~ Bb ~" },
+    { "name": "House chords", "text": "Cm7 . . Cm7 . . Cm7 ." }
+  ],
+  "preview": "Cm ~ ~ ~ / Ab ~ Bb ~",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "low", "min": 0, "max": 1, "default": 0.8, "unit": "", "curve": "linear" },
+    { "name": "mid", "min": 0, "max": 1, "default": 0.6, "unit": "", "curve": "linear" },
+    { "name": "high", "min": 0, "max": 1, "default": 0.3, "unit": "", "curve": "linear" },
+    { "name": "percussion", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "attack", "min": 0.001, "max": 2, "default": 0.005, "unit": "s", "curve": "exponential" },
+    { "name": "release", "min": 0.01, "max": 4, "default": 0.08, "unit": "s", "curve": "exponential" }
+  ],
+  "tone": [
+    { "parameter": "high", "from": 0, "to": 1 },
+    { "parameter": "percussion", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "full", "description": "Full drawbars", "values": {} },
+    { "name": "soft", "description": "Soft flutes", "values": {"high": 0.05, "mid": 0.4} },
+    { "name": "perc", "description": "Percussive click", "values": {"percussion": 0.8, "high": 0.1} },
+    { "name": "church", "description": "Big and slow", "values": {"low": 1, "mid": 0.9, "high": 0.8, "attack": 0.08, "release": 0.8} }
+  ],
+  "defaultPreset": "full",
+  "scene": {"family": "bars", "variant": {"shape": "drawbar"}, "drive": "envelope"}
+}

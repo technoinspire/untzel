@@ -1,0 +1,17 @@
+{
+  "category": "improved",
+  "date": "2026-10-03",
+  "refs": [
+    2,
+    3
+  ],
+  "docs": "/docs/app/loop-length",
+  "title": {
+    "en": "Longer loops and a tidier screen",
+    "pt-BR": "Loops mais longos e uma tela mais limpa"
+  },
+  "body": {
+    "en": "Loops go up to 16 bars, each track can have its own length, and the editing area folds away with Code beside Drop.",
+    "pt-BR": "O loop vai até 16 compassos, cada faixa pode ter o próprio comprimento e a área de edição recolhe, com o Code ao lado do Drop."
+  }
+}

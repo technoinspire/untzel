@@ -1,0 +1,55 @@
+{
+  "name": "kick",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "legacy",
+  "description": "Kick drum, punchy to booming",
+  "model": "VOLTA K9",
+  "tags": ["kick", "bass", "drum", "four"],
+  "voices": 2,
+  "allocation": "poly",
+  "steal": "oldest",
+  "costPerVoice": 1.0,
+  "patterns": [
+    { "name": "Four on the floor", "text": "x... x... x... x..." },
+    { "name": "Broken", "text": "x... ..x. ..x. .x.." },
+    { "name": "Half time", "text": "x... .... ..x. ...." },
+    { "name": "Gallop", "text": "x..x x... x..x x..." },
+    { "name": "Push", "text": "x... x... x... x.x." }
+  ],
+  "preview": "x... x... x... x...",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "decay", "min": 0.05, "max": 1.5, "default": 0.45, "unit": "s", "curve": "exponential" },
+    { "name": "drive", "min": 0, "max": 1, "default": 0.2, "unit": "", "curve": "linear" },
+    { "name": "pitch", "min": 30, "max": 80, "default": 48, "unit": "Hz", "curve": "exponential" },
+    { "name": "click", "min": 0, "max": 1, "default": 0.3, "unit": "", "curve": "linear" },
+    { "name": "sweep", "min": 0, "max": 6, "default": 3.5, "unit": "", "curve": "linear" },
+    { "name": "sweep-time", "min": 0.005, "max": 0.2, "default": 0.025, "unit": "s", "curve": "exponential" },
+    { "name": "overtone", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "click-tone", "min": 100, "max": 8000, "default": 1500, "unit": "Hz", "curve": "exponential" },
+    { "name": "grit", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "level", "min": 0.05, "max": 2, "default": 1, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "decay", "from": 0.15, "to": 0.9 },
+    { "parameter": "drive", "from": 0, "to": 0.7 }
+  ],
+  "toneLevelDb": 14.33,
+  "presets": [
+    { "name": "punch", "description": "Punchy club kick", "values": {} },
+    { "name": "tight", "description": "Short and tight: a fast small sweep, a loud click and grit", "values": {"decay": 0.12, "click": 1, "sweep": 2, "sweep-time": 0.015, "pitch": 60, "drive": 0, "click-tone": 3000, "grit": 0.2, "level": 0.72} },
+    { "name": "boom", "description": "Long and booming, a low body with a rumble", "values": {"decay": 0.9, "pitch": 42, "drive": 0, "sweep": 1.5, "sweep-time": 0.03, "click": 0.25, "grit": 0.05, "click-tone": 1200, "level": 0.75} },
+    { "name": "hard", "description": "Hard and driven, clicky and gritty", "values": {"drive": 1, "click": 0.8, "decay": 0.35, "sweep": 5, "sweep-time": 0.03, "pitch": 58, "click-tone": 800, "grit": 0.15, "level": 0.441} },
+    { "name": "deep", "description": "Deep and round, a soft click", "values": {"decay": 0.7, "pitch": 46, "click": 0.2, "drive": 0, "sweep": 4, "sweep-time": 0.025, "overtone": 0.2, "level": 1.01, "click-tone": 1500} },
+    { "name": "warm", "description": "Short and warm: a round body, a soft sweep", "values": {"decay": 0.3, "pitch": 54, "sweep": 2.5, "sweep-time": 0.025, "overtone": 0.2, "click-tone": 400, "drive": 0.3, "level": 0.95} },
+    { "name": "sharp", "description": "Short and sharp: a tuned body and a loud tick", "values": {"decay": 0.2, "pitch": 50, "click": 0.7, "drive": 0, "sweep": 4, "sweep-time": 0.02, "overtone": 0.3, "level": 0.83} },
+    { "name": "bright", "description": "Driven and hollow, with an airy click on top", "values": {"drive": 1, "click": 0.8, "decay": 0.35, "sweep": 5, "sweep-time": 0.02, "pitch": 58, "click-tone": 6000, "grit": 0.15, "overtone": 0.3, "level": 0.522} },
+    { "name": "rumble", "description": "Deep and long, with a crisp skin on the body", "values": {"decay": 0.7, "pitch": 45, "click": 0.15, "drive": 0, "sweep": 4, "sweep-time": 0.025, "overtone": 0, "click-tone": 3000, "grit": 0.15, "level": 0.92} },
+    { "name": "dark", "description": "Deep and saturated, with a long, wide sweep", "values": {"decay": 0.7, "pitch": 46, "click": 0.3, "drive": 1, "sweep": 5, "sweep-time": 0.025, "overtone": 0.25, "level": 0.371} },
+    { "name": "crisp", "description": "Driven and dry, with a soft, airy click", "values": {"drive": 1, "click": 0.3, "decay": 0.35, "sweep": 5, "sweep-time": 0.03, "pitch": 58, "click-tone": 6000, "grit": 0.15, "level": 0.441} },
+    { "name": "round", "description": "Saturated and hollow, with a bright tick", "values": {"decay": 0.3, "pitch": 54, "sweep": 2.5, "sweep-time": 0.025, "overtone": 0.3, "click-tone": 3000, "drive": 1, "level": 0.566} }
+  ],
+  "defaultPreset": "punch",
+  "scene": {"family": "shockwave", "variant": {"shape": "triple"}, "drive": "attack"}
+}

@@ -1,0 +1,93 @@
+{
+  "template": "tech-house/low-ceiling",
+  "runs": {
+    "loop": {
+      "bars": 16,
+      "events": 908,
+      "eventsPerTrack": {
+        "kick": 65,
+        "clap": 32,
+        "hat": 248,
+        "ohat": 64,
+        "shaker": 241,
+        "tom": 54,
+        "slap": 40,
+        "conga": 68,
+        "bass": 96,
+        "vox": 0,
+        "stab": 0,
+        "acid": 0,
+        "sweep": 0,
+        "down": 0
+      },
+      "songEnded": false,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -16.97,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": -19.79,
+          "clap": -30.95,
+          "hat": -37.72,
+          "ohat": -32.07,
+          "shaker": -33.1,
+          "tom": -29.16,
+          "slap": -41.79,
+          "conga": -28.75,
+          "bass": -21.64,
+          "vox": -240,
+          "stab": -240,
+          "acid": -240,
+          "sweep": -240,
+          "down": -240
+        }
+      }
+    },
+    "song": {
+      "bars": 177,
+      "events": 9337,
+      "eventsPerTrack": {
+        "kick": 576,
+        "clap": 192,
+        "hat": 2362,
+        "ohat": 448,
+        "shaker": 2560,
+        "tom": 520,
+        "slap": 300,
+        "conga": 511,
+        "bass": 672,
+        "vox": 572,
+        "stab": 180,
+        "acid": 440,
+        "sweep": 2,
+        "down": 2
+      },
+      "songEnded": true,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -16.74,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": -20.71,
+          "clap": -33.61,
+          "hat": -38.36,
+          "ohat": -34.06,
+          "shaker": -33.21,
+          "tom": -29.7,
+          "slap": -43.41,
+          "conga": -30.43,
+          "bass": -23.27,
+          "vox": -24.32,
+          "stab": -30.34,
+          "acid": -29.01,
+          "sweep": -32.9,
+          "down": -43.39
+        }
+      }
+    }
+  }
+}

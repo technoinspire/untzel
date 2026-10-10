@@ -1,0 +1,24 @@
+{
+  "name": "@untzel/audio",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./main": "./src/main/index.ts",
+    "./unlock": "./src/unlock.ts",
+    "./worker": "./src/worker/index.ts",
+    "./worklet": "./src/worklet/processor.ts",
+    "./protocol": "./src/protocol/index.ts",
+    "./dsp-host": "./src/worklet/dsp-host.ts",
+    "./preload": "./src/preload.ts"
+  },
+  "dependencies": {
+    "@untzel/core": "workspace:*",
+    "@untzel/session": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/audioworklet": "0.0.100",
+    "@untzel/transport": "workspace:*"
+  }
+}

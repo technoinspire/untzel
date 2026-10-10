@@ -1,0 +1,16 @@
+// template: Blue Lounge
+// order: 1
+title "Blue Lounge"
+tempo 96
+key g minor
+loop 4
+
+kick:  kick    deep   x... .... x..x .... | gain 0.75
+sub:   reese   dark   g1 ~ ~ . . . g1 . / eb2 ~ ~ . . . eb2 . / c2 ~ ~ . . . c2 . / d2 ~ ~ . . . d2 .   | cutoff sine(4) 200..600 | duck 0.5 | gain 1.1
+keys:  epiano  bark   . Gm9 . . . . Gm9 . / . Ebmaj7 . . . . . . / . Cm9 . . . . Cm9 . / . D7sus4 . . D7 . . .   | voicing open | tremolo 0.6 | reverb hall | gain 1
+rim:   rim     wood   .... ..x. .... .x?0.5.                                   | delay 1/8 | reverb small | pan -0.3 | gain 2
+hat:   hat     closed ..x. ..x. ..x. ..x?0.5x                                  | swing 0.1 | gain 0.6 | pan 0.25
+shaker: shaker bright x x?0.5 x x?0.6 x x?0.5 x x?0.6 x x?0.5 x x?0.6 x x?0.5 x x?0.6   | swing 0.1 | pan -0.3 | gain 0.8
+brush: snare   brush  .... x... .... x...                                      | reverb hall | gain 1.05
+harp:  harp    glass  . . g4 . bb4 . d5 . / . . eb4 . g4 . bb4 . / . . c4 . eb4 . g4 . / . . d4 . f#4 . a4 .   | delay 3/16 | reverb hall | pan 0.3 | gain 0.7
+bell:  bell      tubular  . . . . . . . . / . . . . . . d5 . / . . . . . . . . / . . . . . . a4 .   | delay 1/4 | reverb hall | pan -0.25 | gain 0.53

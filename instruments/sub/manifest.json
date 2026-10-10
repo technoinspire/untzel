@@ -1,0 +1,38 @@
+{
+  "name": "sub",
+  "group": "bass",
+  "kind": "pitched",
+  "range": { "lowest": "c0", "highest": "c3" },
+  "engine": "va",
+  "description": "Pure low sub bass",
+  "model": "FLUX S1",
+  "tags": ["sub", "bass", "low", "sine"],
+  "voices": 1,
+  "allocation": "mono",
+  "steal": "oldest",
+  "costPerVoice": 1.52,
+  "patterns": [
+    { "name": "Dotted", "text": "c1 . . c1 . . c1 ." },
+    { "name": "Long notes", "text": "c1 ~ ~ ~ ~ ~ ~ ~ / ab0 ~ ~ ~ bb0 ~ ~ ~" },
+    { "name": "Offbeat", "text": ". c1 . c1 . c1 . c1" },
+    { "name": "Pulse", "text": "c1 . c1 . c1 . c1 ." }
+  ],
+  "preview": "c1 ~ . c1 . . eb1 ~ / g0 ~ . g0 . . bb0 .",
+  "defaultDuck": 0.7,
+  "parameters": [
+    { "name": "wave", "choices": ["triangle", "sine"], "default": "sine" },
+    { "name": "attack", "min": 0.001, "max": 1, "default": 0.004, "unit": "s", "curve": "exponential" },
+    { "name": "release", "min": 0.01, "max": 2, "default": 0.12, "unit": "s", "curve": "exponential" },
+    { "name": "cutoff", "min": 40, "max": 2000, "default": 400, "unit": "Hz", "curve": "exponential" },
+    { "name": "drive", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "cutoff", "from": 100, "to": 1500 }
+  ],
+  "presets": [
+    { "name": "pure", "description": "Clean sine", "values": {} },
+    { "name": "warm", "description": "Triangle with a little edge", "values": {"wave": "triangle", "cutoff": 600} }
+  ],
+  "defaultPreset": "pure",
+  "scene": {"family": "floor", "variant": {"shape": "glow", "density": 1}, "drive": "envelope"}
+}

@@ -1,0 +1,7 @@
+// two bass tracks: two independent instances
+sub:  bass c1 . . . c1 . . .   | cutoff 160
+bass: bass . . c2 . . . eb2 .  | cutoff 900 | pan 0.2
+
+// without a name, a track takes the instrument's: hat, then hat2
+hat ..x. ..x. ..x. ..x.
+hat x.x. x.x. x.x. x.x.        | gain 0.4

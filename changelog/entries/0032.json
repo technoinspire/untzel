@@ -1,0 +1,16 @@
+{
+  "category": "improved",
+  "date": "2026-10-05",
+  "refs": [
+    32
+  ],
+  "docs": "/docs",
+  "title": {
+    "en": "Documentation up to date",
+    "pt-BR": "Documentação em dia"
+  },
+  "body": {
+    "en": "The guide, the reference and the instrument catalog cover everything above.",
+    "pt-BR": "O guia, a referência e o catálogo de instrumentos cobrem tudo o que está acima."
+  }
+}

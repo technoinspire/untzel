@@ -1,0 +1,42 @@
+{
+  "name": "hat",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "legacy",
+  "description": "Hi-hat, closed to open",
+  "model": "VOLTA K9",
+  "tags": ["hat", "hihat", "cymbal", "groove"],
+  "voices": 4,
+  "allocation": "poly",
+  "steal": "oldest",
+  "costPerVoice": 2.1,
+  "patterns": [
+    { "name": "Offbeat", "text": "..x. ..x. ..x. ..x." },
+    { "name": "Sixteenths", "text": "xxxx xxxx xxxx xxxx" },
+    { "name": "Shuffle", "text": "..xx ..x. ..xx ..x." },
+    { "name": "Eighths", "text": "x.x. x.x. x.x. x.x." },
+    { "name": "Accent offbeat", "text": "..X. ..x. ..X. ..x." }
+  ],
+  "preview": ".x.x .x.x .x.x .x.x",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "open", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.01, "max": 0.5, "default": 0.06, "unit": "s", "curve": "exponential" },
+    { "name": "color", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "band", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "samples" }
+  ],
+  "tone": [
+    { "parameter": "open", "from": 0, "to": 1 }
+  ],
+  "toneLevelDb": 10.08,
+  "presets": [
+    { "name": "closed", "description": "Closed hat", "values": {} },
+    { "name": "open", "description": "Open hat", "values": {"open": 0.8} },
+    { "name": "tight", "description": "Very short and thin, a boxed band", "values": {"decay": 0.03, "band": 1, "color": 0.3, "source": "synth"} },
+    { "name": "dusty", "description": "Dark and dusty", "values": {"color": 0.2} },
+    { "name": "metal", "description": "Bright metal", "values": {"color": 0.9, "source": "synth"} }
+  ],
+  "defaultPreset": "closed",
+  "scene": {"family": "sparks", "variant": {"shape": "needle", "tint": "track-white-core"}, "drive": "attack"}
+}

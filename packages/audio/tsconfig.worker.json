@@ -1,0 +1,36 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "ES2023",
+      "WebWorker"
+    ],
+    "types": [],
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/audio-worker",
+    "tsBuildInfoFile": "../../.cache/tsc/audio-worker.tsbuildinfo"
+  },
+  "include": [
+    "src/worker"
+  ],
+  "exclude": [
+    "src/**/*.test.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.protocol.json"
+    },
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../language"
+    },
+    {
+      "path": "../transport"
+    },
+    {
+      "path": "../session"
+    }
+  ]
+}

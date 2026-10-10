@@ -1,0 +1,7 @@
+{
+  "$comment": "A short template: every family is built by hand, so two bars of listening after each layer keep the video at two minutes.",
+  "template": "downtempo/blue-lounge",
+  "pacing": {
+    "listenBars": 2
+  }
+}

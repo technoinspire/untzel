@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "../../.cache/tsc/skins",
+    "tsBuildInfoFile": "../../.cache/tsc/skins.tsbuildinfo"
+  },
+  "files": [],
+  "references": [{ "path": "./booth" }, { "path": "./booth/tsconfig.test.json" }]
+}

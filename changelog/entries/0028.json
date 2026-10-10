@@ -1,0 +1,16 @@
+{
+  "category": "fixed",
+  "date": "2026-10-05",
+  "refs": [
+    28,
+    29
+  ],
+  "title": {
+    "en": "No cut in the sound",
+    "pt-BR": "Nenhum corte no som"
+  },
+  "body": {
+    "en": "Music keeps playing while instruments load or the tab is hidden, and recorded harp, strings and kalimba keep their level when you change the tone.",
+    "pt-BR": "A música continua enquanto os instrumentos carregam ou a aba está escondida, e harpa, cordas e kalimba gravadas mantêm o volume quando você muda o tone."
+  }
+}

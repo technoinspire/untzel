@@ -1,0 +1,13 @@
+tempo 124
+key a minor
+
+kick: kick x... x... x... x...
+hat:  hat  ..x. ..x. ..x. ..x.
+sub:  bass a1 . . a1 . . a1 .     | cutoff 180
+bass: bass . a2 . a2 . c3 . e2    | cutoff saw(4) 300..1800
+
+section intro kick hat
+section build kick hat sub bass   | gain 0.8
+section drop  kick hat sub bass   | tempo 126
+
+song intro 8, build 4, drop 16, intro 4

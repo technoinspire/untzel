@@ -1,0 +1,16 @@
+{
+  "category": "new",
+  "date": "2026-10-04",
+  "refs": [
+    21
+  ],
+  "docs": "/docs/app/play-range",
+  "title": {
+    "en": "Play range and per-part play",
+    "pt-BR": "Trecho de execução e play por parte"
+  },
+  "body": {
+    "en": "Choose the stretch that plays in Loop and Song, play a single part, and export just that range: Story up to 1:00, video and audio up to 10:00.",
+    "pt-BR": "Escolha o trecho que toca no Loop e no Song, toque uma parte só e exporte apenas esse trecho: Story até 1:00, vídeo e áudio até 10:00."
+  }
+}

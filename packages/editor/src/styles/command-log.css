@@ -1,0 +1,295 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+
+/* The command line's results and previews. Opaque: the
+   measured contrast is the real one. */
+
+/* --------------------------------------------------------- terminal */
+
+.ut-terminal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+/* Phone: the toggle names the mode; the heading stays for screen readers. */
+.ut-terminal__header {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.ut-terminal__title {
+  margin: 0;
+  font: 500 16px/22px var(--font-display);
+}
+
+.ut-terminal__keys {
+  margin: 0;
+  color: var(--muted, #aaa5a1);
+  font-size: 12px;
+}
+
+.ut-terminal__well {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  padding: 12px 8px 8px;
+  border-radius: 12px;
+  background: var(--stage, #0b0b0c);
+}
+
+/* The Code sheet is short over the three-row transport: tighter wells and groups keep
+   a command, its result and its detail in the log at the default split. */
+@media (max-width: 1199px) {
+  .ut-terminal__well {
+    padding: 8px 8px 4px;
+  }
+
+  .ut-group {
+    padding: 8px 0 8px 12px;
+  }
+
+  .ut-group--error::before {
+    inset: 8px auto 8px 0;
+  }
+}
+
+.ut-terminal :focus-visible {
+  outline: 2px solid var(--text, #fff);
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------- results */
+
+.ut-log {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 10px 8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--raised, #26282d) var(--stage, #0b0b0c);
+}
+
+.ut-log:focus-visible {
+  outline-offset: -2px;
+}
+
+.ut-glyph {
+  flex: none;
+  width: 18px;
+  height: 18px;
+}
+
+.ut-glyph--muted {
+  width: 14px;
+  height: 14px;
+  color: var(--muted, #aaa5a1);
+}
+
+.ut-glyph--prompt {
+  color: var(--flare, #f65d00);
+}
+
+/* The help sits above the empty log, outside its live region, where it used
+   to sit inside it: same padding, and it scrolls on its own in a short pane. */
+.ut-empty {
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 10px;
+}
+
+.ut-empty .ut-row--title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.ut-row {
+  margin: 0;
+  color: var(--text, #fff);
+  font: 400 13px/19px var(--font-sans);
+  overflow-wrap: anywhere;
+}
+
+.ut-row--muted {
+  color: var(--muted, #aaa5a1);
+}
+
+.ut-row--small {
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.ut-row--indent {
+  padding-left: 22px;
+}
+
+.ut-row--code {
+  display: block;
+  font: 400 12.5px/19px var(--font-mono);
+  white-space: pre-wrap;
+}
+
+.ut-group {
+  position: relative;
+  padding: 12px 0 12px 12px;
+}
+
+.ut-group + .ut-group {
+  border-top: 1px solid var(--raised, #26282d);
+}
+
+/* The only red in the terminal: a 2 px bar, never text. */
+.ut-group--error::before {
+  content: "";
+  position: absolute;
+  inset: 12px auto 12px 0;
+  width: 2px;
+  border-radius: 1px;
+  background: var(--ember, #c52d1f);
+}
+
+.ut-echo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.ut-echo__line {
+  color: var(--muted, #aaa5a1);
+  font: 400 12.5px/18px var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+.ut-group__body {
+  display: grid;
+  justify-items: start;
+  gap: 4px;
+  margin-top: 6px;
+  padding-left: 22px;
+}
+
+.ut-preview .ut-preview__title,
+.ut-group__body > .ut-preview:first-child {
+  margin-top: 0;
+}
+
+.ut-applied {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  column-gap: 8px;
+  margin: 0;
+}
+
+.ut-tick {
+  width: 14px;
+  height: 12px;
+  margin-top: 4px;
+  color: var(--flare, #f65d00);
+}
+
+.ut-applied__summary {
+  color: var(--text, #fff);
+  font: 400 13px/19px var(--font-sans);
+}
+
+.ut-applied__detail {
+  grid-column: 2;
+  color: var(--muted, #aaa5a1);
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.ut-applied__detail:empty {
+  display: none;
+}
+
+/* ----------------------------------------------------------- preview */
+
+.ut-preview {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+}
+
+.ut-preview__title {
+  margin: 0;
+  color: var(--text, #fff);
+  font: 600 13px/19px var(--font-sans);
+}
+
+.ut-diff {
+  display: grid;
+  gap: 2px;
+  /* Nine rows, then the diff scrolls on its own: Apply and Cancel stay in view. */
+  max-height: 216px;
+  overflow-y: auto;
+  font: 400 12px/22px var(--font-mono);
+  scrollbar-width: thin;
+  scrollbar-color: var(--raised, #26282d) var(--stage, #0b0b0c);
+}
+
+.ut-diff__line {
+  display: grid;
+  grid-template-columns: 26px 14px minmax(0, 1fr);
+  margin: 0;
+  padding: 0 6px;
+  border-radius: 4px;
+  color: var(--muted, #aaa5a1);
+}
+
+.ut-diff__text {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.ut-diff__line--added {
+  /* flare at 16 % over the stage, opaque: text 16.59:1, the + sign 5.12:1. */
+  background: #31180a;
+}
+
+.ut-diff__line--added .ut-diff__sign {
+  color: var(--flare, #f65d00);
+  font-weight: 700;
+}
+
+.ut-diff__line--added .ut-diff__text {
+  color: var(--text, #fff);
+  text-decoration: none;
+}
+
+.ut-diff__line--removed .ut-diff__text {
+  text-decoration: line-through;
+  text-decoration-color: var(--muted, #aaa5a1);
+}
+
+.ut-preview__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.ut-action {
+  min-width: 120px;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 22px;
+  font: 600 14px/1 var(--font-sans);
+}
+
+.ut-action--apply {
+  background: var(--flare, #f65d00);
+  color: var(--stage, #0b0b0c);
+}
+
+.ut-action--cancel {
+  background: var(--raised, #26282d);
+  color: var(--text, #fff);
+}

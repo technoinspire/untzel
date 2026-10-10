@@ -1,0 +1,39 @@
+{
+  "name": "bass",
+  "group": "bass",
+  "kind": "pitched",
+  "range": { "lowest": "c1", "highest": "c4" },
+  "engine": "legacy",
+  "description": "Saw bass with a plucked filter",
+  "model": "FLUX B24",
+  "tags": ["bass", "saw", "pluck", "groove"],
+  "voices": 2,
+  "allocation": "poly",
+  "steal": "oldest",
+  "costPerVoice": 1.54,
+  "patterns": [
+    { "name": "Dotted", "text": "c2 . . c2 . . c2 ." },
+    { "name": "Rolling", "text": ". c2 c2 c2 . c2 c2 c2 . c2 c2 c2 . c2 c2 c2" },
+    { "name": "Offbeat", "text": ". c2 . c2 . c2 . c2" },
+    { "name": "Long notes", "text": "c2 ~ ~ ~ ~ ~ ~ ~ / ab1 ~ ~ ~ bb1 ~ ~ ~" },
+    { "name": "Walking", "text": "c2 . eb2 . g2 . bb2 ." }
+  ],
+  "preview": ". c2 . c2 . c2 . eb2 / . ab1 . ab1 . bb1 . g1",
+  "defaultDuck": 0.6,
+  "parameters": [
+    { "name": "cutoff", "min": 40, "max": 8000, "default": 600, "unit": "Hz", "curve": "exponential" },
+    { "name": "decay", "min": 0.05, "max": 2, "default": 0.3, "unit": "s", "curve": "exponential" },
+    { "name": "drive", "min": 0, "max": 1, "default": 0.1, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "cutoff", "from": 120, "to": 3000 }
+  ],
+  "presets": [
+    { "name": "round", "description": "Round and warm", "values": {} },
+    { "name": "bright", "description": "Brighter filter", "values": {"cutoff": 1500} },
+    { "name": "dirty", "description": "Driven", "values": {"drive": 0.6} },
+    { "name": "rolling", "description": "Short rolling notes", "values": {"cutoff": 900, "decay": 0.15} }
+  ],
+  "defaultPreset": "round",
+  "scene": {"family": "floor", "variant": {"shape": "band"}, "drive": "cutoff"}
+}

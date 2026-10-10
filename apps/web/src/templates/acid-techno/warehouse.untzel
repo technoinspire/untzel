@@ -1,0 +1,29 @@
+// template: Warehouse
+// order: 1
+title "Warehouse"
+tempo 138
+key f minor
+
+kick:   kick     hard     x... x... x... x... | gain 0.9
+rumble: boom     dirty    . . f1 . . . f1 . . . f1 . . f1 . .                  | duck 0.9 | lowpass 400 | gain 0.6
+acid:   acid     squelch  f2 f2 f3! f2 . f2 ab2 f2! / f2 . c3 f2 eb3! f2 . f2  | legato | cutoff saw(8) 250..3200 | resonance 0.85 | distort 0.35 | delay 3/16 | duck 0.4 | gain 0.7
+hat:    hat      closed   . x . x . x . x . x . x . x x?0.6 x                  | gain 0.55 | pan -0.15
+ohat:   hat      open     ..x. ..x. ..x. ..x.                                  | gain 0.45 | pan 0.15
+clap:   clap     snap     .... x... .... x...                                  | reverb room | gain 0.9
+snare:  snare    boom     .... .... .... ..xx | reverb small | gain 0.9
+ride:   ride     wash     x.x. x.x. x.x. x.x. | pan 0.3 | gain 0.5
+stab:   stab     rave     . . Fm . . . . . / . . . . Fm . . . / . . Dbmaj7 . . . . . / . . . . C . . .   | crush 0.25 | delay 3/16 | reverb wide | gain 0.6
+lead:   lead     rave     f4 ~ ~ ~ ab4 ~ g4 ~ / f4 ~ ~ ~ ~ ~ . . / eb4 ~ ~ ~ f4 ~ c4 ~ / c4 ~ ~ ~ ~ ~ . .   | cutoff sine(16) 800..4000 | reverb plate | gain 0.9
+chip:   square   chip     . . . . c5 . . . / . . ab4 . . . . . / . . . . c5 . bb4 . / . . f4 . . . . .   | delay 3/16 | reverb small | pan 0.25 | gain 0.3
+rise:   noise    white    x~~~ ~~~~ ~~~~ ~~~~                                  | cutoff saw(8) 300..9000 | gain saw(8) 0.15..0.5
+crash:  crash    wide     x... / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.6
+impact: impact   metal    x... / .... / .... / .... / .... / .... / .... / ....   | reverb room | gain 0.8
+
+section intro  kick hat ride
+section groove kick rumble hat ohat clap ride acid | loop
+section build  kick hat clap snare acid stab rise
+section break  acid stab lead chip
+section drop   kick rumble hat ohat clap snare ride acid stab lead chip crash impact
+section outro  kick hat ride
+
+song intro 16, groove 32, build 8, break 16, build 8, drop 32, groove 16, outro 16

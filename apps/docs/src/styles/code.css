@@ -1,0 +1,127 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* Code blocks, the copy button and the token classes of the grammar. */
+/* Code keeps its lines: a wrapped track line would read as a new line, so examples and the
+   grammar scroll sideways inside their block; the prompt is prose and wraps. The bar
+   under a block holds the copy button. */
+.example,
+.grammar,
+.prompt {
+  margin: 16px 0 24px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.example--error {
+  border-left: 4px solid var(--ember);
+}
+
+pre {
+  margin: 0;
+  padding: 16px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  tab-size: 2;
+}
+
+.example pre,
+.grammar pre {
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.prose > pre {
+  margin: 16px 0 24px;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.prompt__text {
+  max-height: 28rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.example__bar,
+.grammar figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: var(--target);
+  padding: 0 8px 0 16px;
+  border-top: 1px solid var(--raised);
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.grammar figcaption {
+  padding: 8px 16px;
+}
+
+.copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--target);
+  padding: 0 12px;
+  border: 0;
+  border-radius: 22px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 120ms ease-out;
+}
+
+.copy[hidden] {
+  display: none;
+}
+
+.copy:hover {
+  background: var(--raised);
+}
+
+/* Token classes of the real grammar (classifyTokens), each at least 4.5:1 on surface. */
+.tok-keyword {
+  color: var(--flare);
+  font-weight: 700;
+}
+
+.tok-modifier,
+.tok-signal {
+  color: var(--flare);
+}
+
+.tok-signal {
+  font-style: italic;
+}
+
+.tok-track,
+.tok-section {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.tok-instrument,
+.tok-hits,
+.tok-note,
+.tok-chord {
+  color: var(--text);
+}
+
+.tok-number,
+.tok-punctuation {
+  color: var(--muted);
+}
+
+.tok-comment {
+  color: var(--muted);
+  font-style: italic;
+}

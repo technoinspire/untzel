@@ -1,0 +1,12 @@
+{
+  "category": "fixed",
+  "docs": "/docs/credits",
+  "title": {
+    "en": "Complete credits",
+    "pt-BR": "Créditos completos"
+  },
+  "body": {
+    "en": "The Credits page lists every recorded instrument and the interface fonts.",
+    "pt-BR": "A página de Créditos lista todos os instrumentos gravados e as fontes da interface."
+  }
+}

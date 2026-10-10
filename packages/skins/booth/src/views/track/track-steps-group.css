@@ -1,0 +1,31 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The track steps group view, views/track-steps-group.ts. */
+.ui-detail__steps {
+  flex: 1 1 auto;
+  min-width: 0;
+  /* The sheet is surface: the track of the choice is stage, like the panel tabs. */
+  background: var(--stage);
+}
+
+.ui-detail__steps .ui-segmented__option {
+  flex: 1 1 0;
+  min-width: 44px;
+  padding: 0 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Pattern length and steps per bar. The chip sizes to
+   its label ("Pattern 16 bars" once read "Pattern 16 ba…" at 390);
+   the steps switch takes the rest, and both wrap to two rows only when they cannot fit. */
+.ui-detail__lengths {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.ui-detail__length {
+  flex: 0 0 auto;
+  min-width: 150px;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@untzel/export",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./worker": "./src/worker.ts",
+    "./wav": "./src/audio/wav.ts",
+    "./plan": "./src/plan.ts",
+    "./testing": "./src/testing/index.ts",
+    "./render-audio": "./src/audio/render-audio.ts",
+    "./brand-exclusion": "./src/brand/brand-exclusion.ts",
+    "./render-wav": "./src/audio/render-wav.ts",
+    "./take-plan": "./src/take-plan.ts"
+  },
+  "dependencies": {
+    "@untzel/audio": "workspace:*",
+    "@untzel/core": "workspace:*",
+    "@untzel/light": "workspace:*",
+    "@untzel/scene": "workspace:*",
+    "@untzel/session": "workspace:*",
+    "mediabunny": "1.61.0"
+  },
+  "devDependencies": {
+    "@untzel/instrument-index": "workspace:*",
+    "@untzel/language": "workspace:*",
+    "@untzel/transport": "workspace:*"
+  }
+}

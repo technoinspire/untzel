@@ -1,0 +1,15 @@
+{
+  "category": "fixed",
+  "date": "2026-10-04",
+  "refs": [
+    17
+  ],
+  "title": {
+    "en": "Videos that play everywhere",
+    "pt-BR": "Vídeos que tocam em qualquer lugar"
+  },
+  "body": {
+    "en": "Exported videos are always H.264, so phones and social networks open them.",
+    "pt-BR": "Os vídeos exportados são sempre H.264, então celulares e redes sociais abrem."
+  }
+}

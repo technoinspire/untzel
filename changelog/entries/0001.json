@@ -1,0 +1,16 @@
+{
+  "category": "new",
+  "date": "2026-10-03",
+  "refs": [
+    1
+  ],
+  "docs": "/docs",
+  "title": {
+    "en": "The instrument plays",
+    "pt-BR": "O instrumento toca"
+  },
+  "body": {
+    "en": "The first version: tracks you turn on with a tap, the sound engine in the browser, and the light that answers every note.",
+    "pt-BR": "A primeira versão: faixas que você liga com um toque, o motor de som no navegador e a luz que responde a cada nota."
+  }
+}

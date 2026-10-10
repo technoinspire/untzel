@@ -1,0 +1,19 @@
+{
+  "template": "blank",
+  "runs": {
+    "loop": {
+      "bars": 16,
+      "events": 0,
+      "eventsPerTrack": {},
+      "songEnded": false,
+      "sound": {
+        "peakDbfs": -240,
+        "rmsDbfs": -240,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": null,
+        "trackRmsDbfs": {}
+      }
+    }
+  }
+}

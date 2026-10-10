@@ -1,0 +1,24 @@
+{
+  "name": "@untzel/session",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./testing": "./src/testing/index.ts",
+    "./limits": "./src/limits.ts",
+    "./rules": "./src/rules.ts",
+    "./opening-mode": "./src/opening-mode.ts",
+    "./projects": "./src/projects.ts",
+    "./sounding": "./src/sounding-program.ts"
+  },
+  "dependencies": {
+    "@untzel/core": "workspace:*",
+    "@untzel/language": "workspace:*",
+    "@untzel/transport": "workspace:*"
+  },
+  "devDependencies": {
+    "@untzel/instrument-index": "workspace:*"
+  }
+}

@@ -1,0 +1,105 @@
+{
+ "format": 1,
+ "instrument": "conga",
+ "version": 1,
+ "sampleRate": 48000,
+ "frames": 243975,
+ "audio": {
+  "file": "pack.opus",
+  "codec": "opus",
+  "bitrate": "64k",
+  "bytes": 31838,
+  "sha256": "c9af7b594b895094d0c92603db72ae5d575813aa668173d55efabf90a2e4f5c6"
+ },
+ "license": {
+  "id": "CC0-1.0",
+  "name": "Creative Commons Zero 1.0 Universal",
+  "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "changes": "Cut at the onset, mixed to mono, resampled to 48 kHz, levelled, looped (sustained notes) or faded into silence (one-shots) and encoded as Opus (tools/samples/build.py)."
+ },
+ "source": {
+  "dataset": "Versilian Community Sample Library",
+  "author": "Versilian Studios LLC",
+  "record": "https://github.com/sgossner/VCSL",
+  "instrument": "VCSL percussion",
+  "files": [
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Membranophones/Struck%20Membranophones/Conga/Conga_HitFM_v2_rr1_Sum.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Membranophones/Struck%20Membranophones/Conga/Conga_HitN_v2_rr1_Sum.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Membranophones/Struck%20Membranophones/Conga/Quinto_HitFM1_v2_rr1_Sum.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Membranophones/Struck%20Membranophones/Conga/Quinto_HitN_v2_rr1_Sum.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Membranophones/Struck%20Membranophones/Conga/Tumba_HitFM_v3_rr1_Sum.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Membranophones/Struck%20Membranophones/Conga/Tumba_HitN_v3_rr1_Sum.wav"
+  ],
+  "notes": [
+   "C3 tumba, G3 conga, D4 quinto; position 0 = open tone, 1 = slap."
+  ]
+ },
+ "zones": [
+  {
+   "take": "Tumba_HitN_v3_rr1_Sum.wav",
+   "position": 0.0,
+   "root": 48.0,
+   "lowest": 0.0,
+   "highest": 51.5,
+   "pan": 0.0,
+   "start": 1024,
+   "loopStart": 36494,
+   "loopEnd": 38542
+  },
+  {
+   "take": "Conga_HitN_v2_rr1_Sum.wav",
+   "position": 0.0,
+   "root": 55.0,
+   "lowest": 51.5,
+   "highest": 58.5,
+   "pan": 0.0,
+   "start": 39566,
+   "loopStart": 77989,
+   "loopEnd": 80037
+  },
+  {
+   "take": "Quinto_HitN_v2_rr1_Sum.wav",
+   "position": 0.0,
+   "root": 62.0,
+   "lowest": 58.5,
+   "highest": 128.0,
+   "pan": 0.0,
+   "start": 81061,
+   "loopStart": 119815,
+   "loopEnd": 121863
+  },
+  {
+   "take": "Tumba_HitFM_v3_rr1_Sum.wav",
+   "position": 1.0,
+   "root": 48.0,
+   "lowest": 0.0,
+   "highest": 51.5,
+   "pan": 0.0,
+   "start": 122887,
+   "loopStart": 148283,
+   "loopEnd": 150331
+  },
+  {
+   "take": "Conga_HitFM_v2_rr1_Sum.wav",
+   "position": 1.0,
+   "root": 55.0,
+   "lowest": 51.5,
+   "highest": 58.5,
+   "pan": 0.0,
+   "start": 151355,
+   "loopStart": 194946,
+   "loopEnd": 196994
+  },
+  {
+   "take": "Quinto_HitFM1_v2_rr1_Sum.wav",
+   "position": 1.0,
+   "root": 62.0,
+   "lowest": 58.5,
+   "highest": 128.0,
+   "pan": 0.0,
+   "start": 198018,
+   "loopStart": 240903,
+   "loopEnd": 242951
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* Available now / planned. */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px 2px 6px;
+  border-radius: 14px;
+  border: 1px solid currentcolor;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.status .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.status--available {
+  color: var(--flare);
+}
+
+.status--planned {
+  color: var(--muted);
+}
+
+.status-line {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+/* Every designed feature: name and mark on one line, the note under them; three columns
+   from 1024 px, where the reading column has room. */
+.features {
+  margin: 0 0 24px;
+}
+
+.features div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--raised);
+}
+
+.features dt {
+  font-weight: 600;
+}
+
+.features dd {
+  margin: 0;
+}
+
+.features dd:last-child {
+  grid-column: 1 / -1;
+  color: var(--muted);
+}
+
+@media (min-width: 1024px) {
+  .features div {
+    /* A fixed mark column: every note starts at the same x, whatever the mark says. */
+    grid-template-columns: 12rem 10rem 1fr;
+    align-items: baseline;
+  }
+
+  .features dd:last-child {
+    grid-column: auto;
+  }
+}

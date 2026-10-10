@@ -1,0 +1,172 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The track table row view, views/track-table-row.ts. */
+.ui-table__row[data-state="on"] .ui-mini__cell[data-cell="hit"] {
+  background: var(--flare);
+  opacity: 1;
+}
+
+.ui-table__row[data-state="on"] .ui-mini__cell[data-cell="hold"] {
+  background: var(--flare);
+  opacity: 0.6;
+}
+
+@media (min-width: 1200px) {
+  .ui-app[data-mode="song"]:not([data-panel="none"]) .ui-table__mini {
+    grid-template-columns: repeat(16, 9px);
+    column-gap: 3px;
+  }
+
+  .ui-table__row {
+    display: grid;
+    grid-template-columns: var(--columns);
+    align-items: center;
+    padding-left: 16px;
+  }
+
+  .ui-table__row {
+    height: 48px;
+    border-radius: 10px;
+  }
+
+  .ui-table__row.is-selected {
+    background: var(--raised);
+  }
+
+  /* M takes the fifth column, after the spacer; tone runs to the row's end, over the
+     "Set by" column when the table has one (track-table.css). */
+  .ui-table__row > :nth-last-child(3) {
+    grid-column: 5;
+  }
+  .ui-table__td--tone {
+    grid-column: 7 / -1;
+  }
+
+  .ui-table__index {
+    color: var(--muted);
+    font: 400 12px var(--font-mono);
+  }
+
+  /* The whole name column is the target: "hat" alone was 30 px wide. */
+  .ui-table__name {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 44px;
+    padding: 0 8px 0 0;
+    text-align: left;
+  }
+
+  .ui-table__track {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .ui-table__instrument {
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .ui-table__pattern {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    border-radius: 6px;
+  }
+
+  .ui-table__mini {
+    grid-template-columns: repeat(16, minmax(8px, 14px));
+    column-gap: 4px;
+    height: 10px;
+  }
+
+  .ui-table__mini .ui-mini__cell[data-cell="hit"] {
+    height: 10px;
+  }
+
+  .ui-table__mini .ui-mini__cell[data-cell="hold"] {
+    margin-left: -4px;
+  }
+
+  .ui-square {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* Pressed Mute or Solo: a 2 px flare border (5.54:1 on --surface, non-text ≥ 3:1)
+     plus a raised fill and bright letter, so the state never depends on colour alone. */
+  .ui-square[aria-pressed="true"] {
+    background: var(--raised);
+    color: var(--text);
+    box-shadow: inset 0 0 0 2px var(--flare);
+  }
+
+  .ui-table__tone {
+    flex: none;
+    width: 64px;
+    height: 44px;
+  }
+
+  .ui-table__tone::-webkit-slider-thumb {
+    width: 12px;
+    height: 12px;
+    margin-top: -4px;
+  }
+}
+
+/* Rename from the table: the pencil shows on hover and focus, and
+   always on a touch screen (hover: none). */
+.ui-table__td--name {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+.ui-table__rename {
+  opacity: 0;
+  background: none;
+}
+.ui-table__rename .ui-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+}
+.ui-table__row:hover .ui-table__rename,
+.ui-table__rename:focus-visible {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .ui-table__rename {
+    opacity: 1;
+  }
+}
+
+/* The tone column set by a written parameter: dashed rail and "Set by open", on one line
+   that ends at the row's edge; the whole sentence is the hint's title and the slider's
+   value text. */
+.ui-table__td--tone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.ui-table__set-by {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ui-app .ui-table__tone[aria-disabled="true"] {
+  opacity: 1;
+  --track-fill: repeating-linear-gradient(to right, #8f8a86 0 6px, transparent 6px 11px);
+}

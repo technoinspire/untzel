@@ -1,0 +1,16 @@
+{
+  "name": "@untzel/i18n-check",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@untzel/docs": "workspace:*",
+    "@untzel/editor": "workspace:*",
+    "@untzel/i18n": "workspace:*",
+    "@untzel/language": "workspace:*",
+    "@untzel/skin-booth": "workspace:*",
+    "@untzel/web": "workspace:*",
+    "vite": "8.3.2"
+  }
+}

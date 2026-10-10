@@ -1,0 +1,146 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+
+/*
+ * The Untzel language in the Code panel.
+ * Every color is measured on the panel surface #161719 (WCAG ratio in comments) and by
+ * apps/web/tests/skins/booth/parallel/code-panel/code-panel-colors.browser.ts on the rendered page.
+ */
+
+.untzel-editor {
+  /* Keywords in warm white, not orange: the statements frame the
+     music, the colors go to what sounds. Signals keep the orange. */
+  --u-tok-keyword: #ece6e0; /* 14.49 */
+  --u-tok-signal: #ff9a5c; /* 8.57 */
+  --u-tok-instrument: #e9c9a8; /* 11.43 */
+  --u-tok-sound: #c4a484; /* 7.68 */
+  --u-tok-pitch: #ffc14d; /* 11.09 */
+  --u-tok-sustain: #aaa5a1; /* 7.35 */
+  --u-tok-param: #aaa5a1; /* 7.35 */
+  --u-tok-number: #ffffff; /* 17.94 */
+  --u-tok-section: #ffffff; /* 17.94 */
+  --u-tok-punct: #aaa5a1; /* 7.35 */
+  --u-tok-comment: #8a8580; /* 4.91 */
+  --u-tok-rest: #8a8580; /* 4.91 */
+  --u-tok-hit: #ffffff; /* 17.94 */
+  --u-tok-error: #ff6a5c; /* 6.38 */
+}
+
+/* ------------------------------------------------------------ tokens */
+
+.u-tok-keyword {
+  color: var(--u-tok-keyword);
+  font-weight: 600;
+}
+
+.u-tok-signal {
+  color: var(--u-tok-signal);
+  font-weight: 600;
+}
+
+.u-tok-track {
+  font-weight: 600;
+}
+
+.u-tok-instrument,
+.u-tok-value {
+  color: var(--u-tok-instrument);
+}
+/* The sound of an instrument ("kick punch"): the instrument's tan, a step quieter. */
+.u-tok-sound {
+  color: var(--u-tok-sound);
+}
+
+.u-tok-pitch {
+  color: var(--u-tok-pitch);
+}
+
+.u-tok-sustain {
+  color: var(--u-tok-sustain);
+}
+
+.u-tok-param {
+  color: var(--u-tok-param);
+}
+
+.u-tok-number {
+  color: var(--u-tok-number);
+}
+
+.u-tok-section,
+.u-section-name {
+  color: var(--u-tok-section);
+}
+
+.u-section-name {
+  font-weight: 600;
+}
+
+.u-tok-punct {
+  color: var(--u-tok-punct);
+}
+/* "x!" and "c2!": the accent mark reads as strongly as an accented hit. */
+.u-tok-accent {
+  color: var(--u-tok-hit);
+  font-weight: 800;
+}
+
+.u-tok-comment {
+  color: var(--u-tok-comment);
+  font-style: italic;
+}
+
+/* Hits, one class per step character: x stronger than ., X stronger still. */
+.u-hit {
+  color: var(--u-tok-hit);
+  font-weight: 700;
+}
+
+.u-hit-accent {
+  color: var(--u-tok-hit);
+  font-weight: 800;
+  text-decoration: underline 1px;
+  text-underline-offset: 3px;
+}
+
+.u-rest {
+  color: var(--u-tok-rest);
+}
+
+.u-sustain {
+  color: var(--u-tok-sustain);
+}
+
+/* -------------------------------------------------- sounding and errors */
+
+/* The step sounding now: a flare pill, dark text. No transition: it is rhythm,
+   and it stays under prefers-reduced-motion because it is state, not motion. */
+.u-sounding,
+.u-sounding * {
+  border-radius: 2px;
+  background: #f65d00;
+  color: #0b0b0c !important; /* 6.07 */
+  font-weight: 800;
+}
+
+/* Errors: a wavy underline only; the text keeps its own color. */
+.untzel-editor .cm-lintRange-error,
+.untzel-editor .cm-lintRange-warning {
+  background-image: none;
+  text-decoration: underline wavy var(--u-tok-error);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.untzel-editor .cm-lintRange-warning {
+  text-decoration-color: var(--u-tok-param);
+}
+
+/* Completion rows reach 44 px on a touch screen. */
+@media (pointer: coarse) {
+  .cm-tooltip.cm-tooltip-autocomplete > ul > li {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}

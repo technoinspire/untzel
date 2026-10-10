@@ -1,0 +1,20 @@
+{
+  "name": "@untzel/light",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./offline": "./src/offline.ts",
+    "./testing": "./src/testing/index.ts"
+  },
+  "dependencies": {
+    "@untzel/core": "workspace:*",
+    "@untzel/scene": "workspace:*",
+    "@untzel/session": "workspace:*"
+  },
+  "devDependencies": {
+    "@untzel/instrument-index": "workspace:*"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "harp",
+  "group": "plucks",
+  "kind": "chord",
+  "range": { "lowest": "c1", "highest": "g7" },
+  "engine": "string",
+  "description": "Harp, two strings per note",
+  "model": "SILK Harp",
+  "tags": ["harp", "string", "glass"],
+  "voices": 12,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.04,
+  "patterns": [
+    { "name": "Arp", "text": "c3 g3 eb4 g3" },
+    { "name": "Rising", "text": "c3 eb3 g3 c4 eb4 g4 c5 g4" },
+    { "name": "Broken chord", "text": "c3 . g3 . eb4 . g3 ." },
+    { "name": "Long notes", "text": "c4 ~ ~ ~ g3 ~ ~ ~" }
+  ],
+  "preview": "c3 g3 eb4 g4 c5 g4 eb4 g3 / ab2 eb3 c4 eb4 ab4 eb4 c4 eb3",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "brightness", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.1, "max": 20, "default": 4, "unit": "s", "curve": "exponential" },
+    { "name": "position", "min": 0, "max": 1, "default": 0.4, "unit": "", "curve": "linear" },
+    { "name": "detune", "min": 0, "max": 1, "default": 0.3, "unit": "", "curve": "linear" },
+    { "name": "release", "min": 0.01, "max": 4, "default": 0.6, "unit": "s", "curve": "exponential" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "samples" },
+    { "name": "level", "min": 0.05, "max": 8, "default": 1, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "brightness", "from": 0, "to": 1 }
+  ],
+  "toneLevelDb": 4.5,
+  "presets": [
+    { "name": "concert", "description": "Concert harp", "values": {} },
+    { "name": "soft", "description": "Soft and dark, plucked near the middle, shorter", "values": {"brightness": 0.12, "position": 0.6, "decay": 0.9, "level": 1.74} },
+    { "name": "glass", "description": "Glassy shimmer", "values": {"brightness": 1, "detune": 0.6, "decay": 1.6} }
+  ],
+  "defaultPreset": "concert",
+  "scene": {"family": "bars", "variant": {"shape": "arc"}, "drive": "pitch"}
+}

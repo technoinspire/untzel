@@ -1,0 +1,42 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The track's colour dot, track-dot.ts. */
+/* The track's color: the same as its name in the code. */
+.ui-track-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.ui-track-dot--0 {
+  background: var(--u-track-0);
+}
+
+.ui-track-dot--1 {
+  background: var(--u-track-1);
+}
+
+.ui-track-dot--2 {
+  background: var(--u-track-2);
+}
+
+.ui-track-dot--3 {
+  background: var(--u-track-3);
+}
+
+.ui-track-dot--4 {
+  background: var(--u-track-4);
+}
+
+.ui-track-dot--5 {
+  background: var(--u-track-5);
+}
+
+.ui-track-dot--6 {
+  background: var(--u-track-6);
+}
+
+.ui-track-dot--7 {
+  background: var(--u-track-7);
+}

@@ -1,0 +1,1 @@
+acid: acid c2 . eb2 c3 | cutoff sine(8) 300..2400

@@ -1,0 +1,16 @@
+{
+  "category": "new",
+  "date": "2026-10-04",
+  "refs": [
+    5
+  ],
+  "docs": "/docs/app/code",
+  "title": {
+    "en": "A terminal in the Code panel",
+    "pt-BR": "Um terminal no painel Code"
+  },
+  "body": {
+    "en": "Type commands next to your code, with highlighting that follows the language and quick fixes for mistakes.",
+    "pt-BR": "Digite comandos ao lado do código, com destaque que segue a linguagem e correções rápidas para erros."
+  }
+}

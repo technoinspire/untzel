@@ -1,0 +1,51 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "types": [
+      "node"
+    ],
+    "resolveJsonModule": true,
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/docs-generator",
+    "tsBuildInfoFile": "../../.cache/tsc/docs-generator.tsbuildinfo"
+  },
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "../../packages/core"
+    },
+    {
+      "path": "../../packages/language"
+    },
+    {
+      "path": "../../packages/i18n"
+    },
+    {
+      "path": "../../packages/commands"
+    },
+    {
+      "path": "../../packages/skins/booth"
+    },
+    {
+      "path": "../../packages/templates"
+    },
+    {
+      "path": "../../apps/docs"
+    },
+    {
+      "path": "../../apps/web"
+    },
+    {
+      "path": "../../packages/skin-contract"
+    },
+    {
+      "path": "../../packages/instrument-index"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+
+/* Bundled fonts, no CDN (copied from apps/web/public/fonts, OFL). JetBrains Mono is not
+   in the repository yet, so code falls back to the system monospace. */
+
+@font-face {
+  font-family: "Jost";
+  src: url("/fonts/jost-normal-400-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("/fonts/hanken-grotesk-400-600-latin.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  margin: 0;
+  background: #0b0b0c;
+}

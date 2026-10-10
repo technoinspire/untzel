@@ -1,0 +1,57 @@
+{
+ "format": 1,
+ "instrument": "hat",
+ "version": 1,
+ "sampleRate": 48000,
+ "frames": 143973,
+ "audio": {
+  "file": "pack.opus",
+  "codec": "opus",
+  "bitrate": "64k",
+  "bytes": 22856,
+  "sha256": "561e281b451adab98d23c81dcf181b3c34bc8b587cabe2ff12c27a3dc1a9bb1a"
+ },
+ "license": {
+  "id": "CC0-1.0",
+  "name": "Creative Commons Zero 1.0 Universal",
+  "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "changes": "Cut at the onset, mixed to mono, resampled to 48 kHz, levelled, looped (sustained notes) or faded into silence (one-shots) and encoded as Opus (tools/samples/build.py)."
+ },
+ "source": {
+  "dataset": "Versilian Community Sample Library",
+  "author": "Versilian Studios LLC",
+  "record": "https://github.com/sgossner/VCSL",
+  "instrument": "VCSL percussion",
+  "files": [
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Hi-Hat%20Cymbal/HiHat_HitC_v3_rr1_Mid.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Hi-Hat%20Cymbal/HiHat_HitO_rr1_Mid.wav"
+  ],
+  "notes": [
+   "position 0 = closed hi-hat, 1 = open."
+  ]
+ },
+ "zones": [
+  {
+   "take": "HiHat_HitC_v3_rr1_Mid.wav",
+   "position": 0.0,
+   "root": 60.0,
+   "lowest": 0.0,
+   "highest": 128.0,
+   "pan": 0.0,
+   "start": 1024,
+   "loopStart": 60677,
+   "loopEnd": 62725
+  },
+  {
+   "take": "HiHat_HitO_rr1_Mid.wav",
+   "position": 1.0,
+   "root": 60.0,
+   "lowest": 0.0,
+   "highest": 128.0,
+   "pan": 0.0,
+   "start": 63749,
+   "loopStart": 140901,
+   "loopEnd": 142949
+  }
+ ]
+}

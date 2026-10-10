@@ -1,0 +1,183 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The part row view, views/part-row.ts. */
+.ui-partrow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 34%;
+  grid-template-rows: auto auto;
+  align-content: center;
+  column-gap: 16px;
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  border-radius: 12px;
+  background: var(--surface);
+  text-align: left;
+}
+
+.ui-partrow__name {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* muted on surface 7.13:1, on raised 6.04:1. */
+.ui-partrow__meta {
+  grid-row: 2;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* As long as the part, full from 16 bars; the playing part fills with its progress.
+   Decorative and aria-hidden: the row's "N bars" text says the same (muted, 7.35:1), so
+   the track stays a quiet raised (1.22:1 on surface, below the 3:1 of non-text content
+   on purpose). The progress is flare on stage,
+   6.07:1. */
+.ui-partrow__length {
+  grid-area: 1 / 2 / 3 / 3;
+  align-self: center;
+  display: block;
+  width: calc(var(--length, 0.5) * 100%);
+  height: 6px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--raised);
+}
+
+.ui-partrow__fill {
+  display: block;
+  width: calc(var(--progress, 0) * 100%);
+  height: 100%;
+  background: var(--flare);
+}
+
+.ui-partrow[aria-expanded="true"] {
+  background: var(--raised);
+  box-shadow: inset 0 0 0 1.5px var(--muted);
+}
+
+.ui-partrow[data-state="playing"] {
+  background: var(--raised);
+  box-shadow: inset 0 0 0 2px var(--flare);
+}
+
+.ui-partrow[data-state="next"] {
+  box-shadow: inset 0 0 0 2px var(--muted);
+}
+
+.ui-partrow:is([aria-expanded="true"], [data-state="playing"]) .ui-partrow__length {
+  background: var(--stage);
+}
+/* A part row's pencil: its own 44 px button next to the row. */
+.ui-song__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ui-song__item .ui-partrow {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.ui-partrow__rename .ui-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+}
+.ui-partrow__range {
+  grid-area: 1 / 2 / 3 / 3;
+  align-self: center;
+  justify-self: end;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ui-partrow:is([data-range="start"], [data-range="end"], [data-range="both"], [data-range="inside"]) {
+  background: var(--row-in-range);
+  box-shadow: inset 4px 0 0 var(--flare);
+}
+.ui-partrow[data-state="playing"]:is([data-range="start"], [data-range="end"], [data-range="both"], [data-range="inside"]) {
+  box-shadow: inset 4px 0 0 var(--flare), inset 0 0 0 2px var(--flare);
+}
+/* Since the play range a row shares its line with its buttons (To here, brackets, Play, pencil): the
+   meta takes the row's whole width and the length bar sits at its foot, as long as the
+   part ("16 bars · 5 tracks · playing" was cut). With a range, only
+   the part that plays keeps the bar, its progress. */
+.ui-partrow {
+  position: relative;
+}
+.ui-song__item .ui-partrow {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.ui-song__item .ui-partrow .ui-partrow__meta {
+  grid-column: 1 / -1;
+}
+.ui-song__item .ui-partrow .ui-partrow__length {
+  position: absolute;
+  bottom: 3px;
+  left: 16px;
+  width: calc(var(--length, 0.5) * (100% - 32px));
+  height: 3px;
+}
+.ui-partrow:is([data-range="outside"], [data-range="start"], [data-range="end"], [data-range="both"], [data-range="inside"]):not([data-state="playing"]) .ui-partrow__length {
+  display: none;
+}
+/* Inside the range the state text sits by the name. */
+.ui-partrow:is([data-range="start"], [data-range="end"], [data-range="both"], [data-range="inside"]) .ui-partrow__range {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+@media (max-width: 699px) {
+  /* Phone: the row's buttons take a line under it, so the meta
+     "16 bars · 8 tracks · playing" shows whole; the row keeps the full width. */
+  .ui-song__item {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 6px;
+  }
+  .ui-song__item .ui-partrow {
+    flex: 1 0 100%;
+  }
+}
+
+.ui-partrow__brackets .ui-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--flare);
+}
+.ui-partrow__play .ui-icon {
+  width: 20px;
+  height: 20px;
+}
+/* Pressed: this part repeats alone; a tap clears the range. Fill and shape, not colour only. */
+.ui-partrow__play[aria-pressed="true"] {
+  background: var(--flare);
+  color: var(--stage);
+}
+.ui-partrow__to-here {
+  flex: none;
+  padding: 0 14px;
+}
+
+@media (min-width: 1200px) {
+  .ui-partrow {
+    height: 44px;
+  }
+
+  .ui-partrow__name {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .ui-partrow__meta {
+    line-height: 15px;
+  }
+}

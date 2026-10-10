@@ -1,0 +1,140 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The track table view, views/track-table.ts. */
+.ui-tracktable {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  /* desktop track table */
+  .ui-tracktable {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    margin-top: 20px;
+  }
+
+  .ui-tracktable__title {
+    font: 500 18px/24px var(--font-display);
+  }
+
+  .ui-table__scroller {
+    flex: 1;
+    min-height: 0;
+    margin: 0 -8px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--raised) var(--stage);
+  }
+
+  /* Name, pattern, M, S and tone (no section columns). M, S and tone sit right after the
+     pattern and the table is as wide as its columns: a spacer stretched to the right edge
+     left ~730 px of dead gap at 1440 with the panel closed. The pattern gives way first
+     when the Code panel is wide. */
+  .ui-table {
+    --columns: 22px 158px minmax(200px, 306px) 26px 48px 56px 64px;
+    width: fit-content;
+  }
+
+  /* Song mode with the panel open shares a narrow column with the parts list: a
+     narrower name and miniature. With the panel closed the full columns fit. */
+  .ui-app[data-mode="song"]:not([data-panel="none"]) .ui-table {
+    --columns: 22px 116px 200px 8px 48px 56px 64px;
+  }
+  /* A tone set by a written parameter says so in a column of its own after
+     tone: "Set by open" stays inside the row and the table, and under the sticky head
+     when the table scrolls. Out of its 64 px cell it ran past the table's edge, where the
+     Code panel cut it to "Set" at 1280. */
+  .ui-table:has(.is-tone-overridden) {
+    --columns: 22px 158px minmax(200px, 306px) 26px 48px 56px 64px minmax(96px, 160px);
+  }
+  .ui-app[data-mode="song"]:not([data-panel="none"]) .ui-table:has(.is-tone-overridden) {
+    --columns: 22px 116px 200px 8px 48px 56px 64px minmax(96px, 160px);
+  }
+
+  .ui-table__head {
+    display: grid;
+    grid-template-columns: var(--columns);
+    align-items: center;
+    padding-left: 16px;
+  }
+
+  .ui-tracktable {
+    position: relative;
+  }
+
+  .ui-tracktable__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .ui-table__head {
+    height: 24px;
+    background: var(--stage);
+  }
+
+  /* The sticky box is the head's rowgroup, a child of the whole-height .ui-table: on the
+     24 px head alone it could not leave its 24 px parent and scrolled away, and rows ran
+     under the "Tracks" title. Opaque and over the rows, so rows pass under
+     both. */
+  .ui-table > [role="rowgroup"]:first-child {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--stage);
+  }
+
+  .ui-table__head > :nth-child(1),
+  .ui-table__head > :nth-child(2) {
+    color: transparent;
+  }
+
+  .ui-table__th {
+    color: var(--muted);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .ui-table__th--center {
+    width: 44px;
+    text-align: center;
+  }
+
+  .ui-table__th--center:last-child {
+    width: 64px;
+  }
+
+  /* M takes the fifth column, after the spacer, whatever follows tone. */
+  .ui-table__head > .ui-table__th--center:nth-last-child(3) {
+    grid-column: 5;
+  }
+
+  /* Rows from y 600 every 50 px, five whole rows above the footer at 900 px. */
+  .ui-table__body {
+    display: grid;
+    gap: 2px;
+    margin-top: 0;
+    padding-bottom: 8px;
+  }
+
+  .ui-tracktable__footer {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 54px;
+    flex: none;
+  }
+
+  .ui-table__add {
+    width: 140px;
+    padding: 0 16px;
+  }
+
+  .ui-table__count {
+    color: var(--muted);
+    font-size: 12px;
+  }
+}

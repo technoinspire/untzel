@@ -1,0 +1,7 @@
+// 8 bars per pass: the 2-bar bass plays 4 times and the cutoff rises across the pass
+tempo 124
+key c minor
+loop 8
+kick: kick x... x... x... x...
+hat:  hat  ..x. ..x. ..x. ..x.
+bass: bass . c2 . c2 . c2 . eb2 / . ab1 . ab1 . c2 . g1 | cutoff saw(8) 300..2400

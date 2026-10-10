@@ -1,0 +1,19 @@
+// a whole song: intro, build, drop, break, build, drop, outro
+tempo 124
+key a minor
+swing 0.05
+
+kick:   kick x... x... x... x...                     | decay 0.5 | drive 0.25
+hat:    hat  ..x. ..x. ..x. ..x.                     | open 0.3 | gain 0.5
+ticks:  hat  x.x. x.x. x.x. x.x.                     | decay 0.02 | gain 0.25 | pan 0.3
+roll:   hat  x*4 x*4 x*4 x*4                         | decay 0.03 | gain saw(4) 0.1..0.7
+sub:    bass a1 ~ . . a1 ~ . . a1 ~ . . g1 ~ . .     | cutoff 160 | duck 0.6
+melody: bass a2 . c3 . e3 . c3 . / g2 . b2 . d3 . b2 . / f2 . a2 . c3 . a2 . / e2 . g2 . b2 . e3 . | cutoff sine(16) 500..2200 | decay 0.35 | delay 3/16 | reverb wide | gain 0.55 | duck 0.4
+
+section intro kick hat ticks
+section build kick hat ticks roll sub
+section drop  kick hat ticks sub melody
+section break ticks melody                           | gain 0.8
+section outro kick ticks
+
+song intro 8, build 4, drop 16, break 8, build 4, drop 16, outro 8

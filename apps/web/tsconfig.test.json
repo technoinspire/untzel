@@ -1,0 +1,88 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../.cache/tsc/web-test",
+    "tsBuildInfoFile": "../../.cache/tsc/web-test.tsbuildinfo",
+    "resolveJsonModule": true,
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": "."
+  },
+  "include": [
+    "src/**/*.test.ts",
+    "tests",
+    "build",
+    "vite.config.ts",
+    "playwright.config.ts"
+  ],
+  "references": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../../packages/core"
+    },
+    {
+      "path": "../../packages/language"
+    },
+    {
+      "path": "../../packages/transport"
+    },
+    {
+      "path": "../../packages/session"
+    },
+    {
+      "path": "../../packages/take"
+    },
+    {
+      "path": "../../packages/presentation"
+    },
+    {
+      "path": "../../packages/templates"
+    },
+    {
+      "path": "../../packages/audio/tsconfig.protocol.json"
+    },
+    {
+      "path": "../../packages/audio/tsconfig.main.json"
+    },
+    {
+      "path": "../../packages/audio/tsconfig.worker.json"
+    },
+    {
+      "path": "../../packages/audio/tsconfig.worklet.json"
+    },
+    {
+      "path": "../../packages/skins"
+    },
+    {
+      "path": "../../packages/editor"
+    },
+    {
+      "path": "../../packages/light"
+    },
+    {
+      "path": "../../apps/ui-preview"
+    },
+    {
+      "path": "../../tools/sim"
+    },
+    {
+      "path": "../../packages/share"
+    },
+    {
+      "path": "../../packages/export"
+    },
+    {
+      "path": "../../packages/skin-contract"
+    },
+    {
+      "path": "../../packages/instrument-index"
+    }
+  ]
+}

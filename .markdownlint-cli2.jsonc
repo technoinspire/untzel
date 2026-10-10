@@ -1,0 +1,14 @@
+{
+  // Wide tables: line length is not enforced.
+  "config": {
+    "default": true,
+    "MD013": false,
+    "MD033": false,
+    "MD041": false,
+    "MD060": false
+  },
+  "globs": ["**/*.md"],
+  // apps/docs/content is the source of the public docs: {#id} headings and page.md#id
+  // links are generator syntax, checked by pnpm docs:check with the real renderer.
+  "ignores": ["**/node_modules/**", "target/**", "**/dist/**", "**/dist-test/**", ".worktrees/**", "apps/docs/content/**"]
+}

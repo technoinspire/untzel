@@ -1,0 +1,7 @@
+// a 16-bar loop
+tempo 124
+key c minor
+loop 16
+
+kick: kick x... x... x... x...
+bass: bass . c2 . c2 . c2 . eb2 / . c2 . c2 . c2 . g2 / . ab1 . ab1 . c2 . eb2 / . bb1 . bb1 . d2 . f2

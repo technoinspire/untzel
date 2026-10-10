@@ -1,0 +1,200 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The project menu view, views/project-menu.ts. */
+/* The list: one column in the sheet, two in the popover; the order is the same. */
+.ui-menu {
+  display: block;
+}
+
+.ui-menu__group {
+  padding: 8px 0;
+  border-top: 1px solid var(--raised);
+}
+
+.ui-menu__column > .ui-menu__group:first-child {
+  border-top: 0;
+}
+
+.ui-menu__group-label {
+  padding: 8px 16px 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ui-menu__item {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 12px;
+  color: var(--text);
+  text-align: left;
+  text-decoration: none;
+  font: inherit;
+}
+
+.ui-menu__item--tall {
+  min-height: 56px;
+}
+
+.ui-menu__item:hover,
+.ui-menu__item:focus {
+  background: var(--raised);
+}
+
+/* The rows touch: the ring sits inside the row. */
+.ui-menu__item:focus {
+  outline: none;
+}
+
+.ui-menu__item:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: -2px;
+}
+
+.ui-menu__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+.ui-menu__icon .ui-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.ui-menu__item--danger .ui-menu__icon {
+  color: var(--ember);
+}
+
+.ui-menu__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ui-menu__label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ui-menu__hint {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Inert, still focusable: the label steps back, the hint says why. */
+.ui-menu__item[aria-disabled="true"] .ui-menu__label,
+.ui-menu__item[aria-disabled="true"] .ui-menu__icon {
+  color: var(--muted);
+}
+
+.ui-menu__external .ui-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+}
+
+/* Language: two radios in a segmented control; the chosen one has a fill and a check. */
+.ui-menu__subgroup-label {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ui-menu__segmented {
+  display: flex;
+  gap: 4px;
+  margin: 4px 16px 8px;
+  padding: 4px;
+  border-radius: 26px;
+  background: var(--stage);
+}
+
+.ui-menu__segmented .ui-menu__item {
+  display: inline-flex;
+  flex: 1;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 22px;
+  color: var(--muted);
+}
+
+.ui-menu__segmented .ui-menu__icon {
+  display: none;
+}
+
+.ui-menu__segmented .ui-menu__item[aria-checked="true"] {
+  background: var(--raised);
+  color: var(--text);
+}
+
+.ui-menu__check {
+  order: -1;
+  display: inline-grid;
+}
+
+.ui-menu__check .ui-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Preview sounds and Reduced motion: position, On / Off and aria-checked tell the state. */
+.ui-menu__switch {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ui-menu__switch .ui-switch__track {
+  width: 44px;
+  height: 26px;
+  border-radius: 13px;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 2px var(--muted);
+}
+
+.ui-menu__switch .ui-switch__track::after {
+  top: 4px;
+  left: 4px;
+  width: 18px;
+  height: 18px;
+  background: var(--muted);
+}
+
+.ui-menu__item[aria-checked="true"] .ui-switch__track {
+  background: var(--flare);
+  box-shadow: none;
+}
+
+.ui-menu__item[aria-checked="true"] .ui-switch__track::after {
+  left: 22px;
+  background: var(--stage);
+}
+
+.ui-menu[data-columns="2"] {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ui-menu[data-columns="2"] .ui-menu__column + .ui-menu__column {
+  padding-left: 8px;
+  margin-left: 8px;
+  border-left: 1px solid var(--raised);
+}

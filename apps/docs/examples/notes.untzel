@@ -1,0 +1,4 @@
+key c minor
+
+sub:  bass c1 ~ . c1 ~ . c1 .         | cutoff 180
+line: bass c2 eb2 g2 bb2 c3 . g2 .    | cutoff 1200 | decay 0.2

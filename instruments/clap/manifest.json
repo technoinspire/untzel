@@ -1,0 +1,39 @@
+{
+  "name": "clap",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "percussion",
+  "description": "Hand clap, tight to roomy",
+  "model": "VOLTA K9",
+  "tags": ["clap", "hand", "snap"],
+  "voices": 4,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 2.25,
+  "patterns": [
+    { "name": "Backbeat", "text": ".... x... .... x..." },
+    { "name": "Late", "text": ".... x..x .... x..." },
+    { "name": "Roll", "text": ".... x... .... x.xx" },
+    { "name": "Half time", "text": ".... .... x... ...." }
+  ],
+  "preview": ".... x... .... x...",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "decay", "min": 0.05, "max": 1, "default": 0.18, "unit": "s", "curve": "exponential" },
+    { "name": "spread", "min": 0, "max": 1, "default": 0.4, "unit": "", "curve": "linear" },
+    { "name": "color", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "samples" }
+  ],
+  "tone": [
+    { "parameter": "decay", "from": 0.08, "to": 0.6 },
+    { "parameter": "spread", "from": 0.1, "to": 0.9 }
+  ],
+  "toneLevelDb": 7.26,
+  "presets": [
+    { "name": "tight", "description": "Short and close", "values": {} },
+    { "name": "roomy", "description": "Longer tail, wider bursts", "values": {"decay": 0.45, "spread": 0.75} },
+    { "name": "snap", "description": "Bright and sharp", "values": {"decay": 0.06, "color": 0.85, "spread": 0.3} }
+  ],
+  "defaultPreset": "tight",
+  "scene": {"family": "burst", "variant": {"shape": "arcs"}, "drive": "attack"}
+}

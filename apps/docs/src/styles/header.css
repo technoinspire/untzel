@@ -1,0 +1,115 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* Header and the language switch. */
+/* Header: logo, divider, name and the attribution phrase; then search, language, app. */
+.masthead {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 12px var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  border-bottom: 1px solid var(--raised);
+}
+
+.masthead__brand {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.masthead__logo {
+  display: flex;
+  align-items: center;
+  min-height: var(--target);
+  grid-row: 1 / span 2;
+}
+
+.masthead__logo img {
+  width: auto;
+  height: 28px;
+}
+
+.masthead__divider {
+  grid-row: 1 / span 2;
+  width: 1px;
+  height: 32px;
+  background: var(--raised);
+}
+
+.masthead__name {
+  font-family: var(--display);
+  font-size: var(--step-1);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text);
+  text-decoration: none;
+  align-self: end;
+}
+
+.masthead__phrase {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--muted);
+  align-self: start;
+}
+
+.masthead__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: var(--target);
+  padding: 0 16px;
+  border-radius: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 120ms ease-out, color 120ms ease-out;
+}
+
+.button--primary {
+  background: var(--flare);
+  color: var(--stage);
+}
+
+.button--primary:hover {
+  background: var(--text);
+  color: var(--stage);
+}
+
+/* Language switch: two links, the current one marked. */
+.untzel-lang {
+  display: flex;
+  gap: 4px;
+  padding: 2px;
+  border-radius: 24px;
+  background: var(--surface);
+}
+
+.untzel-lang__item {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
+  padding: 0 14px;
+  border-radius: 22px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.untzel-lang__item[aria-current="true"] {
+  background: var(--raised);
+  font-weight: 600;
+}

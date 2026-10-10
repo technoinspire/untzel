@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "types": [],
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/commands",
+    "tsBuildInfoFile": "../../.cache/tsc/commands.tsbuildinfo"
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts", "src/testing"],
+  "references": [{ "path": "../core" }, { "path": "../i18n" }, { "path": "../language" }]
+}

@@ -1,0 +1,103 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The piano keys view, views/piano-keys.ts. */
+.ui-picker__span {
+  min-width: 64px;
+  color: var(--muted);
+  font: 400 12px/1 var(--font-mono);
+  text-align: center;
+}
+
+/* The padding keeps the focus ring inside the box that scrolls. */
+.ui-piano__scroller {
+  margin: -5px;
+  padding: 5px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--raised) transparent;
+}
+
+.ui-piano {
+  --white-w: 52px;
+  position: relative;
+  width: calc(14 * var(--white-w));
+  height: 132px;
+}
+
+.ui-piano .ui-piano__key {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+  font: 600 12px/1 var(--font-mono);
+}
+
+.ui-piano .ui-piano__key--white {
+  left: calc(var(--white-before) * var(--white-w));
+  width: calc(var(--white-w) - 2px);
+  height: 132px;
+  border-radius: 0 0 8px 8px;
+  background: var(--text);
+  color: var(--stage);
+}
+
+.ui-piano .ui-piano__key--black {
+  z-index: 1;
+  left: calc(var(--white-before) * var(--white-w) - 22px);
+  width: 44px;
+  height: 72px;
+  border-radius: 0 0 6px 6px;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--raised);
+}
+
+/* A note of the key: a flare dot above the label. */
+.ui-piano .ui-piano__key[data-scale="true"]::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: var(--flare);
+}
+
+.ui-piano .ui-piano__key--white.is-dimmed {
+  background: var(--muted);
+}
+
+.ui-piano .ui-piano__key--black.is-dimmed {
+  background: var(--raised);
+}
+
+/* What the step plays, never by colour alone: the track's colour
+   (flare until the shared palette arrives), a lowered key with an inset top edge, and
+   aria-pressed. Fill against the white key 3.24:1, against the black key 5.54:1; label
+   stage on flare 6.07:1. */
+.ui-piano .ui-piano__key[aria-pressed="true"] {
+  background: var(--track-color, var(--flare));
+  color: var(--stage);
+  box-shadow: inset 0 6px 0 rgb(11 11 12 / 45%);
+  padding-bottom: 6px;
+}
+
+.ui-piano .ui-piano__key[aria-pressed="true"]::before {
+  background: var(--stage);
+}
+
+/* The chord's root: a ring around the dot, besides the fill. */
+.ui-piano .ui-piano__key.is-root::before {
+  width: 10px;
+  height: 10px;
+  box-shadow: 0 0 0 2px var(--stage);
+  background: var(--track-color, var(--flare));
+}
+
+/* Chosen, not written yet: an outline, so it never reads as what the step plays. */
+.ui-piano .ui-piano__key.is-pending {
+  outline: 3px solid var(--track-color, var(--flare));
+  outline-offset: -3px;
+}

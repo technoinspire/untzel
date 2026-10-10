@@ -1,0 +1,38 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The export stretch view, views/export-stretch.ts. */
+/* The export's stretch: the same ruler, the times under it, then Fine and the
+   reset, and the format's cap in words. Room under the ruler for a handle's value. */
+.ui-export__stretch {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+.ui-export__stretch > .ui-range-ruler {
+  padding-bottom: 14px;
+}
+/* The play range in words ("Bars 9–28 · build → drop"), above its ruler, while the stretch is it. */
+.ui-export__selected {
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.ui-export__readout {
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.ui-export__cap {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 16px;
+}
+.ui-export__stretch-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.ui-export__reset[aria-disabled="true"] {
+  color: var(--muted);
+}

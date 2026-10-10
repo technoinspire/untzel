@@ -1,0 +1,112 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The idle center view, views/idle-center.ts. */
+/* The top of the idle column (idle-screen.css), 150 px down, 120 with a notice. */
+.ui-idle__center {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.ui-idle__center > * {
+  pointer-events: auto;
+}
+
+.ui-idle__play {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 0 12px;
+  border-radius: 16px;
+}
+
+.ui-idle__ring {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px var(--flare);
+  color: var(--flare);
+}
+
+.ui-idle__ring .ui-icon {
+  width: 34px;
+  height: 34px;
+  margin-left: 6px;
+}
+
+.ui-idle__label {
+  font: 500 30px/1 var(--font-display);
+}
+
+.ui-idle__sub {
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+.ui-idle__failure {
+  max-width: 34ch;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--ember);
+  color: var(--text);
+  text-align: center;
+  font-weight: 600;
+}
+
+.ui-idle__retry {
+  margin-top: 16px;
+  min-width: 140px;
+}
+
+.ui-idle__unsupported {
+  max-width: 30ch;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* What arrived from a link or a file, above Tap to play. */
+.ui-idle__remix {
+  max-width: 36ch;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.ui-idle__remix-title {
+  font: 500 22px/1.2 var(--font-display);
+  color: var(--flare);
+}
+
+.ui-idle__remix-text {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Failure: text on surface-raised with an ember bar, 14.75:1. */
+.ui-idle__notice {
+  max-width: 36ch;
+  margin-bottom: 22px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: inset 4px 0 0 var(--ember);
+  background: var(--raised);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 21px;
+}
+/* Start from scratch: Blank chosen, the ring shows + instead of play. */
+.ui-idle__ring .ui-icon--plus,
+.ui-idle__play[data-blank="true"] .ui-icon--play {
+  display: none;
+}
+.ui-idle__play[data-blank="true"] .ui-icon--plus {
+  display: block;
+  margin-left: 0;
+}

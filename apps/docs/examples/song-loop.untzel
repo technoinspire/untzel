@@ -1,0 +1,7 @@
+kick: kick x... x... x... x...
+bass: bass c2 . . c2 . . g1 .
+
+section a kick
+section b kick bass
+
+song a 4, b 8 | loop

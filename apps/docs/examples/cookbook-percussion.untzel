@@ -1,0 +1,8 @@
+// percussion: a swung shuffle where some hits only happen by chance
+tempo 124
+swing 0.14
+
+kick:   kick x... x... x... x...
+ghost:  kick . . . . . . x?0.3 . . . . . . . x?0.2 .   | gain 0.45 | decay 0.2 | pitch 60
+hat:    hat  ..x. ..x. ..x. ..x.                       | open 0.45 | color 0.7
+shaker: hat  [x x?0.5]*8                               | decay 0.02 | gain 0.3 | swing 0.2 | pan rand(2) -0.4..0.4

@@ -1,0 +1,35 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The export progress view, views/export-progress.ts. */
+/* Status and origin stacked: the origin describes the status, it is not a second column. */
+.ui-export__row {
+  display: grid;
+  gap: 2px;
+  margin-top: 26px;
+}
+
+.ui-export__status {
+  font-variant-numeric: tabular-nums;
+}
+
+.ui-export__left {
+  margin: -6px 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ui-export__status {
+  font-weight: 600;
+}
+
+.ui-export__origin {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.ui-export__progress {
+  height: 6px;
+  margin: 8px 0 14px;
+  border-radius: 3px;
+}

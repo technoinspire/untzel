@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions
+    url: https://github.com/technoinspire/untzel/discussions/categories/q-a
+    about: Ask how to do something, or share what you made.
+  - name: Security problem
+    url: https://github.com/technoinspire/untzel/security/advisories/new
+    about: Report a vulnerability privately. Never in a public issue.
+  - name: Docs
+    url: https://untzel.com/docs
+    about: The app, the language and every instrument, in English and Portuguese.

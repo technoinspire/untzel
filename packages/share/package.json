@@ -1,0 +1,22 @@
+{
+  "name": "@untzel/share",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./link": "./src/link.ts",
+    "./untzel-file": "./src/untzel-file.ts",
+    "./local-store": "./src/local-store.ts",
+    "./projects": "./src/project-db.ts"
+  },
+  "dependencies": {
+    "@untzel/session": "workspace:*"
+  },
+  "devDependencies": {
+    "@untzel/core": "workspace:*",
+    "@untzel/instrument-index": "workspace:*",
+    "@untzel/language": "workspace:*"
+  }
+}

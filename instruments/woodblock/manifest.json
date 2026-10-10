@@ -1,0 +1,37 @@
+{
+  "name": "woodblock",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "modal",
+  "description": "Hollow wooden block, clicks and knocks",
+  "model": "TERRA Hands",
+  "tags": ["woodblock", "wood", "block", "click", "afro"],
+  "voices": 2,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.53,
+  "patterns": [
+    { "name": "Tick", "text": "..x. ..x. .x.. x..." },
+    { "name": "Answer", "text": ".x.. x... .x.. ..x." },
+    { "name": "Clave", "text": "x..x ..x. ..x. ...." },
+    { "name": "Skip", "text": "..x. x.x. ..x. ...x" }
+  ],
+  "preview": "..x. ..x. .x.x x...",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "tune", "min": 0, "max": 1, "default": 0.6, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.02, "max": 1, "default": 0.12, "unit": "s", "curve": "exponential" },
+    { "name": "hardness", "min": 0, "max": 1, "default": 0.7, "unit": "", "curve": "linear" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "samples" }
+  ],
+  "tone": [
+    { "parameter": "tune", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "high", "description": "Small block, high", "values": {} },
+    { "name": "low", "description": "Large block, low", "values": {"tune": 0.2} },
+    { "name": "hollow", "description": "Hollow and longer", "values": {"decay": 0.25, "tune": 0.4} }
+  ],
+  "defaultPreset": "high",
+  "scene": {"family": "mark", "variant": {"shape": "square"}, "drive": "attack"}
+}

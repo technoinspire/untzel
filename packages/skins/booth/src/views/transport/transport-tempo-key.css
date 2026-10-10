@@ -1,0 +1,44 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The transport tempo key view, views/transport-tempo-key.ts. */
+/* "124 BPM · c minor": two buttons with a dotted underline, the dot between them is no
+   part of either. Each target is 44 px tall through ::before: under 1200 px it grows down
+   from the top of its line (over the ruler, never over the first line or the actions);
+   on the desktop it grows up over the stage. */
+.ui-tempo-key {
+  display: inline-flex;
+  align-items: baseline;
+  min-width: 0;
+  white-space: nowrap;
+}
+.ui-tempo-key__button {
+  position: relative;
+  padding: 0;
+  font: inherit;
+  text-decoration: underline dotted var(--muted);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+.ui-tempo-key__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  min-inline-size: 44px;
+  inset-inline: 0;
+  height: 44px;
+}
+.ui-tempo-key__tempo::before {
+  inset-inline: auto 0;
+  min-width: max(44px, 100%);
+}
+.ui-tempo-key__key::before {
+  inset-inline: 0 auto;
+  min-width: max(44px, 100%);
+}
+.ui-tempo-key__button[aria-expanded="true"] {
+  text-decoration: underline solid var(--flare);
+  text-decoration-thickness: 2px;
+}
+.ui-tempo-key__dot {
+  color: var(--muted);
+}

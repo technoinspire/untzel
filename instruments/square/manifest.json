@@ -1,0 +1,48 @@
+{
+  "name": "square",
+  "group": "leads",
+  "kind": "pitched",
+  "range": { "lowest": "c2", "highest": "c7" },
+  "engine": "va",
+  "description": "Square and pulse lead",
+  "model": "FLUX P8",
+  "tags": ["square", "pulse", "chip", "lead"],
+  "voices": 1,
+  "allocation": "mono",
+  "steal": "oldest",
+  "costPerVoice": 1.52,
+  "patterns": [
+    { "name": "Bounce", "text": "c4 . g4 . eb4 . g4 ." },
+    { "name": "Chip arp", "text": "c4 eb4 g4 c5 g4 eb4 c4 g3" },
+    { "name": "Offbeat", "text": ". c4 . eb4 . g4 . eb4" },
+    { "name": "Long notes", "text": "c4 ~ ~ ~ bb3 ~ ~ ~" }
+  ],
+  "preview": "c4 . g4 . eb4 . g4 . / bb3 . g4 . eb4 . c4 .",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "cutoff", "min": 100, "max": 12000, "default": 3000, "unit": "Hz", "curve": "exponential" },
+    { "name": "width", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "attack", "min": 0.001, "max": 2, "default": 0.005, "unit": "s", "curve": "exponential" },
+    { "name": "release", "min": 0.01, "max": 4, "default": 0.15, "unit": "s", "curve": "exponential" },
+    { "name": "wave2", "choices": ["saw", "square", "triangle", "sine"], "default": "saw" },
+    { "name": "mix", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "sync", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "filter", "choices": ["lp12", "lp24", "bp", "hp"], "default": "lp12" },
+    { "name": "filter-attack", "min": 0.001, "max": 4, "default": 0.001, "unit": "s", "curve": "exponential" },
+    { "name": "filter-decay", "min": 0.01, "max": 8, "default": 0.3, "unit": "s", "curve": "exponential" },
+    { "name": "drive", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "spread", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "sub", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "noise", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "width", "from": 0.1, "to": 0.5 }
+  ],
+  "presets": [
+    { "name": "hollow", "description": "Hollow square", "values": {} },
+    { "name": "chip", "description": "Bright chip tune", "values": {"cutoff": 12000, "width": 0.25} },
+    { "name": "pwm", "description": "Thin pulse", "values": {"width": 0.15} }
+  ],
+  "defaultPreset": "hollow",
+  "scene": {"family": "ribbon", "variant": {"shape": "stepped"}, "drive": "pitch"}
+}

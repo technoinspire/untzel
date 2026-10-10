@@ -1,0 +1,41 @@
+{
+  "name": "epiano",
+  "group": "keys",
+  "kind": "chord",
+  "range": { "lowest": "e1", "highest": "e7" },
+  "engine": "fm",
+  "description": "Electric piano, FM tines",
+  "model": "OPAL Keys",
+  "tags": ["epiano", "rhodes", "electric", "keys"],
+  "voices": 12,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.58,
+  "patterns": [
+    { "name": "Held", "text": "Cm7 ~ ~ ~" },
+    { "name": "Stabs", "text": ". Cm7 . . Cm7 . . ." },
+    { "name": "Progression", "text": "Cm7 ~ ~ ~ / Abmaj7 ~ ~ ~" },
+    { "name": "Comp", "text": "Cm7 . . Cm7 . . Fm7 ." }
+  ],
+  "preview": ". Cm7 . . Cm7 . . . / . Abmaj7 . . Abmaj7 . . .",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "brightness", "min": 0, "max": 1, "default": 0.55, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.1, "max": 8, "default": 2, "unit": "s", "curve": "exponential" },
+    { "name": "release", "min": 0.01, "max": 8, "default": 0.4, "unit": "s", "curve": "exponential" },
+    { "name": "detune", "min": 0, "max": 1, "default": 0.3, "unit": "", "curve": "linear" },
+    { "name": "tine", "min": 0, "max": 1, "default": 0.7, "unit": "", "curve": "linear" },
+    { "name": "tremolo", "min": 0, "max": 1, "default": 0.4, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "brightness", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "tine", "description": "Classic tines with the suitcase autopan", "values": {} },
+    { "name": "bell", "description": "Bell-like and clear, a loud tine", "values": {"brightness": 0.75, "tine": 1, "decay": 3.5, "tremolo": 0} },
+    { "name": "soft", "description": "Mellow and warm", "values": {"brightness": 0.18, "tine": 0.2} },
+    { "name": "bark", "description": "Driven and barking, short", "values": {"brightness": 1, "decay": 0.8, "tine": 0.3, "tremolo": 0.7} }
+  ],
+  "defaultPreset": "tine",
+  "scene": {"family": "bars", "variant": {"shape": "tine"}, "drive": "pitch"}
+}

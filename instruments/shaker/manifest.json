@@ -1,0 +1,37 @@
+{
+  "name": "shaker",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "percussion",
+  "description": "Shaker and maracas",
+  "model": "TERRA Hands",
+  "tags": ["shaker", "maracas", "afro", "groove"],
+  "voices": 4,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.33,
+  "patterns": [
+    { "name": "Sixteenths", "text": "xxxx xxxx xxxx xxxx" },
+    { "name": "Accented", "text": "x.xx x.xX x.xx x.xX" },
+    { "name": "Offbeat", "text": "..x. ..x. ..x. ..x." },
+    { "name": "Eighths", "text": "x.x. x.x. x.x. x.x." }
+  ],
+  "preview": "x.xx x.xX x.xx x.xX",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "decay", "min": 0.01, "max": 0.5, "default": 0.08, "unit": "s", "curve": "exponential" },
+    { "name": "color", "min": 0, "max": 1, "default": 0.25, "unit": "", "curve": "linear" },
+    { "name": "spread", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "samples" }
+  ],
+  "tone": [
+    { "parameter": "color", "from": 0, "to": 1 }
+  ],
+  "toneLevelDb": 12,
+  "presets": [
+    { "name": "soft", "description": "Gentle grains", "values": {} },
+    { "name": "bright", "description": "Crisp and airy", "values": {"color": 0.9, "decay": 0.02} }
+  ],
+  "defaultPreset": "soft",
+  "scene": {"family": "sparks", "variant": {"shape": "grain", "density": 3}, "drive": "velocity"}
+}

@@ -1,0 +1,6 @@
+kick: kick x... x... x... x...
+hat:  hat  ..x. ..x. ..x. ..x.
+
+// no song: in Song mode each section plays 8 bars, in order, in a cycle
+section first  kick
+section second kick hat

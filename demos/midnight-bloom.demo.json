@@ -1,0 +1,11 @@
+{
+  "$comment": "Demo of the first-touch template (Melodic techno · Midnight Bloom). Only the featured tracks and the rhythm: the actions come from the template.",
+  "template": "melodic-techno/midnight-bloom",
+  "title": "Midnight Bloom",
+  "pacing": {
+    "layers": {
+      "kick": { "listenBars": 2 },
+      "sub": { "listenBars": 2 }
+    }
+  }
+}

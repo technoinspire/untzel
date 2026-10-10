@@ -1,0 +1,78 @@
+// SPDX-License-Identifier: CPAL-1.0
+// Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md.
+
+// Announcements of the page (aria-live), English. The screens' own copy lives in
+// @untzel/skin (the skin the composition mounts). Translations become sibling catalogs with the same keys.
+
+export const announcements = {
+  starting: "Starting…",
+  playing: "Playing",
+  stopped: "Stopped",
+  blocked: "The browser kept the sound off. Tap to play again.",
+  loadFailed: "Untzel couldn't load. Check your connection and try again.",
+  songEnded: "The song ended.",
+  songUnavailable: "Song needs at least one section.",
+  songNextPhrase: "Song mode from the next phrase.",
+  loopNextPhrase: "Loop mode from the next phrase.",
+  drop: "Drop: every track enters on the next bar.",
+  loopLength: (bars: number) => `Loop of ${bars === 1 ? "1 bar" : `${bars} bars`} from the next bar.`,
+  tempoNextBar: (bpm: number) => `Tempo ${bpm} BPM from the next bar.`,
+  keyNextBar: (key: string) => `Key ${key} from the next bar.`,
+  patternPreview: (track: string, pattern: string) => `${track} previews ${pattern} from the next bar.`,
+  linkFailed: "This link could not be opened.",
+  savedFailed: "The saved music could not be opened.",
+  fileHasErrors: (message: string) => `This file has errors: ${message}`,
+  fileNeedsNewer: "This file needs a newer version of Untzel.",
+  fileTooLarge: "This file is too large to be an Untzel song.",
+  fileNotSong: "This file is not an Untzel song.",
+  receivedPlays: (label: string) => `${label} plays on the next bar.`,
+  sharedMusic: "The shared music",
+  lastValidShared: "The last version that plays was shared.",
+  linkCopied: "Link copied.",
+  pressToCopy: (isApple: boolean) => `Press ${isApple ? "Command" : "Ctrl"}+C to copy.`,
+  savedAs: (name: string) => `Saved as ${name}.`,
+  downloaded: (name: string) => `Downloaded ${name}.`,
+  downloadedInstead: "Downloaded instead.",
+  storyReady: "The story is ready.",
+  videoReady: "The video is ready.",
+  audioReady: "The audio is ready.",
+  exportFailed: "The export failed. The music keeps playing.",
+  exportNoVideo: "This browser can't make videos. Audio still works.",
+  exportNoH264: "This device can't encode H.264 video. Try the Audio WAV export or another browser.",
+  exportEncoderBusy: "The video encoder didn't answer in time. Try Render again.",
+  exportOutOfMemory: "This device ran out of memory. Try a shorter video.",
+  exportTooLong: (limit: string) => `This export can be at most ${limit} at this quality. Pick fewer parts or bars.`,
+  exportEmptyRange: "Pick at least one part to export.",
+  invalidText: (message: string) => `${message} The previous version keeps playing.`,
+  failed: (code: string) => `That change could not be made (${code}).`,
+  trackOnNextBar: (track: string, wasMuted: boolean) =>
+    `${track} ${wasMuted ? "on" : "off"} on the next bar.`,
+  trackAdded: (track: string) => `${track} added. It starts on the next bar.`,
+  previewing: (instrument: string, sound: string | null) => `Playing ${instrument}${sound === null ? "" : `, ${sound}`}`,
+  trackDeleted: (track: string) => `${track} deleted.`,
+  // The play range: one announcement per change, never per bar or per key.
+  rangeSet: (start: number, end: number) => (start === end ? `Range bar ${start}, from the next bar.` : `Range bars ${start} to ${end}, from the next bar.`),
+  // The export's stretch: said when a handle is let go, never per key.
+  exportStretchSet: (start: string, end: string, cap: string | null) => `Export from ${start} to ${end}.${cap === null ? "" : ` ${cap}.`}`,
+  exportStretchTrimmed: (cap: string) => `${cap}: the export range now ends there.`,
+  rangeCleared: (mode: "loop" | "song") => `Range cleared. The whole ${mode} plays from the next bar.`,
+  cycleOff: (end: number) => `Cycle off: the song plays on after bar ${end}.`,
+  cycleOn: (start: number, end: number) => `Cycle on: bars ${start} to ${end} repeat.`,
+  // Play from here: a bar, or a part and its first bar; the whole sentence lives here.
+  playingFrom: (part: string | null, bar: number) => `Playing from ${part === null ? "" : `${part}, `}bar ${bar}, from the next bar.`,
+  partRepeats: (section: string) => `Only ${section} plays, from the next bar.`,
+  rangeClamped: (mode: "loop" | "song", lastBar: number, start: number, end: number) =>
+    `The ${mode} is now ${lastBar === 1 ? "1 bar" : `${lastBar} bars`}: range is ${start === end ? `bar ${start}` : `bars ${start}–${end}`}.`,
+  partAdded: (section: string) => `${section} added at the end of the song.`,
+  partLength: (section: string, bars: number) => `${section} now lasts ${bars === 1 ? "1 bar" : `${bars} bars`}.`,
+  partMoved: (section: string, position: number) => `${section} is now part ${position}.`,
+  partDuplicated: (section: string) => `${section} copied after itself.`,
+  partNeedsTrack: "A part needs at least one track.",
+  nothingPlaying: "Turn a track on first: the new part takes what is playing.",
+  barCopied: (track: string, bar: number) => `Bar ${bar} of ${track} copied.`,
+  barPasted: (track: string, bar: number) => `Pasted into bar ${bar} of ${track}.`,
+  barCleared: (track: string, bar: number) => `Bar ${bar} of ${track} cleared.`,
+  templateStarts: (template: string) => `${template} plays on the next bar.`,
+  lineChanged: (line: number, track: string, what: string, value: string) =>
+    `Line ${line} changed by the ${track} track: ${what} became ${value}.`,
+} as const;

@@ -1,0 +1,53 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The key picker view, views/key-picker.ts. */
+.ui-key__tonics {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 14px;
+}
+.ui-key__scales {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+.ui-key__tonic,
+.ui-key__scale {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 44px;
+  border-radius: 12px;
+  background: var(--raised);
+  font-weight: 600;
+}
+.ui-key__scale {
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 0 14px;
+}
+.ui-key__description {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 13px;
+}
+.ui-key__tonic .ui-icon,
+.ui-key__scale .ui-icon {
+  display: none;
+  width: 16px;
+  height: 16px;
+}
+/* The chosen tonic and scale: flare outline and ✓. */
+.ui-key__tonic[aria-checked="true"],
+.ui-key__scale[aria-checked="true"] {
+  box-shadow: inset 0 0 0 2px var(--flare);
+}
+.ui-key__tonic[aria-checked="true"] .ui-icon,
+.ui-key__scale[aria-checked="true"] .ui-icon {
+  display: block;
+}
+.ui-key__note {
+  margin-top: 12px;
+}

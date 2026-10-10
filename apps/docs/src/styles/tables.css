@@ -1,0 +1,75 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* Tables and the facts of an instrument or a diagnostic. */
+/* Tables: numbers right-aligned with tabular figures. */
+/* A Markdown table is a bare <table>; it keeps the same space as a generated one. */
+.table-wrap,
+.prose > table {
+  margin: 16px 0 24px;
+}
+.table-wrap {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+th,
+td {
+  padding: 10px 12px 10px 0;
+  border-bottom: 1px solid var(--raised);
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+
+tbody th {
+  font-weight: 600;
+}
+
+.num,
+.align-right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+/* Facts of an instrument or a diagnostic. */
+.facts {
+  display: grid;
+  gap: 4px 24px;
+  margin: 0 0 16px;
+}
+
+.facts div {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 12px;
+}
+
+.facts dt {
+  color: var(--muted);
+}
+
+.facts dd {
+  /* A URL or a DOI breaks inside the column instead of widening the page (credits, 390 px). */
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}

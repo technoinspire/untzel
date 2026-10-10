@@ -1,0 +1,165 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The track grid view, views/track-grid.ts. */
+.ui-tracks {
+  position: relative;
+  height: 100%;
+}
+
+.ui-grid__scroller {
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 16px 64px;
+  scrollbar-width: none;
+}
+
+.ui-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(171px, 1fr));
+  gap: 10px 16px;
+}
+
+.ui-grid__fade {
+  position: absolute;
+  inset: auto 0 0;
+  height: 56px;
+  background: linear-gradient(rgb(11 11 12 / 0%), var(--stage));
+  pointer-events: none;
+}
+
+.ui-grid__count {
+  position: absolute;
+  inset: auto 0 4px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.ui-tile {
+  position: relative;
+  height: 76px;
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.ui-tile[data-state="on"] {
+  background: var(--raised);
+  box-shadow: inset 0 0 0 2px var(--flare);
+}
+
+.ui-grid[data-solo="true"] .ui-tile:not(.is-soloed) {
+  opacity: 0.4;
+}
+/* The first block outside the loop section pulses once while the loop plays. The
+   dashed outline is the resting state; the pulse only adds to it. */
+.ui-tile.is-hinted {
+  outline: 2px dashed var(--flare);
+  outline-offset: -2px;
+  animation: ui-tile-hint 900ms cubic-bezier(0.16, 1, 0.3, 1) 1;
+}
+@keyframes ui-tile-hint {
+  40% {
+    scale: 1.04;
+  }
+}
+
+.ui-tile__main {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 56px 0 14px;
+  border-radius: inherit;
+  text-align: left;
+  touch-action: none;
+  user-select: none;
+}
+
+.ui-tile__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 20px;
+}
+
+.ui-tile__name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ui-tile__caption {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.ui-tile__mini {
+  margin-top: 6px;
+}
+
+.ui-ring {
+  display: none;
+  width: 22px;
+  height: 22px;
+  rotate: -90deg;
+}
+
+.ui-tile[data-state="queued"] .ui-ring {
+  display: block;
+}
+
+.ui-ring__track,
+.ui-ring__fill {
+  fill: none;
+  stroke-width: 3;
+}
+
+.ui-ring__track {
+  stroke: var(--raised);
+}
+
+.ui-ring__fill {
+  stroke: var(--flare);
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: calc(100 - var(--next-bar, 0) * 100);
+}
+
+.ui-tile__tune {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgb(38 40 45 / 70%);
+}
+
+.ui-tile[data-state="on"] .ui-tile__tune {
+  background: rgb(11 11 12 / 70%);
+}
+
+.ui-tile--add {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  background: none;
+  box-shadow: inset 0 0 0 2px var(--raised);
+  width: 100%;
+}
+
+.ui-tile[data-state="on"] .ui-mini__cell[data-cell="hit"] {
+  background: var(--flare);
+  opacity: 1;
+}
+
+.ui-tile[data-state="on"] .ui-mini__cell[data-cell="hold"] {
+  background: var(--flare);
+  opacity: 0.6;
+}

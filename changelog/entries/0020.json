@@ -1,0 +1,15 @@
+{
+  "category": "new",
+  "date": "2026-10-04",
+  "refs": [
+    20
+  ],
+  "title": {
+    "en": "Untzel's own address",
+    "pt-BR": "O endereço próprio do Untzel"
+  },
+  "body": {
+    "en": "The app lives at app.untzel.com, the site at untzel.com and the documentation at untzel.com/docs.",
+    "pt-BR": "O app fica em app.untzel.com, o site em untzel.com e a documentação em untzel.com/docs."
+  }
+}

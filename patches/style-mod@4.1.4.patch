@@ -1,0 +1,28 @@
+diff --git a/dist/style-mod.cjs b/dist/style-mod.cjs
+index 567209b15c6e78a711208beb3c5d7c075d8cb2b5..b9de3cf6d979281649dfd5045842e2d207b14348 100644
+--- a/dist/style-mod.cjs
++++ b/dist/style-mod.cjs
+@@ -84,7 +84,8 @@ var adoptedSet = new Map //<Document, StyleSet>
+ 
+ var StyleSet = function StyleSet(root, nonce) {
+   var doc = root.ownerDocument || root, win = doc.defaultView
+-  if (!root.head && root.adoptedStyleSheets && win.CSSStyleSheet) {
++  // Untzel: documents too, so a static CSP needs no nonce.
++  if (root.adoptedStyleSheets && win.CSSStyleSheet) {
+     var adopted = adoptedSet.get(doc)
+     if (adopted) { return root[SET] = adopted }
+     this.sheet = new win.CSSStyleSheet
+diff --git a/src/style-mod.js b/src/style-mod.js
+index 41e4a1161cbb38af3a37f1a50eefe16654a7a860..17dcd8f308d13e54c75d3987c01a4a56e395ed9d 100644
+--- a/src/style-mod.js
++++ b/src/style-mod.js
+@@ -91,7 +91,8 @@ let adoptedSet = new Map //<Document, StyleSet>
+ class StyleSet {
+   constructor(root, nonce) {
+     let doc = root.ownerDocument || root, win = doc.defaultView
+-    if (!root.head && root.adoptedStyleSheets && win.CSSStyleSheet) {
++    // Untzel: documents too, so a static CSP needs no nonce.
++    if (root.adoptedStyleSheets && win.CSSStyleSheet) {
+       let adopted = adoptedSet.get(doc)
+       if (adopted) return root[SET] = adopted
+       this.sheet = new win.CSSStyleSheet

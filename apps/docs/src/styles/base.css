@@ -1,0 +1,129 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* Tokens, fonts, page, focus and the surfaces the browser draws. */
+/* The public documentation. Tokens and type of the app: dark by the scene of use
+   (the docs open next to the app, which is dark), flare as the accent, ember only for
+   errors. Fonts are the app's own files, never a CDN. Modular scale 1.25 on 16 px. */
+
+@font-face {
+  font-family: "Jost";
+  src: url("../../../web/public/fonts/jost-normal-400-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("../../../web/public/fonts/hanken-grotesk-400-600-latin.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --stage: #0b0b0c;
+  --surface: #161719;
+  --raised: #26282d;
+  --text: #ffffff;
+  --muted: #aaa5a1;
+  --flare: #f65d00;
+  --ember: #c52d1f;
+  --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --display: "Jost", Futura, "Helvetica Neue", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --step--1: 0.8rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.5625rem;
+  --step-3: 1.9531rem;
+  --step-4: 2.4414rem;
+  --container: 80rem;
+  --gutter: 1rem;
+  --target: 44px;
+  --radius: 8px;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--stage);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 100%;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  hyphens: manual;
+  scrollbar-color: var(--raised) var(--stage);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background: rgb(246 93 0 / 30%);
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+a {
+  color: var(--flare);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 120ms ease-out;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+img,
+svg {
+  display: block;
+}
+
+.icon {
+  flex: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -100px;
+  z-index: 10;
+  min-height: var(--target);
+  padding: 10px 16px;
+  background: var(--text);
+  color: var(--stage);
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 8px;
+}

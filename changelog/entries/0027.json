@@ -1,0 +1,16 @@
+{
+  "category": "fixed",
+  "date": "2026-10-05",
+  "refs": [
+    27
+  ],
+  "docs": "/docs/app/code",
+  "title": {
+    "en": "The editor works under a strict security policy",
+    "pt-BR": "O editor funciona sob uma política de segurança rígida"
+  },
+  "body": {
+    "en": "The Code panel no longer needs any relaxed browser rule to run.",
+    "pt-BR": "O painel Code não precisa mais de nenhuma regra relaxada do navegador para funcionar."
+  }
+}

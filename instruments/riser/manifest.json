@@ -1,0 +1,36 @@
+{
+  "name": "riser",
+  "group": "fx",
+  "kind": "drum",
+  "engine": "percussion",
+  "description": "Rising sweep before a drop",
+  "model": "PULSAR FX",
+  "tags": ["riser", "build", "uplifter", "transition"],
+  "voices": 2,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.55,
+  "patterns": [
+    { "name": "Whole bar", "text": "x~~~ ~~~~ ~~~~ ~~~~" },
+    { "name": "Half bar", "text": "x~~~ ~~~~ .... ...." },
+    { "name": "Upbeat", "text": ".... .... x~~~ ~~~~" }
+  ],
+  "preview": "x~~~ ~~~~ ~~~~ ~~~~",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "length", "min": 0, "max": 30, "default": 0, "unit": "s", "curve": "linear" },
+    { "name": "cutoff", "min": 200, "max": 16000, "default": 12000, "unit": "Hz", "curve": "exponential" },
+    { "name": "resonance", "min": 0, "max": 1, "default": 0.05, "unit": "", "curve": "linear" },
+    { "name": "color", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "color", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "noise", "description": "Noise sweeping up", "values": {} },
+    { "name": "tone", "description": "Rising tone", "values": {"color": 1} },
+    { "name": "both", "description": "Noise and tone", "values": {"color": 0.5} }
+  ],
+  "defaultPreset": "noise",
+  "scene": {"family": "sweep", "variant": {"shape": "converge"}, "drive": "envelope"}
+}

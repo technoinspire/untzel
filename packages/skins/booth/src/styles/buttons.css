@@ -1,0 +1,90 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The pill, round and segmented buttons every view shares. */
+.ui-round {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface);
+  flex: none;
+}
+
+.ui-round--raised {
+  background: var(--raised);
+}
+
+.ui-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  min-width: 44px;
+  padding: 0 18px;
+  border-radius: 22px;
+  background: var(--surface);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ui-pill--raised {
+  background: var(--raised);
+}
+
+.ui-pill--quiet {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.ui-pill--outline {
+  box-shadow: inset 0 0 0 1.5px var(--raised);
+}
+
+.ui-pill--primary {
+  background: var(--flare);
+  color: var(--stage);
+}
+
+.ui-pill--chip {
+  font-weight: 400;
+}
+
+.ui-pill--chip[aria-pressed="true"] {
+  background: var(--raised);
+  box-shadow: inset 0 0 0 1.5px var(--flare);
+  font-weight: 600;
+}
+
+.ui-pill[aria-pressed="true"]:not(.ui-pill--chip) {
+  box-shadow: inset 0 0 0 2px var(--flare);
+}
+/* An inert primary loses its flare: text-muted on flare would be 1.4:1. */
+.ui-app .ui-pill--primary[aria-disabled="true"] {
+  background: var(--raised);
+}
+
+/* Every option is a whole 44 px target (Loop/Song, 8/16/32 and the
+   panel tabs were 36 px tall inside a 4 px rim). The pressed option fills the track. */
+.ui-segmented {
+  display: inline-flex;
+  height: 44px;
+  padding: 0;
+  border-radius: 22px;
+  background: var(--surface);
+}
+
+.ui-segmented__option {
+  min-width: 74px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 22px;
+  color: var(--muted);
+}
+
+.ui-segmented__option[aria-pressed="true"] {
+  background: var(--raised);
+  color: var(--text);
+  font-weight: 600;
+}

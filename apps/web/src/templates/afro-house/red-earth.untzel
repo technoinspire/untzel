@@ -1,0 +1,41 @@
+// template: Red Earth
+// order: 1
+title "Red Earth"
+tempo 121
+key e dorian
+
+kick:     kick      punch    x... x... x... x... | gain 0.85
+sub:      sub       warm     . . e1 . . e1 . . . . e1 . . . g1 . / . . e1 . . e1 . . . . d1 . . . b0 .   | duck 0.6 | glide 0.04 | gain 2
+ohat:     hat       dusty   ..x. ..x. ..x. ..x.                                      | open 0.7 | gain 0.55 | pan 0.15
+hat:      hat       tight    .... x... .... x..x?0.5                                  | gain 1.05 | pan -0.2
+shaker:   shaker    soft     x x?0.6 x! x?0.7 x x?0.6 x! x?0.7 x x?0.6 x! x?0.7 x x?0.6 x! x?0.8   | swing 0.14 | pan 0.3 | gain 0.75
+tumba:    conga     low      x..x..x..x..x..x                                         | swing 0.12 | pan -0.3 | gain 0.34
+quinto:   conga     slap     . . x . . x . x! . . x . . x x?0.5 .                      | swing 0.12 | pan 0.35 | gain 0.45
+bongo:    bongo     high     ..x. .x.. ..x. x.x?0.6.                                   | swing 0.14 | pan 0.45 | gain 0.42
+djembe:   djembe    tone     x..x ..x. .x.. x.x?0.6.                                   | swing 0.1 | pan -0.1 | reverb room | gain 0.42
+block:    woodblock hollow   x..x..x. x..x..x.                                        | pan -0.45 | delay 1/8 | gain 0.45
+low:      djembe    bass     .... .... .... x.x?0.5.                                   | pan 0.2 | reverb room | gain 0.6
+rim:      rim       click    .... x... .... x..x?0.5                                  | reverb room | gain 1.35
+cowbell:  cowbell   classic  ..x. ...x ..x. .x?0.5..                                  | pan 0.4 | reverb room | gain 0.45
+pad:      pad       dusk     Em9 ~ ~ ~ / Em9 ~ ~ ~ / A9 ~ ~ ~ / Dmaj7 ~ ~ ~              | voicing spread | brightness sine(16) 0.3..0.6 | duck 0.4 | reverb room | gain 0.16
+swell:    pad       warm     Em9 ~ ~ ~ / Em9 ~ ~ ~ / A9 ~ ~ ~ / A9 ~ ~ ~                  | brightness saw(8) 0.15..0.85 | reverb sea | gain 0.5
+kalimba:  kalimba   tine     e4 . g4 b4 . e5 . b4 / d5 . b4 . g4 . a4 .                | delay 3/16 | reverb wide | pan 0.3 | gain 0.68
+marimba:  mallet    marimba  . . e3 . g3 . . b3 / . a3 . . f#3 . e3 .                  | delay 1/4 | reverb room | pan -0.3 | gain 0.24
+stab:     stab      classic  . . . . . . Em . / . . . . . . D .                        | lowpass 1400 | delay 1/4 | reverb wide | gain 0.5
+chant:    choir     chant    e4 ~ ~ . . . . . / . . . . . . . . / g4 ~ ~ . . . . . / . . . . . . . .   | reverb sea | gain 1.35
+answer:   vox       ooh      . . . . . . . . / b3 ~ g3 ~ . . . . / . . . . . . . . / a3 ~ f#3 ~ . . . .   | vowel sine(8) 0.2..0.6 | delay 3/16 | reverb sea | gain 0.57
+riser:    riser     noise    x... / .... / .... / .... / .... / .... / .... / ....     | length 15.6 | gain 0.5
+impact:   impact    deep     x... / .... / .... / .... / .... / .... / .... / ....     | reverb sea | gain 0.7
+
+section intro   shaker tumba quinto block djembe
+section groove  kick sub ohat hat shaker tumba quinto bongo block djembe rim cowbell pad | loop
+section motif   kick sub ohat hat shaker tumba quinto bongo block djembe rim cowbell pad kalimba marimba
+section break   shaker pad chant answer kalimba
+section build   kick hat shaker tumba quinto bongo block djembe low swell kalimba riser
+section drop    kick sub ohat hat shaker tumba quinto bongo block djembe rim cowbell pad kalimba marimba stab chant impact
+section perc    kick shaker tumba quinto bongo block djembe low
+section break2  pad chant answer marimba stab
+section drop2   kick sub ohat hat shaker tumba quinto bongo block djembe rim cowbell pad kalimba marimba stab chant answer impact
+section outro   shaker tumba quinto block djembe
+
+song intro 16, groove 32, motif 16, break 16, build 8, drop 32, perc 16, break2 16, build 8, drop2 32, outro 16

@@ -1,0 +1,35 @@
+// template: Disco Lights
+// order: 2
+// Disco house: octave bass, muted guitar chops, brass stabs through an opening filter,
+// string runs into the drop.
+title "Disco Lights"
+tempo 118
+key g major
+kick:    kick     crisp     x... x... x... x... | gain 0.9
+clap:    clap     tight     .... x... .... x...                                   | reverb small | gain 1.83
+hat:     hat      closed    x x?0.6 x x?0.8 x x?0.6 x x?0.8 x x?0.6 x x?0.8 x x?0.6 x x?0.9   | swing 0.1 | pan -0.2 | gain 0.4
+ohat:    hat      metal     ..x. ..x. ..x. ..x.                                   | gain 1.51 | pan 0.2
+shaker:  shaker   bright    x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7   | swing 0.1 | gain 0.18 | pan 0.3
+conga:   conga    low       . . x . x . . x . . x . . x x?0.6 .                   | swing 0.1 | pan -0.35 | reverb small | gain 0.55
+bell:    cowbell  bright    x . . . . . . . x . . . . . . . / x . . . . . . . x . . . x . . .   | pan 0.4 | gain 0.3
+block:   perc     block     .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... x.x. xxxx   | reverb small | pan -0.25 | gain 0.51
+bass:    bass     rolling   c2 c3 c2 c3 c2 c3 b1 b2 / b1 b2 b1 b2 b1 b2 a1 a2 / a1 a2 a1 a2 a1 a2 d2 d3 / d2 d3 d2 d3 d2 d3 c2 d2   | cutoff sine(4) 900..2600 | duck 0.5 | gain 1.03
+guitar:  pluck    muted     Cmaj7 . Cmaj7 . . Cmaj7 . Cmaj7 . . Cmaj7 . . Cmaj7 . . / Bm7 . Bm7 . . Bm7 . Bm7 . . Bm7 . . Bm7 . . / Am7 . Am7 . . Am7 . Am7 . . Am7 . . Am7 . . / D . D . . D . D . . D . . D . .   | voicing open | pan 0.3 | duck 0.4 | gain 0.5
+brass:   brass    section   . . . Cmaj7 . . Cmaj7 . / . . . Bm7 . . Bm7 . / . . . Am7 . . Am7 . / . . . D . . D .   | cutoff saw(16) 800..5000 | reverb small | gain 0.5
+strings: strings  ensemble  Cmaj7 ~ ~ ~ / Bm7 ~ ~ ~ / Am7 ~ ~ ~ / D ~ ~ ~         | brightness sine(16) 0.3..0.8 | reverb sea | gain 0.27
+run:     strings  high      . . . . . . . . / . . . . . . . . / . . . . . . . . / g4 a4 b4 c5 d5 e5 f#5 g5   | reverb wide | gain 0.5
+keys:    epiano   tine      . Cmaj7 . . Cmaj7 . . . / . Bm7 . . Bm7 . . . / . Am7 . . Am7 . . . / . D . . D . D .   | chorus 0.3 | reverb wide | gain 0.5
+voice:   vox      talk      d4 . b3 . . . . . / . . . . . . . . / c4 . a3 . . . . . / . . . . d4 ~ ~ ~   | delay 3/16 | reverb wide | pan -0.2 | gain 0.55
+rise:    noise    white     x~~~ ~~~~ ~~~~ ~~~~                                   | cutoff saw(8) 300..9000 | gain saw(8) 0.15..0.5
+riser:   riser    both      x... / .... / .... / .... / .... / .... / .... / ....   | length 15.5 | gain 0.5
+down:    downlifter noise   x~~~ ~~~~ ~~~~ ~~~~ / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.6
+crash:   crash    wide      x... / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.45
+section intro   kick hat shaker conga guitar
+section groove  kick clap hat ohat shaker conga bass guitar brass | loop
+section build   kick clap hat shaker conga block guitar brass strings run rise riser
+section drop    kick clap hat ohat shaker conga bell block bass guitar brass strings run voice crash
+section break   strings keys voice run down
+section groove2 kick clap hat ohat shaker conga bass guitar keys voice
+section drop2   kick clap hat ohat shaker conga bell block bass guitar brass strings run keys voice crash
+section outro   kick hat shaker conga guitar
+song intro 16, groove 32, build 8, drop 32, break 16, build 8, drop2 32, groove2 16, outro 16

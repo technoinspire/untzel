@@ -1,0 +1,41 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "types": [],
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/audio-main",
+    "tsBuildInfoFile": "../../.cache/tsc/audio-main.tsbuildinfo"
+  },
+  "include": [
+    "src/main",
+    "src/unlock.ts",
+    "src/preload.ts"
+  ],
+  "exclude": [
+    "src/**/*.test.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.protocol.json"
+    },
+    {
+      "path": "./tsconfig.worklet.json"
+    },
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../language"
+    },
+    {
+      "path": "../transport"
+    },
+    {
+      "path": "../session"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "tom",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "modal",
+  "description": "Toms, floor to high",
+  "model": "VOLTA K9",
+  "tags": ["tom", "drum", "fill"],
+  "voices": 4,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 0.94,
+  "patterns": [
+    { "name": "Low hits", "text": "x... .... x.x. ...." },
+    { "name": "Fill", "text": ".... .... x.x. xxxx" },
+    { "name": "Tribal", "text": "x..x ..x. x..x ..x." },
+    { "name": "Sparse", "text": "x... ...x .... x..." }
+  ],
+  "preview": "x.x. x... .x.x x...",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "tune", "min": 0, "max": 1, "default": 0.35, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.05, "max": 2, "default": 0.55, "unit": "s", "curve": "exponential" },
+    { "name": "bend", "min": 0, "max": 1, "default": 0.25, "unit": "", "curve": "linear" },
+    { "name": "hardness", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "tune", "from": 0, "to": 1 }
+  ],
+  "toneLevelDb": -8.25,
+  "presets": [
+    { "name": "floor", "description": "Low floor tom", "values": {} },
+    { "name": "high", "description": "High rack tom", "values": {"tune": 0.7, "decay": 0.35} },
+    { "name": "boom", "description": "Big and long", "values": {"tune": 0.15, "decay": 1.2, "bend": 0.4} },
+    { "name": "electronic", "description": "Synth tom with a pitch drop", "values": {"bend": 0.85, "hardness": 0.2, "decay": 0.5} }
+  ],
+  "defaultPreset": "floor",
+  "scene": {"family": "ripple", "variant": {"shape": "falling"}, "drive": "pitch"}
+}

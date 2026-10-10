@@ -1,0 +1,12 @@
+{
+  "category": "new",
+  "docs": "/docs/app/waiting",
+  "title": {
+    "en": "Three new templates, and a Style list",
+    "pt-BR": "Três templates novos e uma lista de estilos"
+  },
+  "body": {
+    "en": "Three more projects to start from, each in a style of its own. The styles now sit in one list, in alphabetical order, with the number of projects of each.",
+    "pt-BR": "Mais três projetos para começar, cada um num estilo próprio. Os estilos agora ficam numa lista só, em ordem alfabética, com o número de projetos de cada um."
+  }
+}

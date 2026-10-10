@@ -1,0 +1,7 @@
+// my first loop
+tempo 124
+key a minor
+
+kick: kick x... x... x... x...
+hat:  hat  ..x. ..x. ..x. ..x.   | swing 0.1
+bass: bass a1 . . a1 . . e2 .    | cutoff 500

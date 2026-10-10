@@ -1,0 +1,35 @@
+// template: Golden Hour
+// order: 3
+// Soulful house: Rhodes-style chords, a walking bass, live-feel percussion, a lead voice
+// answered by a choir.
+title "Golden Hour"
+tempo 121
+key eb major
+kick:    kick     warm      x... x... x... x...                                   | drive 0.6 | grit 0.15 | gain 0.85
+clap:    clap     tight     .... x... .... x...                                   | reverb small | gain 1.84
+snare:   snare    brush     .... x... .... x..x?0.4                               | reverb small | pan 0.1 | gain 0.45
+hat:     hat      closed    x x?0.5 x x?0.8 x x?0.5 x x?0.8 x x?0.5 x x?0.8 x x?0.5 x x?0.9   | swing 0.12 | pan -0.2 | gain 0.8
+ohat:    hat      dusty     ..x. ..x. ..x. ..x.                                   | gain 0.7 | pan 0.2
+shaker:  shaker   soft      x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7   | swing 0.12 | pan 0.3 | gain 0.75
+conga:   conga    high      . . x . . x . x . . x . . x . x?0.5                   | swing 0.12 | pan -0.35 | reverb small | gain 0.55
+quinto:  conga    muted     x . . . x . . x . . . x . . x .                       | swing 0.12 | pan 0.4 | gain 0.45
+bass:    bass     rolling   ab1 . ab1 . c2 . eb2 . / g1 . g1 . bb1 . d2 . / f1 . f1 . ab1 . c2 . / bb1 . bb1 . d2 . f2 eb2   | duck 0.5 | gain 2
+keys:    epiano   soft      . Abmaj9 . . . Abmaj9 . . / . Gm7 . . . Gm7 . . / . Fm9 . . . Fm9 . . / . Bb7sus4 . . . Bb7sus4 . Bb7 .   | voicing open | chorus 0.3 | reverb wide | gain 0.34
+organ:   organ    full      Abmaj9 ~ ~ ~ / Gm7 ~ ~ ~ / Fm9 ~ ~ ~ / Bb7sus4 ~ ~ ~ | reverb wide | gain 0.13
+strings: strings  tremolo   Ab ~ ~ ~ / Gm ~ ~ ~ / Fm ~ ~ ~ / Bb ~ ~ ~             | reverb sea | gain 0.22
+voice:   vox      talk      eb4 ~ ~ . f4 ~ g4 ~ / bb4 ~ ~ ~ g4 ~ . . / ab4 ~ ~ . g4 ~ f4 ~ / g4 ~ ~ ~ ~ ~ . .   | legato | glide 0.06 | delay 1/4 | reverb wide | gain 0.22
+choir:   choir    gospel      . . . . Ab ~ ~ ~ / . . . . Gm ~ ~ ~ / . . . . Fm ~ ~ ~ / . . . . Bb ~ ~ ~   | reverb sea | gain 0.19
+bell:    bell     glass     g5 . . bb5 . . eb5 . / f5 . . g5 . . d5 . / c5 . . eb5 . . ab5 . / bb5 ~ ~ ~ . . . .   | delay 3/16 | reverb wide | pan 0.3 | gain 0.35
+rise:    noise    white     x~~~ ~~~~ ~~~~ ~~~~                                   | cutoff saw(8) 300..9000 | gain saw(8) 0.15..0.5
+riser:   riser    both      x... / .... / .... / .... / .... / .... / .... / ....   | length 15.5 | gain 0.5
+down:    downlifter noise   x~~~ ~~~~ ~~~~ ~~~~ / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.6
+crash:   crash    short     x... / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.45
+section intro   kick hat shaker conga keys
+section groove  kick clap snare hat ohat shaker conga quinto bass keys | loop
+section build   kick clap snare hat shaker conga quinto keys strings rise riser
+section drop    kick clap snare hat ohat shaker conga quinto bass keys organ voice choir crash
+section break   keys strings voice bell down
+section groove2 kick clap snare hat ohat shaker conga quinto bass keys bell
+section drop2   kick clap snare hat ohat shaker conga quinto bass keys organ strings voice choir crash
+section outro   kick hat shaker conga keys
+song intro 16, groove 32, build 8, drop 32, break 16, build 8, drop2 32, groove2 16, outro 16

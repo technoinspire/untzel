@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "types": ["node"],
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/core-test",
+    "tsBuildInfoFile": "../../.cache/tsc/core-test.tsbuildinfo"
+  },
+  "include": ["src/**/*.test.ts"],
+  "references": [{ "path": "." }]
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: CPAL-1.0 -->
+<!-- Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0B0B0C" />
+    <title>Untzel · Techno Inspire</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="preload" href="./fonts/jost-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Everything the first screen draws loads with the page. The build adds the engine
+         (WASM, worklet, boot chunk) at low priority after it (first sound < 1 s). -->
+    <link rel="preload" href="./fonts/hanken-grotesk-400-600-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <noscript><p class="noscript">Untzel needs JavaScript to play. Powered by Untzel · Techno Inspire.</p></noscript>
+  </body>
+</html>

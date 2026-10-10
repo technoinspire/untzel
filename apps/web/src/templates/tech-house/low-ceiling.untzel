@@ -1,0 +1,35 @@
+// template: Low Ceiling
+// order: 1
+// Tech house: a rubbery bass whose filter snaps shut on every note (a per-note envelope
+// over resonance), a recorded voice that talks through a square-wave vowel, low toms,
+// djembe slaps and congas swung against the closed hats, a dub chord stab thrown into
+// the long delay, a drum bridge for the DJ and an acid line that takes over the second
+// drop. Style reference only; every melody is original.
+title "Low Ceiling"
+tempo 126
+key g minor
+kick:    kick       punch    x... x... x... x...                                   | decay 0.26 | pitch 50 | click 0.5 | click-tone 2600 | drive 0.25 | eq-mid -4 | eq-mid-freq 200 | gain 1.28
+clap:    clap       snap     .... x... .... x...                                   | decay 0.16 | spread 0.6 | eq-mid 3 | eq-mid-freq 2000 | reverb small | gain 1.49
+hat:     hat        closed   x x X x x x X x x x X x x x X x?0.6 / x x X x x x X x x x X x x X X x?0.6   | velocity 0.7 | swing 0.08 | pan -0.2 | gain 0.88
+ohat:    hat        closed   ..x. ..x. ..x. ..x.                                   | open 0.4 | decay 0.18 | pan 0.2 | gain 0.74
+shaker:  shaker     bright   x x?0.7 X x x x?0.7 X x x x?0.7 X x x x?0.7 X x?0.8   | decay 0.05 | color 0.8 | swing 0.08 | velocity 0.5 | pan 0.3 | gain 0.54
+tom:     tom        floor    . . . . . . x . . . . x . . x . / . . . . . . x . . x . . . . x x?0.5   | tune 0.45 | decay 0.3 | swing 0.08 | pan -0.3 | reverb room | gain 0.61
+slap:    djembe     slap     . x . . . . . . . x . . . . . . / . x . . . . . x . . . . . x . .   | tune 0.65 | swing 0.08 | pan 0.35 | reverb small | gain 0.68
+conga:   conga      high     . . x . . x . . . . x . . x . x?0.5 / . . x . . x . . . x . . . x . .   | swing 0.08 | pan 0.4 | reverb small | gain 0.61
+bass:    reese      growl    . . g1 ~ . g1 . g2 . . g1 ~ . bb1 . g1 / . . g1 ~ . g1 . g2 . . f1 ~ . f1 . g1 / . . g1 ~ . g1 . g2 . . g1 ~ . bb1 . d2 / . . eb1 ~ . eb1 . eb2 . . f1 ~ . f1 . f2   | cutoff env(0.14) 1800..300 | resonance 0.5 | detune 0.35 | release 0.08 | duck 0.75 | gain 0.81
+vox:     vox        aah      . . g3 . . g3 . bb3 . . g3 . . . . . / . . g3 . . g3 . bb3 . . c4 . bb3 . g3 . / . . g3 . . g3 . bb3 . . d4 ~ c4 . bb3 . / . . eb4 ~ . d4 . c4 . . c4 ~ bb3 . a3 .   | vowel square(1/8) 0.1..0.9 | crush 0.2 | delay 3/16 | reverb plate | gain 0.88
+stab:    supersaw   thin     . . . Gm9 . . . . . . Gm9 . . . . . / . . . Gm9 . . . . . . Gm9 . . . Gm9 . / . . . Gm9 . . . . . . Gm9 . . . . . / . . . Ebmaj9 . . . . . . F . . . . .   | voicing open | release 0.12 | cutoff sine(8) 1500..4000 | delay 3/16 | reverb dub | duck 0.6 | gain 0.74
+acid:    acid       classic  g2 . g3 g2 . g2 bb2! g2 . f2 g2 . g3! . d3 g2 / g2 . g3 g2 . g2 c3! bb2 . g2 f2 . d3! . c3 bb2 / g2 . g3 g2 . g2 bb2! g2 . f2 g2 . g3! . d3 g2 / eb2 . eb3 eb2 . eb2 g2! eb2 . f2 f2 . f3! . c3 a2   | cutoff saw(16) 300..2600 | resonance 0.78 | decay 0.18 | delay 3/16 | duck 0.6 | gain 0.81
+sweep:   sweep      notch    x... / .... / .... / .... / .... / .... / .... / ....   | length 15 | gain 0.54
+down:    downlifter both     x~~~ ~~~~ ~~~~ ~~~~ / .... / .... / .... / .... / .... / .... / ....   | reverb plate | gain 0.68
+section intro   kick hat shaker tom
+section groove  kick clap hat ohat shaker tom slap conga bass | loop
+section vocal   kick clap hat ohat shaker tom slap conga bass vox
+section break   shaker stab vox down
+section build   hat shaker tom slap conga vox sweep
+section drop    kick clap hat ohat shaker tom slap conga bass vox stab
+section bridge  kick hat ohat shaker tom slap conga bass
+section build2  shaker tom acid sweep
+section drop2   kick clap hat ohat shaker tom slap conga bass vox stab acid
+section outro   kick hat shaker tom
+song intro 16, groove 16, vocal 16, break 16, build 8, drop 32, bridge 16, build2 8, drop2 32, outro 16

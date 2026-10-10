@@ -1,0 +1,4 @@
+key c minor
+keys: piano c3+eb3+g3 ~ ~ . bb2+d3+f3 ~ . . | reverb wide
+kick: kick x . . . x . . . x . . . x! . x .
+lead: lead c4! . eb4 . g4 . bb4! .      | cutoff 2000

@@ -1,0 +1,99 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The idle screen view, views/idle-screen.ts. */
+/* One column in flow between the top bar and the tab bar: the
+   notice, the play button, the templates and the legal line, in reading and Tab order.
+   With every part placed absolutely the picker met the play button on a short phone
+   (375 × 667: the Blank card over it). When it all fits the templates sit at the bottom,
+   as before; when it does not, the column scrolls. With a notice it starts where the top
+   bar's scrim ends (--scrim-end of top-bar.css, 120 px): "Remix this" under the scrim
+   measured 2.94:1. */
+.ui-idle {
+  position: absolute;
+  inset: 0 0 48px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 150px 0 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  /* A control scrolled into view (Tab) clears the sticky legal band. */
+  scroll-padding-bottom: 56px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--raised) transparent;
+}
+
+.ui-idle:has(.ui-idle__center > :is(.ui-idle__remix, .ui-idle__notice):not([hidden])) {
+  padding-top: 120px;
+}
+
+.ui-idle > * {
+  flex: none;
+}
+
+/* Tapping the stage around the controls starts; the column's blocks paint over it. */
+.ui-idle__hit {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+.ui-idle > :not(.ui-idle__hit) {
+  position: relative;
+}
+
+.ui-idle__open {
+  width: 100%;
+  padding: 0 12px;
+}
+
+/* 68 px under the templates and 12 px over the tab bar, as when both were absolute. The
+   legal notice shows at every launch: when the column scrolls it stays at its
+   foot on an opaque band down to the column's edge, and the templates pass under it. */
+.ui-idle > .ui-idle__legal {
+  position: sticky;
+  bottom: 0;
+}
+
+.ui-idle__legal {
+  margin-top: 60px;
+  padding: 8px 16px 12px;
+  background: var(--stage);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@media (min-width: 700px) {
+  /* 36 px under the templates and 4 px over the tab bar. */
+  .ui-idle__legal {
+    margin-top: 28px;
+    padding-bottom: 4px;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* No tab bar. The ring at about a quarter of the window; a notice starts 48 px
+     higher, so the picker still fits a 900 px window, and never under the desktop
+     bar's scrim (144 px). */
+  .ui-idle {
+    inset: 0;
+    padding: max(144px, min(220px, 22dvh)) 0 0;
+  }
+
+  .ui-idle:has(.ui-idle__center > :is(.ui-idle__remix, .ui-idle__notice):not([hidden])) {
+    padding-top: max(144px, min(220px, 22dvh) - 48px);
+  }
+
+  .ui-idle__legal {
+    margin-top: 40px;
+    padding: 8px 32px 32px;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": [],
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/export",
+    "tsBuildInfoFile": "../../.cache/tsc/export.tsbuildinfo"
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts"],
+  "references": [
+    { "path": "../core" },
+    { "path": "../session" },
+    { "path": "../audio/tsconfig.protocol.json" },
+    { "path": "../audio/tsconfig.worklet.json" },
+    { "path": "../light" }
+  ]
+}

@@ -1,0 +1,7 @@
+// rolling bass: off-beat sixteenths that dip under every kick
+tempo 126
+key f minor
+
+kick: kick x... x... x... x...                                  | drive 0.3 | decay 0.4
+roll: bass . f1 f1 f1 . f1 f1 f1 . f1 f1 f1 . f1 ab1 c2         | cutoff 650 | decay 0.12 | drive 0.35 | duck 0.85
+hat:  hat  ..x. ..x. ..x. ..x.                                  | open 0.2 | gain 0.45

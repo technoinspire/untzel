@@ -1,0 +1,39 @@
+{
+  "template": "downtempo/blue-lounge",
+  "runs": {
+    "loop": {
+      "bars": 16,
+      "events": 511,
+      "eventsPerTrack": {
+        "kick": 49,
+        "sub": 33,
+        "keys": 28,
+        "rim": 28,
+        "hat": 72,
+        "shaker": 213,
+        "brush": 32,
+        "harp": 48,
+        "bell": 8
+      },
+      "songEnded": false,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -17.7,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": null,
+        "trackRmsDbfs": {
+          "kick": -21.71,
+          "sub": -22.33,
+          "keys": -26.72,
+          "rim": -33.97,
+          "hat": -47.56,
+          "shaker": -34.01,
+          "brush": -31.46,
+          "harp": -28.09,
+          "bell": -34.69
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    "resolveJsonModule": true,
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/light-test",
+    "tsBuildInfoFile": "../../.cache/tsc/light-test.tsbuildinfo"
+  },
+  "include": ["src/**/*.test.ts"],
+  "references": [{ "path": "." }, { "path": "../core" }, { "path": "../scene" }, { "path": "../language" }, { "path": "../transport" }, { "path": "../session" }, { "path": "../instrument-index" }]
+}

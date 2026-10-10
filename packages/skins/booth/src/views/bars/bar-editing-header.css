@@ -1,0 +1,22 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The bar editing header view, views/bar-editing-header.ts. */
+.ui-detail__editing-row {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.ui-detail__editing-text {
+  text-align: center;
+}
+
+.ui-detail__editing {
+  font: 500 18px/24px var(--font-display);
+}
+
+.ui-detail__editing-hint {
+  color: var(--muted);
+  font-size: 12px;
+}

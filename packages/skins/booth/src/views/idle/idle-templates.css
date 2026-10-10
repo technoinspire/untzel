@@ -1,0 +1,54 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The idle templates view, views/idle-templates.ts. */
+/* At the foot of the idle column when it fits (the auto margin), never closer than
+   16 px under "Starts on the next bar". */
+.ui-idle__templates {
+  margin-top: auto;
+  padding: 16px 16px 0;
+}
+
+.ui-idle__templates-label {
+  font-weight: 600;
+}
+
+.ui-idle__hint {
+  max-width: 52ch;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 19px;
+}
+
+/* Side by side where both labels fit; stacked on a phone, so neither is cut. */
+.ui-idle__more {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.ui-idle__resume {
+  width: 100%;
+  padding: 0 12px;
+}
+
+@media (min-width: 1200px) {
+  /* Wide enough for the nine style tabs on one row (about 860 px) and three project
+     cards; the hint and the buttons keep the old 640 px measure. The tighter gaps keep
+     the picker under "Starts on the next bar" on an 800 px high window. */
+  .ui-idle__templates {
+    max-width: 900px;
+    margin-left: 32px;
+    padding-inline: 0;
+  }
+
+  .ui-idle__hint {
+    margin-top: 12px;
+  }
+
+  .ui-idle__more {
+    max-width: 640px;
+    margin-top: 16px;
+  }
+}

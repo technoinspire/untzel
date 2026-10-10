@@ -1,0 +1,41 @@
+{
+  "name": "vox",
+  "group": "voices",
+  "kind": "pitched",
+  "range": { "lowest": "c2", "highest": "c5" },
+  "engine": "formant",
+  "description": "Singing synth voice",
+  "model": "AETHER Voice",
+  "tags": ["vox", "vocal", "talk", "voice"],
+  "voices": 1,
+  "allocation": "mono",
+  "steal": "oldest",
+  "costPerVoice": 2.05,
+  "patterns": [
+    { "name": "Phrase", "text": "c4 ~ eb4 ~ g4 ~ ~ ." },
+    { "name": "Long notes", "text": "c4 ~ ~ ~ ~ ~ ~ ~ / bb3 ~ ~ ~ g3 ~ ~ ~" },
+    { "name": "Chant", "text": "c4 . c4 . eb4 . c4 ." },
+    { "name": "Answer", "text": ". . g3 ~ bb3 ~ c4 ~" }
+  ],
+  "preview": "c4 ~ eb4 ~ g4 ~ ~ . / f4 ~ eb4 ~ c4 ~ ~ .",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "vowel", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "breath", "min": 0, "max": 1, "default": 0.15, "unit": "", "curve": "linear" },
+    { "name": "brightness", "min": 0, "max": 1, "default": 0.6, "unit": "", "curve": "linear" },
+    { "name": "attack", "min": 0.001, "max": 2, "default": 0.02, "unit": "s", "curve": "exponential" },
+    { "name": "release", "min": 0.01, "max": 4, "default": 0.2, "unit": "s", "curve": "exponential" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "synth" }
+  ],
+  "tone": [
+    { "parameter": "vowel", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "talk", "description": "Talking vowel", "values": {} },
+    { "name": "ooh", "description": "Sung ooh, recorded singer", "values": {"vowel": 1, "source": "samples"} },
+    { "name": "aah", "description": "Sung aah, recorded singer", "values": {"source": "samples"} },
+    { "name": "robot", "description": "Robotic, no breath", "values": {"breath": 0, "brightness": 0.9} }
+  ],
+  "defaultPreset": "talk",
+  "scene": {"family": "halo", "variant": {"shape": "aura"}, "drive": "pitch"}
+}

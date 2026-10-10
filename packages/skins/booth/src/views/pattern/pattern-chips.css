@@ -1,0 +1,71 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The pattern chips view, views/pattern-chips.ts. */
+.ui-patterns {
+  margin-top: 12px;
+}
+.ui-patterns[hidden] {
+  display: none;
+}
+/* A row that scrolls on touch, with its right edge faded; it wraps with a fine pointer. */
+.ui-patterns__chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px;
+  scrollbar-width: none;
+  mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
+}
+
+@media (pointer: fine) {
+  .ui-patterns__chips {
+    flex-wrap: wrap;
+    overflow: visible;
+    mask-image: none;
+  }
+}
+
+.ui-patterns__chip {
+  flex: none;
+  gap: 6px;
+  background: var(--raised);
+}
+.ui-patterns__chip .ui-icon {
+  width: 16px;
+  height: 16px;
+}
+/* The current chip: flare outline and ✓; previewing: dashed white and a speaker. */
+.ui-patterns__chip .ui-icon--check,
+.ui-patterns__chip .ui-icon--speaker {
+  display: none;
+}
+.ui-patterns__chip[aria-pressed="true"] .ui-icon--check {
+  display: block;
+}
+/* A pseudo-element, so the focus ring (an outline) never hides the dashed edge. */
+.ui-patterns__chip {
+  position: relative;
+}
+.ui-patterns__chip[data-previewing="true"] {
+  background: var(--raised);
+  box-shadow: none;
+}
+.ui-patterns__chip[data-previewing="true"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1.5px dashed var(--text);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.ui-patterns__chip[data-previewing="true"] .ui-icon--speaker {
+  display: block;
+}
+.ui-patterns__caption {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.ui-patterns__caption[hidden] {
+  display: none;
+}

@@ -1,0 +1,35 @@
+{
+  "template": "deep-house/night-garden",
+  "runs": {
+    "loop": {
+      "bars": 16,
+      "events": 452,
+      "eventsPerTrack": {
+        "kick": 65,
+        "hat": 68,
+        "shaker": 201,
+        "bass": 33,
+        "organ": 32,
+        "pad": 21,
+        "bell": 32
+      },
+      "songEnded": false,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -15.51,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": -19.74,
+          "hat": -41.87,
+          "shaker": -33.15,
+          "bass": -18.65,
+          "organ": -24.25,
+          "pad": -31.54,
+          "bell": -22.36
+        }
+      }
+    }
+  }
+}

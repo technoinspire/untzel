@@ -1,0 +1,38 @@
+{
+  "name": "fm-bass",
+  "group": "bass",
+  "kind": "pitched",
+  "range": { "lowest": "c1", "highest": "c4" },
+  "engine": "fm",
+  "description": "FM bass, plucky to metallic",
+  "model": "OPAL B6",
+  "tags": ["fm", "bass", "pluck", "digital"],
+  "voices": 1,
+  "allocation": "mono",
+  "steal": "oldest",
+  "costPerVoice": 2.21,
+  "patterns": [
+    { "name": "Bounce", "text": "c2 . c2 . eb2 . c2 g1" },
+    { "name": "Offbeat", "text": ". c2 . c2 . c2 . eb2" },
+    { "name": "Long notes", "text": "c2 ~ ~ ~ g1 ~ ~ ~" },
+    { "name": "Stabs", "text": "c2 . . . c2 . eb2 ." }
+  ],
+  "preview": "c2 . c2 . eb2 . c2 g1",
+  "defaultDuck": 0.6,
+  "parameters": [
+    { "name": "brightness", "min": 0, "max": 1, "default": 0.45, "unit": "", "curve": "linear" },
+    { "name": "feedback", "min": 0, "max": 1, "default": 0.4, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.05, "max": 4, "default": 0.35, "unit": "s", "curve": "exponential" },
+    { "name": "release", "min": 0.01, "max": 2, "default": 0.1, "unit": "s", "curve": "exponential" }
+  ],
+  "tone": [
+    { "parameter": "brightness", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "pluck", "description": "Plucked, growling digital bass", "values": {} },
+    { "name": "metal", "description": "Hard and metallic", "values": {"brightness": 0.8, "feedback": 0.5} },
+    { "name": "round", "description": "Soft and round", "values": {"brightness": 0.2, "decay": 0.7, "feedback": 0.1} }
+  ],
+  "defaultPreset": "pluck",
+  "scene": {"family": "floor", "variant": {"shape": "comb"}, "drive": "cutoff"}
+}

@@ -1,0 +1,39 @@
+// template: Night Petals
+// order: 2
+// Emotional melodic techno: a rolling 1/16 bass under a long, singing lead; an arp that
+// repeats for 8 bars and opens slowly; a long breakdown with felt piano, strings and
+// choir. Every melody is original.
+title "Night Petals"
+tempo 122
+key d minor
+kick:    kick       rumble   x... x... x... x... | gain 0.9
+sub:     sub        pure     d1 ~ ~ ~ / bb0 ~ ~ ~ / f1 ~ ~ ~ / c1 ~ ~ ~             | duck 0.9 | gain 1.29
+bass:    bass       rolling  . d2 d2 d2 . d2 d2 d2 . d2 d2 d2 . d2 d2 d2 / . bb1 bb1 bb1 . bb1 bb1 bb1 . bb1 bb1 bb1 . bb1 bb1 bb1 / . f2 f2 f2 . f2 f2 f2 . f2 f2 f2 . f2 f2 f2 / . c2 c2 c2 . c2 c2 c2 . c2 c2 c2 . c2 e2 g2   | duck 0.85 | cutoff sine(16) 350..1100 | gain 0.7
+clap:    clap       roomy    .... x... .... x...                                   | reverb wide | gain 0.55
+hat:     hat        metal    . x x?0.5 x . x x?0.5 x . x x?0.5 x . x x?0.6 x     | gain 0.4 | pan -0.15
+ohat:    hat        open     ..x. ..x. ..x. ..x.                                   | gain 0.4 | pan 0.15
+shaker:  shaker     soft     x x?0.6 x x?0.6 x x?0.6 x x?0.6 x x?0.6 x x?0.6 x x?0.6 x x?0.6   | gain 0.15 | pan 0.3
+perc:    perc       drop     .... ..x. .... .... / .... .... ..x. ..x.             | delay 3/16 | reverb wide | pan -0.35 | gain 0.45
+ride:    ride       ping     x.x. x.x. x.x. x.x. | pan 0.25 | gain 0.34
+arp:     pluck      bright   Dm9 ~ ~ ~ / Bbmaj7 ~ ~ ~ / Fmaj9 ~ ~ ~ / Csus4 ~ C ~   | arp updown | arp-rate 1/16 | arp-octaves 2 | brightness saw(32) 0.2..0.85 | highpass 350 | delay 3/16 | reverb wide | duck 0.5 | gain 0.5
+pad:     pad        bright   Dm9 ~ ~ ~ / Bbmaj7 ~ ~ ~ / Fmaj9 ~ ~ ~ / Csus4 ~ C ~   | voicing spread | brightness sine(32) 0.25..0.65 | duck 0.6 | reverb sea | gain 0.38
+strings: strings    high     Dm ~ ~ ~ / Bb ~ ~ ~ / F ~ ~ ~ / C ~ ~ ~                | voicing spread | reverb sea | gain 0.41
+piano:   piano      felt     a4 ~ ~ . f4 ~ g4 ~ / a4 ~ c5 ~ bb4 ~ a4 ~ / g4 ~ ~ . f4 ~ e4 ~ / f4 ~ ~ ~ e4 ~ d4 ~   | delay 1/4 | reverb sea | gain 0.6
+lead:    lead       glass    a4 ~ ~ . f4 ~ g4 ~ / a4 ~ c5 ~ bb4 ~ a4 ~ / g4 ~ ~ . f4 ~ e4 ~ / f4 ~ ~ ~ e4 ~ d4 ~   | legato | glide 0.08 | attack 0.08 | release 1.5 | cutoff sine(16) 1400..3800 | delay 1/4 | reverb sea | gain 0.8
+answer:  harp       glass    . . . . . . d5 . / . . . . . . f5 . / . . . . . . c5 . / . . . . e5 ~ d5 .   | delay 3/16 | reverb wide | pan 0.3 | gain 0.35
+choir:   choir      ooh      Dm ~ ~ ~ / Bb ~ ~ ~ / F ~ ~ ~ / C ~ ~ ~                | vowel sine(16) 0.2..0.7 | reverb sea | gain 0.4
+rise:    noise      white    x~~~ ~~~~ ~~~~ ~~~~                                   | cutoff saw(8) 300..9000 | gain saw(8) 0.15..0.5
+riser:   riser      both     x... / .... / .... / .... / .... / .... / .... / ....   | length 15.5 | gain 0.5
+down:    downlifter noise    x~~~ ~~~~ ~~~~ ~~~~ / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.6
+impact:  impact     deep     x... / .... / .... / .... / .... / .... / .... / ....   | reverb sea | gain 0.8
+section intro   kick hat shaker perc pad
+section groove  kick sub bass clap hat ohat shaker perc arp pad | loop
+section build   kick sub bass clap hat shaker perc ride arp pad rise
+section break   pad strings piano choir down
+section lift    arp strings choir riser
+section drop    kick sub bass clap hat ohat shaker perc ride arp pad lead answer impact
+section groove2 kick sub bass clap hat ohat shaker perc arp answer
+section break2  strings piano answer choir down
+section drop2   kick sub bass clap hat ohat shaker perc ride arp pad strings lead answer choir impact
+section outro   kick hat shaker perc arp
+song intro 16, groove 32, build 8, break 32, lift 8, drop 32, groove2 16, break2 16, lift 8, drop2 32, outro 16

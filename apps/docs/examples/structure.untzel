@@ -1,0 +1,13 @@
+// globals first, then tracks, then sections, then the song
+tempo 124
+key a minor
+swing 0.08
+
+kick: kick x... x... x... x...
+hat:  hat  ..x. ..x. ..x. ..x.
+bass: bass a1 . . a1 . . c2 .
+
+section intro kick hat
+section main  kick hat bass
+
+song intro 8, main 16 | loop

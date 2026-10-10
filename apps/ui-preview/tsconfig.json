@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["vite/client"],
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/ui-preview",
+    "tsBuildInfoFile": "../../.cache/tsc/ui-preview.tsbuildinfo"
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../../packages/core" },
+    { "path": "../../packages/language" },
+    { "path": "../../packages/transport" },
+    { "path": "../../packages/session" },
+    { "path": "../../packages/presentation" },
+    { "path": "../../packages/skins" },
+    { "path": "../../packages/editor" },
+    { "path": "../../packages/light" },
+    { "path": "../../packages/i18n" },
+    { "path": "../../packages/skin-contract" }
+  ]
+}

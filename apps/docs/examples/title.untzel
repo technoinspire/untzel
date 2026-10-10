@@ -1,0 +1,6 @@
+// the title names the song; it never changes the sound
+title "Midnight Coast"
+tempo 122
+key f minor
+kick: kick  x... x... x... x...
+keys: piano Fm7 ~ ~ ~ / Dbmaj7 ~ ~ ~

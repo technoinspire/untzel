@@ -1,0 +1,44 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/audio-test",
+    "tsBuildInfoFile": "../../.cache/tsc/audio-test.tsbuildinfo"
+  },
+  "include": [
+    "src/**/*.test.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.protocol.json"
+    },
+    {
+      "path": "./tsconfig.main.json"
+    },
+    {
+      "path": "./tsconfig.worker.json"
+    },
+    {
+      "path": "./tsconfig.worklet.json"
+    },
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../language"
+    },
+    {
+      "path": "../transport"
+    },
+    {
+      "path": "../session"
+    }
+  ]
+}

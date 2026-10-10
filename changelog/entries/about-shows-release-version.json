@@ -1,0 +1,11 @@
+{
+  "category": "fixed",
+  "title": {
+    "en": "About shows the version you are playing",
+    "pt-BR": "O Sobre mostra a versão que você está usando"
+  },
+  "body": {
+    "en": "Help → About now names the release, such as 0.1.0, instead of 0.0.0.",
+    "pt-BR": "Ajuda → Sobre agora mostra a versão publicada, como 0.1.0, em vez de 0.0.0."
+  }
+}

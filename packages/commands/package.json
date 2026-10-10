@@ -1,0 +1,20 @@
+{
+  "name": "@untzel/commands",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./pt-BR": "./src/copy/portuguese.ts",
+    "./testing": "./src/testing/composer.ts"
+  },
+  "dependencies": {
+    "@untzel/core": "workspace:*",
+    "@untzel/i18n": "workspace:*",
+    "@untzel/language": "workspace:*"
+  },
+  "devDependencies": {
+    "@untzel/instrument-index": "workspace:*"
+  }
+}

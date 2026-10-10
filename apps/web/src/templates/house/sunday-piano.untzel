@@ -1,0 +1,32 @@
+// template: Sunday Piano
+// order: 1
+// Piano house: dotted piano stabs, offbeat bass, swung hats and congas, gospel choir.
+title "Sunday Piano"
+tempo 125
+key f major
+kick:    kick     round     x... x... x... x... | gain 0.9
+clap:    clap     roomy     .... x... .... x...                                   | reverb small | gain 1.5
+hat:     hat      closed    x x?0.6 x x x x?0.6 x x x x?0.6 x x x x?0.6 x x?0.7   | swing 0.15 | pan -0.2 | gain 0.45
+ohat:    hat      open      ..x. ..x. ..x. ..x. | pan 0.2 | gain 0.93
+shaker:  shaker   bright    x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7   | swing 0.15 | gain 0.18 | pan 0.3
+conga:   conga    slap      . . x . . x . . x . . . x . x x?0.5                   | swing 0.15 | pan -0.35 | reverb plate | gain 0.6
+bell:    cowbell  classic   . . . . . . x . . . . . . x . x                       | pan 0.4 | gain 0.35
+bass:    bass     rolling   . . bb1 . . . bb1 bb2 . . bb1 . . bb1 . . / . . c2 . . . c2 c3 . . c2 . . c2 . . / . . a1 . . . a1 a2 . . a1 . . a1 . . / . . d2 . . . d2 d3 . . d2 . . c2 . a1   | cutoff 1400 | drive 0.2 | duck 0.6 | gain 2
+piano:   piano    house     Bbmaj9 . . Bbmaj9 . . Bbmaj9 . . . Bbmaj9 . . Bbmaj9 . . / C . . C . . C . . . C . . C . . / Am7 . . Am7 . . Am7 . . . Am7 . . Am7 . . / Dm9 . . Dm9 . . Dm9 . . . Dm9 . . Dm9 . .   | voicing open | delay 3/16 | reverb small | gain 0.5
+organ:   organ    soft      Bbmaj9 ~ ~ ~ / C ~ ~ ~ / Am7 ~ ~ ~ / Dm9 ~ ~ ~       | lowpass 2400 | reverb wide | gain 0.11
+strings: strings  ensemble  Bb ~ ~ ~ / C ~ ~ ~ / Am ~ ~ ~ / Dm ~ ~ ~               | brightness saw(8) 0.2..0.8 | reverb sea | gain 0.41
+voice:   vox      ooh       f4 ~ ~ . d4 ~ f4 ~ / g4 ~ ~ ~ e4 ~ . . / e4 ~ ~ . c4 ~ e4 ~ / f4 ~ ~ ~ ~ ~ . .   | legato | glide 0.05 | delay 1/4 | reverb plate | gain 0.3
+choir:   choir    gospel      Bb ~ ~ ~ / C ~ ~ ~ / Am ~ ~ ~ / Dm ~ ~ ~               | reverb sea | gain 0.24
+rise:    noise    white     x~~~ ~~~~ ~~~~ ~~~~                                   | cutoff saw(8) 300..9000 | gain saw(8) 0.15..0.5
+riser:   riser    both      x... / .... / .... / .... / .... / .... / .... / ....   | length 15.5 | gain 0.5
+down:    downlifter noise   x~~~ ~~~~ ~~~~ ~~~~ / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.6
+crash:   crash    short     x... / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.45
+section intro   kick hat shaker conga
+section groove  kick clap hat ohat shaker conga bass piano | loop
+section build   kick clap hat shaker conga strings piano rise riser
+section drop    kick clap hat ohat shaker conga bell bass piano organ voice choir crash
+section break   piano strings organ voice choir down
+section groove2 kick clap hat ohat shaker conga bass organ voice
+section drop2   kick clap hat ohat shaker conga bell bass piano organ strings voice choir crash
+section outro   kick hat shaker conga
+song intro 16, groove 32, build 8, drop 32, break 16, build 8, drop2 32, groove2 16, outro 16

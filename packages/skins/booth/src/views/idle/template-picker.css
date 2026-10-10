@@ -1,0 +1,65 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The template picker view, views/template-picker.ts. */
+/* The detail span starts with " · ": a flex item drops its leading space, so the gap
+   stands in for one word space. */
+.ui-styles__card {
+  flex: none;
+  gap: 0.3em;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+
+/* muted on raised 6.04:1, on surface 7.2:1; numbers keep their width. */
+.ui-styles__detail {
+  color: var(--muted);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+/* The Blank project: its own card before the styles, a dashed square
+   with +, "No tracks · 124 BPM · a minor"; chosen, flare outline and ✓. */
+.ui-styles__blank {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  height: auto;
+  min-height: 56px;
+  margin-bottom: 14px;
+  padding: 8px 16px;
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 1.5px var(--muted);
+  text-align: left;
+  white-space: normal;
+}
+
+@media (min-width: 1200px) {
+  .ui-styles__blank {
+    width: 320px;
+  }
+}
+
+.ui-styles__blank[hidden] {
+  display: none;
+}
+.ui-styles__blank-text {
+  display: grid;
+  gap: 2px;
+}
+.ui-styles__blank .ui-icon {
+  flex: none;
+  width: 22px;
+  height: 22px;
+}
+.ui-styles__blank .ui-icon--check {
+  display: none;
+  margin-left: auto;
+  color: var(--flare);
+}
+.ui-styles__blank[aria-pressed="true"] {
+  background: var(--raised);
+  box-shadow: inset 0 0 0 2px var(--flare);
+}
+.ui-styles__blank[aria-pressed="true"] .ui-icon--check {
+  display: block;
+}

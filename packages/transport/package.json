@@ -1,0 +1,20 @@
+{
+  "name": "@untzel/transport",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./testing": "./src/testing/index.ts",
+    "./play-range": "./src/play-range/play-range.ts",
+    "./export-stretch": "./src/export-stretch/export-stretch.ts"
+  },
+  "dependencies": {
+    "@untzel/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@untzel/instrument-index": "workspace:*",
+    "@untzel/language": "workspace:*"
+  }
+}

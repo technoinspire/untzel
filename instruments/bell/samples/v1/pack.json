@@ -1,0 +1,236 @@
+{
+ "format": 1,
+ "instrument": "bell",
+ "version": 1,
+ "sampleRate": 48000,
+ "frames": 2583183,
+ "audio": {
+  "file": "pack.opus",
+  "codec": "opus",
+  "bitrate": "64k",
+  "bytes": 549453,
+  "sha256": "ffa6d7806d6b1bf8e87c8367297f215209cf0477e5444bbcf6f58b90330cb08f"
+ },
+ "license": {
+  "id": "CC0-1.0",
+  "name": "Creative Commons Zero 1.0 Universal",
+  "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "changes": "Cut at the onset, mixed to mono, resampled to 48 kHz, levelled, looped (sustained notes) or faded into silence (one-shots) and encoded as Opus (tools/samples/build.py)."
+ },
+ "source": {
+  "dataset": "Versilian Community Sample Library",
+  "author": "Versilian Studios LLC",
+  "record": "https://github.com/sgossner/VCSL",
+  "files": [
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Glockenspiel/glock_loud_C5_01.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Glockenspiel/glock_loud_C6_01.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Glockenspiel/glock_loud_C7_01.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Glockenspiel/glock_loud_G%236_01.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Glockenspiel/glock_loud_G4_01.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Glockenspiel/glock_loud_G5_01.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Tubular%20Bells%202/TB_hit_A4_v4_1.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Tubular%20Bells%202/TB_hit_B4_v4_1.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Tubular%20Bells%202/TB_hit_C4_v4_1.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Tubular%20Bells%202/TB_hit_C5_v4_1.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Tubular%20Bells%202/TB_hit_D4_v4_2.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Tubular%20Bells%202/TB_hit_D5_v4_1.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Tubular%20Bells%202/TB_hit_E4_v4_1.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Tubular%20Bells%202/TB_hit_E5_v4_2.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Tubular%20Bells%202/TB_hit_F4_v4_1.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Tubular%20Bells%202/TB_hit_F5_v4_1.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Tubular%20Bells%202/TB_hit_G4_v4_1.wav"
+  ],
+  "notes": [
+   "position 0 = tubular bells, 1 = glockenspiel."
+  ]
+ },
+ "zones": [
+  {
+   "take": "TB_hit_C4_v4_1.wav",
+   "position": 0.0,
+   "root": 60.0,
+   "lowest": 0.0,
+   "highest": 61.0,
+   "pan": 0.0,
+   "start": 1024,
+   "loopStart": 161100,
+   "loopEnd": 163148
+  },
+  {
+   "take": "TB_hit_D4_v4_2.wav",
+   "position": 0.0,
+   "root": 62.0,
+   "lowest": 61.0,
+   "highest": 63.0,
+   "pan": 0.0,
+   "start": 164172,
+   "loopStart": 322592,
+   "loopEnd": 324640
+  },
+  {
+   "take": "TB_hit_E4_v4_1.wav",
+   "position": 0.0,
+   "root": 64.0,
+   "lowest": 63.0,
+   "highest": 64.5,
+   "pan": 0.0,
+   "start": 325664,
+   "loopStart": 482429,
+   "loopEnd": 484477
+  },
+  {
+   "take": "TB_hit_F4_v4_1.wav",
+   "position": 0.0,
+   "root": 65.0,
+   "lowest": 64.5,
+   "highest": 66.0,
+   "pan": 0.0,
+   "start": 485501,
+   "loopStart": 641439,
+   "loopEnd": 643487
+  },
+  {
+   "take": "TB_hit_G4_v4_1.wav",
+   "position": 0.0,
+   "root": 67.0,
+   "lowest": 66.0,
+   "highest": 68.0,
+   "pan": 0.0,
+   "start": 644511,
+   "loopStart": 798794,
+   "loopEnd": 800842
+  },
+  {
+   "take": "TB_hit_A4_v4_1.wav",
+   "position": 0.0,
+   "root": 69.0,
+   "lowest": 68.0,
+   "highest": 70.0,
+   "pan": 0.0,
+   "start": 801866,
+   "loopStart": 954493,
+   "loopEnd": 956541
+  },
+  {
+   "take": "TB_hit_B4_v4_1.wav",
+   "position": 0.0,
+   "root": 71.0,
+   "lowest": 70.0,
+   "highest": 71.5,
+   "pan": 0.0,
+   "start": 957565,
+   "loopStart": 1108537,
+   "loopEnd": 1110585
+  },
+  {
+   "take": "TB_hit_C5_v4_1.wav",
+   "position": 0.0,
+   "root": 72.0,
+   "lowest": 71.5,
+   "highest": 73.0,
+   "pan": 0.0,
+   "start": 1111609,
+   "loopStart": 1261754,
+   "loopEnd": 1263802
+  },
+  {
+   "take": "TB_hit_D5_v4_1.wav",
+   "position": 0.0,
+   "root": 74.0,
+   "lowest": 73.0,
+   "highest": 75.0,
+   "pan": 0.0,
+   "start": 1264826,
+   "loopStart": 1413315,
+   "loopEnd": 1415363
+  },
+  {
+   "take": "TB_hit_E5_v4_2.wav",
+   "position": 0.0,
+   "root": 76.0,
+   "lowest": 75.0,
+   "highest": 76.5,
+   "pan": 0.0,
+   "start": 1416387,
+   "loopStart": 1563221,
+   "loopEnd": 1565269
+  },
+  {
+   "take": "TB_hit_F5_v4_1.wav",
+   "position": 0.0,
+   "root": 77.0,
+   "lowest": 76.5,
+   "highest": 128.0,
+   "pan": 0.0,
+   "start": 1566293,
+   "loopStart": 1712300,
+   "loopEnd": 1714348
+  },
+  {
+   "take": "glock_loud_G4_01.wav",
+   "position": 1.0,
+   "root": 67.0,
+   "lowest": 0.0,
+   "highest": 69.5,
+   "pan": 0.0,
+   "start": 1715372,
+   "loopStart": 1869655,
+   "loopEnd": 1871703
+  },
+  {
+   "take": "glock_loud_C5_01.wav",
+   "position": 1.0,
+   "root": 72.0,
+   "lowest": 69.5,
+   "highest": 75.5,
+   "pan": 0.0,
+   "start": 1872727,
+   "loopStart": 2022872,
+   "loopEnd": 2024920
+  },
+  {
+   "take": "glock_loud_G5_01.wav",
+   "position": 1.0,
+   "root": 79.0,
+   "lowest": 75.5,
+   "highest": 81.5,
+   "pan": 0.0,
+   "start": 2025944,
+   "loopStart": 2170296,
+   "loopEnd": 2172344
+  },
+  {
+   "take": "glock_loud_C6_01.wav",
+   "position": 1.0,
+   "root": 84.0,
+   "lowest": 81.5,
+   "highest": 88.0,
+   "pan": 0.0,
+   "start": 2173368,
+   "loopStart": 2313582,
+   "loopEnd": 2315630
+  },
+  {
+   "take": "glock_loud_G%236_01.wav",
+   "position": 1.0,
+   "root": 92.0,
+   "lowest": 88.0,
+   "highest": 94.0,
+   "pan": 0.0,
+   "start": 2316654,
+   "loopStart": 2450247,
+   "loopEnd": 2452295
+  },
+  {
+   "take": "glock_loud_C7_01.wav",
+   "position": 1.0,
+   "root": 96.0,
+   "lowest": 94.0,
+   "highest": 128.0,
+   "pan": 0.0,
+   "start": 2453319,
+   "loopStart": 2580111,
+   "loopEnd": 2582159
+  }
+ ]
+}

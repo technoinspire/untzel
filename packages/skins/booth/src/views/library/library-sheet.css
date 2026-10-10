@@ -1,0 +1,22 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The library sheet view, views/library-sheet.ts. */
+.ui-sheet--library {
+  --sheet-top: 150px;
+}
+
+.ui-sheet--library .ui-sheet__header {
+  min-height: 66px;
+}
+
+.ui-sheet--library .ui-sheet__hint {
+  margin-bottom: 16px;
+}
+
+.ui-library__label {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 24px;
+}

@@ -1,0 +1,13 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The public documentation, one file per concern. Tokens and type of the app. */
+@import "./base.css";
+@import "./header.css";
+@import "./search.css";
+@import "./layout.css";
+@import "./prose.css";
+@import "./code.css";
+@import "./tables.css";
+@import "./status.css";
+@import "./pager.css";
+@import "./responsive.css";

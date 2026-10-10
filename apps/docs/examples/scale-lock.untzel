@@ -1,0 +1,6 @@
+key c minor
+
+// in c minor, e2 plays eb2 and b2 plays bb2
+locked: bass c2 e2 g2 b2
+// free plays every note as written
+loose:  bass c2 e2 g2 b2   | free

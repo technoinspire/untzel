@@ -1,0 +1,123 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The song title view, views/song-title.ts. */
+.ui-topbar__title {
+  display: flex;
+  margin: 0;
+  font: 500 21px/1 var(--font-display);
+  letter-spacing: 0;
+}
+/* The title takes Untzel's place after the divider: a 44 px button inside the h1, Jost 500,
+   17 px on a phone and 24 px on the desktop, one line, an ellipsis. Not display type: the
+   person writes it. Renaming swaps it for a field and Done in the same place. */
+.ui-song-title {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.ui-song-title__heading {
+  display: flex;
+  min-width: 0;
+  font: 500 17px/1 var(--font-display);
+  letter-spacing: 0;
+}
+
+.ui-song-title__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  max-width: 155px;
+  height: 44px;
+  padding: 0 4px;
+  margin-left: -4px;
+  border-radius: 10px;
+  font: inherit;
+  color: var(--text);
+}
+
+.ui-song-title__button:hover {
+  background: rgb(38 40 45 / 60%);
+}
+
+.ui-song-title__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ui-song-title__button .ui-icon--pencil {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+}
+
+.ui-song-title__editor {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ui-song-title__editor[hidden] {
+  display: none;
+}
+
+.ui-song-title__field {
+  width: 158px;
+  height: 44px;
+  padding: 0 10px;
+  border: 2px solid var(--text);
+  border-radius: 12px;
+  background: var(--stage);
+  color: var(--text);
+  font: 500 17px/1 var(--font-display);
+}
+
+.ui-song-title__field:focus-visible {
+  outline: 2px solid var(--flare);
+  outline-offset: 2px;
+}
+
+.ui-song-title__done {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background: var(--flare);
+  color: var(--stage);
+}
+
+.ui-song-title__done .ui-icon__stroke {
+  stroke-width: 2.5;
+}
+
+/* On a phone the bar has no room for the hint; Done takes Export's place instead. */
+.ui-song-title__hint {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .ui-song-title__heading {
+    font-size: 24px;
+  }
+
+  .ui-song-title__button {
+    max-width: min(420px, calc(100vw - var(--panel-w) - 520px));
+  }
+
+  .ui-song-title__field {
+    width: 320px;
+    font-size: 24px;
+  }
+
+  .ui-song-title__hint {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}

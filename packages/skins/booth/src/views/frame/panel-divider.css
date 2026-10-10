@@ -1,0 +1,55 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The panel divider view, views/panel-divider.ts. */
+.ui-panel__divider {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  /* Over the sheet it borders (z-index 20); gone while a library or export covers it. */
+  .ui-app[data-code="shown"][data-overlay="none"] .ui-panel__divider {
+    position: absolute;
+    z-index: 21;
+    /* 44 px to grab, centred on the edge (it was 16 px). */
+    inset: 0 auto 0 -22px;
+    display: flex;
+    justify-content: center;
+    width: 44px;
+    cursor: col-resize;
+    touch-action: none;
+  }
+
+  /* The edge: a 2 px line in raised; the grip in the middle, #8A8580, is what marks the
+     control (4.91:1 on the surface, 5.38:1 on the stage). */
+  .ui-panel__divider::before {
+    content: "";
+    width: 2px;
+    background: var(--raised);
+  }
+
+  .ui-panel__divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 4px;
+    height: 40px;
+    border-radius: 2px;
+    background: #8a8580;
+    translate: 0 -50%;
+  }
+
+  .ui-panel__divider:hover::after,
+  .ui-panel__divider[data-dragging]::after {
+    background: var(--flare);
+  }
+
+  .ui-panel__divider:hover::before,
+  .ui-panel__divider[data-dragging]::before {
+    background: var(--flare);
+  }
+
+  .ui-panel__divider:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: -2px;
+  }
+}

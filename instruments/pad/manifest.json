@@ -1,0 +1,60 @@
+{
+  "name": "pad",
+  "group": "pads",
+  "kind": "chord",
+  "range": { "lowest": "c1", "highest": "c7" },
+  "engine": "va",
+  "description": "Warm analog pad",
+  "model": "PRISMA P6",
+  "tags": ["pad", "warm", "analog", "ambient"],
+  "voices": 8,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 2.8,
+  "patterns": [
+    { "name": "Held", "text": "Cm7 ~ ~ ~" },
+    { "name": "Progression", "text": "Cm7 ~ ~ ~ / Abmaj7 ~ ~ ~ / Fm7 ~ ~ ~ / Gm7 ~ ~ ~" },
+    { "name": "Stabs", "text": ". Cm7 . . . Cm7 . ." },
+    { "name": "Swell", "text": "Cm ~ ~ ~ ~ ~ ~ ~ / Bb ~ ~ ~ ~ ~ ~ ~" },
+    { "name": "Offbeat", "text": ". Cm7 . Cm7 . Cm7 . Cm7" }
+  ],
+  "preview": "Cm7 ~ ~ ~ / Abmaj7 ~ ~ ~",
+  "defaultDuck": 0.5,
+  "parameters": [
+    { "name": "brightness", "min": 0, "max": 1, "default": 0.6, "unit": "", "curve": "linear" },
+    { "name": "attack", "min": 0.01, "max": 8, "default": 0.8, "unit": "s", "curve": "exponential" },
+    { "name": "release", "min": 0.01, "max": 8, "default": 1.8, "unit": "s", "curve": "exponential" },
+    { "name": "detune", "min": 0, "max": 1, "default": 0.4, "unit": "", "curve": "linear" },
+    { "name": "wave2", "choices": ["saw", "square", "triangle", "sine"], "default": "saw" },
+    { "name": "mix", "min": 0, "max": 1, "default": 0.35, "unit": "", "curve": "linear" },
+    { "name": "sync", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "filter", "choices": ["lp12", "lp24", "bp", "hp"], "default": "lp12" },
+    { "name": "filter-attack", "min": 0.001, "max": 4, "default": 1.5, "unit": "s", "curve": "exponential" },
+    { "name": "filter-decay", "min": 0.01, "max": 8, "default": 4, "unit": "s", "curve": "exponential" },
+    { "name": "drive", "min": 0, "max": 1, "default": 0.15, "unit": "", "curve": "linear" },
+    { "name": "spread", "min": 0, "max": 1, "default": 0.8, "unit": "", "curve": "linear" },
+    { "name": "sub", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "noise", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "resonance", "min": 0, "max": 0.95, "default": 0.15, "unit": "", "curve": "linear" },
+    { "name": "contour", "min": 0, "max": 1, "default": 0.3, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.05, "max": 8, "default": 2, "unit": "s", "curve": "exponential" },
+    { "name": "sustain", "min": 0, "max": 1, "default": 0.85, "unit": "", "curve": "linear" },
+    { "name": "level", "min": 0.05, "max": 8, "default": 1, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "brightness", "from": 0, "to": 1 }
+  ],
+  "toneLevelDb": 8.9,
+  "presets": [
+    { "name": "warm", "description": "Warm detuned saws, soft filter, a little drive", "values": {} },
+    { "name": "dark", "description": "Dark: saw and pulse in a resonant 24 dB ladder", "values": {"brightness": 0.43, "wave2": "square", "mix": 0.4, "spread": 0.5, "filter": "lp24", "resonance": 0.3, "drive": 0.25, "contour": 0.4} },
+    { "name": "bright", "description": "Open saws, wide and airy", "values": {"brightness": 0.85, "filter": "lp12", "mix": 0, "spread": 1, "drive": 0.2} },
+    { "name": "sea", "description": "Slow, wide and hollow", "values": {"attack": 2.5, "release": 4, "detune": 0.6, "filter": "bp", "brightness": 0.45, "spread": 1, "filter-attack": 3, "wave2": "triangle", "mix": 0.5, "drive": 0} },
+    { "name": "noir", "description": "Melodic techno: resonant saws that open slowly", "values": {"wave2": "saw", "mix": 0.5, "filter": "lp24", "brightness": 0.48, "resonance": 0.45, "contour": 0.55, "filter-attack": 1.5, "filter-decay": 3, "spread": 0.6, "drive": 0.2} },
+    { "name": "hypnotic", "description": "Melodic techno: synced, pulsing chord pad", "values": {"wave2": "square", "mix": 0.5, "sync": 0.35, "filter": "lp24", "brightness": 0.45, "resonance": 0.6, "contour": 0.55, "filter-attack": 0.01, "filter-decay": 1.2, "decay": 1.5, "sustain": 0.6, "spread": 0.8, "attack": 0.05} },
+    { "name": "dusk", "description": "Afro house: soft warm triangle chords", "values": {"wave2": "triangle", "mix": 0.4, "filter": "lp12", "brightness": 0.56, "resonance": 0.15, "contour": 0.2, "spread": 0.6, "detune": 0.3, "attack": 0.4} },
+    { "name": "void", "description": "Psytrance: band-passed, resonant, slowly moving air", "values": {"filter": "bp", "brightness": 0.55, "resonance": 0.6, "wave2": "square", "mix": 0.4, "sync": 0.4, "attack": 2, "release": 3, "spread": 1, "noise": 0.08, "contour": 0.6, "filter-attack": 4, "level": 0.55} }
+  ],
+  "defaultPreset": "warm",
+  "scene": {"family": "fog", "variant": {"shape": "cloud"}, "drive": "envelope"}
+}

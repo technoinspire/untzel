@@ -1,0 +1,48 @@
+{
+  "name": "untzel",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.8.1",
+  "engines": {
+    "node": ">=24.21.0"
+  },
+  "scripts": {
+    "generate": "pnpm --filter @untzel/language generate && node tools/harness/generate-instruments.mjs",
+    "build:wasm": "pnpm --filter @untzel/dsp build",
+    "typecheck": "pnpm generate && tsc -b",
+    "test": "pnpm generate && vitest run",
+    "test:rust": "cargo test -p untzel-dsp",
+    "lint:deps": "pnpm generate && node tools/harness/cruise.mjs",
+    "build": "pnpm generate && pnpm build:wasm && pnpm --filter @untzel/web build && node tools/docs/bin/docs.mjs build --out apps/web/dist/docs && pnpm changelog:build",
+    "check:headers": "node tools/headers/check-headers.mjs",
+    "budgets": "node tools/budgets/check-budgets.mjs apps/web/dist",
+    "changelog:check": "node tools/changelog/bin/changelog.mjs check",
+    "changelog:build": "node tools/changelog/bin/changelog.mjs build --repository technoinspire/untzel --out apps/web/dist/changelog.json",
+    "dev": "pnpm generate && node tools/harness/dev.mjs",
+    "test:browser": "pnpm generate && node tools/harness/browser.mjs",
+    "sim": "pnpm generate && node tools/sim/bin/sim.mjs",
+    "demo": "pnpm generate && node tools/demo/bin/demo.mjs",
+    "sim:golden": "pnpm generate && node tools/sim/bin/sim.mjs --golden",
+    "docs:build": "pnpm generate && node tools/docs/bin/docs.mjs build",
+    "docs:dev": "pnpm generate && node tools/docs/bin/docs.mjs dev",
+    "docs:check": "pnpm generate && node tools/docs/bin/docs.mjs check",
+    "i18n:check": "pnpm generate && node tools/i18n/bin/check.mjs",
+    "doctor": "node tools/harness/doctor.mjs",
+    "check": "node tools/harness/check.mjs",
+    "check:full": "node tools/harness/check.mjs --full",
+    "check:wasm": "node tools/harness/wasm.mjs --check-imports",
+    "share:links": "node tools/share/make-test-links.mjs"
+  },
+  "devDependencies": {
+    "@changesets/cli": "3.0.3",
+    "@swc/core": "1.16.13",
+    "@types/node": "24.19.1",
+    "dependency-cruiser": "18.5.0",
+    "fast-check": "4.10.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.2",
+    "vitest": "5.0.3"
+  }
+}

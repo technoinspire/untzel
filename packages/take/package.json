@@ -1,0 +1,21 @@
+{
+  "name": "@untzel/take",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./replay": "./src/replay/index.ts"
+  },
+  "dependencies": {
+    "@untzel/core": "workspace:*",
+    "@untzel/session": "workspace:*"
+  },
+  "devDependencies": {
+    "@untzel/audio": "workspace:*",
+    "@untzel/transport": "workspace:*",
+    "fast-check": "4.10.2"
+  }
+}

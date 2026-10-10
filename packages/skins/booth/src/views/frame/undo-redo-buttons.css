@@ -1,0 +1,30 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The undo redo buttons view, views/undo-redo-buttons.ts. */
+.ui-undo-redo {
+  display: inline-flex;
+  gap: 8px;
+}
+/* Available: surface-raised fill and a white icon. */
+.ui-undo-redo__button {
+  background: var(--raised);
+}
+.ui-undo-redo__button .ui-icon {
+  width: 22px;
+  height: 22px;
+}
+/* Empty: no fill, a dashed ring (#6b6f78, 3.6:1 on stage) and a dimmed icon (#8f8a86),
+   so the state has a shape and not only a colour. */
+.ui-app .ui-undo-redo__button[aria-disabled="true"] {
+  background: none;
+  outline: 1.5px dashed #6b6f78;
+  outline-offset: -1.5px;
+  color: #8f8a86;
+}
+/* With focus the empty button trades the dashed ring for the page's focus ring:
+   the inert rule above outranks the global :focus-visible. The available buttons
+   keep the global ring. */
+.ui-app .ui-undo-redo__button[aria-disabled="true"]:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}

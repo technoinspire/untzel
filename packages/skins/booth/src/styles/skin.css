@@ -1,0 +1,120 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/*
+ * Untzel controls: the CSS of each view sits next to the TypeScript that writes its classes
+ * (views/<view>.css, shell/shell.css, track-dot.css, icons.css); styles/ keeps the tokens,
+ * the app's resets, the shared primitives and the reduced-motion layer. This entry is the
+ * cascade: each file sits where its first rule was, and reduced motion comes last, over
+ * every view. Five files moved from that place so that every cascade decision stays the
+ * same; each says which rule it has to follow. The bundle inlines the imports into one
+ * stylesheet; no TypeScript imports CSS, so a lazy chunk never splits it. A new view adds
+ * its line at its place in the cascade, before reduced-motion.css.
+ */
+/* The note picker comes first: its selectors outweigh the button reset after it. */
+@import "../views/pattern/note-picker.css";
+@import "../views/pattern/piano-keys.css";
+@import "../views/pattern/chord-chips.css";
+@import "./tokens.css";
+@import "../shell/shell.css";
+@import "./base.css";
+@import "../views/frame/attribution.css";
+@import "../views/icons.css";
+@import "./buttons.css";
+@import "../views/track/track-detail.css";
+@import "./switch.css";
+/* Before the transport bar: from 1200 px, .ui-transport__history { display: none } beats
+   .ui-undo-redo. */
+@import "../views/frame/undo-redo-buttons.css";
+@import "../views/transport/transport-bar.css";
+@import "../views/frame/top-bar.css";
+@import "../views/frame/song-title.css";
+@import "../views/idle/idle-screen.css";
+@import "../views/idle/idle-center.css";
+@import "../views/idle/idle-templates.css";
+@import "../views/idle/file-open.css";
+@import "../views/idle/style-list.css";
+@import "../views/idle/template-cards.css";
+@import "../views/idle/template-picker.css";
+@import "../views/transport/transport-info.css";
+@import "../views/transport/mode-switch.css";
+@import "../views/song-settings/length-chip.css";
+@import "./meter.css";
+/* After meter.css: the narrow desktop column hides .ui-transport__cpu-meter over .ui-meter. */
+@import "../views/transport/cpu-meter.css";
+@import "../views/transport/transport-tempo-key.css";
+@import "../views/song-settings/tempo-editor.css";
+@import "../views/song-settings/tap-tempo.css";
+@import "../views/song-settings/key-picker.css";
+@import "../views/track/track-table.css";
+@import "../views/track/track-grid.css";
+@import "../behavior/color/track-dot.css";
+@import "../views/pattern/mini-steps-view.css";
+@import "../views/track/track-empty-state.css";
+@import "../views/frame/tab-bar.css";
+@import "../views/frame/panel-divider.css";
+@import "../views/sheets/sheet.css";
+/* After sheet.css: .ui-sheet--code sets its bottom over the inset of .ui-sheet. */
+@import "../views/sheets/code-sheet.css";
+@import "../views/library/library-sheet.css";
+@import "../views/library/library-search-field.css";
+@import "../views/library/library-categories.css";
+@import "../views/library/library-empty.css";
+@import "../views/library/library-audition-panel.css";
+@import "../views/library/library-results.css";
+@import "../views/library/library-row.css";
+@import "../views/library/library-group.css";
+@import "../views/library/library-footer.css";
+@import "../views/track/track-detail-header.css";
+@import "../views/track/track-steps-group.css";
+@import "../views/bars/bar-thumbs.css";
+@import "../views/bars/bar-editor.css";
+@import "../views/bars/bar-editing-header.css";
+@import "../views/bars/bar-actions.css";
+@import "../views/pattern/step-grid.css";
+@import "./slider.css";
+@import "./range-input.css";
+/* After range-input.css: .ui-table__tone sizes its slider over .ui-range. */
+@import "../views/track/track-table-row.css";
+@import "../views/primitives/inline-name.css";
+@import "../views/sound/slider-row.css";
+@import "../views/sound/tone-row.css";
+@import "../views/sound/gain-fader.css";
+@import "../views/pattern/pattern-chips.css";
+@import "../views/pattern/pattern-preview.css";
+@import "../views/sound/sound-group-header.css";
+@import "../views/sound/sound-picker.css";
+@import "../views/sound/effects-list.css";
+@import "../views/song/song-view.css";
+@import "../views/song/part-list.css";
+@import "../views/song/part-row.css";
+@import "../views/song/part-editor.css";
+@import "../views/song/part-track-toggles.css";
+@import "../views/song/part-move.css";
+@import "../views/song-settings/length-picker.css";
+@import "../views/export/export-sheet.css";
+@import "../views/export/export-formats.css";
+@import "../views/export/export-quality.css";
+@import "../views/export/export-range.css";
+@import "./option.css";
+@import "../views/export/export-progress.css";
+@import "../views/export/export-actions.css";
+@import "../views/export/export-preview.css";
+@import "../views/sheets/share-sheet.css";
+@import "../views/frame/toast.css";
+@import "../views/menu/menu-button.css";
+@import "../views/menu/project-menu-host.css";
+@import "../views/menu/project-menu.css";
+@import "../views/menu/menu-popover.css";
+@import "../views/menu/projects-sheet.css";
+@import "../views/menu/shortcuts-sheet.css";
+@import "../views/menu/about-sheet.css";
+@import "../views/menu/project-row.css";
+@import "../views/range/range-strip.css";
+@import "../views/range/range-row.css";
+@import "../views/range/range-ruler.css";
+@import "../views/range/range-ruler-layers.css";
+@import "../views/export/export-stretch.css";
+/* Last of the views: in the 1200 px panel, .ui-panel .ui-sheet__header and __body beat each
+   sheet's own header and body (library, export, share, part, projects, shortcuts, about). */
+@import "../views/frame/side-panel.css";
+@import "./reduced-motion.css";

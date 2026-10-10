@@ -1,0 +1,63 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* Design tokens: the custom properties on :root. */
+/*
+ * Untzel controls. Values follow the screen designs
+ * (mobile 390 × 844, desktop 1440 × 900). Fonts are declared by the app (@font-face,
+ * bundled, font-display: swap); these stacks fall back to system fonts.
+ */
+:root {
+  --stage: #0b0b0c;
+  --surface: #161719;
+  --raised: #26282d;
+  --text: #ffffff;
+  --muted: #aaa5a1;
+  /* Boundary of an input field: measured ≥ 3:1 against --stage (4.51), --surface (4.11)
+     and --raised (3.38), so a field reads as a field on any of them. */
+  --edge: #76797f;
+  --flare: #f65d00;
+  --ember: #c52d1f;
+  /* Track palette, each on #161719: picked by trackColorIndex. */
+  --u-track-0: #f65d00; /* 5.54 */
+  --u-track-1: #ffc14d; /* 11.09 */
+  --u-track-2: #ff7a6b; /* 7.05 */
+  --u-track-3: #e9c9a8; /* 11.43 */
+  --u-track-4: #f2a0b5; /* 8.94 */
+  --u-track-5: #d9b45a; /* 9.08 */
+  --u-track-6: #8fd3c1; /* 10.47 */
+  --u-track-7: #c7b3ff; /* 9.67 */
+  --font-display: "Jost", Futura, "Helvetica Neue", sans-serif;
+  --font-sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --panel-w: 480px;
+  /* Phone: the transport has two rows since Code joined Drop, so the stage gives up 48 px
+     and the track grid keeps its drawn place. Since the play range the Tracks stage is
+     300 px. */
+  --stage-h: 300px;
+  /* 116 px since the track controls: the tempo and key buttons
+     take their own line and Undo and Redo sit by the toggle. 218 px since the play range:
+     the range row 68 px under the top and the range ruler. */
+  --transport-h: 218px;
+  /* Space under a transport docked at the bottom: the tab bar (48) plus 8. */
+  --dock-bottom: 56px;
+  color-scheme: dark;
+}
+/* The range row and the range ruler under the transport. States never by colour alone: the range is a tinted band with flare
+   rules above and below, bracket handles and bold numbers; the bar playing is a white
+   needle; a first tap is a dashed white outline and words. */
+:root {
+  /* The band and a part row inside the range (measured: text 12.62:1 and 15.21:1). */
+  --band: #562508;
+  --row-in-range: #352116;
+}
+
+@media (min-width: 700px) {
+  /* Room for one row: the stage keeps the heights of the designed screens. */
+  /* Since the play range: under the transport row, the range row and ruler in one
+     56 px line (chip at the left, ruler in the rest); 56 + 12 + 56 = 124 px. */
+  :root {
+    --stage-h: 400px;
+    --transport-h: 124px;
+  }
+}

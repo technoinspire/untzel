@@ -1,0 +1,35 @@
+// template: Crate Digger
+// order: 1
+// Boom bap at 90 under a global swing: an out-of-tune piano "sample" chopped and crushed
+// like an old sampler, ghost snares at low velocity, a dusty recorded hat, a clap that
+// doubles the backbeat, a round bass that follows the kick and a vinyl hiss whose filter
+// jumps at random. The hook adds a gospel organ and a vocal chop, and the second hook a
+// gospel choir and a crushed string stab; the second verse a harp flourish from the
+// arpeggiator. The bridge drops the snare for the strings, the choir and a music-box
+// bell. Style reference only; every melody is original.
+title "Crate Digger"
+tempo 90
+key d minor
+swing 0.16
+kick:    kick       hard     x......x..x..... / x.........x..x.. / x......x..x..... / x......x..x...x?0.5.   | decay 0.32 | pitch 52 | click 0.4 | click-tone 1100 | drive 0.7 | grit 0.3 | gain 1.35
+snare:   snare      fat      . . . . X . . x?0.5 . . . . X . . x?0.4 / . . . . X . . . . x?0.4 . . X . x?0.3 .   | velocity 0.3 | tune 0.35 | snap 0.7 | decay 0.25 | reverb room | gain 1.08
+hat:     hat        dusty    x . x x?0.4 x . x . x . x x?0.4 x . x x?0.3 / x . x x?0.4 x . x x?0.4 x . x x?0.4 x . x .   | velocity 1 | decay 0.1 | pan 0.2 | gain 2
+bass:    bass       round    d2 ~ ~ . . . . d2 . . d2 ~ . . c2 . / bb1 ~ ~ . . . . . . . bb1 ~ . bb1 . . / g1 ~ ~ . . . . g1 . . g1 ~ . . bb1 . / a1 ~ ~ . . . . a1 . . a1 ~ . . e2 .   | cutoff 500 | decay 0.5 | drive 0.4 | duck 0.3 | gain 1.35
+sample:  piano      honky    Dm9 ~ ~ ~ . . Dm9 ~ . . . Dm9 . . Dm9 . / Bbmaj9 ~ ~ ~ . . Bbmaj9 ~ . . . Bbmaj9 . . . . / Gm9 ~ ~ ~ . . Gm9 ~ . . . Gm9 . . Gm9 . / A7sus4 ~ ~ ~ . . A7sus4 ~ A7 ~ ~ ~ A7 . A7 .   | free | voicing open | inversion 1 | velocity 0.7 | crush 0.3 | lowpass 3400 | highpass 180 | eq-low -8 | reverb room | gain 0.47
+vinyl:   noise      pink     x~~~ ~~~~ ~~~~ ~~~~                                   | cutoff rand(1/16) 1500..9000 | crush 0.6 | highpass 900 | gain 0.16
+organ:   organ      church   Dm9 ~ ~ ~ / Bbmaj9 ~ ~ ~ / Gm9 ~ ~ ~ / A7sus4 ~ A7 ~    | free | voicing spread | lowpass 2400 | eq-low -4 | duck 0.3 | reverb hall | gain 0.41
+chop:    vox        ooh      . . a4 ~ c5 . a4 . . . g4 ~ f4 . . . / . . f4 ~ g4 . a4 . . . d4 ~ ~ . . . / . . bb4 ~ a4 . g4 . . . f4 ~ g4 . . . / . . e4 ~ ~ ~ . . g4 ~ ~ ~ . . . .   | crush 0.25 | highpass 400 | delay 1/8 | reverb plate | gain 0.47
+harp:    harp       concert  Dm9 ~ . . . . . . / Bbmaj9 ~ . . . . . . / Gm9 ~ . . . . . . / A7sus4 ~ . . A7 ~ . .   | free | arp up | arp-rate 1/24 | arp-octaves 2 | reverb hall | pan -0.3 | gain 0.54
+fill:    tom        boom     .... / .... / .... / .... .... ..x. x.xx              | tune 0.3 | reverb room | gain 0.68
+clap:    clap       roomy    . . . . x . . . . . . . x . . . / . . . . x . . . . . . . x . . .   | reverb room | pan 0.1 | gain 0.74
+strings: strings    ensemble Dm9 ~ . . . . . . / Bbmaj9 ~ . . . . . . / Gm9 ~ . . . . . . / A7sus4 ~ . . A7 ~ . .   | free | voicing open | attack 0.02 | release 0.3 | crush 0.25 | lowpass 3200 | highpass 250 | reverb room | gain 0.47
+choir:   choir      gospel   Dm9 ~ ~ ~ / Bbmaj9 ~ ~ ~ / Gm9 ~ ~ ~ / A7sus4 ~ A7 ~   | free | voicing spread | attack 0.3 | release 1.2 | lowpass 3000 | reverb hall | gain 0.3
+bell:    bell       toy      d6 . a5 . f5 . a5 . / d6 . bb5 . f5 . bb5 a5 / g5 . bb5 . d6 . c6 bb5 / a5 . c#6 . e6 . c#6 a5   | free | velocity 0.6 | delay 3/16 | reverb hall | pan 0.25 | gain 0.54
+section intro    sample vinyl
+section verse    kick snare hat bass sample vinyl | loop
+section hook     kick snare clap hat bass sample organ chop vinyl
+section verse2   kick snare hat bass sample harp fill vinyl
+section hook2    kick snare clap hat bass sample organ choir strings chop vinyl
+section bridge   kick clap bass strings choir bell vinyl
+section outro    sample vinyl
+song intro 8, verse 16, hook 8, verse2 16, hook2 8, bridge 8, verse 16, hook2 8, outro 8

@@ -1,0 +1,21 @@
+{
+  "name": "@untzel/skin-booth",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./pt-BR": "./src/copy/portuguese.ts",
+    "./styles.css": "./src/styles/skin.css",
+    "./page.css": "./src/styles/page.css",
+    "./testing": "./src/testing/view-fixture.ts"
+  },
+  "dependencies": {
+    "@untzel/core": "workspace:*",
+    "@untzel/i18n": "workspace:*",
+    "@untzel/presentation": "workspace:*",
+    "@untzel/session": "workspace:*",
+    "@untzel/skin-contract": "workspace:*"
+  }
+}

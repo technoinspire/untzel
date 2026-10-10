@@ -1,0 +1,30 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The library categories view, views/library-categories.ts. */
+.ui-library__categories {
+  display: flex;
+  gap: 8px;
+  margin: 12px -4px 4px;
+  padding: 0 4px 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.ui-library__categories .ui-pill {
+  flex: none;
+}
+
+/* Unselected chips are outlined pills; the pressed one keeps the flare ring of styles/buttons.css. */
+.ui-library__categories .ui-pill--chip:not([aria-pressed="true"]) {
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1.5px var(--raised);
+}
+
+@media (pointer: fine) {
+  /* With a mouse the chips wrap, so every category is in reach without a sideways wheel;
+     touch keeps the single scrolling row of the drawing. */
+  .ui-library__categories {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}

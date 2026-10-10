@@ -1,0 +1,287 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The transport bar view, views/transport-bar.ts. */
+.ui-app[data-transition="collapse"] .ui-transport {
+  transition: top 200ms var(--ease-out);
+}
+
+/* Phone: play, the tempo line, the ruler and "bar 2 of
+   4 · CPU" on the first row with the hide toggle at its end; the Length chip, Code and
+   Drop on the second, where the thumb is. 20 + 12 + 16 + 4 + 44 = 96 px, as before. */
+/* Since the track controls: play, the position over
+   "124 BPM · c minor" (two buttons), Undo, Redo and the toggle on the first 44 px; the
+   ruler (or the song meter) across; then Length, Code and Drop. 22 + 22 + 8 + 12 + 8 + 44
+   = 116 px. */
+/* Since the play range: the range row starts 68 px under the top, clear of the tempo
+   and key targets, then the range ruler, then Length, Code and Drop where
+   the thumb is. 22 + 22 + 24 + 44 + 4 + 50 + 8 + 44 = 218 px. */
+.ui-transport {
+  position: absolute;
+  top: calc(var(--stage-h) + 4px);
+  inset-inline: 16px;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 44px 12px minmax(0, 1fr) 8px auto 8px 44px;
+  grid-template-rows: 22px 22px 24px 44px 4px 50px 8px 44px;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.ui-transport__range {
+  grid-area: 4 / 1 / 7 / -1;
+}
+/* With the controls hidden (the H key): no range rows; 22 + 22 + 8 + 44 = 96 px. */
+.ui-app[data-collapsed="true"] .ui-transport {
+  grid-template-rows: 22px 22px 8px 0 0 0 0 44px;
+}
+.ui-transport__actions {
+  grid-area: 8 / 1 / 9 / -1;
+  display: flex;
+  gap: 8px;
+  min-width: 0;
+}
+
+/* About the designed widths at 390 px (Length 140, Code 92, Drop 110), with room for
+   "Length 16 bars" without cutting it: 150, 86 and 106. */
+.ui-transport__actions .ui-pill {
+  flex: 0.86 1 0;
+  gap: 6px;
+  min-width: 0;
+  padding: 0 10px;
+}
+
+.ui-transport__actions .ui-transport__drop {
+  flex-grow: 1.06;
+}
+
+.ui-transport__length {
+  flex: 1.5 1 0;
+  gap: 4px;
+  min-width: 0;
+  padding: 0 10px 0 14px;
+}
+
+.ui-transport__toggle {
+  grid-area: 1 / 7 / 3 / 8;
+}
+.ui-transport__history {
+  grid-area: 1 / 5 / 3 / 6;
+}
+
+.ui-transport__toggle[aria-expanded="false"] .ui-icon--chevron {
+  rotate: 180deg;
+}
+
+.ui-transport__play {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.ui-transport__play[aria-pressed="true"] {
+  background: var(--flare);
+  color: var(--stage);
+}
+
+.ui-transport__play[aria-pressed="true"] .ui-icon--play,
+.ui-transport__play[aria-pressed="false"] .ui-icon--pause {
+  display: none;
+}
+
+.ui-transport__drop {
+  background: var(--ember);
+}
+
+/* Song mode: Drop stays in place, inert and quiet, so Code next to it does not move. */
+.ui-transport[data-mode="song"] .ui-transport__drop {
+  background: var(--surface);
+  color: var(--muted);
+  opacity: 1;
+}
+.ui-transport__actions .ui-range-strip__play-from {
+  display: none;
+}
+.ui-transport[data-pending="true"] .ui-transport__actions .ui-range-strip__play-from:not([hidden]) {
+  display: inline-flex;
+  flex: 1.5 1 0;
+}
+.ui-transport[data-pending="true"][data-mode="loop"] .ui-transport__length,
+.ui-transport[data-pending="true"][data-mode="song"] .ui-transport__drop {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .ui-app[data-code="shown"] .ui-transport {
+    grid-template-rows: 22px 22px 8px 0 0 0 0 44px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1199px) {
+  .ui-app[data-code="shown"] .ui-transport {
+    grid-template-rows: 20px 14px 22px;
+  }
+}
+
+@media (min-width: 700px) {
+  /* One row: the info column, then the Length chip, Code and Drop, then the toggle. */
+  /* One row: the info column (position, ruler, tempo and key), then Length, Code and
+     Drop, then Undo, Redo and the toggle. */
+  .ui-transport {
+    grid-template-columns: 44px 12px minmax(0, 1fr) 16px auto 8px auto 8px 44px;
+    grid-template-rows: 20px 14px 22px 12px 56px;
+  }
+  .ui-app[data-collapsed="true"] .ui-transport {
+    grid-template-rows: 20px 14px 22px;
+  }
+  .ui-transport__range {
+    grid-area: 5 / 1 / 6 / -1;
+  }
+
+  .ui-transport__actions {
+    grid-area: 1 / 5 / 4 / 6;
+    align-self: center;
+  }
+
+  .ui-transport__play {
+    grid-area: 1 / 1 / 4 / 2;
+  }
+
+  .ui-transport__history {
+    grid-area: 1 / 7 / 4 / 8;
+  }
+
+  .ui-transport__actions .ui-pill,
+  .ui-transport__actions .ui-transport__drop {
+    flex: none;
+    width: 104px;
+  }
+
+  .ui-transport__length {
+    flex: none;
+    width: 150px;
+  }
+
+  .ui-transport__toggle {
+    grid-area: 1 / 9 / 4 / 10;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* One row, never wrapped (with the 480 px panel open, Drop and the
+     toggle once fell to a second row, away from Code). The live column is the container:
+     when it narrows, the left side gives up room first (transport-row.browser.ts). */
+  /* Since the play range the range row and ruler take a line of their own under
+     it: the only item that wraps, because it is 100% wide; the first line keeps fitting by
+     the container rules below. */
+  .ui-transport {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 14px;
+    min-height: 44px;
+  }
+  .ui-transport__range { order: 9; flex: 0 0 100%; }
+  /* A first tap waiting: Play from here takes the Length chip's place in the row. */
+  .ui-transport[data-pending="true"] .ui-transport__actions .ui-range-strip__play-from:not([hidden]) {
+    order: 4;
+    flex: none;
+    margin-left: 12px;
+    padding: 0 18px;
+  }
+
+  /* Play, tempo with the ruler and "loop · bar 2 of 4", the mode
+     switch, the Length chip (loop), CPU; Code, Drop and the toggle at the right edge. */
+  .ui-transport__play { order: 1; }
+  .ui-transport__length { order: 4; }
+  .ui-transport__code { order: 6; }
+  .ui-transport__drop { order: 7; }
+  .ui-transport__toggle { order: 8; }
+
+  .ui-transport[data-mode="song"] .ui-transport__position {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .ui-transport__actions {
+    display: contents;
+  }
+
+  .ui-transport__length {
+    flex: none;
+    width: auto;
+    margin-left: 12px;
+  }
+
+  .ui-transport__actions .ui-transport__code {
+    flex: none;
+    width: 104px;
+    margin-left: auto;
+  }
+
+  .ui-transport__actions .ui-transport__drop {
+    flex: none;
+    width: 112px;
+    margin-left: 8px;
+  }
+
+  .ui-transport__toggle {
+    margin-left: 8px;
+  }
+
+  @container live (max-width: 820px) {
+    /* The range row is not part of these rules: its own line keeps the chip (and the
+       legend or Cycle) at the left and the ruler in the rest of the column. */
+    /* The phone's line in the position's place: its shorter words for the eye ("bar 2 of
+       16"), its whole text for the screen reader, so the position and CPU fit the column
+       (transport-row.browser.ts). */
+    .ui-transport[data-mode] .ui-transport__position {
+      display: none;
+    }
+
+    .ui-transport__length {
+      margin-left: 8px;
+    }
+
+    .ui-transport__actions .ui-transport__code,
+    .ui-transport__actions .ui-transport__drop {
+      width: auto;
+      padding: 0 16px;
+    }
+  }
+
+  @container live (max-width: 699px) {
+    /* 1200–1243 with the panel open (656–699 px), loop mode: one row would cut "132 BPM ·
+       c minor". Two rows by design, as on the phone: play, the info, the mode switch and
+       the toggle; under them, at the right edge, the Length chip, Code and Drop together.
+       Song mode has no chip and keeps one row. */
+    .ui-transport[data-mode="loop"] {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr) auto 8px 44px;
+      grid-template-rows: 44px 44px auto;
+      row-gap: 8px;
+    }
+    .ui-transport[data-mode="loop"] .ui-transport__range { grid-area: 3 / 1 / 4 / -1; }
+
+    .ui-transport[data-mode="loop"] .ui-transport__play { grid-area: 1 / 1; }
+    .ui-transport[data-mode="loop"] .ui-transport__info { grid-area: 1 / 2; }
+    .ui-transport[data-mode="loop"] .ui-transport__modes { grid-area: 1 / 3; }
+    .ui-transport[data-mode="loop"] .ui-transport__toggle { grid-area: 1 / 5; margin-left: 0; }
+
+    .ui-transport[data-mode="loop"] .ui-transport__actions {
+      grid-area: 2 / 1 / 3 / -1;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .ui-transport[data-mode="loop"] :is(.ui-transport__length, .ui-transport__code, .ui-transport__drop) {
+      margin-left: 0;
+    }
+  }
+
+  /* Undo and Redo live in the Code panel header and on Mod+Z here. */
+  .ui-transport__history {
+    display: none;
+  }
+}

@@ -1,0 +1,18 @@
+[workspace]
+resolver = "3"
+members = ["packages/dsp"]
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[workspace.package]
+license = "CPAL-1.0"
+
+# Native tests render minutes of audio; unoptimized they took ~218 s, at opt-level 2
+# they fit the local `pnpm check` budget.
+[profile.test]
+opt-level = 2

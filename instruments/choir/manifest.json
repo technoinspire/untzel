@@ -1,0 +1,46 @@
+{
+  "name": "choir",
+  "group": "voices",
+  "kind": "chord",
+  "range": { "lowest": "c2", "highest": "c6" },
+  "engine": "formant",
+  "description": "Choir of recorded singers",
+  "model": "AETHER Choir",
+  "tags": ["choir", "vocal", "voice", "aah"],
+  "voices": 8,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.92,
+  "patterns": [
+    { "name": "Held", "text": "Cm ~ ~ ~" },
+    { "name": "Progression", "text": "Cm ~ ~ ~ / Ab ~ Bb ~" },
+    { "name": "Swell", "text": "Cm ~ ~ ~ ~ ~ ~ ~" },
+    { "name": "Pulse", "text": "Cm . . . Cm . . ." }
+  ],
+  "preview": "Cm ~ ~ ~ / Ab ~ Bb ~",
+  "defaultDuck": 0.3,
+  "parameters": [
+    { "name": "vowel", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "breath", "min": 0, "max": 1, "default": 0.25, "unit": "", "curve": "linear" },
+    { "name": "brightness", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "attack", "min": 0.01, "max": 8, "default": 0.5, "unit": "s", "curve": "exponential" },
+    { "name": "release", "min": 0.01, "max": 8, "default": 1, "unit": "s", "curve": "exponential" },
+    { "name": "detune", "min": 0, "max": 1, "default": 0.4, "unit": "", "curve": "linear" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "samples" }
+  ],
+  "tone": [
+    { "parameter": "vowel", "from": 0, "to": 1 },
+    { "parameter": "brightness", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "aah", "description": "Open aah, recorded ensemble", "values": {} },
+    { "name": "ooh", "description": "Round ooh, recorded ensemble", "values": {"vowel": 0.9} },
+    { "name": "dark", "description": "Dark and low", "values": {"brightness": 0.2, "vowel": 0.75, "source": "synth"} },
+    { "name": "chant", "description": "Open chant, call and response", "values": {"vowel": 0.15, "breath": 0.25, "brightness": 0.65, "attack": 0.04, "source": "synth"} },
+    { "name": "gospel", "description": "House: bright open gospel voices", "values": {"source": "samples", "vowel": 0.45, "brightness": 1, "attack": 0.01, "release": 0.6, "detune": 0.35} },
+    { "name": "ethereal", "description": "Trance: airy voices that swell in", "values": {"source": "synth", "vowel": 0.3, "breath": 0.7, "brightness": 0.8, "attack": 1.2, "release": 3.5, "detune": 0.4} },
+    { "name": "monk", "description": "Melodic techno: low closed chant", "values": {"source": "samples", "vowel": 1, "brightness": 0, "attack": 0.3, "release": 1.5, "detune": 0.1} }
+  ],
+  "defaultPreset": "aah",
+  "scene": {"family": "halo", "variant": {"shape": "arc"}, "drive": "envelope"}
+}

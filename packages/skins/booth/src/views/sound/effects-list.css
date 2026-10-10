@@ -1,0 +1,48 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The effects list view, views/effects-list.ts. */
+.ui-effects {
+  display: grid;
+  gap: 12px;
+}
+
+.ui-effects__list {
+  display: grid;
+  gap: 10px;
+}
+
+.ui-effects__item {
+  display: grid;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--raised);
+}
+
+.ui-effects__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ui-effects__name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ui-effects__add {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ui-effects__add-one {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ui-effects__add-one svg {
+  width: 14px;
+  height: 14px;
+}

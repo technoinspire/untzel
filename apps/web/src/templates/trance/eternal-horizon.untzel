@@ -1,0 +1,40 @@
+// template: Eternal Horizon
+// order: 1
+// Classic European uplifting trance with an Arabian colour: offbeat bass, gated pluck
+// chords, a long breakdown with piano and strings, a snare roll into a supersaw drop, and a
+// lead in harmonic minor (the raised seventh is why the melodic tracks are `free`).
+// Every melody is original.
+title "Eternal Horizon"
+tempo 138
+key d minor
+kick:    kick       bright   x... x... x... x... | gain 0.9
+bass:    bass       bright   . . d2 . . . d2 . . . d2 . . . d2 . / . . bb1 . . . bb1 . . . bb1 . . . bb1 . / . . f1 . . . f1 . . . f1 . . . f1 . / . . a1 . . . a1 . . . a1 . . . a1 .   | duck 0.8 | cutoff sine(16) 900..2400 | gain 2
+hat:     hat        dusty    x x?0.6 x x x x?0.6 x x x x?0.6 x x x x?0.6 x x | pan -0.2 | gain 0.35
+ohat:    hat        open     ..x. ..x. ..x. ..x. | pan 0.2 | gain 0.45
+clap:    clap       tight    .... x... .... x...                                   | reverb small | gain 0.6
+ride:    ride       ping     x.x. x.x. x.x. x.x. | pan 0.3 | gain 0.4
+roll:    snare      snap     x... x... x... x... / x... x... x... x... / x... x... x... x... / x... x... x... x... / x.x. x.x. x.x. x.x. / x.x. x.x. x.x. x.x. / xxxx xxxx xxxx xxxx / xxxx xxxx xxxx xxxx   | gain saw(8) 0.15..0.6 | reverb wide
+gate:    pluck      bright   Dm . Dm Dm . Dm . Dm Dm . Dm . Dm Dm . Dm / Bb . Bb Bb . Bb . Bb Bb . Bb . Bb Bb . Bb / F . F F . F . F F . F . F F . F / A . A A . A . A A . A . Asus4 Asus4 . A   | free | duck 0.6 | delay 3/16 | reverb room | gain 0.31
+pad:     pad        sea      Dm ~ ~ ~ / Bb ~ ~ ~ / F ~ ~ ~ / A ~ ~ ~                 | free | voicing spread | brightness sine(16) 0.3..0.7 | duck 0.6 | reverb sea | gain 0.55
+saws:    supersaw   anthem   Dm ~ ~ ~ / Bb ~ ~ ~ / F ~ ~ ~ / A ~ ~ ~                 | free | duck 0.9 | release 0.5 | reverb wide | gain 0.4
+arp:     pluck      steel    Dm ~ ~ ~ / Bb ~ ~ ~ / F ~ ~ ~ / A ~ ~ ~                 | free | arp up | arp-rate 1/16 | arp-octaves 2 | highpass 500 | delay 3/16 | reverb wide | gain 0.34
+lead:    lead       anthem     a4 ~ bb4 a4 g4 ~ a4 ~ / f4 ~ ~ g4 a4 ~ bb4 ~ / c5 ~ bb4 a4 g4 ~ f4 ~ / e4 ~ f4 g4 c#5 ~ ~ ~   | free | detune 0.5 | attack 0.01 | release 0.6 | glide 0.04 | delay 3/16 | reverb sea | gain 0.21
+piano:   piano      grand    a4 ~ bb4 a4 g4 ~ a4 ~ / f4 ~ ~ g4 a4 ~ bb4 ~ / c5 ~ bb4 a4 g4 ~ f4 ~ / e4 ~ f4 g4 c#5 ~ ~ ~   | free | reverb sea | gain 0.55
+strings: strings    high     Dm ~ ~ ~ / Bb ~ ~ ~ / F ~ ~ ~ / A ~ ~ ~                 | free | voicing spread | reverb sea | gain 0.41
+choir:   choir      ethereal      Dm ~ ~ ~ / Bb ~ ~ ~ / F ~ ~ ~ / A ~ ~ ~                 | free | reverb sea | gain 0.35
+rise:    noise      white    x~~~ ~~~~ ~~~~ ~~~~                                   | cutoff saw(8) 300..10000 | gain saw(8) 0.15..0.5
+riser:   riser      both     x... / .... / .... / .... / .... / .... / .... / ....   | length 13.9 | gain 0.5
+down:    downlifter noise    x~~~ ~~~~ ~~~~ ~~~~ / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.6
+crash:   crash      wide     x... / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.5
+impact:  impact     metal    x... / .... / .... / .... / .... / .... / .... / ....   | reverb sea | gain 0.75
+section intro   kick hat ohat arp
+section groove  kick bass hat ohat clap gate | loop
+section build   kick bass hat ohat clap gate arp rise
+section break   pad piano strings choir down
+section lift    pad strings arp roll riser
+section drop    kick bass hat ohat clap ride gate saws lead choir crash impact
+section groove2 kick bass hat ohat clap ride gate arp
+section break2  piano strings choir lead down
+section drop2   kick bass hat ohat clap ride gate saws arp lead strings choir crash impact
+section outro   kick hat ohat arp
+song intro 16, groove 32, build 16, break 32, lift 8, drop 32, groove2 16, break2 16, lift 8, drop2 32, outro 16

@@ -1,0 +1,55 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The bar editor view, views/bar-editor.ts. */
+.ui-detail__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.ui-detail__legend-playing::before,
+.ui-detail__legend-editing::before {
+  content: "";
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: 1px;
+}
+
+.ui-detail__legend-playing::before {
+  width: 10px;
+  height: 6px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background: var(--text);
+}
+
+.ui-detail__legend-editing::before {
+  width: 12px;
+  height: 9px;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px var(--flare);
+}
+
+.ui-detail__reach {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+/* "Editing bar 2 of 4" between the previous and next arrows; sideways swipes here and on
+   the grid change the bar, vertical drags still scroll the sheet. */
+.ui-detail__bar-editor {
+  touch-action: pan-y;
+}
+
+.ui-detail__bar-editor .ui-steps {
+  margin-top: 14px;
+}
+
+.ui-detail__caption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@untzel/sim",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./registry": "./src/registry.ts",
+    "./stress": "./src/stress.ts",
+    "./template-tree": "./src/templates/template-tree.ts",
+    "./fixtures/*": "./fixtures/*"
+  },
+  "dependencies": {
+    "@untzel/audio": "workspace:*",
+    "@untzel/core": "workspace:*",
+    "@untzel/export": "workspace:*",
+    "@untzel/instrument-index": "workspace:*",
+    "@untzel/language": "workspace:*",
+    "@untzel/session": "workspace:*",
+    "@untzel/take": "workspace:*",
+    "@untzel/templates": "workspace:*",
+    "@untzel/transport": "workspace:*"
+  },
+  "devDependencies": {
+    "opus-decoder": "0.7.12",
+    "vite": "8.3.2"
+  }
+}

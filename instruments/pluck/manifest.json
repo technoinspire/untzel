@@ -1,0 +1,40 @@
+{
+  "name": "pluck",
+  "group": "plucks",
+  "kind": "chord",
+  "range": { "lowest": "e2", "highest": "e6" },
+  "engine": "string",
+  "description": "Plucked string, bright to muted",
+  "model": "SILK Pluck",
+  "tags": ["pluck", "guitar", "banjo", "string"],
+  "voices": 12,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.08,
+  "patterns": [
+    { "name": "Arp", "text": "c3 eb3 g3 c4 g3 eb3 c3 bb2" },
+    { "name": "Offbeat", "text": ". c3 . eb3 . g3 . eb3" },
+    { "name": "Gate", "text": "c4 c4 . c4 c4 . c4 ." },
+    { "name": "Rising", "text": "c3 eb3 g3 bb3 c4 eb4 g4 bb4" }
+  ],
+  "preview": "c3 eb3 g3 c4 g3 eb3 c3 g2 / ab2 c3 eb3 ab3 eb3 c3 bb2 g2",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "brightness", "min": 0, "max": 1, "default": 0.6, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.1, "max": 20, "default": 2.5, "unit": "s", "curve": "exponential" },
+    { "name": "position", "min": 0, "max": 1, "default": 0.3, "unit": "", "curve": "linear" },
+    { "name": "body", "min": 0, "max": 1, "default": 0.4, "unit": "", "curve": "linear" },
+    { "name": "release", "min": 0.01, "max": 4, "default": 0.15, "unit": "s", "curve": "exponential" }
+  ],
+  "tone": [
+    { "parameter": "brightness", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "bright", "description": "Bright pick", "values": {} },
+    { "name": "nylon", "description": "Warm nylon", "values": {"brightness": 0.33, "body": 0.65} },
+    { "name": "muted", "description": "Palm-muted", "values": {"decay": 0.3, "brightness": 0.3, "release": 0.05} },
+    { "name": "steel", "description": "Steel strings", "values": {"brightness": 0.85, "position": 0.15, "decay": 4, "body": 0.7} }
+  ],
+  "defaultPreset": "bright",
+  "scene": {"family": "bars", "variant": {"shape": "string"}, "drive": "pitch"}
+}

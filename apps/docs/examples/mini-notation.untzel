@@ -1,0 +1,5 @@
+kick:  kick X... x... X... x...
+clap:  hat  .... x~.. .... x~..   | open 0.4
+roll:  hat  x x [x x] x*2         | decay 0.03
+ghost: hat  x?0.3 x? x? x?        | gain 0.5
+fill:  kick x... x... x... x... / x... x... x.x. xxxx

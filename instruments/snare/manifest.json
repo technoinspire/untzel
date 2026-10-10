@@ -1,0 +1,37 @@
+{
+  "name": "snare",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "percussion",
+  "description": "Snare drum, tone and wires",
+  "model": "VOLTA K9",
+  "tags": ["snare", "backbeat", "drum"],
+  "voices": 4,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.81,
+  "patterns": [
+    { "name": "Backbeat", "text": ".... x... .... x..." },
+    { "name": "Ghost", "text": ".... x..x .x.. x..." },
+    { "name": "Roll", "text": ".... x... .... xxxx" },
+    { "name": "Half time", "text": ".... .... x... ...." }
+  ],
+  "preview": ".... x... .... x..x",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "decay", "min": 0.05, "max": 1, "default": 0.2, "unit": "s", "curve": "exponential" },
+    { "name": "tune", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "snap", "min": 0, "max": 1, "default": 0.6, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "snap", "from": 0.2, "to": 1 }
+  ],
+  "presets": [
+    { "name": "snap", "description": "Crisp wires", "values": {} },
+    { "name": "fat", "description": "Lower and longer", "values": {"tune": 0.3, "decay": 0.32, "snap": 0.5} },
+    { "name": "boom", "description": "Deep body, few wires", "values": {"tune": 0.05, "decay": 0.6, "snap": 0.1} },
+    { "name": "brush", "description": "Soft swept wires", "values": {"snap": 0.95, "decay": 0.35, "tune": 0.6} }
+  ],
+  "defaultPreset": "snap",
+  "scene": {"family": "burst", "variant": {"shape": "shards"}, "drive": "attack"}
+}

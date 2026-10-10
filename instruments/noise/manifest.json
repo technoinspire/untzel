@@ -1,0 +1,36 @@
+{
+  "name": "noise",
+  "group": "fx",
+  "kind": "drum",
+  "engine": "percussion",
+  "description": "Filtered noise, white to wind",
+  "model": "PULSAR FX",
+  "tags": ["noise", "white", "wind", "texture"],
+  "voices": 2,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.08,
+  "patterns": [
+    { "name": "Whole bar", "text": "x~~~ ~~~~ ~~~~ ~~~~" },
+    { "name": "Half bar", "text": "x~~~ ~~~~ .... ...." },
+    { "name": "Upbeat", "text": ".... .... x~~~ ~~~~" }
+  ],
+  "preview": "x~~~ ~~~~ ~~~~ ~~~~",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "cutoff", "min": 40, "max": 16000, "default": 4000, "unit": "Hz", "curve": "exponential" },
+    { "name": "resonance", "min": 0, "max": 1, "default": 0.3, "unit": "", "curve": "linear" },
+    { "name": "color", "min": 0, "max": 1, "default": 1, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "cutoff", "from": 200, "to": 12000 }
+  ],
+  "toneLevelDb": 17.41,
+  "presets": [
+    { "name": "white", "description": "Bright white noise", "values": {} },
+    { "name": "pink", "description": "Softer pink noise", "values": {"color": 0} },
+    { "name": "wind", "description": "Resonant wind", "values": {"color": 0.3, "resonance": 0.7, "cutoff": 800} }
+  ],
+  "defaultPreset": "white",
+  "scene": {"family": "sweep", "variant": {"shape": "band"}, "drive": "cutoff"}
+}

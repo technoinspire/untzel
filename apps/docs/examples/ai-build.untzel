@@ -1,0 +1,18 @@
+// the loop with a 4-bar build before the drop
+tempo 124
+key a minor
+swing 0.06
+
+kick:   kick x... x... x... x...                       | decay 0.55 | drive 0.2 | pitch 45
+hat:    hat  ..x. ..x. ..x. ..x.                       | open 0.35 | color 0.55 | gain 0.5
+shaker: hat  [x x?0.6]*8                               | decay 0.02 | gain 0.22 | pan rand(2) -0.3..0.3
+sub:    bass a1 ~ . . a1 ~ . . a1 ~ . . a1 ~ . .       | cutoff 150 | duck 0.7
+melody: bass e3 . a2 . c3 . e3 . / d3 . g2 . b2 . d3 . | cutoff sine(8) 600..2000 | decay 0.3 | delay 3/16 | reverb sea | gain 0.5 | duck 0.4
+// build only: these rise across its 4 bars
+roll:   hat  x*4 x*4 x*4 x*4                           | decay 0.03 | gain saw(4) 0.1..0.75
+lift:   bass a2 . a2 . a2 . a2 . a2 . a2 . a2 . a2 .   | cutoff saw(4) 200..5000 | gain 0.4 | duck 0.5
+
+section build kick hat roll lift sub
+section drop  kick hat shaker sub melody
+
+song build 4, drop 16 | loop

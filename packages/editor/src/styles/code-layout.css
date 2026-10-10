@@ -1,0 +1,174 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+
+/* ------------------------------------------------------------ layout */
+
+/* Sections read as one block. */
+.cm-line.u-block-sections {
+  background: rgb(255 255 255 / 3.5%);
+}
+
+/* The spacing above the block is padding, so the line numbers stay aligned with it. */
+.cm-line.u-block-sections--first {
+  padding-top: 6px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.cm-line.u-block-sections--last {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Phone: wrap only before a "|" (or after a song part's ","), and hang the
+   continuation lines under the pattern. From 768 px nothing wraps. */
+@media (max-width: 767px) {
+  .u-mod {
+    white-space: nowrap;
+  }
+
+  .cm-line.u-hang-4 {
+    padding-left: calc(4 * 1ch);
+    text-indent: calc(-4 * 1ch);
+  }
+
+  .cm-line.u-hang-5 {
+    padding-left: calc(5 * 1ch);
+    text-indent: calc(-5 * 1ch);
+  }
+
+  .cm-line.u-hang-6 {
+    padding-left: calc(6 * 1ch);
+    text-indent: calc(-6 * 1ch);
+  }
+
+  .cm-line.u-hang-7 {
+    padding-left: calc(7 * 1ch);
+    text-indent: calc(-7 * 1ch);
+  }
+
+  .cm-line.u-hang-8 {
+    padding-left: calc(8 * 1ch);
+    text-indent: calc(-8 * 1ch);
+  }
+
+  .cm-line.u-hang-9 {
+    padding-left: calc(9 * 1ch);
+    text-indent: calc(-9 * 1ch);
+  }
+
+  .cm-line.u-hang-10 {
+    padding-left: calc(10 * 1ch);
+    text-indent: calc(-10 * 1ch);
+  }
+
+  .cm-line.u-hang-11 {
+    padding-left: calc(11 * 1ch);
+    text-indent: calc(-11 * 1ch);
+  }
+
+  .cm-line.u-hang-12 {
+    padding-left: calc(12 * 1ch);
+    text-indent: calc(-12 * 1ch);
+  }
+
+  .cm-line.u-hang-13 {
+    padding-left: calc(13 * 1ch);
+    text-indent: calc(-13 * 1ch);
+  }
+
+  .cm-line.u-hang-14 {
+    padding-left: calc(14 * 1ch);
+    text-indent: calc(-14 * 1ch);
+  }
+
+  .cm-line.u-hang-15 {
+    padding-left: calc(15 * 1ch);
+    text-indent: calc(-15 * 1ch);
+  }
+
+  .cm-line.u-hang-16 {
+    padding-left: calc(16 * 1ch);
+    text-indent: calc(-16 * 1ch);
+  }
+
+  .cm-line.u-hang-17 {
+    padding-left: calc(17 * 1ch);
+    text-indent: calc(-17 * 1ch);
+  }
+
+  .cm-line.u-hang-18 {
+    padding-left: calc(18 * 1ch);
+    text-indent: calc(-18 * 1ch);
+  }
+
+  .cm-line.u-hang-19 {
+    padding-left: calc(19 * 1ch);
+    text-indent: calc(-19 * 1ch);
+  }
+
+  .cm-line.u-hang-20 {
+    padding-left: calc(20 * 1ch);
+    text-indent: calc(-20 * 1ch);
+  }
+
+  .cm-line.u-hang-21 {
+    padding-left: calc(21 * 1ch);
+    text-indent: calc(-21 * 1ch);
+  }
+
+  .cm-line.u-hang-22 {
+    padding-left: calc(22 * 1ch);
+    text-indent: calc(-22 * 1ch);
+  }
+
+  .cm-line.u-hang-23 {
+    padding-left: calc(23 * 1ch);
+    text-indent: calc(-23 * 1ch);
+  }
+
+  .cm-line.u-hang-24 {
+    padding-left: calc(24 * 1ch);
+    text-indent: calc(-24 * 1ch);
+  }
+
+  .cm-line.u-hang-25 {
+    padding-left: calc(25 * 1ch);
+    text-indent: calc(-25 * 1ch);
+  }
+
+  .cm-line.u-hang-26 {
+    padding-left: calc(26 * 1ch);
+    text-indent: calc(-26 * 1ch);
+  }
+
+  .cm-line.u-hang-27 {
+    padding-left: calc(27 * 1ch);
+    text-indent: calc(-27 * 1ch);
+  }
+
+  .cm-line.u-hang-28 {
+    padding-left: calc(28 * 1ch);
+    text-indent: calc(-28 * 1ch);
+  }
+
+  .cm-line.u-hang-29 {
+    padding-left: calc(29 * 1ch);
+    text-indent: calc(-29 * 1ch);
+  }
+
+  .cm-line.u-hang-30 {
+    padding-left: calc(30 * 1ch);
+    text-indent: calc(-30 * 1ch);
+  }
+
+  .cm-line.u-hang-31 {
+    padding-left: calc(31 * 1ch);
+    text-indent: calc(-31 * 1ch);
+  }
+
+  .cm-line.u-hang-32 {
+    padding-left: calc(32 * 1ch);
+    text-indent: calc(-32 * 1ch);
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "cowbell",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "modal",
+  "description": "Cowbell, classic and bright",
+  "model": "TERRA Hands",
+  "tags": ["cowbell", "bell", "metal"],
+  "voices": 2,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 2.46,
+  "patterns": [
+    { "name": "Offbeat", "text": "..x. ..x. ..x. ..x." },
+    { "name": "Clave", "text": "x.x. ..x. x.x. ..x." },
+    { "name": "Late", "text": "...x ..x. ...x ..x." },
+    { "name": "Sparse", "text": "x..x ..x. ..x. x..." }
+  ],
+  "preview": "x.x. ..x. x.x. ..x.",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "tune", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.02, "max": 1, "default": 0.22, "unit": "s", "curve": "exponential" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "samples" }
+  ],
+  "tone": [
+    { "parameter": "tune", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "classic", "description": "Two-tone bell", "values": {} },
+    { "name": "bright", "description": "Higher and shorter", "values": {"tune": 0.75, "decay": 0.14} }
+  ],
+  "defaultPreset": "classic",
+  "scene": {"family": "mark", "variant": {"shape": "diamond"}, "drive": "attack"}
+}

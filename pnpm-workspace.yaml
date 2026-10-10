@@ -1,0 +1,17 @@
+packages:
+  - "packages/*"
+  - "packages/skins/*"
+  - "instruments/*"
+  - "apps/*"
+  - "tools/sim"
+  - "tools/docs"
+  - "tools/i18n"
+  - "tools/release"
+  - "tools/changelog"
+  - "tools/demo"
+allowBuilds:
+  "@swc/core": false
+minimumReleaseAgeExclude:
+  - "@types/node@24.19.1"
+patchedDependencies:
+  style-mod@4.1.4: patches/style-mod@4.1.4.patch

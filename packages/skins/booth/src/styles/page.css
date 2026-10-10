@@ -1,0 +1,40 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+
+/* Bundled fonts, never a CDN (visitor privacy, LGPD). Copied from the site admin-kit;
+   licenses in public/fonts/OFL-*.txt. Latin subset. */
+@font-face {
+  font-family: "Jost";
+  src: url("/fonts/jost-normal-400-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("/fonts/hanken-grotesk-400-600-latin.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* The page around the shell of the skin (@untzel/skin), which draws every screen. */
+
+html {
+  background: #0b0b0c;
+  color: #ffffff;
+  font-family: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  hyphens: manual;
+}
+
+body {
+  margin: 0;
+}
+
+.noscript {
+  margin: 0;
+  padding: 24px 16px;
+}

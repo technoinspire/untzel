@@ -1,0 +1,16 @@
+{
+  "category": "new",
+  "date": "2026-10-04",
+  "refs": [
+    15
+  ],
+  "docs": "/docs/app/track-detail",
+  "title": {
+    "en": "Track controls",
+    "pt-BR": "Controles da faixa"
+  },
+  "body": {
+    "en": "Change the tone, rename in place, set tempo and key, use a volume fader in dB, name patterns, undo and redo, or start blank.",
+    "pt-BR": "Mude o tone, renomeie no lugar, ajuste tempo e tom, use um fader de volume em dB, dê nome aos padrões, desfaça e refaça, ou comece em branco."
+  }
+}

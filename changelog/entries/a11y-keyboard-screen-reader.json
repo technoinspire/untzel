@@ -1,0 +1,11 @@
+{
+  "category": "improved",
+  "title": {
+    "en": "Play it all from the keyboard and a screen reader",
+    "pt-BR": "Toque tudo pelo teclado e com leitor de tela"
+  },
+  "body": {
+    "en": "Sheets keep the focus and return it when they close, every control is at least 44 px, labels are easier to read, arrows move sliders by 1% and the screen reader hears each message once.",
+    "pt-BR": "Os painéis seguram o foco e o devolvem ao fechar, todo controle tem ao menos 44 px, os rótulos ficam mais legíveis, as setas movem os controles deslizantes em 1% e o leitor de tela ouve cada aviso uma vez."
+  }
+}

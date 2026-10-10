@@ -1,0 +1,130 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+
+/* The Code panel's body: the code, and the command line behind the Commands bar. */
+
+/* ------------------------------------------------------------- area */
+
+/* The code first; the command line opens under it from the "Commands" bar. */
+.ut-area {
+  display: grid;
+  /* minmax(0, …): a long line scrolls inside the code instead of widening the panel. */
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  height: 100%;
+  min-height: 0;
+  /* The commands' height until the divider moves; the phone overrides it below. */
+  --ut-terminal-default: 45%;
+}
+
+.ut-area[data-commands="open"] {
+  grid-template-rows: minmax(0, 1fr) auto auto var(--ut-terminal-h, var(--ut-terminal-default));
+}
+
+/* The Code sheet (below 1200 px): over the three-row transport the area is about 350 to
+   370 px on a phone and on a landscape tablet, so the commands open with at least
+   260 px, the code giving up to two lines (48 px, plus the Commands bar of 53 and the
+   20 px divider), and the log keeps a command, its result and its detail in view. A
+   taller sheet keeps 45 %. The divider still moves it. At 390 × 844 the area
+   measures 244 px: the 160 px floor then leaves the code 11 px. */
+@media (max-width: 1199px) {
+  .ut-area {
+    --ut-terminal-default: max(160px, min(calc(100% - 121px), max(45%, 260px)));
+  }
+}
+/* A preview is the safety net of a destructive command: while it is open the commands
+   grow up to the room the code can give (a few lines stay), so the header, the diff
+   and Apply / Cancel are seen together; the chosen split comes back after. */
+.ut-area[data-commands="open"]:has(.ut-preview--open) {
+  grid-template-rows: minmax(64px, 1fr) auto 0 minmax(var(--ut-terminal-h, var(--ut-terminal-default)), max-content);
+}
+/* Nothing to resize meanwhile; the handle keeps its grid row so nothing moves rows. */
+.ut-area:has(.ut-preview--open) > .ut-split {
+  visibility: hidden;
+  height: 0;
+}
+
+.ut-area__code,
+.ut-area__terminal {
+  min-height: 0;
+}
+
+.ut-area__terminal {
+  display: flex;
+  padding: 0 16px 8px;
+}
+
+.ut-area__terminal > .ut-terminal {
+  flex: 1;
+}
+
+.ut-area__bar {
+  display: flex;
+  padding: 4px 16px;
+  border-top: 1px solid var(--raised, #26282d);
+}
+
+.ut-commands-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px 0 10px;
+  border-radius: 22px;
+  color: var(--muted, #aaa5a1);
+  font: 400 13px/1 var(--font-sans);
+}
+
+.ut-commands-toggle[aria-expanded="true"] {
+  background: var(--raised, #26282d);
+  color: var(--text, #fff);
+}
+
+.ut-commands-toggle:focus-visible {
+  outline: 2px solid var(--text, #fff);
+  outline-offset: 3px;
+}
+
+/* A 20 px band with the 40 × 4 grip in the middle, and a 44 × 88 px area to grab:
+   16 px up into the empty middle of the Commands bar, 8 px down into the well's
+   top padding. A 44 px band pushed the command field 13 px out of the 244 px sheet at
+   390 × 844. */
+.ut-split {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  cursor: row-resize;
+  touch-action: none;
+}
+
+.ut-split::after {
+  content: "";
+  position: absolute;
+  top: -16px;
+  bottom: -8px;
+  left: calc(50% - 44px);
+  width: 88px;
+}
+
+.ut-split::before {
+  content: "";
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--raised, #26282d);
+}
+
+.ut-split:focus-visible {
+  outline: 2px solid var(--text, #fff);
+  outline-offset: -2px;
+}
+
+@media (min-width: 1200px) {
+  .ut-area__bar,
+  .ut-area__terminal {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

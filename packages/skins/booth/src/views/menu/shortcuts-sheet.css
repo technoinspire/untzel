@@ -1,0 +1,41 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The shortcuts sheet view, views/shortcuts-sheet.ts. */
+.ui-sheet--shortcuts .ui-sheet__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  padding: 0 16px 24px;
+}
+
+.ui-shortcuts {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.ui-shortcuts th {
+  padding: 6px 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.ui-shortcuts td {
+  padding: 8px 0;
+  border-top: 1px solid var(--raised);
+}
+
+.ui-shortcuts td:first-child {
+  width: 40%;
+}
+
+.ui-shortcuts kbd {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--raised);
+  font: 600 13px/1.6 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}

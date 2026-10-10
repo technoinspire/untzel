@@ -1,0 +1,55 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../.cache/tsc/web-worker",
+    "tsBuildInfoFile": "../../.cache/tsc/web-worker.tsbuildinfo",
+    "resolveJsonModule": true,
+    "lib": [
+      "ES2023",
+      "WebWorker"
+    ],
+    "types": [
+      "vite/client"
+    ],
+    "rootDir": "src"
+  },
+  "include": [
+    "src/transport.worker.ts",
+    "src/export.worker.ts"
+  ],
+  "references": [
+    {
+      "path": "../../packages/core"
+    },
+    {
+      "path": "../../packages/language"
+    },
+    {
+      "path": "../../packages/transport"
+    },
+    {
+      "path": "../../packages/session"
+    },
+    {
+      "path": "../../packages/audio/tsconfig.protocol.json"
+    },
+    {
+      "path": "../../packages/audio/tsconfig.main.json"
+    },
+    {
+      "path": "../../packages/audio/tsconfig.worker.json"
+    },
+    {
+      "path": "../../packages/audio/tsconfig.worklet.json"
+    },
+    {
+      "path": "../../packages/export"
+    },
+    {
+      "path": "../../packages/light"
+    },
+    {
+      "path": "../../packages/instrument-index"
+    }
+  ]
+}

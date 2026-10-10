@@ -1,0 +1,51 @@
+// The library stress song, a synthetic worst case for the engine: one track of every
+// instrument playing its preview in a loop, chords on the chord instruments and the full
+// insert chain on four tracks. pnpm sim --scale renders it against the 6% budget. A new
+// instrument adds its line here (library.test.ts checks every one is present).
+tempo 124
+key c minor
+
+acid:       acid c2 c2 c3 c2! eb2 c2 bb1 c2 | gain 0.3 | lowpass 2000 | highpass 200 | distort 0.3 | crush 0.3 | chorus 0.3 | phaser 0.3 | eq-high 2 | comp 0.4 | gate 0.3
+bass:       bass . c2 . c2 . c2 . eb2 / . ab1 . ab1 . bb1 . g1 | gain 0.3
+bell:       bell c4 ~ ~ ~ g4 ~ eb4 ~ / ab4 ~ ~ ~ g4 ~ ~ ~ | gain 0.3
+bongo:      bongo x.x. .x.x x.xx .x.x | gain 0.3
+boom:       boom c1 ~ ~ . . . c1 . / . . eb1 ~ ~ ~ . . | gain 0.3
+brass:      brass Cm ~ . Cm Bb ~ ~ ~ / Ab ~ ~ ~ Bb ~ ~ ~ | gain 0.3
+choir:      choir Cm ~ ~ ~ / Ab ~ Bb ~ | gain 0.3
+clap:       clap .... x... .... x... | gain 0.3
+conga:      conga ..x. x..x ..x. x.xx | gain 0.3
+cowbell:    cowbell x.x. ..x. x.x. ..x. | gain 0.3
+crash:      crash x... .... .... .... | gain 0.3
+djembe:     djembe x..x ..x. x.x. .xx. | gain 0.3
+downlifter: downlifter x~~~ ~~~~ ~~~~ ~~~~ | gain 0.3
+epiano:     epiano . Cm7 . . Cm7 . . . / . Abmaj7 . . Abmaj7 . . . | gain 0.3 | lowpass 2000 | highpass 200 | distort 0.3 | crush 0.3 | chorus 0.3 | phaser 0.3 | eq-high 2 | comp 0.4 | gate 0.3
+fm-bass:    fm-bass c2 . c2 . eb2 . c2 g1 | gain 0.3
+fm-lead:    fm-lead c4 ~ eb4 . g4 ~ ~ . / bb4 ~ g4 . eb4 ~ ~ . | gain 0.3
+harp:       harp c3 g3 eb4 g4 c5 g4 eb4 g3 / ab2 eb3 c4 eb4 ab4 eb4 c4 eb3 | gain 0.3
+hat:        hat .x.x .x.x .x.x .x.x | gain 0.3
+impact:     impact x... .... .... .... | gain 0.3
+kalimba:    kalimba c4 . eb4 g4 . bb4 . g4 / eb4 . c5 . g4 . eb4 . | gain 0.3
+kick:       kick x... x... x... x... | gain 0.3
+lead:       lead c4 ~ eb4 . g4 ~ bb4 ~ / g4 ~ ~ ~ eb4 ~ ~ . | gain 0.3 | lowpass 2000 | highpass 200 | distort 0.3 | crush 0.3 | chorus 0.3 | phaser 0.3 | eq-high 2 | comp 0.4 | gate 0.3
+mallet:     mallet c4 . eb4 . g4 . bb4 g4 / ab3 . c4 . eb4 . c4 . | gain 0.3
+noise:      noise x~~~ ~~~~ ~~~~ ~~~~ | gain 0.3
+organ:      organ Cm ~ ~ ~ / Ab ~ Bb ~ | gain 0.3
+pad:        pad Cm7 ~ ~ ~ / Abmaj7 ~ ~ ~ | gain 0.3 | lowpass 2000 | highpass 200 | distort 0.3 | crush 0.3 | chorus 0.3 | phaser 0.3 | eq-high 2 | comp 0.4 | gate 0.3
+perc:       perc ..x. .x.. ...x .x.. | gain 0.3
+piano:      piano c3+eb3+g3 ~ ~ . bb3 . g3 . / Abmaj7 ~ ~ ~ ~ ~ . . | gain 0.3
+pluck:      pluck c3 eb3 g3 c4 g3 eb3 c3 g2 / ab2 c3 eb3 ab3 eb3 c3 bb2 g2 | gain 0.3
+reese:      reese c2 ~ ~ ~ eb2 ~ g1 ~ | gain 0.3
+ride:       ride x.xx x.x. x.xx x.x. | gain 0.3
+rim:        rim ..x. ...x ..x. .x.. | gain 0.3
+riser:      riser x~~~ ~~~~ ~~~~ ~~~~ | gain 0.3
+shaker:     shaker x.xx x.xX x.xx x.xX | gain 0.3
+snare:      snare .... x... .... x..x | gain 0.3
+square:     square c4 . g4 . eb4 . g4 . / bb3 . g4 . eb4 . c4 . | gain 0.3
+stab:       stab . Cm7 . . . Cm7 . . / . Abmaj7 . . . Bb . . | gain 0.3
+strings:    strings Cm ~ ~ ~ / Ab ~ Bb ~ | gain 0.3
+sub:        sub c1 ~ . c1 . . eb1 ~ / g0 ~ . g0 . . bb0 . | gain 0.3
+supersaw:   supersaw Cm ~ ~ ~ / Ab ~ Bb ~ | gain 0.3
+sweep:      sweep x~~~ ~~~~ ~~~~ ~~~~ | gain 0.3
+tom:        tom x.x. x... .x.x x... | gain 0.3
+vox:        vox c4 ~ eb4 ~ g4 ~ ~ . / f4 ~ eb4 ~ c4 ~ ~ . | gain 0.3
+woodblock:  woodblock ..x. ..x. .x.x x... | gain 0.3

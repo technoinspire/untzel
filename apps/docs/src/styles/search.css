@@ -1,0 +1,82 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* Search, shown only with JavaScript. */
+/* Search: hidden without JavaScript. */
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: var(--target);
+  padding: 0 12px;
+  border-radius: 22px;
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.search[hidden] {
+  display: none;
+}
+
+.search__label {
+  display: flex;
+  align-items: center;
+  min-height: var(--target);
+}
+
+.search__input {
+  width: 12rem;
+  min-height: var(--target);
+  padding: 0 8px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+}
+
+.search__input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.search__input:focus-visible {
+  outline-offset: 6px;
+}
+
+.search__results {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 5;
+  width: min(26rem, calc(100vw - 2 * var(--gutter)));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 50%);
+}
+
+.search__results:empty {
+  display: none;
+}
+
+.search__results a,
+.search__message {
+  display: flex;
+  align-items: center;
+  min-height: var(--target);
+  padding: 8px 16px;
+}
+
+.search__results a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.search__results a:hover {
+  background: var(--raised);
+}
+
+.search__message {
+  color: var(--muted);
+}

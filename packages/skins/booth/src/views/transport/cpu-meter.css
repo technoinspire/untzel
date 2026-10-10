@@ -1,0 +1,44 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The cpu meter view, views/cpu-meter.ts. */
+.ui-transport__cpu {
+  display: none;
+}
+
+.is-near-limit .ui-meter__fill {
+  background: var(--ember);
+}
+
+@media (min-width: 1200px) {
+  .ui-transport__cpu { order: 5; }
+
+  .ui-transport__cpu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 16px;
+    color: var(--muted);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .ui-transport__cpu-meter {
+    width: 80px;
+  }
+
+  @container live (max-width: 920px) {
+    /* 1440 with the panel open (896 px): the CPU meter gives its room; the text stays. */
+    .ui-transport__cpu-meter {
+      display: none;
+    }
+  }
+
+  @container live (max-width: 820px) {
+    /* 1200–1280 with the panel open (720–736 px): CPU joins the position line, as on the
+       phone ("bar 3 of 16 · CPU 1%"), and the mode switch, Code and Drop fit their labels.
+       The Length chip, Code, Drop and the toggle keep their order and their 44 px. */
+    .ui-transport__cpu {
+      display: none;
+    }
+  }
+}

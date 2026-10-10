@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM"],
+    "types": ["node"],
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/demo",
+    "tsBuildInfoFile": "../../.cache/tsc/demo.tsbuildinfo"
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../../packages/core" },
+    { "path": "../../packages/language" },
+    { "path": "../../packages/session" },
+    { "path": "../../packages/skin-contract" },
+    { "path": "../../packages/skins/booth" },
+    { "path": "../sim" }
+  ]
+}

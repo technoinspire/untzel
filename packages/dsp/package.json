@@ -1,0 +1,13 @@
+{
+  "name": "@untzel/dsp",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./untzel_dsp.wasm": "./dist/untzel_dsp.wasm"
+  },
+  "scripts": {
+    "build": "node scripts/build-wasm.mjs && node scripts/copy-wasm.mjs"
+  }
+}

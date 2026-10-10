@@ -1,0 +1,33 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The pattern preview view, views/pattern-preview.ts. */
+.ui-patterns__preview {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--raised);
+}
+.ui-patterns__preview[hidden] {
+  display: none;
+}
+.ui-patterns__preview-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+.ui-patterns__preview-head .ui-icon {
+  width: 18px;
+  height: 18px;
+}
+.ui-patterns__preview-note {
+  color: var(--muted);
+  font-size: 13px;
+}
+.ui-patterns__preview-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}

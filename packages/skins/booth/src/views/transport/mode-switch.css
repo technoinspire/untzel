@@ -1,0 +1,22 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The mode switch view, views/mode-switch.ts. */
+.ui-transport__modes {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .ui-transport__modes { order: 3; }
+
+  .ui-transport__modes {
+    display: inline-flex;
+    margin-left: 0;
+  }
+
+  @container live (max-width: 820px) {
+    .ui-transport__modes .ui-segmented__option {
+      min-width: 60px;
+      padding: 0 12px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "category": "fixed",
+  "title": {
+    "en": "Typing in the search, previews and renaming",
+    "pt-BR": "Digitar na busca, prévias e renomear"
+  },
+  "body": {
+    "en": "Letters, digits and Space typed in the library search stay in the search. A preview started right after you touched notes stops again instead of playing on by itself. A renamed track keeps its detail open, and the empty track list scrolls on short phones.",
+    "pt-BR": "Letras, números e Espaço digitados na busca da biblioteca ficam na busca. Uma prévia aberta logo depois de tocar notas volta a parar, em vez de seguir tocando sozinha. Uma faixa renomeada mantém o detalhe aberto, e a lista vazia de faixas rola em celulares baixos."
+  }
+}

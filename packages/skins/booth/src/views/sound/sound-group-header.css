@@ -1,0 +1,21 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The sound group header view, views/sound-group-header.ts. */
+/* The Sound group's head: its label, and Change sound at the right. */
+.ui-sound__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 18px;
+}
+.ui-sound__head .ui-detail__label {
+  margin: 0;
+}
+.ui-sound__change {
+  gap: 8px;
+}
+.ui-sound__change .ui-icon {
+  width: 18px;
+  height: 18px;
+}

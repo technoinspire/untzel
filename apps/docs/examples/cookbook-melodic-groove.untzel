@@ -1,0 +1,10 @@
+// 124 BPM melodic groove in A minor: a bass melody over a steady kick
+tempo 124
+key a minor
+swing 0.06
+
+kick:   kick x... x... x... x...                     | decay 0.55 | drive 0.25 | pitch 46
+hat:    hat  ..x. ..x. ..x. ..x.                     | open 0.3 | color 0.6 | gain 0.5
+ticks:  hat  x.x. x.x. x.x. x.x.                     | decay 0.02 | gain 0.25 | pan 0.35
+sub:    bass a1 ~ . . a1 ~ . . a1 ~ . . g1 ~ . .     | cutoff 160 | duck 0.6
+melody: bass a2 . c3 . e3 . c3 . / g2 . b2 . d3 . b2 . / f2 . a2 . c3 . a2 . / e2 . g2 . b2 . e3 . | cutoff sine(16) 500..2200 | decay 0.35 | delay 3/16 | reverb wide | gain 0.55 | duck 0.4

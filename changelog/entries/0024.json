@@ -1,0 +1,16 @@
+{
+  "category": "improved",
+  "date": "2026-10-04",
+  "refs": [
+    24
+  ],
+  "docs": "/docs/instruments",
+  "title": {
+    "en": "Recorded instruments and cleaner sound",
+    "pt-BR": "Instrumentos gravados e um som mais limpo"
+  },
+  "body": {
+    "en": "Piano, strings, harp, mallets, bells and kalimba are recorded instruments now, every instrument has a model name, and the synths sound cleaner.",
+    "pt-BR": "Piano, cordas, harpa, mallets, sinos e kalimba agora são instrumentos gravados, cada instrumento tem nome de modelo e os sintetizadores soam mais limpos."
+  }
+}

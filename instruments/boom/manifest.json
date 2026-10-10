@@ -1,0 +1,39 @@
+{
+  "name": "boom",
+  "group": "bass",
+  "kind": "pitched",
+  "range": { "lowest": "a0", "highest": "c3" },
+  "engine": "percussion",
+  "description": "Long booming tuned kick bass",
+  "model": "ORBIT K8",
+  "tags": ["boom", "bass", "trap", "long"],
+  "voices": 1,
+  "allocation": "mono",
+  "steal": "oldest",
+  "costPerVoice": 1.25,
+  "patterns": [
+    { "name": "Glide", "text": "c2 ~ ~ . . . c2 . / . . eb2 ~ ~ ~ . ." },
+    { "name": "Long", "text": "c2 ~ ~ ~ ~ ~ ~ ~" },
+    { "name": "Bounce", "text": "c2 . . c2 . . c2 . / . . c2 . eb2 . . ." },
+    { "name": "Offbeat", "text": ". c2 . c2 . c2 . c2" }
+  ],
+  "preview": "c1 ~ ~ . . . c1 . / . . eb1 ~ ~ ~ . .",
+  "defaultDuck": 0.4,
+  "parameters": [
+    { "name": "decay", "min": 0.1, "max": 8, "default": 1.2, "unit": "s", "curve": "exponential" },
+    { "name": "tune", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "bend", "min": 0, "max": 1, "default": 0.3, "unit": "", "curve": "linear" },
+    { "name": "color", "min": 0, "max": 1, "default": 0.45, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "decay", "from": 0.3, "to": 4 }
+  ],
+  "toneLevelDb": 10.05,
+  "presets": [
+    { "name": "long", "description": "Long sustained boom with some grit", "values": {} },
+    { "name": "short", "description": "Punchy and short", "values": {"decay": 0.4} },
+    { "name": "dirty", "description": "Saturated hard, a deeper drop", "values": {"color": 0.7, "bend": 0.6} }
+  ],
+  "defaultPreset": "long",
+  "scene": {"family": "shockwave", "variant": {"shape": "dome"}, "drive": "envelope"}
+}

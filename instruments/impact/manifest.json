@@ -1,0 +1,36 @@
+{
+  "name": "impact",
+  "group": "fx",
+  "kind": "drum",
+  "engine": "percussion",
+  "description": "Hit for section changes",
+  "model": "PULSAR FX",
+  "tags": ["impact", "hit", "boom", "transition"],
+  "voices": 2,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 2.51,
+  "patterns": [
+    { "name": "Downbeat", "text": "x... .... .... ...." },
+    { "name": "Two hits", "text": "x... .... x... ...." },
+    { "name": "Pickup", "text": ".... .... .... ...x" }
+  ],
+  "preview": "x... .... .... ....",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "decay", "min": 0.1, "max": 4, "default": 3.2, "unit": "s", "curve": "exponential" },
+    { "name": "size", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "color", "min": 0, "max": 1, "default": 0.1, "unit": "", "curve": "linear" },
+    { "name": "tail", "min": 0, "max": 1, "default": 0.6, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "size", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "hit", "description": "A dropping sub and a washed noise burst", "values": {} },
+    { "name": "deep", "description": "Deep sub drop, a dark short tail", "values": {"size": 1, "decay": 4, "tail": 0.1, "color": 0} },
+    { "name": "metal", "description": "Metallic crash hit in a long wash", "values": {"color": 0.8, "size": 0.3, "tail": 0.7} }
+  ],
+  "defaultPreset": "hit",
+  "scene": {"family": "shockwave", "variant": {"shape": "blast"}, "drive": "envelope"}
+}

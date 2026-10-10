@@ -1,0 +1,67 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The app's resets and the hidden-but-spoken primitives (ui-visually-hidden, ui-slot). */
+.ui-app * {
+  box-sizing: border-box;
+}
+
+.ui-app :where(h1, h2, p, ol, ul, figure) {
+  margin: 0;
+  padding: 0;
+}
+
+.ui-app :where(ol, ul) {
+  list-style: none;
+}
+
+/* :where keeps the reset at zero specificity, so component classes win. */
+.ui-app :where(button) {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ui-app [hidden] {
+  display: none !important;
+}
+
+.ui-app :focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+.ui-app :focus:not(:focus-visible) {
+  outline: none;
+}
+
+.ui-app ::selection {
+  background: rgb(246 93 0 / 30%);
+}
+
+.ui-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Inert: label and icon in opaque text-muted (8.04:1 on stage, 7.33:1 on surface, 6.05:1
+   on surface-raised), no opacity. Half opacity on the label measured 2.6:1 (Use whole
+   loop); the 4.5:1 floor has no exception for it. The icon
+   at 50% over text-muted fell to 2.60:1 on surface-raised, under the 3:1 of a glyph that
+   is the only name a round button shows (Previous bar, Octave down). */
+.ui-app [aria-disabled="true"] {
+  color: var(--muted);
+  cursor: default;
+}
+/* The places the lazily loaded menu and its sheets take (lazy-menu.ts): no box of their
+   own, so what they hold lays out as their parent's children. */
+.ui-slot {
+  display: contents;
+}

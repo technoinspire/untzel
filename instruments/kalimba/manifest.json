@@ -1,0 +1,43 @@
+{
+  "name": "kalimba",
+  "group": "plucks",
+  "kind": "chord",
+  "range": { "lowest": "c3", "highest": "c7" },
+  "engine": "modal",
+  "description": "Thumb piano, metal tines on a box",
+  "model": "TERRA Kalimba",
+  "tags": ["kalimba", "mbira", "thumb", "tine", "afro"],
+  "voices": 6,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 0.53,
+  "patterns": [
+    { "name": "Thumb", "text": "c4 . eb4 . g4 . bb4 . / g4 . eb4 . c5 . g4 ." },
+    { "name": "Lullaby", "text": "g4 . eb4 . c4 . eb4 ." },
+    { "name": "Pulse", "text": "c4 . c4 . g4 . g4 ." },
+    { "name": "Sparkle", "text": "c5 . g4 eb4 . c4 . g4" }
+  ],
+  "preview": "c4 . eb4 g4 . bb4 . g4 / eb4 . c5 . g4 . eb4 .",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "hardness", "min": 0, "max": 1, "default": 0.6, "unit": "", "curve": "linear" },
+    { "name": "brightness", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.1, "max": 6, "default": 1.1, "unit": "s", "curve": "exponential" },
+    { "name": "body", "min": 0, "max": 1, "default": 0.4, "unit": "", "curve": "linear" },
+    { "name": "noise", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "samples" },
+    { "name": "level", "min": 0.05, "max": 8, "default": 1.306, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "brightness", "from": 0, "to": 1 }
+  ],
+  "toneLevelDb": 6.0,
+  "presets": [
+    { "name": "tine", "description": "Warm metal tines", "values": {} },
+    { "name": "bright", "description": "Hard thumb, glassy upper partials, long ring", "values": {"brightness": 0.95, "hardness": 0.95, "decay": 6, "body": 0.15, "level": 0.704} },
+    { "name": "soft", "description": "Soft thumb, dark and round", "values": {"hardness": 0, "brightness": 0.05, "decay": 0.45, "body": 0.6, "level": 2.153} },
+    { "name": "box", "description": "Woody box resonance and a buzzing tine", "values": {"body": 1, "decay": 0.16, "brightness": 0.35, "noise": 0.7, "level": 1.921} }
+  ],
+  "defaultPreset": "tine",
+  "scene": {"family": "bars", "variant": {"shape": "hanging"}, "drive": "pitch"}
+}

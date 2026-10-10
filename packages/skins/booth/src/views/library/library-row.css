@@ -1,0 +1,116 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The library row view, views/library-row.ts. */
+.ui-library__row {
+  border-radius: 12px;
+  background: var(--raised);
+}
+
+.ui-library__row[aria-selected="true"] {
+  outline: 2px solid var(--muted);
+  outline-offset: 2px;
+}
+
+.ui-library__row[data-playing="true"] {
+  box-shadow: inset 0 0 0 2px var(--flare);
+}
+
+/* The active row that also plays shows one ring, the flare one. */
+.ui-library__row[aria-selected="true"][data-playing="true"] {
+  outline-color: var(--flare);
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+.ui-library__row-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px 44px;
+  align-items: center;
+  gap: 6px;
+  min-height: 56px;
+  padding: 6px 8px 6px 14px;
+}
+
+.ui-library__text {
+  min-width: 0;
+}
+
+.ui-library__cell {
+  display: grid;
+}
+
+.ui-library__name {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* The model name: small caps-like label, part of the instrument's identity. */
+.ui-library__model {
+  color: var(--flare);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ui-library__use,
+.ui-library__detail {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* The description gives way before the sound count, which always stays whole. */
+.ui-library__detail {
+  display: flex;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.ui-library__description {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-library__count {
+  flex: none;
+}
+
+.ui-library__preview,
+.ui-library__add {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--stage);
+}
+
+.ui-library__preview svg,
+.ui-library__add svg {
+  width: 18px;
+  height: 18px;
+}
+
+.ui-library__preview[aria-pressed="true"] {
+  background: var(--flare);
+  color: var(--stage);
+}
+/* The library in replace mode: the sound playing now has a ✓ ring and no action. */
+.ui-library__current {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px var(--flare);
+  color: var(--flare);
+}
+.ui-library__current .ui-icon {
+  width: 20px;
+  height: 20px;
+}

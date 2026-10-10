@@ -1,0 +1,16 @@
+{
+  "category": "new",
+  "date": "2026-10-04",
+  "refs": [
+    10
+  ],
+  "docs": "/docs/instruments",
+  "title": {
+    "en": "Voices and choir",
+    "pt-BR": "Vozes e coro"
+  },
+  "body": {
+    "en": "Natural vox and choir, recorded from real singers.",
+    "pt-BR": "Vox e coro naturais, gravados de cantores de verdade."
+  }
+}

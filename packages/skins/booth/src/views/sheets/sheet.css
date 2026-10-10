@@ -1,0 +1,116 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The sheet view, views/sheet.ts. */
+.ui-sheet {
+  position: absolute;
+  inset: var(--sheet-top, 96px) 0 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px 20px 0 0;
+  background: var(--surface);
+  transition: translate 200ms var(--ease-out);
+}
+
+@starting-style {
+  .ui-sheet {
+    translate: 0 24px;
+  }
+}
+
+.ui-sheet__handle {
+  position: absolute;
+  top: 10px;
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--raised);
+}
+
+/* Drag down to close starts here (views/sheet.ts): the browser must not claim the pan. */
+.ui-sheet__handle,
+.ui-sheet__header {
+  touch-action: none;
+}
+
+.ui-sheet__header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 10px;
+  min-height: 88px;
+  padding: 22px 16px 0;
+  align-content: flex-start;
+}
+
+.ui-sheet__title {
+  font: 500 20px/44px var(--font-display);
+}
+
+.ui-sheet__title:focus {
+  outline: none;
+}
+
+.ui-sheet__close {
+  margin-left: auto;
+}
+
+.ui-sheet__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 16px 24px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--raised) var(--surface);
+}
+
+.ui-sheet__hint {
+  color: var(--muted);
+  font-size: 13px;
+}
+/* In a sheet header the name is the h2; while editing it takes the whole first row and
+   the meta and the Preview sounds switch move under it. */
+.ui-sheet__title .ui-inline-name__button {
+  font: 500 20px/44px var(--font-display);
+}
+.ui-sheet__header:has(.ui-inline-name[data-editing="true"]) .ui-sheet__title {
+  flex: 1 1 100%;
+  order: 0;
+}
+/* The tempo and key editors share the Length picker's place on the phone. */
+.ui-sheet--popover {
+  top: auto;
+  z-index: 30;
+}
+.ui-sheet--popover .ui-sheet__header {
+  min-height: 70px;
+}
+
+@media (min-width: 1200px) {
+  .ui-sheet--popover {
+    position: fixed;
+    inset: auto;
+    top: var(--anchor-top, 488px);
+    left: var(--anchor-left, 32px);
+    z-index: 40;
+    width: 420px;
+    border-radius: 16px;
+    box-shadow: inset 0 0 0 1px var(--raised);
+    translate: none;
+    transition: none;
+  }
+
+  .ui-sheet--popover .ui-sheet__handle {
+    display: none;
+  }
+
+  .ui-sheet--popover .ui-sheet__header {
+    min-height: 0;
+    padding: 12px 12px 0 20px;
+  }
+
+  .ui-sheet--popover .ui-sheet__body {
+    padding: 0 20px 20px;
+  }
+}

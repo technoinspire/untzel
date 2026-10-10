@@ -1,0 +1,161 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The side panel view, views/side-panel.ts. */
+.ui-panel {
+  display: contents;
+}
+
+.ui-panel__bar {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  /* side panel */
+  .ui-panel {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    grid-area: 1 / 2;
+    width: var(--panel-w);
+    height: calc(100dvh - var(--footer-h));
+    background: var(--surface);
+  }
+
+  .ui-panel__bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 20px 0 32px;
+  }
+
+  /* Track · Part · Code; Part only in song mode, so the width follows. */
+  .ui-panel__tabs {
+    min-width: 196px;
+    background: var(--stage);
+  }
+
+  .ui-panel__tabs .ui-segmented__option {
+    min-width: 88px;
+  }
+  /* Loop mode: Track alone is no choice (side-panel.ts); the × keeps its corner. */
+  .ui-panel__tabs[hidden] {
+    display: none;
+  }
+  .ui-panel__close {
+    margin-left: auto;
+  }
+
+  .ui-panel .ui-sheet--part .ui-sheet__header {
+    padding-top: 18px;
+  }
+
+  .ui-panel .ui-sheet--part .ui-sheet__title {
+    font-size: 22px;
+  }
+
+  .ui-panel .ui-part__length {
+    margin-left: auto;
+  }
+
+  .ui-panel .ui-detail__length {
+    min-width: 160px;
+  }
+
+  .ui-panel__tabs .ui-segmented__option {
+    flex: 1;
+  }
+
+  .ui-panel .ui-sheet {
+    position: relative;
+    inset: auto;
+    flex: 1;
+    min-height: 0;
+    border-radius: 0;
+    background: none;
+    translate: none;
+    transition: none;
+  }
+
+  .ui-panel .ui-sheet__handle,
+  .ui-panel .ui-sheet__close {
+    display: none;
+  }
+
+  .ui-panel .ui-sheet__header {
+    min-height: 0;
+    padding: 18px 32px 0;
+  }
+
+  .ui-panel .ui-sheet__body {
+    padding: 0 32px 24px;
+  }
+
+  .ui-panel .ui-sheet--detail {
+    padding-bottom: 64px;
+  }
+
+  .ui-panel .ui-detail__toggles {
+    margin-top: 4px;
+  }
+
+  .ui-panel .ui-detail__toggles .ui-pill {
+    flex: none;
+    width: 90px;
+  }
+
+  .ui-panel .ui-detail__steps {
+    flex: none;
+    width: 168px;
+  }
+
+  .ui-panel .ui-steps__row {
+    gap: 6.6px;
+    margin: 0;
+  }
+
+  .ui-panel .ui-step {
+    border-width: 0;
+    border-radius: 10px;
+    height: 52px;
+    font-size: 14px;
+  }
+
+  .ui-panel .ui-detail__footer {
+    height: 64px;
+    padding: 10px 32px;
+    grid-template-columns: 204px 204px;
+  }
+
+  .ui-panel .ui-slider__track {
+    height: 30px;
+  }
+
+  .ui-panel .ui-sheet--code {
+    bottom: auto;
+  }
+
+  .ui-panel .ui-sheet--code .ui-sheet__header {
+    padding-top: 22px;
+  }
+
+  .ui-panel .ui-sheet--code .ui-sheet__body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 32px 0;
+  }
+
+  .ui-panel .ui-sheet--export,
+  .ui-panel .ui-sheet--share {
+    background: none;
+  }
+
+  /* In the panel (--surface) the field sinks to --stage. */
+  .ui-panel .ui-share__field {
+    background: var(--stage);
+  }
+  .ui-panel .ui-sheet--export .ui-sheet__header,
+  .ui-panel .ui-sheet--share .ui-sheet__header {
+    justify-content: flex-start;
+    padding: 18px 32px 0;
+  }
+}

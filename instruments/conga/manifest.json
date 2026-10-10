@@ -1,0 +1,42 @@
+{
+  "name": "conga",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "modal",
+  "description": "Hand drum, open, slap and muted",
+  "model": "TERRA Hands",
+  "tags": ["conga", "hand", "afro", "latin"],
+  "voices": 4,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 0.95,
+  "patterns": [
+    { "name": "Tumbao", "text": "..x. x..x ..x. x.x." },
+    { "name": "Steady", "text": "x..x ..x. x..x .xx." },
+    { "name": "Push", "text": "..xx x... ..xx x.x." },
+    { "name": "Sparse", "text": ".x.. x.x. .x.. x..x" }
+  ],
+  "preview": "..x. x..x ..x. x.xx",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "tune", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.05, "max": 2, "default": 0.3, "unit": "s", "curve": "exponential" },
+    { "name": "bend", "min": 0, "max": 1, "default": 0.1, "unit": "", "curve": "linear" },
+    { "name": "hardness", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "slap", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "samples" }
+  ],
+  "tone": [
+    { "parameter": "tune", "from": 0, "to": 1 }
+  ],
+  "toneLevelDb": -3.5,
+  "presets": [
+    { "name": "open", "description": "Open tone", "values": {} },
+    { "name": "slap", "description": "Sharp slap: skin noise and ringing high modes", "values": {"hardness": 0.9, "decay": 0.14, "slap": 0.8} },
+    { "name": "muted", "description": "Palm-muted", "values": {"decay": 0.08, "hardness": 0.4} },
+    { "name": "low", "description": "Low conga (tumba)", "values": {"tune": 0, "decay": 1.2, "hardness": 0.3} },
+    { "name": "high", "description": "High conga (quinto)", "values": {"tune": 0.85} }
+  ],
+  "defaultPreset": "open",
+  "scene": {"family": "ripple", "variant": {"shape": "triple"}, "drive": "velocity"}
+}

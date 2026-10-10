@@ -1,0 +1,224 @@
+{
+ "format": 1,
+ "instrument": "mallet",
+ "version": 1,
+ "sampleRate": 48000,
+ "frames": 3014088,
+ "audio": {
+  "file": "pack.opus",
+  "codec": "opus",
+  "bitrate": "64k",
+  "bytes": 563414,
+  "sha256": "2f2906d46c58b1ec16579e4bdc63f7ebad236e78b03fad1a581cae64a395e0f8"
+ },
+ "license": {
+  "id": "CC0-1.0",
+  "name": "Creative Commons Zero 1.0 Universal",
+  "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "changes": "Cut at the onset, mixed to mono, resampled to 48 kHz, levelled, looped (sustained notes) or faded into silence (one-shots) and encoded as Opus (tools/samples/build.py)."
+ },
+ "source": {
+  "dataset": "Versilian Community Sample Library",
+  "author": "Versilian Studios LLC",
+  "record": "https://github.com/sgossner/VCSL",
+  "files": [
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_B2_med_01.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_B4_med_01.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_C2_med_01.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_C4_med_01.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_C6_med_01.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Marimba/Marimba_hit_Outrigger_F1_med_01.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Vibraphone/Hard%20Mallets/Vibes_hard_A2_v3_rr1_Main.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Vibraphone/Hard%20Mallets/Vibes_hard_A4_v3_rr1_Main.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Vibraphone/Hard%20Mallets/Vibes_hard_B3_v3_rr1_Main.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Vibraphone/Hard%20Mallets/Vibes_hard_C3_v3_rr1_Main.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Vibraphone/Hard%20Mallets/Vibes_hard_C5_v3_rr1_Main.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Vibraphone/Hard%20Mallets/Vibes_hard_D4_v3_rr1_Main.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Vibraphone/Hard%20Mallets/Vibes_hard_E3_v3_rr1_Main.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Vibraphone/Hard%20Mallets/Vibes_hard_E5_v3_rr1_Main.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Vibraphone/Hard%20Mallets/Vibes_hard_F2_v3_rr1_Main.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Vibraphone/Hard%20Mallets/Vibes_hard_F4_v3_rr1_Main.wav"
+  ],
+  "notes": [
+   "position 0 = marimba (Outrigger, medium), 1 = vibraphone (hard mallets)."
+  ]
+ },
+ "zones": [
+  {
+   "take": "Marimba_hit_Outrigger_F1_med_01.wav",
+   "position": 0.0,
+   "root": 29.0,
+   "lowest": 0.0,
+   "highest": 32.5,
+   "pan": -0.239,
+   "start": 1024,
+   "loopStart": 187725,
+   "loopEnd": 189773
+  },
+  {
+   "take": "Marimba_hit_Outrigger_C2_med_01.wav",
+   "position": 0.0,
+   "root": 36.0,
+   "lowest": 32.5,
+   "highest": 41.5,
+   "pan": -0.191,
+   "start": 190797,
+   "loopStart": 418735,
+   "loopEnd": 420783
+  },
+  {
+   "take": "Marimba_hit_Outrigger_B2_med_01.wav",
+   "position": 0.0,
+   "root": 47.0,
+   "lowest": 41.5,
+   "highest": 53.5,
+   "pan": -0.116,
+   "start": 421807,
+   "loopStart": 640641,
+   "loopEnd": 642689
+  },
+  {
+   "take": "Marimba_hit_Outrigger_C4_med_01.wav",
+   "position": 0.0,
+   "root": 60.0,
+   "lowest": 53.5,
+   "highest": 65.5,
+   "pan": -0.027,
+   "start": 643713,
+   "loopStart": 762853,
+   "loopEnd": 764901
+  },
+  {
+   "take": "Marimba_hit_Outrigger_B4_med_01.wav",
+   "position": 0.0,
+   "root": 71.0,
+   "lowest": 65.5,
+   "highest": 77.5,
+   "pan": 0.048,
+   "start": 765925,
+   "loopStart": 844945,
+   "loopEnd": 846993
+  },
+  {
+   "take": "Marimba_hit_Outrigger_C6_med_01.wav",
+   "position": 0.0,
+   "root": 84.0,
+   "lowest": 77.5,
+   "highest": 128.0,
+   "pan": 0.136,
+   "start": 848017,
+   "loopStart": 930329,
+   "loopEnd": 932377
+  },
+  {
+   "take": "Vibes_hard_F2_v3_rr1_Main.wav",
+   "position": 1.0,
+   "root": 41.0,
+   "lowest": 0.0,
+   "highest": 43.0,
+   "pan": -0.157,
+   "start": 933401,
+   "loopStart": 1117309,
+   "loopEnd": 1119357
+  },
+  {
+   "take": "Vibes_hard_A2_v3_rr1_Main.wav",
+   "position": 1.0,
+   "root": 45.0,
+   "lowest": 43.0,
+   "highest": 46.5,
+   "pan": -0.13,
+   "start": 1120381,
+   "loopStart": 1340870,
+   "loopEnd": 1342918
+  },
+  {
+   "take": "Vibes_hard_C3_v3_rr1_Main.wav",
+   "position": 1.0,
+   "root": 48.0,
+   "lowest": 46.5,
+   "highest": 50.0,
+   "pan": -0.109,
+   "start": 1343942,
+   "loopStart": 1561949,
+   "loopEnd": 1563997
+  },
+  {
+   "take": "Vibes_hard_E3_v3_rr1_Main.wav",
+   "position": 1.0,
+   "root": 52.0,
+   "lowest": 50.0,
+   "highest": 55.5,
+   "pan": -0.082,
+   "start": 1565021,
+   "loopStart": 1779717,
+   "loopEnd": 1781765
+  },
+  {
+   "take": "Vibes_hard_B3_v3_rr1_Main.wav",
+   "position": 1.0,
+   "root": 59.0,
+   "lowest": 55.5,
+   "highest": 60.5,
+   "pan": -0.034,
+   "start": 1782789,
+   "loopStart": 1991692,
+   "loopEnd": 1993740
+  },
+  {
+   "take": "Vibes_hard_D4_v3_rr1_Main.wav",
+   "position": 1.0,
+   "root": 62.0,
+   "lowest": 60.5,
+   "highest": 63.5,
+   "pan": -0.014,
+   "start": 1994764,
+   "loopStart": 2201184,
+   "loopEnd": 2203232
+  },
+  {
+   "take": "Vibes_hard_F4_v3_rr1_Main.wav",
+   "position": 1.0,
+   "root": 65.0,
+   "lowest": 63.5,
+   "highest": 67.0,
+   "pan": 0.007,
+   "start": 2204256,
+   "loopStart": 2408194,
+   "loopEnd": 2410242
+  },
+  {
+   "take": "Vibes_hard_A4_v3_rr1_Main.wav",
+   "position": 1.0,
+   "root": 69.0,
+   "lowest": 67.0,
+   "highest": 70.5,
+   "pan": 0.034,
+   "start": 2411266,
+   "loopStart": 2611893,
+   "loopEnd": 2613941
+  },
+  {
+   "take": "Vibes_hard_C5_v3_rr1_Main.wav",
+   "position": 1.0,
+   "root": 72.0,
+   "lowest": 70.5,
+   "highest": 74.0,
+   "pan": 0.055,
+   "start": 2614965,
+   "loopStart": 2813110,
+   "loopEnd": 2815158
+  },
+  {
+   "take": "Vibes_hard_E5_v3_rr1_Main.wav",
+   "position": 1.0,
+   "root": 76.0,
+   "lowest": 74.0,
+   "highest": 128.0,
+   "pan": 0.082,
+   "start": 2816182,
+   "loopStart": 3011016,
+   "loopEnd": 3013064
+  }
+ ]
+}

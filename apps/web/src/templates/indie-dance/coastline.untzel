@@ -1,0 +1,45 @@
+// template: Coastline
+// order: 1
+// Melodic indie dance: an arp with delay opens the track, a tuned kick and a driving
+// sidechained bass carry it, and a live-feel kit with ear-candy loops of different
+// lengths (3, 4 and 8 bars) keeps it moving. Style reference only; every melody is original.
+title "Coastline"
+tempo 118
+key eb major
+kick:    kick       tight    x... x... x... x...                                   | pitch 52 | decay 0.35 | click 0.6 | sweep 3 | gain 1.25
+sub:     sub        pure     c1 ~ ~ ~ . . . . / ab1 ~ ~ ~ . . . . / eb1 ~ ~ ~ . . . . / bb1 ~ ~ ~ . . . .   | duck 0.85 | gain 0.59
+bass:    bass       rolling  . c2 c2 c3 . c2 c2 c2 . c2 c2 c3 . c2 eb2 c2 / . ab1 ab1 ab2 . ab1 ab1 ab1 . ab1 ab1 ab2 . ab1 c2 ab1 / . eb2 eb2 eb3 . eb2 eb2 eb2 . eb2 eb2 eb3 . eb2 g2 eb2 / . bb1 bb1 bb2 . bb1 bb1 bb1 . bb1 bb1 bb2 . bb1 d2 f2   | duck 0.85 | cutoff sine(8) 500..1800 | drive 0.25 | gain 1
+rim:     rim        wood     .... x... .... x..x?0.4                               | reverb small | pan 0.15 | gain 0.8
+snare:   snare      fat      .... x... .... x...                                   | reverb plate | gain 0.6
+hat:     hat        tight    x x?0.6 x x?0.8 x x?0.6 x x?0.8 x x?0.6 x x?0.8 x x?0.6 x x?0.9   | open sine(8) 0.05..0.45 | swing 0.06 | pan 0.25 | gain 0.45
+ride:    ride       wash     ..x. ..x. ..x. ..x.                                   | gain 0.42 | pan 0.2
+shaker:  shaker     soft     x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7 x x?0.7   | swing 0.08 | pan -0.3 | gain 0.18
+shaker2: shaker     soft     . x . x . x . x . x . x . x . x                       | gain 0.12 | pan 0.35
+perc:    perc       drop     .... .... ..x. .... / .... ..x. .... .x.. / .... .... .... x.x.   | delay 3/16 | reverb small | pan -0.35 | gain 0.55
+verb:    noise      pink     .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... ..x~ ~~~~   | cutoff saw(4) 400..6000 | reverb wide | pan 0.3 | gain 0.35
+fill:    clap       tight    .... / .... / .... / .... / .... / .... / .... / .... .... ..x. x.xx   | reverb wide | pan -0.1 | gain 0.5
+tom:     tom        high     .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... x.x. xx.x   | reverb wide | pan -0.25 | gain 0.55
+arp:     pluck      steel    Cm9 ~ ~ ~ / Abmaj9 ~ ~ ~ / Ebmaj9 ~ ~ ~ / Bb ~ ~ ~   | arp up | arp-rate 1/16 | arp-octaves 2 | highpass 500 | delay 3/16 | reverb wide | duck 0.5 | gain 0.5
+pad:     pad        warm     Cm9 ~ ~ ~ / Abmaj9 ~ ~ ~ / Ebmaj9 ~ ~ ~ / Bb ~ ~ ~   | voicing spread | detune 0.5 | attack 1.2 | release 3 | brightness sine(16) 0.35..0.75 | duck 0.6 | reverb sea | gain 0.34
+chords:  supersaw   wide     . Cm . Cm . Cm . Cm / . Ab . Ab . Ab . Ab / . Eb . Eb . Eb . Eb / . Bb . Bb . Bb . Bb   | duck 0.9 | cutoff saw(8) 1200..7000 | release 0.3 | chorus 0.3 | reverb wide | gain 0.4
+guitar:  pluck      nylon    g4 . . eb5 . . d5 . / c5 . . ab4 . . g4 . / bb4 . . g4 . . eb5 . / d5 . f5 . d5 . bb4 .   | delay 3/16 | reverb wide | pan -0.3 | gain 0.5
+hook:    lead       juno     g4 . g4 bb4 . c5 . bb4 / ab4 ~ ~ . g4 . eb4 . / g4 . g4 bb4 . eb5 . d5 / c5 ~ ~ ~ bb4 ~ . .   | detune 0.35 | attack 0.06 | release 1.2 | cutoff sine(16) 1800..4500 | glide 0.05 | delay 1/4 | reverb sea | gain 0.25
+voice:   vox        ooh      eb4 ~ ~ ~ ~ ~ c4 ~ / c4 ~ ~ ~ ~ ~ . . / bb3 ~ ~ ~ g3 ~ bb3 ~ / d4 ~ ~ ~ ~ ~ . .   | legato | glide 0.06 | vowel sine(8) 0.3..0.8 | attack 0.08 | delay 1/4 | reverb hall | gain 0.41
+chop:    vox        talk     . . eb5 . . c5 . . / . . ab4 . . . . . / . . g4 . . bb4 . . / . . f4 . . d4 . .   | vowel sine(4) 0.1..0.9 | delay 3/16 | reverb plate | pan 0.3 | gain 0.45
+choir:   choir      aah      Cm ~ ~ ~ / Ab ~ ~ ~ / Eb ~ ~ ~ / Bb ~ ~ ~             | reverb plate | gain 0.36
+piano:   piano      felt     Cm9 ~ ~ ~ / Abmaj9 ~ ~ ~ / Ebmaj9 ~ ~ ~ / Bb ~ ~ ~   | voicing open | reverb wide | gain 0.5
+rise:    noise      white    x~~~ ~~~~ ~~~~ ~~~~                                   | cutoff saw(8) 300..9000 | gain saw(8) 0.15..0.5
+riser:   riser      both     x... / .... / .... / .... / .... / .... / .... / ....   | length 15.5 | gain 0.5
+down:    downlifter noise    x~~~ ~~~~ ~~~~ ~~~~ / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.6
+crash:   crash      wide     x... / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.45
+impact:  impact     hit      x... / .... / .... / .... / .... / .... / .... / ....   | reverb sea | gain 0.75
+section intro   arp hat shaker perc verb
+section groove  kick sub bass rim hat ride shaker shaker2 perc verb fill arp pad guitar | loop
+section verse   kick sub bass rim hat shaker shaker2 perc verb fill tom arp pad voice chop
+section build   kick rim hat shaker shaker2 perc fill tom arp pad chords rise
+section drop    kick sub bass snare rim hat ride shaker shaker2 perc verb fill tom arp pad chords hook chop crash impact
+section break   pad piano choir voice guitar down
+section lift    hat arp choir chop riser
+section drop2   kick sub bass snare rim hat ride shaker shaker2 perc verb fill tom arp pad chords guitar hook voice choir crash impact
+section outro   kick hat shaker perc verb arp
+song intro 8, groove 16, verse 16, build 8, drop 32, break 16, lift 8, drop2 32, groove 16, outro 16

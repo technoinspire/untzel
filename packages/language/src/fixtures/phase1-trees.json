@@ -1,0 +1,1641 @@
+{
+ "grammarCommit": "3c98537",
+ "entries": [
+  {
+   "text": "// low end",
+   "tree": "Source(Comment)"
+  },
+  {
+   "text": "// low end\nbass2:  bass  . c2 . c2 . c2 . eb2  | cutoff 900  // low end\n",
+   "tree": "Source(Comment,Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Comment)"
+  },
+  {
+   "text": "// my song",
+   "tree": "Source(Comment)"
+  },
+  {
+   "text": "// my song\ntempo 132 // fast\n\n",
+   "tree": "Source(Comment,Line(TempoStatement(tempo,Number)),Comment)"
+  },
+  {
+   "text": "// my song\ntempo 132 // fast\n\nkick:  kick  x... x... x... x...   | drive 0.3   // the floor\nhat:   hat   ..x. ..x. ..x. ..xx   | swing 0.12\nbass:  bass  . c2 . c2 . c2 . eb2  | cutoff 900  // low end\n\nsection intro  kick   hat\nsection drop   kick   hat   bass\nsong intro 8, drop 16\n",
+   "tree": "Source(Comment,Line(TempoStatement(tempo,Number)),Comment,Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Comment,Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(swing),Value(Number)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Comment,Line(SectionDecl(section,Name,Name,Name)),Line(SectionDecl(section,Name,Name,Name,Name)),Line(SongDecl(song,Part(Name,Number),\",\",Part(Name,Number))))"
+  },
+  {
+   "text": "// onboard",
+   "tree": "Source(Comment)"
+  },
+  {
+   "text": "// onboard\n",
+   "tree": "Source(Comment)"
+  },
+  {
+   "text": "// onboard\ntempo 132\nkey c minor\n\nkick:  kick  x... x... x... x...          | drive 0.3\nhat:   hat   ..x. ..x. ..x. ..xx          | swing 0.12\nride:  hat   x.x. x.x. x.x. x.x.          | open 0.7 | gain 0.4 | pan -0.3\nclap:  clap  .... x... .... x...\nsub:   bass  c1 . . c1 . . c1 .           | cutoff 180\nbass:  bass  . c2 . c2 . c2 . eb2         | cutoff 900 | pan 0.2\nacid:  acid  c2 . eb2 c3 . c2 g1 .        | cutoff sine(8) 300..2400 | resonance 0.7\npad:   pad   Cm7 ~ ~ ~ / Abmaj7 ~ ~ ~     | reverb sea\nrise:  noise x~~~ ~~~~ ~~~~ ~~~~          | cutoff saw(4) 200..9000 | gain 0.5\n\nsection intro  kick hat sub\nsection build  kick hat ride clap sub acid rise\nsection drop   kick hat ride clap sub bass acid pad\nsection break  pad acid\n\nsong intro 8, build 4, drop 16, break 8, build 4, drop 16\n",
+   "tree": "Source(Comment,Line(TempoStatement(tempo,Number)),Line(KeyStatement(key,Tonic,Name)),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(swing),Value(Number)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Note)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Chord)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain))),\"/\",Bar(Element(Atom(Chord)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)))),\"|\",Modifier(ModifierName(Name),Value(Name)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(saw),\"(\",Number,\")\"),Range(Number,\"..\",Number))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(SectionDecl(section,Name,Name,Name,Name)),Line(SectionDecl(section,Name,Name,Name,Name,Name,Name,Name,Name)),Line(SectionDecl(section,Name,Name,Name,Name,Name,Name,Name,Name,Name)),Line(SectionDecl(section,Name,Name,Name)),Line(SongDecl(song,Part(Name,Number),\",\",Part(Name,Number),\",\",Part(Name,Number),\",\",Part(Name,Number),\",\",Part(Name,Number),\",\",Part(Name,Number))))"
+  },
+  {
+   "text": "// onboard (phase 1",
+   "tree": "Source(Comment)"
+  },
+  {
+   "text": "// onboard (phase 1: kick, hat and bass only)",
+   "tree": "Source(Comment)"
+  },
+  {
+   "text": "// onboard (phase 1: kick, hat and bass only)\ntempo 132\nkey c minor\n\nkick:  kick  x... x... x... x...          | drive 0.3\nhat:   hat   ..x. ..x. ..x. ..xx          | swing 0.12\nride:  hat   x.x. x.x. x.x. x.x.          | open 0.7 | gain 0.4 | pan -0.3\nsub:   bass  c1 . . c1 . . c1 .           | cutoff 180\nbass:  bass  . c2 . c2 . c2 . eb2         | cutoff sine(8) 300..1400 | pan 0.2\n\nsection intro  kick hat sub\nsection build  kick hat ride sub\nsection drop   kick hat ride sub bass\nsection break  hat bass\n\nsong intro 8, build 4, drop 16, break 8, build 4, drop 16\n",
+   "tree": "Source(Comment,Line(TempoStatement(tempo,Number)),Line(KeyStatement(key,Tonic,Name)),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(swing),Value(Number)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(SectionDecl(section,Name,Name,Name,Name)),Line(SectionDecl(section,Name,Name,Name,Name,Name)),Line(SectionDecl(section,Name,Name,Name,Name,Name,Name)),Line(SectionDecl(section,Name,Name,Name)),Line(SongDecl(song,Part(Name,Number),\",\",Part(Name,Number),\",\",Part(Name,Number),\",\",Part(Name,Number),\",\",Part(Name,Number),\",\",Part(Name,Number))))"
+  },
+  {
+   "text": "a",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "a9",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "ab",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "abcdef",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "abcdefghijklmnopqrstuvwxy",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "abcdefghijklmnopqrstuvwxy: kick x...",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "acid",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "acid c2 | cutoff sine(8) 300..2400",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "acid2",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "acid:  acid  c2 . eb2 c3 . c2 g1 .        | cutoff sine(8) 300..2400 | resonance 0.7",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Note)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "acid:  acid  c2 . eb2 | cutoff sine(8) 300..2400",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "acid: acid c2 . eb2 c3 | cutoff sine(8) 300..2400",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "acid: acid c2 . eb2 c3 | cutoff sine(8) 300..2400\n",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "add-track",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "analyze: rules",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name))))"
+  },
+  {
+   "text": "apply-now",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "arrangement",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "atom",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "audio",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "b",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "b2",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "b2: bass c2",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))))))"
+  },
+  {
+   "text": "b: bass a9",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))))))"
+  },
+  {
+   "text": "b: bass c2 .x.",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "b: bass c2 | cutof 1",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "b: bass c2 | cutof 300",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "b: bass c2 | cutoff 900",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "b: bass c2 | cutoff 9000",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "b: bass c2 | cutoff rand(4) 100..900",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(rand),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "b: bass c2 | cutoff saw(4) 10..900",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(saw),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "b: bass c2 | cutoff sine(4) 100..900",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "b: bass c2 | cutoff sine(8)",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"))))))"
+  },
+  {
+   "text": "b: bass c2 | cutoff sine(8) 300..1400",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "b: bass c2 | mute | free | transpose -12 | shift -3 | reverb sea | delay 3/16",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name)),\"|\",Modifier(ModifierName(Name)),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Name)),\"|\",Modifier(ModifierName(Name),Value(Division(Number,\"/\",Number))))))"
+  },
+  {
+   "text": "b: bass c2 | tone 0.5",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "b: bass c2 | tone 1 | cutoff 300",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "b: bass c2 | tone rand(4) 0..1",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(rand),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "b: bass x c2 x.",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "b: bass x.x c2",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)))))))"
+  },
+  {
+   "text": "b: bass x.x.",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "bad",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "bar",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "bass",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "bass  . g2 . c2 . c2 . eb2",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))))))"
+  },
+  {
+   "text": "bass  c2 c2 . c2 . c2 . eb2",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))))))"
+  },
+  {
+   "text": "bass c2",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))))))"
+  },
+  {
+   "text": "bass c2 eb2 f#1",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Note)),Element(Atom(Note)))))))"
+  },
+  {
+   "text": "bass2",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "bass2:  bass  . c2 . c2 . c2 . eb2  | cutoff 900  // low end",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Comment)"
+  },
+  {
+   "text": "bass2: bass c2 . . c2 . . c2 .",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "bass:  bass  . . . c2 . c2 . eb2",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))))))"
+  },
+  {
+   "text": "bass:  bass  . c2 . c2 . c2 . eb2         | cutoff 900 | pan 0.2",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "bass:  bass  . c2 . c2 . c2 . eb2         | cutoff sine(8) 300..1400 | pan 0.2",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "bass:  bass  . c2 . c2 . c2 . eb2  | cutoff 900  // low end",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Comment)"
+  },
+  {
+   "text": "bass:  bass  . eb2 . c2 . c2 . eb2",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))))))"
+  },
+  {
+   "text": "bass:  bass  g1 c2 . c2 . c2 . eb2",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)))))))"
+  },
+  {
+   "text": "bass: bass . . . .",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "bass: bass . c2 . .",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "bass: bass . eb2 . c2 . c2 . .",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "bass: bass . g2 . c2 . c2 . .",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "bass: bass c2",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))))))"
+  },
+  {
+   "text": "bass: bass c2\nbass: bass c3",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))))))"
+  },
+  {
+   "text": "bass: bass c3",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))))))"
+  },
+  {
+   "text": "bass: bass eb2 eb2 . c2 . c2 . .",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "bass: bass eb2 g2 . c2 . c2 . .",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "bb",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "boolean",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "boom",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "break",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "build",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "c",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "c1",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "c2",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "chord",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "chorus",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "chromatic",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "clap",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "clap:  clap  .... x... .... x...",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "clap: clap x... | spread 0.5 | gain 2",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "clap: clap x... | spread 0.5 | gain 2\nsection a clap",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "close",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "code",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "comment",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "constant",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "cutof",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "cutoff",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "d",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "defect",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "delete",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "diagnostics",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "dorian",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "drive",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "drop",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "drum",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "drums",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "duck",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "duplicate",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "eb",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "eb2",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "error",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "exponential",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "export",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "f",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "fixture",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "format",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "g",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "g1",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "gain",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "h",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "h2",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "h: hat x? x? x? x? x? x? x? x? x? x? x? x? x? x? x? x?",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")))))))"
+  },
+  {
+   "text": "hall",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "hat",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "hat ..x.",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat ..x.\nhat2: hat ..x.",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat ..x. | gain 0.5",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "hat ..x. | mute | gain 0.5",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name)),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "hat x",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat x\nhat ..x.\nsection a hat hat2",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "hat x\nhat ..x.\nsection a hat2",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "hat x\nhat2: hat x.",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat x...",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat x...\nhat x...\nhat2: hat x...",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat2",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "hat2: hat ..x.",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat2: hat ..x.\nsection a hat2",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "hat2: hat x.",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat2: hat x...",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat3",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "hat:   hat   ..x. ..x. ..x. ..xx          | swing 0.12",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(swing),Value(Number)))))"
+  },
+  {
+   "text": "hat:   hat   ..x. ..x. ..x. ..xx   | swing 0.12",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(swing),Value(Number)))))"
+  },
+  {
+   "text": "hat:   hat   ..x. ..x. ..x. ..xx   | swing 0.12 | mute",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(swing),Value(Number)),\"|\",Modifier(ModifierName(Name)))))"
+  },
+  {
+   "text": "hat:   hat   ..x. ..x. ..x. ..xx   | swing 0.12 | mute\n",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(swing),Value(Number)),\"|\",Modifier(ModifierName(Name)))))"
+  },
+  {
+   "text": "hat:   hat   ..x. ..xx",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat: hat ..x.",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat: hat ..x. ..x.",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat: hat ..x. ..x. ..x. ..x.",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hat: hat ..x. ..x. ..x. ..x. | mute",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name)))))"
+  },
+  {
+   "text": "hat: hat ..x. ..x. | gain 0.5",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "hat: hat x.x. ..x. ..x. ..x.",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hats",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "hats:   hat   ..x.",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "hit",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "hits",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "hold",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "intro",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "k",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "k: kik x...",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "key",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "key c minor",
+   "tree": "Source(Line(KeyStatement(key,Tonic,Name)))"
+  },
+  {
+   "text": "key c minr",
+   "tree": "Source(Line(KeyStatement(key,Tonic,Name)))"
+  },
+  {
+   "text": "key c minr\nkick x...",
+   "tree": "Source(Line(KeyStatement(key,Tonic,Name)),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "key eb chromatic",
+   "tree": "Source(Line(KeyStatement(key,Tonic,Name)))"
+  },
+  {
+   "text": "key eb chromatic\nkick x",
+   "tree": "Source(Line(KeyStatement(key,Tonic,Name)),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "key eb minor",
+   "tree": "Source(Line(KeyStatement(key,Tonic,Name)))"
+  },
+  {
+   "text": "key f# dorian",
+   "tree": "Source(Line(KeyStatement(key,Tonic,Name)))"
+  },
+  {
+   "text": "key f# dorian\nkick x",
+   "tree": "Source(Line(KeyStatement(key,Tonic,Name)),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "keyword",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "kick",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "kick  xx.. x... x... x...",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick X.x~",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick [[[[[x]]]]]",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Group(\"[\",Element(Atom(Group(\"[\",Element(Atom(Group(\"[\",Element(Atom(Group(\"[\",Element(Atom(Group(\"[\",Element(Atom(Hits)),\"]\"))),\"]\"))),\"]\"))),\"]\"))),\"]\"))))))))"
+  },
+  {
+   "text": "kick [x [x x]]",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Group(\"[\",Element(Atom(Hits)),Element(Atom(Group(\"[\",Element(Atom(Hits)),Element(Atom(Hits)),\"]\"))),\"]\"))))))))"
+  },
+  {
+   "text": "kick x",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick x\nhat x",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick x\nsection a kick",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "kick x x x x",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick x | delay 3/16",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Division(Number,\"/\",Number))))))"
+  },
+  {
+   "text": "kick x | gain -0.5",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x | gain 0.2 | gain 0.4",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x | gain 0.2 | gain 0.9",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x | mute",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name)))))"
+  },
+  {
+   "text": "kick x*0",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits),Repeat(\"*\",Number)))))))"
+  },
+  {
+   "text": "kick x*17",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits),Repeat(\"*\",Number)))))))"
+  },
+  {
+   "text": "kick x*4",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits),Repeat(\"*\",Number)))))))"
+  },
+  {
+   "text": "kick x...",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick x...\nhat ..x. | gain 0.5\nbass c2",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))))))"
+  },
+  {
+   "text": "kick x...\nsection a kick\nhat x...",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name)),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick x...\nsection a kick\nsong a 0",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name)),Line(SongDecl(song,Part(Name,Number))))"
+  },
+  {
+   "text": "kick x...\nsection a kick\nsong a 300",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name)),Line(SongDecl(song,Part(Name,Number))))"
+  },
+  {
+   "text": "kick x...\nsection a kick\nsong a 8\nsection b kick",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name)),Line(SongDecl(song,Part(Name,Number))),Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "kick x...\nsection a kick\nsong a 8\nsong a 4",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name)),Line(SongDecl(song,Part(Name,Number))),Line(SongDecl(song,Part(Name,Number))))"
+  },
+  {
+   "text": "kick x...\nsection a kick | gain 2",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name,\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x...\nsection a kick | pan 0.5",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name,\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x...\nsection drop kick\nsection drop kick",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name)),Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "kick x...\nsection drop kick\nsong chorus 8",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name)),Line(SongDecl(song,Part(Name,Number))))"
+  },
+  {
+   "text": "kick x...\nsection drop kick acid2",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "kick x...\ntempo 120",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(TempoStatement(tempo,Number)))"
+  },
+  {
+   "text": "kick x... / x.x.",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits))),\"/\",Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick x... // four on the floor",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Comment)"
+  },
+  {
+   "text": "kick x... c2",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)))))))"
+  },
+  {
+   "text": "kick x... x...",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick x... x... | mute",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name)))))"
+  },
+  {
+   "text": "kick x... | delay 1/16",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Division(Number,\"/\",Number))))))"
+  },
+  {
+   "text": "kick x... | gain",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name)))))"
+  },
+  {
+   "text": "kick x... | gain 0.5",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x... | gain 0.5 | gain 0.6",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x... | gain sine(0) 0..1",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "kick x... | gain sine(300) 0..1",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "kick x... | gain sine(4) 0..2",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "kick x... | mute",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name)))))"
+  },
+  {
+   "text": "kick x... | mute\nhat ..x. | mute | gain 0.5\nbass c2",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name)))),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name)),\"|\",Modifier(ModifierName(Name),Value(Number)))),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))))))"
+  },
+  {
+   "text": "kick x... | mute 1",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x... | pan 2",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x... | reverb 1.5",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x... | reverb hall",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Name)))))"
+  },
+  {
+   "text": "kick x... | shift 1025",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x... | swing 0.6",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(swing),Value(Number)))))"
+  },
+  {
+   "text": "kick x... | tone 0.3333",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x... | transpose 1.5",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick x... | transpose sine(4) 0..1",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(sine),\"(\",Number,\")\"),Range(Number,\"..\",Number))))))"
+  },
+  {
+   "text": "kick x...?1.5",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits),Probability(\"?\",Number)))))))"
+  },
+  {
+   "text": "kick x...x...",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick x?...",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick x?0.3",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits),Probability(\"?\",Number)))))))"
+  },
+  {
+   "text": "kick | gain 0.5",
+   "tree": "Source(Line(Track(InstrumentName(Name),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick2",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "kick3",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "kick:  kick  x... x... x... x...          | drive 0.3",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "kick:  kick  x... x... x... x...   | drive 0.3   // the floor",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))),Comment)"
+  },
+  {
+   "text": "kick:  kick  x.x. x... x... x...",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick: kick x...",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick: kick x...\n",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick: kick x...\nhat: hat ..x.\n",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick: kick x... x...",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick: kick x... x... x... x...",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kick: kick x... x... | mute",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name)))))"
+  },
+  {
+   "text": "kick: kik x...",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "kik",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "library",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "linear",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "load",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "log",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "loop",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "loop: hat x.",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "loop: kick x",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "measurements",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "minor",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "minr",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "modifier",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "mute",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "muted",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "my_kick-2: kick x",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "name",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "new",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "noise",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "none",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "nope",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "not-in-section",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "note",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "number",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "off",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "ok",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "on",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "onboard",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "open",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "open: hat x",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "open: hat x\nhat2: hat ..x.\nsection a open hat2",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "operator",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "outro",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "overlay",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "pad",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "pad Cm7 Abmaj7 Gsus4 Bbdim",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Chord)),Element(Atom(Chord)),Element(Atom(Chord)),Element(Atom(Chord)))))))"
+  },
+  {
+   "text": "pad Cm7 | reverb sea",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Chord)))),\"|\",Modifier(ModifierName(Name),Value(Name)))))"
+  },
+  {
+   "text": "pad Cm7 ~ ~ ~",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Chord)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)))))))"
+  },
+  {
+   "text": "pad:   pad   Cm7 ~ ~ ~ / Abmaj7 ~ ~ ~     | reverb sea",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Chord)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain))),\"/\",Bar(Element(Atom(Chord)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)))),\"|\",Modifier(ModifierName(Name),Value(Name)))))"
+  },
+  {
+   "text": "pan",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "parameter",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "parameters",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "part",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "pattern",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "pitched",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "play",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "playback",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "queued",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "queued-off",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "redo",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "rename",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "rest",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "ride",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "ride:  hat   x.x. x.x. x.x. x.x.          | open 0.7 | gain 0.4 | pan -0.3",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "rise:  noise x~~~ ~~~~ ~~~~ ~~~~          | cutoff saw(4) 200..9000 | gain 0.5",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)),Element(Atom(Sustain)))),\"|\",Modifier(ModifierName(Name),Value(Signal(SignalShape(saw),\"(\",Number,\")\"),Range(Number,\"..\",Number))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "same",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "saw",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "section",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "section a b",
+   "tree": "Source(Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "section a clap",
+   "tree": "Source(Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "section a hat hat2",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "section a hat2",
+   "tree": "Source(Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "section a kick",
+   "tree": "Source(Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "section a kick | gain 2",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "section a kick | pan 0.5",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "section a open hat2",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "section b kick",
+   "tree": "Source(Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "section break  hat bass",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "section break  pad acid",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "section build  kick hat ride clap sub acid rise",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name,Name,Name,Name,Name,Name)))"
+  },
+  {
+   "text": "section build  kick hat ride sub",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name,Name,Name)))"
+  },
+  {
+   "text": "section drop   kick   bass",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "section drop   kick   bass\n",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "section drop   kick   hat   bass",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name,Name)))"
+  },
+  {
+   "text": "section drop   kick   hats   bass",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name,Name)))"
+  },
+  {
+   "text": "section drop   kick   hats   bass\n",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name,Name)))"
+  },
+  {
+   "text": "section drop   kick hat ride clap sub bass acid pad",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name,Name,Name,Name,Name,Name,Name)))"
+  },
+  {
+   "text": "section drop   kick hat ride sub bass",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name,Name,Name,Name)))"
+  },
+  {
+   "text": "section drop  kick hat",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "section drop kick",
+   "tree": "Source(Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "section drop kick acid2",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "section drop kick hat bass",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name,Name)))"
+  },
+  {
+   "text": "section drop kick hat | gain 0.8",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name,\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "section intro  kick",
+   "tree": "Source(Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "section intro  kick\n",
+   "tree": "Source(Line(SectionDecl(section,Name,Name)))"
+  },
+  {
+   "text": "section intro  kick   hat",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "section intro  kick   hat bass",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name,Name)))"
+  },
+  {
+   "text": "section intro  kick   hat bass\n",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name,Name)))"
+  },
+  {
+   "text": "section intro  kick   hats",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "section intro  kick   hats\n",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name)))"
+  },
+  {
+   "text": "section intro  kick hat sub",
+   "tree": "Source(Line(SectionDecl(section,Name,Name,Name,Name)))"
+  },
+  {
+   "text": "shortcuts",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "signal",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "signals",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "sine",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "sine: kick x",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "sine: kick x...",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "sine: kick x...\nloop: hat x.\ntempo: kick x\nx: kick x\nb2: bass c2",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))))))"
+  },
+  {
+   "text": "snap-back",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "solo",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "song",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "song a 0",
+   "tree": "Source(Line(SongDecl(song,Part(Name,Number))))"
+  },
+  {
+   "text": "song a 300",
+   "tree": "Source(Line(SongDecl(song,Part(Name,Number))))"
+  },
+  {
+   "text": "song a 4",
+   "tree": "Source(Line(SongDecl(song,Part(Name,Number))))"
+  },
+  {
+   "text": "song a 8",
+   "tree": "Source(Line(SongDecl(song,Part(Name,Number))))"
+  },
+  {
+   "text": "song chorus 8",
+   "tree": "Source(Line(SongDecl(song,Part(Name,Number))))"
+  },
+  {
+   "text": "song drop 16",
+   "tree": "Source(Line(SongDecl(song,Part(Name,Number))))"
+  },
+  {
+   "text": "song intro 8, build 4, drop 16, break 8, build 4, drop 16",
+   "tree": "Source(Line(SongDecl(song,Part(Name,Number),\",\",Part(Name,Number),\",\",Part(Name,Number),\",\",Part(Name,Number),\",\",Part(Name,Number),\",\",Part(Name,Number))))"
+  },
+  {
+   "text": "song intro 8, drop 16",
+   "tree": "Source(Line(SongDecl(song,Part(Name,Number),\",\",Part(Name,Number))))"
+  },
+  {
+   "text": "song intro 8, drop 16 | loop",
+   "tree": "Source(Line(SongDecl(song,Part(Name,Number),\",\",Part(Name,Number),\"|\",loop)))"
+  },
+  {
+   "text": "song intro 8, drop 32",
+   "tree": "Source(Line(SongDecl(song,Part(Name,Number),\",\",Part(Name,Number))))"
+  },
+  {
+   "text": "song intro 8, drop 32\n",
+   "tree": "Source(Line(SongDecl(song,Part(Name,Number),\",\",Part(Name,Number))))"
+  },
+  {
+   "text": "sparks",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "stop",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "story",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "string",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "sub",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "sub:   bass  c1 . . c1 . . c1 .           | cutoff 180",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "summary",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "swing",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "swing 0.12",
+   "tree": "Source(Line(SwingStatement(swing,Number)))"
+  },
+  {
+   "text": "t",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "tempo",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "tempo\nkick x...",
+   "tree": "Source(Line(Track(InstrumentName(Name))),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "tempo 120",
+   "tree": "Source(Line(TempoStatement(tempo,Number)))"
+  },
+  {
+   "text": "tempo 120\n",
+   "tree": "Source(Line(TempoStatement(tempo,Number)))"
+  },
+  {
+   "text": "tempo 120\nkick: kick x... x... x... x...\n",
+   "tree": "Source(Line(TempoStatement(tempo,Number)),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "tempo 120\ntempo 130\nkick x...",
+   "tree": "Source(Line(TempoStatement(tempo,Number)),Line(TempoStatement(tempo,Number)),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "tempo 130",
+   "tree": "Source(Line(TempoStatement(tempo,Number)))"
+  },
+  {
+   "text": "tempo 132",
+   "tree": "Source(Line(TempoStatement(tempo,Number)))"
+  },
+  {
+   "text": "tempo 132\n\nkick x...\n",
+   "tree": "Source(Line(TempoStatement(tempo,Number)),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "tempo 132\nh: hat x? x? x? x? x? x? x? x? x? x? x? x? x? x? x? x?",
+   "tree": "Source(Line(TempoStatement(tempo,Number)),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")),Element(Atom(Hits),Probability(\"?\")))))))"
+  },
+  {
+   "text": "tempo 132\nkey c minor\nkick: kick x... x... x... x...\nhat: hat ..x. ..x. ..x. ..x.\nbass: bass . eb2 . c2 . c2 . .\nsection drop kick hat bass\n",
+   "tree": "Source(Line(TempoStatement(tempo,Number)),Line(KeyStatement(key,Tonic,Name)),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Note)),Element(Atom(Hits)),Element(Atom(Hits)))))),Line(SectionDecl(section,Name,Name,Name,Name)))"
+  },
+  {
+   "text": "tempo 132\nkick: kick x... x...\nhat: hat ..x. ..x.\n",
+   "tree": "Source(Line(TempoStatement(tempo,Number)),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "tempo 132\nkick: kick x... x... | mute\nhat: hat ..x. ..x. | gain 0.5\n",
+   "tree": "Source(Line(TempoStatement(tempo,Number)),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name)))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "tempo 132\nkick: kik x...\n",
+   "tree": "Source(Line(TempoStatement(tempo,Number)),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "tempo 132 // fast",
+   "tree": "Source(Line(TempoStatement(tempo,Number)),Comment)"
+  },
+  {
+   "text": "tempo 132.5",
+   "tree": "Source(Line(TempoStatement(tempo,Number)))"
+  },
+  {
+   "text": "tempo 20",
+   "tree": "Source(Line(TempoStatement(tempo,Number)))"
+  },
+  {
+   "text": "tempo 20\nkey c minr\nk: kik x...\nb: bass c2 | cutof 1",
+   "tree": "Source(Line(TempoStatement(tempo,Number)),Line(KeyStatement(key,Tonic,Name)),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))),Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Note)))),\"|\",Modifier(ModifierName(Name),Value(Number)))))"
+  },
+  {
+   "text": "tempo 250",
+   "tree": "Source(Line(TempoStatement(tempo,Number)))"
+  },
+  {
+   "text": "tempo 250\nkick x...",
+   "tree": "Source(Line(TempoStatement(tempo,Number)),Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "tempo: kick x",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "toggle",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "toggle-controls",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "toggle-play",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "toggle-track",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "tone",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "track",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "tracks",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "true",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "undo",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "untzel",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "untzel-sim-",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "up",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "utf8",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "valid",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "video",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "view",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "warning",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "x",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "x...",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "x... x...",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "x... x... x... x...",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)),Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "x.x.",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "x: kick x",
+   "tree": "Source(Line(Track(TrackName(Name),\":\",InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "xxxx",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "xxxx xxxx",
+   "tree": "Source(Line(Track(InstrumentName(Name),Pattern(Bar(Element(Atom(Hits)))))))"
+  },
+  {
+   "text": "xxxxxxx",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "yes",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  },
+  {
+   "text": "z",
+   "tree": "Source(Line(Track(InstrumentName(Name))))"
+  }
+ ]
+}

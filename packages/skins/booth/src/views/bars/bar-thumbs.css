@@ -1,0 +1,106 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The bar thumbs view, views/bar-thumbs.ts. */
+/* Bar thumbnails: each bar's own steps in the tile's miniature. 4 fit; more scroll.
+   The padding keeps the 3 px focus ring inside the scroll box, which clips it. */
+.ui-thumbs {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 24px - 10px) / 4);
+  gap: 8px;
+  margin: -5px;
+  padding: 5px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.ui-thumb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  height: 64px;
+  padding-bottom: 9px;
+  border-radius: 12px;
+  background: var(--raised);
+}
+
+/* What you edit: a flare ring (6.07:1 against the stage, 5.54:1 against the sheet). */
+.ui-thumb[aria-pressed="true"] {
+  box-shadow: inset 0 0 0 2px var(--flare);
+}
+
+/* What plays now: a white marker on top (17.9:1 on the thumbnail), never the ring. */
+.ui-thumb__marker {
+  display: none;
+  position: absolute;
+  top: 6px;
+  left: calc(50% - 6px);
+  width: 12px;
+  height: 7px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background: var(--text);
+}
+
+.ui-thumb[aria-current="true"] .ui-thumb__marker {
+  display: block;
+}
+
+.ui-thumb__mini {
+  grid-template-columns: repeat(16, 3px);
+  column-gap: 1px;
+  height: 6px;
+}
+
+.ui-thumb__mini .ui-mini__cell {
+  background: var(--stage);
+}
+
+.ui-thumb__mini .ui-mini__cell[data-cell="hit"] {
+  height: 6px;
+  background: var(--muted);
+  opacity: 1;
+}
+
+.ui-thumb__mini .ui-mini__cell[data-cell="hold"] {
+  margin-left: -1px;
+  background: var(--muted);
+  opacity: 0.6;
+}
+
+.ui-thumb[aria-pressed="true"] .ui-mini__cell:is([data-cell="hit"], [data-cell="hold"]) {
+  background: var(--flare);
+}
+
+/* muted on raised 6.04:1; the bar being edited in text. */
+.ui-thumb__label {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ui-thumb[aria-pressed="true"] .ui-thumb__label {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* A bar past the end of a shorter written loop never plays: the
+   thumbnail sinks to the sheet colour and its steps fade, the number keeps muted on
+   surface (7.35:1), and "Loop plays bars 1–2 only" says it in words (text on surface,
+   17.94:1). The flare ring still shows when it is the bar being edited. */
+.ui-thumb[data-audible="false"] {
+  background: var(--surface);
+}
+
+.ui-thumb[data-audible="false"]:not([aria-pressed="true"]) {
+  box-shadow: inset 0 0 0 1px var(--raised);
+}
+
+.ui-thumb[data-audible="false"] .ui-thumb__mini {
+  opacity: 0.45;
+}

@@ -1,0 +1,101 @@
+{
+  "template": "psytrance/full-moon",
+  "runs": {
+    "loop": {
+      "bars": 16,
+      "events": 565,
+      "eventsPerTrack": {
+        "kick": 65,
+        "bass": 192,
+        "hat": 192,
+        "ohat": 64,
+        "clap": 32,
+        "ride": 0,
+        "zap": 20,
+        "acid": 0,
+        "lead": 0,
+        "pad": 0,
+        "choir": 0,
+        "rise": 0,
+        "riser": 0,
+        "down": 0,
+        "crash": 0,
+        "impact": 0
+      },
+      "songEnded": false,
+      "sound": {
+        "peakDbfs": -3.36,
+        "rmsDbfs": -19.67,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": -21.5,
+          "bass": -23.72,
+          "hat": -50.13,
+          "ohat": -55.05,
+          "clap": -43.53,
+          "ride": -240,
+          "zap": -44.71,
+          "acid": -240,
+          "lead": -240,
+          "pad": -240,
+          "choir": -240,
+          "rise": -240,
+          "riser": -240,
+          "down": -240,
+          "crash": -240,
+          "impact": -240
+        }
+      }
+    },
+    "song": {
+      "bars": 233,
+      "events": 10049,
+      "eventsPerTrack": {
+        "kick": 800,
+        "bass": 1728,
+        "hat": 2400,
+        "ohat": 704,
+        "clap": 336,
+        "ride": 896,
+        "zap": 230,
+        "acid": 2432,
+        "lead": 380,
+        "pad": 32,
+        "choir": 64,
+        "rise": 24,
+        "riser": 3,
+        "down": 4,
+        "crash": 8,
+        "impact": 8
+      },
+      "songEnded": true,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -17.59,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": -22.17,
+          "bass": -25.74,
+          "hat": -50.78,
+          "ohat": -56.27,
+          "clap": -44.95,
+          "ride": -36.15,
+          "zap": -45.15,
+          "acid": -21.47,
+          "lead": -29.85,
+          "pad": -30.65,
+          "choir": -33.62,
+          "rise": -37.97,
+          "riser": -38,
+          "down": -44.35,
+          "crash": -57.53,
+          "impact": -33.35
+        }
+      }
+    }
+  }
+}

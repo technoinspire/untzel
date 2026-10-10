@@ -1,0 +1,13 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The bar actions view, views/bar-actions.ts. */
+.ui-detail__bar-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.ui-detail__bar-actions .ui-pill {
+  padding: 0 8px;
+}

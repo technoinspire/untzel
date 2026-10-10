@@ -1,0 +1,50 @@
+{
+  "name": "supersaw",
+  "group": "leads",
+  "kind": "chord",
+  "range": { "lowest": "c2", "highest": "c6" },
+  "engine": "va",
+  "description": "Seven detuned saws",
+  "model": "SOLAR S7",
+  "tags": ["supersaw", "trance", "anthem", "wide"],
+  "voices": 8,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 3.56,
+  "patterns": [
+    { "name": "Held", "text": "Cm ~ ~ ~" },
+    { "name": "Stabs", "text": ". Cm . . . Cm . ." },
+    { "name": "Offbeat", "text": ". Cm . Cm . Cm . Cm" },
+    { "name": "Progression", "text": "Cm ~ ~ ~ / Ab ~ ~ ~ / Eb ~ ~ ~ / Bb ~ ~ ~" }
+  ],
+  "preview": "Cm ~ ~ ~ / Ab ~ Bb ~",
+  "defaultDuck": 0.4,
+  "parameters": [
+    { "name": "cutoff", "min": 200, "max": 16000, "default": 5000, "unit": "Hz", "curve": "exponential" },
+    { "name": "detune", "min": 0, "max": 1, "default": 0.6, "unit": "", "curve": "linear" },
+    { "name": "attack", "min": 0.001, "max": 4, "default": 0.01, "unit": "s", "curve": "exponential" },
+    { "name": "release", "min": 0.01, "max": 4, "default": 0.4, "unit": "s", "curve": "exponential" },
+    { "name": "wave2", "choices": ["saw", "square", "triangle", "sine"], "default": "saw" },
+    { "name": "mix", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "sync", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "filter", "choices": ["lp12", "lp24", "bp", "hp"], "default": "lp12" },
+    { "name": "filter-attack", "min": 0.001, "max": 4, "default": 0.001, "unit": "s", "curve": "exponential" },
+    { "name": "filter-decay", "min": 0.01, "max": 8, "default": 1, "unit": "s", "curve": "exponential" },
+    { "name": "drive", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "spread", "min": 0, "max": 1, "default": 0.8, "unit": "", "curve": "linear" },
+    { "name": "sub", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "noise", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "low-cut", "min": 0, "max": 1, "default": 0.2, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "cutoff", "from": 600, "to": 12000 },
+    { "parameter": "detune", "from": 0.1, "to": 0.9 }
+  ],
+  "presets": [
+    { "name": "anthem", "description": "Big, wide anthem lead", "values": {} },
+    { "name": "thin", "description": "Narrow and focused", "values": {"detune": 0.2, "cutoff": 3000, "spread": 0.2, "low-cut": 0} },
+    { "name": "wide", "description": "Very wide, bright and buzzing", "values": {"detune": 0.85, "spread": 1, "low-cut": 1, "wave2": "square", "mix": 0.4, "cutoff": 10000} }
+  ],
+  "defaultPreset": "anthem",
+  "scene": {"family": "ribbon", "variant": {"shape": "fan", "density": 3}, "drive": "cutoff"}
+}

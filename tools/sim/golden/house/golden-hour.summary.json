@@ -1,0 +1,113 @@
+{
+  "template": "house/golden-hour",
+  "runs": {
+    "loop": {
+      "bars": 16,
+      "events": 890,
+      "eventsPerTrack": {
+        "kick": 65,
+        "clap": 32,
+        "snare": 22,
+        "hat": 213,
+        "ohat": 64,
+        "shaker": 221,
+        "conga": 87,
+        "quinto": 81,
+        "bass": 69,
+        "keys": 36,
+        "organ": 0,
+        "strings": 0,
+        "voice": 0,
+        "choir": 0,
+        "bell": 0,
+        "rise": 0,
+        "riser": 0,
+        "down": 0,
+        "crash": 0
+      },
+      "songEnded": false,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -17.16,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": null,
+          "clap": null,
+          "snare": null,
+          "hat": null,
+          "ohat": null,
+          "shaker": null,
+          "conga": null,
+          "quinto": null,
+          "bass": null,
+          "keys": null,
+          "organ": null,
+          "strings": null,
+          "voice": null,
+          "choir": null,
+          "bell": null,
+          "rise": null,
+          "riser": null,
+          "down": null,
+          "crash": null
+        }
+      }
+    },
+    "song": {
+      "bars": 177,
+      "events": 8738,
+      "eventsPerTrack": {
+        "kick": 640,
+        "clap": 256,
+        "snare": 228,
+        "hat": 2141,
+        "ohat": 448,
+        "shaker": 2167,
+        "conga": 866,
+        "quinto": 640,
+        "bass": 476,
+        "keys": 396,
+        "organ": 64,
+        "strings": 64,
+        "voice": 180,
+        "choir": 64,
+        "bell": 80,
+        "rise": 16,
+        "riser": 2,
+        "down": 2,
+        "crash": 8
+      },
+      "songEnded": true,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -17.03,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": null,
+          "clap": null,
+          "snare": null,
+          "hat": null,
+          "ohat": null,
+          "shaker": null,
+          "conga": null,
+          "quinto": null,
+          "bass": null,
+          "keys": null,
+          "organ": null,
+          "strings": null,
+          "voice": null,
+          "choir": null,
+          "bell": null,
+          "rise": null,
+          "riser": null,
+          "down": null,
+          "crash": null
+        }
+      }
+    }
+  }
+}

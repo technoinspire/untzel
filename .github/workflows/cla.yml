@@ -1,0 +1,42 @@
+name: CLA
+# The cla check: the pull request description carries the exact, checked line of
+# CLA.md. It only reads the event: no checkout, no token permission, never
+# pull_request_target. Owners, members and bots are exempt.
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, edited, reopened, synchronize]
+permissions: {}
+concurrency:
+  group: cla-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  cla:
+    runs-on: ubuntu-24.04
+    permissions: {}
+    steps:
+      - name: The CLA line is checked in the pull request description
+        env:
+          BODY: ${{ github.event.pull_request.body }}
+          ASSOCIATION: ${{ github.event.pull_request.author_association }}
+          AUTHOR_TYPE: ${{ github.event.pull_request.user.type }}
+          CLA_URL: ${{ github.server_url }}/${{ github.repository }}/blob/main/CLA.md
+        run: |
+          case "$ASSOCIATION" in
+            OWNER | MEMBER)
+              echo "Exempt: the author is a $ASSOCIATION of the organization."
+              exit 0
+              ;;
+          esac
+          if [ "$AUTHOR_TYPE" = "Bot" ]; then
+            echo "Exempt: the author is a bot."
+            exit 0
+          fi
+          line='I have read the Untzel Contributor License Agreement (CLA.md, version 1.0) and I accept it for this and all my future contributions.'
+          body=$(printf '%s\n' "$BODY" | tr -d '\r' | sed 's/[[:space:]]*$//')
+          if grep -qxF -e "- [x] $line" -e "- [X] $line" <<< "$body"; then
+            echo "CLA accepted."
+            exit 0
+          fi
+          echo "::error title=CLA not accepted::Check the CLA line at the end of the pull request description, exactly as written in $CLA_URL"
+          exit 1

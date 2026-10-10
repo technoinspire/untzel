@@ -1,0 +1,11 @@
+{
+  "category": "fixed",
+  "title": {
+    "en": "A busy device no longer silences the rest of the bar",
+    "pt-BR": "Um aparelho ocupado não cala mais o resto do compasso"
+  },
+  "body": {
+    "en": "When the device falls behind for a moment, the music comes back on the next sixteenth, in time, instead of waiting for the next bar.",
+    "pt-BR": "Quando o aparelho fica para trás por um instante, a música volta na próxima semicolcheia, no tempo, em vez de esperar o próximo compasso."
+  }
+}

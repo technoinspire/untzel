@@ -1,0 +1,38 @@
+{
+  "name": "sweep",
+  "group": "fx",
+  "kind": "drum",
+  "engine": "percussion",
+  "description": "Filter sweep, up, down or notch",
+  "model": "PULSAR FX",
+  "tags": ["sweep", "filter", "transition"],
+  "voices": 2,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.7,
+  "patterns": [
+    { "name": "Whole bar", "text": "x~~~ ~~~~ ~~~~ ~~~~" },
+    { "name": "Half bar", "text": "x~~~ ~~~~ .... ...." },
+    { "name": "Upbeat", "text": ".... .... x~~~ ~~~~" }
+  ],
+  "preview": "x~~~ ~~~~ ~~~~ ~~~~",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "length", "min": 0, "max": 30, "default": 0, "unit": "s", "curve": "linear" },
+    { "name": "cutoff", "min": 200, "max": 16000, "default": 6000, "unit": "Hz", "curve": "exponential" },
+    { "name": "resonance", "min": 0, "max": 1, "default": 0.97, "unit": "", "curve": "linear" },
+    { "name": "bend", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "color", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "resonance", "from": 0, "to": 1 }
+  ],
+  "toneLevelDb": 1.25,
+  "presets": [
+    { "name": "up", "description": "Band sweeping up", "values": {} },
+    { "name": "down", "description": "Band sweeping down", "values": {"bend": 1} },
+    { "name": "notch", "description": "Notch sweeping up", "values": {"color": 1} }
+  ],
+  "defaultPreset": "up",
+  "scene": {"family": "sweep", "variant": {"shape": "diagonal"}, "drive": "cutoff"}
+}

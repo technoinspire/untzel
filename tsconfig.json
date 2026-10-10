@@ -1,0 +1,155 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "packages/core"
+    },
+    {
+      "path": "packages/core/tsconfig.test.json"
+    },
+    {
+      "path": "packages/i18n"
+    },
+    {
+      "path": "packages/i18n/tsconfig.test.json"
+    },
+    {
+      "path": "packages/language"
+    },
+    {
+      "path": "packages/language/tsconfig.test.json"
+    },
+    {
+      "path": "packages/scene"
+    },
+    {
+      "path": "packages/scene/tsconfig.test.json"
+    },
+    {
+      "path": "packages/transport"
+    },
+    {
+      "path": "packages/transport/tsconfig.test.json"
+    },
+    {
+      "path": "packages/session"
+    },
+    {
+      "path": "packages/session/tsconfig.test.json"
+    },
+    {
+      "path": "packages/take"
+    },
+    {
+      "path": "packages/take/tsconfig.test.json"
+    },
+    {
+      "path": "packages/presentation"
+    },
+    {
+      "path": "packages/presentation/tsconfig.test.json"
+    },
+    {
+      "path": "packages/templates"
+    },
+    {
+      "path": "packages/templates/tsconfig.test.json"
+    },
+    {
+      "path": "packages/commands"
+    },
+    {
+      "path": "packages/commands/tsconfig.test.json"
+    },
+    {
+      "path": "packages/audio/tsconfig.protocol.json"
+    },
+    {
+      "path": "packages/audio/tsconfig.main.json"
+    },
+    {
+      "path": "packages/audio/tsconfig.worker.json"
+    },
+    {
+      "path": "packages/audio/tsconfig.worklet.json"
+    },
+    {
+      "path": "packages/audio/tsconfig.test.json"
+    },
+    {
+      "path": "packages/skins"
+    },
+    {
+      "path": "packages/editor"
+    },
+    {
+      "path": "packages/editor/tsconfig.test.json"
+    },
+    {
+      "path": "packages/light"
+    },
+    {
+      "path": "packages/light/tsconfig.test.json"
+    },
+    {
+      "path": "packages/share"
+    },
+    {
+      "path": "packages/share/tsconfig.test.json"
+    },
+    {
+      "path": "packages/export"
+    },
+    {
+      "path": "packages/export/tsconfig.test.json"
+    },
+    {
+      "path": "apps/web"
+    },
+    {
+      "path": "apps/web/tsconfig.worker.json"
+    },
+    {
+      "path": "apps/web/tsconfig.test.json"
+    },
+    {
+      "path": "apps/ui-preview"
+    },
+    {
+      "path": "tools/sim"
+    },
+    {
+      "path": "apps/docs"
+    },
+    {
+      "path": "apps/docs/tsconfig.test.json"
+    },
+    {
+      "path": "tools/docs"
+    },
+    {
+      "path": "tools/i18n"
+    },
+    {
+      "path": "tools/release"
+    },
+    {
+      "path": "tools/changelog"
+    },
+    {
+      "path": "packages/skin-contract"
+    },
+    {
+      "path": "packages/skin-contract/tsconfig.test.json"
+    },
+    {
+      "path": "packages/instrument-index"
+    },
+    {
+      "path": "packages/instrument-index/tsconfig.test.json"
+    },
+    {
+      "path": "tools/demo"
+    }
+  ]
+}

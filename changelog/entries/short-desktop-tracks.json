@@ -1,0 +1,11 @@
+{
+  "category": "fixed",
+  "title": {
+    "en": "The track list fits short desktop windows",
+    "pt-BR": "A lista de faixas cabe em janelas baixas no desktop"
+  },
+  "body": {
+    "en": "On laptop-height windows the visual gives up some height so at least three tracks show whole, and the column header stays over the list while it scrolls; no track name shows through the list's title any more.",
+    "pt-BR": "Em janelas da altura de um notebook, o visual cede altura para que pelo menos três faixas apareçam inteiras, e o cabeçalho das colunas fica sobre a lista ao rolar; nenhum nome de faixa aparece mais sob o título da lista."
+  }
+}

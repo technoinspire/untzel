@@ -1,0 +1,32 @@
+name: Docs
+description: Something in the docs at untzel.com/docs is wrong, unclear or missing.
+title: "[Docs]: "
+labels: [documentation, triage]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      placeholder: https://untzel.com/docs/language
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language of the page
+      options:
+        - English
+        - Portuguese (pt-BR)
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggestion
+      description: How the page could say it.

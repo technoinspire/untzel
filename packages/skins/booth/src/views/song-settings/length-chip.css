@@ -1,0 +1,33 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The length chip view, views/length-chip.ts. */
+/* How long the loop, a pattern or a part lasts:
+   raised fill, flare ring (6.07:1 on stage, 5.54:1 on surface), white label (14.75:1). */
+.ui-chip-length {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  height: 44px;
+  min-width: 44px;
+  padding: 0 14px 0 18px;
+  border-radius: 22px;
+  background: var(--raised);
+  box-shadow: inset 0 0 0 2px var(--flare);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ui-chip-length .ui-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.ui-chip-length[aria-expanded="true"] .ui-icon {
+  rotate: 180deg;
+}
+
+.ui-chip-length__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

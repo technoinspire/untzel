@@ -1,0 +1,61 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The tone row view, views/tone-row.ts. */
+/* Tone set by a written parameter: dashed rail, hollow thumb, the value does not move.
+   #8f8a86 on surface is 5.1:1; the shared aria-disabled dimming is undone so
+   nothing falls under 3:1. */
+.ui-tone .ui-range[aria-disabled="true"] {
+  opacity: 1;
+  cursor: not-allowed;
+}
+.ui-tone__set-by {
+  grid-column: 2 / 4;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.ui-tone .ui-slider__value[hidden],
+.ui-tone__set-by[hidden] {
+  display: none;
+}
+.ui-tone__set-by .ui-icon {
+  width: 14px;
+  height: 14px;
+}
+.ui-tone__set-by code,
+.ui-tone__note code {
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+.ui-tone.is-overridden .ui-range {
+  --track-fill: repeating-linear-gradient(to right, #8f8a86 0 6px, transparent 6px 11px);
+}
+.ui-tone.is-overridden .ui-range::-webkit-slider-thumb {
+  background: var(--surface);
+  box-shadow: inset 0 0 0 2px #8f8a86;
+}
+.ui-tone.is-overridden .ui-range::-moz-range-thumb {
+  background: var(--surface);
+  box-shadow: inset 0 0 0 2px #8f8a86;
+}
+.ui-tone__action {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 6px;
+}
+.ui-tone__action[hidden] {
+  display: none;
+}
+.ui-tone__use {
+  flex: none;
+}
+.ui-tone__note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 16px;
+}

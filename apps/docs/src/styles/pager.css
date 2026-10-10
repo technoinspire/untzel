@@ -1,0 +1,54 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* Previous and next page. */
+.pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 56rem;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--raised);
+}
+
+.pager__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: var(--target);
+  text-decoration: none;
+}
+
+.pager__link--next {
+  grid-column: 2;
+  text-align: right;
+}
+
+.pager__label {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.pager__title {
+  font-weight: 600;
+}
+
+.footer {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 24px var(--gutter) 32px;
+  border-top: 1px solid var(--raised);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
+}

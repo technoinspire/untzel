@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM"],
+    "types": ["node"],
+    "resolveJsonModule": true,
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/sim",
+    "tsBuildInfoFile": "../../.cache/tsc/sim.tsbuildinfo"
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../../packages/core" },
+    { "path": "../../packages/language" },
+    { "path": "../../packages/transport" },
+    { "path": "../../packages/session" },
+    { "path": "../../packages/take" },
+    { "path": "../../packages/templates" },
+    { "path": "../../packages/audio/tsconfig.protocol.json" },
+    { "path": "../../packages/audio/tsconfig.main.json" },
+    { "path": "../../packages/audio/tsconfig.worklet.json" },
+    { "path": "../../packages/audio/tsconfig.worker.json" },
+    { "path": "../../packages/export" },
+    { "path": "../../packages/instrument-index" }
+  ]
+}

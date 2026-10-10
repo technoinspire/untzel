@@ -1,0 +1,93 @@
+{
+  "template": "hip-hop/crate-digger",
+  "runs": {
+    "loop": {
+      "bars": 16,
+      "events": 382,
+      "eventsPerTrack": {
+        "kick": 45,
+        "snare": 46,
+        "hat": 148,
+        "bass": 61,
+        "sample": 65,
+        "vinyl": 17,
+        "organ": 0,
+        "chop": 0,
+        "harp": 0,
+        "fill": 0,
+        "clap": 0,
+        "strings": 0,
+        "choir": 0,
+        "bell": 0
+      },
+      "songEnded": false,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -17.52,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": null,
+        "trackRmsDbfs": {
+          "kick": -20.97,
+          "snare": -31.6,
+          "hat": -33.78,
+          "bass": -19.12,
+          "sample": -26.71,
+          "vinyl": -37.39,
+          "organ": -240,
+          "chop": -240,
+          "harp": -240,
+          "fill": -240,
+          "clap": -240,
+          "strings": -240,
+          "choir": -240,
+          "bell": -240
+        }
+      }
+    },
+    "song": {
+      "bars": 97,
+      "events": 2247,
+      "eventsPerTrack": {
+        "kick": 208,
+        "snare": 202,
+        "hat": 665,
+        "bass": 300,
+        "sample": 352,
+        "vinyl": 96,
+        "organ": 30,
+        "chop": 96,
+        "harp": 120,
+        "fill": 16,
+        "clap": 64,
+        "strings": 30,
+        "choir": 30,
+        "bell": 38
+      },
+      "songEnded": true,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -17.82,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": null,
+        "trackRmsDbfs": {
+          "kick": -22.05,
+          "snare": -32.92,
+          "hat": -35.05,
+          "bass": -19.96,
+          "sample": -27.13,
+          "vinyl": -37.47,
+          "organ": -32.65,
+          "chop": -38.28,
+          "harp": -35.96,
+          "fill": -38.37,
+          "clap": -43.12,
+          "strings": -35.35,
+          "choir": -30.43,
+          "bell": -41.01
+        }
+      }
+    }
+  }
+}

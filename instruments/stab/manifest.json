@@ -1,0 +1,46 @@
+{
+  "name": "stab",
+  "group": "brass",
+  "kind": "chord",
+  "range": { "lowest": "c2", "highest": "c6" },
+  "engine": "va",
+  "description": "Chord stabs, classic and rave",
+  "model": "PRISMA ST",
+  "tags": ["stab", "chord", "rave", "house"],
+  "voices": 8,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.49,
+  "patterns": [
+    { "name": "Stabs", "text": ". Cm7 . . . Cm7 . ." },
+    { "name": "Offbeat", "text": ". Cm7 . Cm7 . Cm7 . Cm7" },
+    { "name": "Dub", "text": "Cm7 . . . . . . . / . . Cm7 . . . . ." },
+    { "name": "Push", "text": ". . . Cm7 . . Cm7 ." }
+  ],
+  "preview": ". Cm7 . . . Cm7 . . / . Abmaj7 . . . Bb . .",
+  "defaultDuck": 0.4,
+  "parameters": [
+    { "name": "cutoff", "min": 200, "max": 12000, "default": 2500, "unit": "Hz", "curve": "exponential" },
+    { "name": "decay", "min": 0.05, "max": 2, "default": 0.25, "unit": "s", "curve": "exponential" },
+    { "name": "detune", "min": 0, "max": 1, "default": 0.3, "unit": "", "curve": "linear" },
+    { "name": "wave2", "choices": ["saw", "square", "triangle", "sine"], "default": "saw" },
+    { "name": "mix", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "sync", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "filter", "choices": ["lp12", "lp24", "bp", "hp"], "default": "lp12" },
+    { "name": "filter-attack", "min": 0.001, "max": 4, "default": 0.001, "unit": "s", "curve": "exponential" },
+    { "name": "drive", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "spread", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "sub", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "noise", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "cutoff", "from": 400, "to": 9000 }
+  ],
+  "presets": [
+    { "name": "classic", "description": "Classic house stab", "values": {} },
+    { "name": "rave", "description": "Driven rave stab, hollow and wide", "values": {"detune": 0.8, "cutoff": 6000, "wave2": "square", "mix": 0.5, "drive": 0.3, "spread": 0.8} },
+    { "name": "short", "description": "Very short", "values": {"decay": 0.1} }
+  ],
+  "defaultPreset": "classic",
+  "scene": {"family": "fog", "variant": {"shape": "panel"}, "drive": "attack"}
+}

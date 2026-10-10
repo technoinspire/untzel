@@ -1,0 +1,46 @@
+name: Sound or instrument
+description: A sound that is off, or a new instrument or sample pack.
+title: "[Sound]: "
+labels: [sound, triage]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - Timbre
+        - Level and mix
+        - Timing
+        - New instrument
+        - New sample pack
+    validations:
+      required: true
+  - type: input
+    id: instrument
+    attributes:
+      label: Instrument and preset
+      placeholder: "piano, preset bright"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What it sounds like, and what you expect
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: Untzel code
+      description: A short text that plays the sound.
+      render: text
+  - type: input
+    id: reference
+    attributes:
+      label: Reference
+      description: A link to a recording of the sound you have in mind.
+  - type: textarea
+    id: recordings
+    attributes:
+      label: Source and license of the recordings
+      description: For a new sample pack only. Untzel bundles only recordings in the public domain, CC0 or CC BY (see THIRD_PARTY.md). Say where they come from, who made them and their license.

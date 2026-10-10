@@ -1,0 +1,38 @@
+// template: After Hours
+// order: 3
+// Deep, hypnotic melodic techno: a rolling 1/16 bass that is its
+// own melody, wide detuned chords with an unconventional voicing, shuffled drums, a dark
+// vocal motif in call-and-response. Every melody is original.
+title "After Hours"
+tempo 122
+key c minor
+kick:    kick     dark     x... x... x... x...                                   | decay 0.5 | gain 0.88
+sub:     sub      warm     c1 ~ ~ ~ / ab0 ~ ~ ~ / eb1 ~ ~ ~ / g0 ~ ~ ~             | duck 0.85 | gain 0.85
+bass:    bass     round    . c2 c2 eb2 . c2 c2 g1 . c2 c2 eb2 . g2 c2 bb1 / . ab1 ab1 c2 . ab1 ab1 eb2 . ab1 ab1 c2 . eb2 ab1 g1 / . eb2 eb2 g2 . eb2 eb2 bb1 . eb2 eb2 g2 . bb2 eb2 d2 / . g1 g1 bb1 . g1 g1 d2 . g1 g1 bb1 . d2 g1 f2   | duck 0.85 | cutoff sine(16) 400..1500 | gain 0.72
+clap:    clap     roomy    .... x... .... x...                                   | reverb small | gain 1.16
+roll:    clap     snap     .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... .... .... / .... .... .... .... / x.x. x.x. x.x. x.x. / xxxx xxxx xxxx xxxx   | gain saw(8) 0.15..0.45 | reverb small | pan 0.1
+hat:     hat      dusty    . x x?0.5 x . x x?0.6 x . x x?0.5 x . x x?0.7 x     | swing 0.16 | pan -0.15 | gain 0.4
+ohat:    hat      metal    ..x. ..x. ..x. ..x?0.6x                               | swing 0.16 | pan 0.2 | gain 1.13
+shaker:  shaker   bright   x x?0.6 x x?0.7 x x?0.6 x x?0.7 x x?0.6 x x?0.7 x x?0.6 x x?0.8   | swing 0.16 | pan 0.3 | gain 0.51
+rim:     rim      wood     .... ..x. .... .x.. / .... ..x. .... x.x?0.4.         | swing 0.14 | delay 1/8 | pan -0.3 | reverb small | gain 0.5
+perc:    perc     ping     .... .... ..x. .... / .... .x.. .... ..x.             | delay 3/16 | reverb wide | pan 0.35 | gain 0.4
+chord:   pad      hypnotic   Cm9 ~ ~ ~ / Abmaj9 ~ ~ ~ / Ebadd9 ~ ~ ~ / Gm7 ~ ~ ~   | voicing spread | detune 0.6 | attack 0.6 | release 2.4 | brightness sine(16) 0.3..0.65 | duck 0.7 | reverb plate | gain 0.23
+stab:    stab     short    . . Cm9 . . . . . / . . Abmaj7 . . . . . / . . Ebadd9 . . . . . / . . Gm7 . . Gm7 . .   | lowpass 1600 | delay 3/16 | duck 0.5 | reverb wide | gain 0.45
+keys:    epiano   bell     . . . . c4 ~ . . / . . eb4 . . . . . / . . . . bb3 ~ . . / . . d4 . . g4 . .   | chorus 0.3 | delay 1/4 | reverb wide | pan 0.25 | gain 0.5
+voice:   vox      ooh      c4 ~ ~ . . . eb4 ~ / . . . . . . . . / g3 ~ ~ . . . bb3 ~ / . . . . d4 ~ . .   | legato | glide 0.06 | vowel sine(8) 0.2..0.7 | delay 1/4 | reverb sea | gain 0.54
+answer:  vox      talk     . . . . . . . . / . . eb4 . c4 . . . / . . . . . . . . / . . g4 . f4 . . .   | vowel sine(4) 0.1..0.8 | delay 3/16 | reverb wide | pan -0.3 | gain 0.4
+pad:     strings  slow     Cm ~ ~ ~ / Ab ~ ~ ~ / Eb ~ ~ ~ / Gm ~ ~ ~             | voicing spread | reverb sea | gain 0.37
+rise:    sweep    up       x~~~ ~~~~ ~~~~ ~~~~                                   | cutoff saw(8) 300..9000 | gain saw(8) 0.15..0.5
+riser:   riser    both     x... / .... / .... / .... / .... / .... / .... / ....   | length 15.5 | gain 0.5
+down:    downlifter noise  x~~~ ~~~~ ~~~~ ~~~~ / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.6
+impact:  impact   hit      x... / .... / .... / .... / .... / .... / .... / ....   | reverb sea | gain 0.75
+section intro   kick hat shaker rim chord
+section groove  kick sub bass clap hat ohat shaker rim perc chord | loop
+section verse   kick sub bass clap hat ohat shaker rim perc chord stab voice
+section build   kick clap roll hat shaker rim perc chord stab keys rise riser
+section drop    kick sub bass clap hat ohat shaker rim perc chord stab keys voice answer impact
+section break   chord pad keys voice down
+section groove2 kick sub bass clap hat ohat shaker rim perc chord stab keys
+section drop2   kick sub bass clap hat ohat shaker rim perc chord stab keys voice answer pad impact
+section outro   kick hat shaker rim chord
+song intro 16, groove 32, verse 16, build 8, drop 32, break 16, groove2 16, drop2 32, outro 16

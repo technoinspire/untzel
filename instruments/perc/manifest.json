@@ -1,0 +1,37 @@
+{
+  "name": "perc",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "modal",
+  "description": "Tuned hits, blocks and pings",
+  "model": "TERRA Hands",
+  "tags": ["perc", "block", "ping", "tuned"],
+  "voices": 4,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 1.4,
+  "patterns": [
+    { "name": "Scatter", "text": "..x. .x.. ...x .x.." },
+    { "name": "Steady", "text": "x... ..x. .x.. ..x." },
+    { "name": "Pair", "text": "..x. ..x. .x.x ...." },
+    { "name": "Late", "text": ".x.. ...x ..x. x..." }
+  ],
+  "preview": "..x. .x.. ...x .x..",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "tune", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.05, "max": 2, "default": 0.22, "unit": "s", "curve": "exponential" },
+    { "name": "bend", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "tune", "from": 0, "to": 1 }
+  ],
+  "toneLevelDb": -19.66,
+  "presets": [
+    { "name": "block", "description": "Wooden block", "values": {} },
+    { "name": "ping", "description": "Bright metal ping", "values": {"tune": 0.75, "decay": 0.45} },
+    { "name": "drop", "description": "Falling water drop", "values": {"bend": 0.6, "tune": 0.4, "decay": 0.3} }
+  ],
+  "defaultPreset": "block",
+  "scene": {"family": "mark", "variant": {"shape": "ping"}, "drive": "pitch"}
+}

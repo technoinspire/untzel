@@ -1,0 +1,68 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The part editor view, views/part-editor.ts. */
+/* The part editor: a sheet over the lower part of the list on the phone. */
+.ui-sheet--part {
+  --sheet-top: max(180px, calc(100% - 392px));
+}
+
+.ui-sheet--part .ui-sheet__header {
+  min-height: 74px;
+}
+
+.ui-part__length {
+  order: 1;
+  margin-left: auto;
+}
+
+.ui-sheet--part .ui-sheet__close {
+  order: 2;
+  margin-left: 8px;
+}
+
+.ui-part__meta {
+  order: 3;
+  flex-basis: 100%;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.ui-part__shared {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.ui-part__actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.ui-part__actions .ui-pill {
+  padding: 0 8px;
+}
+
+.ui-part__hint {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+/* While the part's name is edited, "drop plays 2 times in the song. Both follow." stands
+   in for "Plays 2 times in the song…". */
+.ui-part__follows {
+  display: none;
+  color: var(--muted);
+  font-size: 13px;
+}
+.ui-sheet--part:has(.ui-inline-name[data-editing="true"]) .ui-part__follows {
+  display: block;
+}
+.ui-sheet--part:has(.ui-inline-name[data-editing="true"]) .ui-part__shared {
+  display: none;
+}
+.ui-part__play-from .ui-icon {
+  width: 18px;
+  height: 18px;
+}

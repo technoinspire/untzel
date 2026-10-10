@@ -1,0 +1,38 @@
+{
+  "name": "bongo",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "modal",
+  "description": "Pair of small hand drums, high and low",
+  "model": "TERRA Hands",
+  "tags": ["bongo", "hand", "latin", "afro"],
+  "voices": 4,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 0.93,
+  "patterns": [
+    { "name": "Groove", "text": "x.x. .x.x x.x. .xx." },
+    { "name": "Call", "text": "x..x .x.. x..x .x.x" },
+    { "name": "Answer", "text": "..x. x.x. ..x. xx.x" },
+    { "name": "Skip", "text": ".x.x x.x. .x.x x..x" }
+  ],
+  "preview": "x.x. .x.x x.xx .x.x",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "tune", "min": 0, "max": 1, "default": 0.6, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.05, "max": 1, "default": 0.18, "unit": "s", "curve": "exponential" },
+    { "name": "hardness", "min": 0, "max": 1, "default": 0.6, "unit": "", "curve": "linear" },
+    { "name": "slap", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "samples" }
+  ],
+  "tone": [
+    { "parameter": "tune", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "high", "description": "Small drum, high", "values": {} },
+    { "name": "low", "description": "Large drum, low", "values": {"tune": 0.2, "decay": 0.6, "hardness": 0.3} },
+    { "name": "slap", "description": "Dry slap: skin noise and high modes", "values": {"hardness": 0.9, "decay": 0.08, "slap": 0.9} }
+  ],
+  "defaultPreset": "high",
+  "scene": {"family": "ripple", "variant": {"shape": "twin"}, "drive": "pitch"}
+}

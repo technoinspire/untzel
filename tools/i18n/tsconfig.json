@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM"],
+    "types": ["node"],
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/i18n-check",
+    "tsBuildInfoFile": "../../.cache/tsc/i18n-check.tsbuildinfo"
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../../packages/i18n" },
+    { "path": "../../packages/language" },
+    { "path": "../../packages/commands" },
+    { "path": "../../packages/skins" },
+    { "path": "../../packages/editor" },
+    { "path": "../../apps/docs" },
+    { "path": "../../apps/web" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM"],
+    "types": ["node"],
+    "resolveJsonModule": true,
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/instrument-index-test",
+    "tsBuildInfoFile": "../../.cache/tsc/instrument-index-test.tsbuildinfo"
+  },
+  "include": ["src/**/*.test.ts"],
+  "references": [{ "path": "." }, { "path": "../core" }]
+}

@@ -1,0 +1,4 @@
+kick: kick x... x... x... x...
+hat: hat .x.x .x.x .x.x .x.x
+section groove kick hat | loop
+section break hat | loop

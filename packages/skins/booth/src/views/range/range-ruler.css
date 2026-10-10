@@ -1,0 +1,110 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The range ruler view, views/range-ruler.ts. */
+/* Half a handle (22 px) on each side: a handle on the first or last bar line stays
+   inside the transport, nothing overflows. */
+.ui-range-ruler {
+  min-width: 0;
+  padding: 0 22px;
+}
+.ui-range-ruler__track {
+  position: relative;
+  height: 30px;
+  touch-action: pan-y;
+  user-select: none;
+}
+.ui-range-ruler__cells,
+.ui-range-ruler__editing,
+.ui-range-ruler__band,
+.ui-range-ruler__pending,
+.ui-range-ruler__needle {
+  position: absolute;
+}
+.ui-range-ruler__cells {
+  inset: 0;
+}
+/* The song's part names show where the blocks are wide enough (1024 px and up). */
+.ui-range-ruler[data-mode="song"] .ui-range-ruler__cell {
+  color: transparent;
+}
+/* The bar in edit: a 2 px flare outline with a 2 px stage gap, under the
+   band so the range still reads through it. */
+.ui-range-ruler__editing {
+  inset: 0;
+  pointer-events: none;
+}
+.ui-range-ruler__band {
+  top: 2px;
+  left: calc(var(--left, 0) * 100%);
+  width: calc(var(--width, 0) * 100%);
+  height: 26px;
+  background: rgb(246 93 0 / 28%);
+  box-shadow: inset 0 2px 0 var(--flare), inset 0 -2px 0 var(--flare);
+  pointer-events: none;
+}
+.ui-range-ruler__pending {
+  top: 2px;
+  left: calc(var(--left, 0) * 100%);
+  width: calc(var(--width, 0) * 100%);
+  height: 26px;
+  border: 2px dashed var(--text);
+  border-radius: 4px;
+  pointer-events: none;
+}
+.ui-range-ruler__needle {
+  top: -4px;
+  bottom: -2px;
+  left: calc(var(--at, 0) * 100% - 1px);
+  width: 2px;
+  background: var(--text);
+  pointer-events: none;
+}
+.ui-range-ruler__needle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -4px;
+  border: 5px solid transparent;
+  border-top: 6px solid var(--text);
+}
+.ui-range-ruler[data-range="false"] .ui-range-ruler__handle::before {
+  background: var(--stage);
+  box-shadow: inset 0 0 0 2px var(--flare);
+}
+/* The value while a handle is dragged ("Start · bar 3"), and the focused handle's value
+   ("End, bar 6 of 8"), under the ruler over the numbers. */
+.ui-range-ruler__value {
+  position: absolute;
+  top: 40px;
+  z-index: 2;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--raised);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+/* Start opens to the right of its handle, End to the left: neither runs off the ruler. */
+.ui-range-ruler__value {
+  left: calc(var(--at, 0) * 100%);
+  translate: -22px 0;
+}
+.ui-range-ruler__value[data-handle="end"] {
+  translate: calc(22px - 100%) 0;
+}
+/* Dragging: the value replaces the focus bubble. */
+.ui-range-ruler:has(.ui-range-ruler__value:not([hidden])) .ui-range-ruler__handle::after {
+  content: none;
+}
+.ui-range-ruler__numbers {
+  position: relative;
+  height: 20px;
+  margin-top: 0;
+}
+
+@media (min-width: 1200px) {
+  .ui-range-ruler[data-mode="song"] .ui-range-ruler__cell { color: var(--text); }
+}

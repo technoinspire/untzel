@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    "resolveJsonModule": true,
+    "rootDir": "src",
+    "outDir": "../../.cache/tsc/export-test",
+    "tsBuildInfoFile": "../../.cache/tsc/export-test.tsbuildinfo"
+  },
+  "include": ["src/**/*.test.ts"],
+  "references": [
+    { "path": "." },
+    { "path": "../core" },
+    { "path": "../language" },
+    { "path": "../transport" },
+    { "path": "../session" },
+    { "path": "../audio/tsconfig.protocol.json" },
+    { "path": "../audio/tsconfig.worklet.json" },
+    { "path": "../light" },
+    { "path": "../instrument-index" }
+  ]
+}

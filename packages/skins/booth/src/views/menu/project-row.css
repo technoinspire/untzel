@@ -1,0 +1,102 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The project row view, views/project-row.ts. */
+.ui-project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 6px 6px 0;
+  border-radius: 14px;
+  background: var(--stage);
+}
+
+.ui-project[data-open="true"] {
+  box-shadow: inset 0 0 0 2px var(--flare);
+}
+
+.ui-project__open {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  min-height: 52px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  color: var(--text);
+  text-align: left;
+}
+
+.ui-project__open:hover {
+  background: var(--raised);
+}
+
+.ui-project__title {
+  overflow: hidden;
+  font: 500 17px/1.2 var(--font-display);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ui-project__detail {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Rename is the shared InlineName: its idle button is the row's own title, so it hides;
+   while the field is open it takes the title's place. */
+.ui-project__name {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  padding-left: 6px;
+}
+
+.ui-project__name .ui-inline-name__button,
+.ui-project__name:not([data-editing="true"]) {
+  display: none;
+}
+
+.ui-project:has(.ui-project__name[data-editing="true"]) .ui-project__open {
+  display: none;
+}
+
+.ui-project__open,
+.ui-project__actions {
+  grid-row: 1;
+}
+
+.ui-project__actions {
+  display: flex;
+  gap: 2px;
+}
+
+.ui-project__action {
+  width: 44px;
+  height: 44px;
+}
+
+.ui-project__action .ui-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.ui-project__action--danger {
+  color: var(--ember);
+}
+
+@container (max-width: 559px) {
+  /* A phone, or the 480 px desktop panel, has no room for the title beside four 44 px
+     actions: they take a row of their own under it, so the title keeps the row's width. */
+  .ui-project {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 6px;
+  }
+  .ui-project__actions {
+    grid-row: 2;
+    justify-self: end;
+  }
+}

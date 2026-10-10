@@ -1,0 +1,11 @@
+{
+  "category": "fixed",
+  "title": {
+    "en": "Export picks stick while the music plays",
+    "pt-BR": "As escolhas do export ficam enquanto a música toca"
+  },
+  "body": {
+    "en": "Choosing Bars, From or To in the export while the song played could snap back to the old value. Every pick now stays.",
+    "pt-BR": "Escolher Compassos, De ou Até no export com a música tocando às vezes voltava ao valor antigo. Agora toda escolha fica."
+  }
+}

@@ -1,0 +1,94 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The library audition panel view, views/library-audition-panel.ts. */
+.ui-library__sounds .ui-pill--chip:not([aria-pressed="true"]) {
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1.5px var(--raised);
+}
+
+.ui-library__sounds .ui-pill--chip[aria-pressed="true"] {
+  background: var(--stage);
+}
+
+.ui-library__audition {
+  display: grid;
+  gap: 10px;
+  padding: 0 14px 14px;
+}
+
+.ui-library__playing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.ui-library__playing .ui-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--flare);
+}
+
+/* The bars breathe while the audition plays; at rest they are already drawn. */
+.ui-library__playing .ui-icon__fill {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: ui-library-level 0.9s var(--ease-out) infinite alternate;
+}
+
+.ui-library__playing .ui-icon__fill:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.ui-library__playing .ui-icon__fill:nth-child(3) {
+  animation-delay: -0.6s;
+}
+
+@keyframes ui-library-level {
+  to {
+    transform: scaleY(0.55);
+  }
+}
+
+.ui-library__audition .ui-library__label {
+  margin-top: 0;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.ui-library__sounds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ui-library__add-sound {
+  width: 100%;
+}
+.ui-library__chip {
+  flex: none;
+  gap: 6px;
+  background: var(--raised);
+}
+.ui-library__chip .ui-icon--check {
+  width: 16px;
+  height: 16px;
+}
+.ui-library__chip .ui-icon--check {
+  display: none;
+}
+.ui-library__chip[aria-pressed="true"] .ui-icon--check {
+  display: block;
+}
+.ui-library__chip {
+  gap: 6px;
+}
+.ui-library__default {
+  color: var(--muted);
+  font-size: 11px;
+}
+.ui-library__note,
+.ui-library__summary {
+  color: var(--muted);
+  font-size: 13px;
+}

@@ -1,0 +1,93 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The gain fader view, views/gain-fader.ts. */
+/* The gain fader: Off … 0 dB at 75 % … +6. A drawn rail under a slider role, so a drag
+   can be fine and a double tap can reset; the thumb sits at --fill. */
+.ui-fader__slider {
+  position: relative;
+  grid-column: 1 / -1;
+  height: 44px;
+  touch-action: none;
+  cursor: pointer;
+}
+.ui-fader__slider:focus-visible {
+  outline: 2px solid var(--flare);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.ui-fader__rail {
+  position: absolute;
+  inset: 20px 0 auto;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(to right, var(--flare) calc(var(--fill, 0) * 100%), var(--raised) 0);
+}
+/* The 0 dB tick: long and white, a mark on the rail, not only a label. */
+.ui-fader__rail::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: calc(75% - 1px);
+  width: 2px;
+  height: 20px;
+  background: var(--text);
+}
+.ui-fader__thumb {
+  position: absolute;
+  top: 13px;
+  left: calc(var(--fill, 0) * 100% - 9px);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--text);
+}
+.ui-fader.has-signal .ui-fader__rail {
+  background: linear-gradient(
+    to right,
+    var(--raised) calc(var(--signal-from, 0) * 100%),
+    rgb(246 93 0 / 45%) 0 calc(var(--signal-to, 0) * 100%),
+    var(--raised) 0
+  );
+}
+.ui-fader.has-signal .ui-fader__thumb {
+  background: var(--flare);
+}
+.ui-fader__marks {
+  position: relative;
+  grid-column: 1 / -1;
+  height: 16px;
+  color: var(--muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+.ui-fader__mark {
+  position: absolute;
+  left: calc(var(--at, 0) * 100%);
+  translate: -50% 0;
+  white-space: nowrap;
+}
+.ui-fader__mark:first-child {
+  translate: 0 0;
+}
+.ui-fader__mark:last-child {
+  translate: -100% 0;
+}
+.ui-fader__mark.is-unity {
+  color: var(--text);
+  font-weight: 700;
+}
+.ui-fader__mark.is-wide-only {
+  display: none;
+}
+.ui-fader__legend {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (min-width: 1200px) {
+  .ui-fader__mark.is-wide-only {
+    display: block;
+  }
+}

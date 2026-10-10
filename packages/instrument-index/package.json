@@ -1,0 +1,14 @@
+{
+  "name": "@untzel/instrument-index",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./testing": "./src/testing/test-registry.ts"
+  },
+  "dependencies": {
+    "@untzel/core": "workspace:*"
+  }
+}

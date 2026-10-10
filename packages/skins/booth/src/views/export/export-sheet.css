@@ -1,0 +1,51 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The export sheet view, views/export-sheet.ts. */
+.ui-sheet--export {
+  /* Below the top bar, not over it: the attribution stays visible while exporting. */
+  inset: 76px 0 0;
+  z-index: 30;
+  border-radius: 0;
+  background: var(--stage);
+}
+
+.ui-sheet--export .ui-sheet__handle {
+  display: none;
+}
+
+.ui-sheet--export .ui-sheet__header {
+  position: relative;
+  justify-content: center;
+  min-height: 64px;
+  padding: 10px 16px 0;
+}
+
+.ui-sheet--export .ui-sheet__close {
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  margin: 0;
+}
+
+.ui-export__label {
+  color: var(--muted);
+  font-size: 13px;
+}
+.ui-sheet--export[data-format="video"] .ui-preview {
+  --frame-w: 232px;
+  --card-w: 96px;
+}
+.ui-sheet--export[data-format="audio"] :is(.ui-preview__art, .ui-preview__mark, .ui-preview__card) {
+  display: none;
+}
+.ui-sheet--export[data-format="audio"] .ui-preview__wave {
+  display: flex;
+}
+
+.ui-sheet--export .ui-sheet__hint,
+.ui-export__solo {
+  font-size: 12px;
+}
+.ui-export__solo {
+  color: var(--muted);
+}

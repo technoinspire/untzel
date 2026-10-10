@@ -1,0 +1,43 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The labelled slider every view shares. */
+/* sliders */
+.ui-slider {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  row-gap: 0;
+}
+
+.ui-slider__label {
+  font-weight: 600;
+}
+
+.ui-slider__value {
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ui-slider__track {
+  position: relative;
+  grid-column: 1 / -1;
+  height: 28px;
+}
+
+.ui-slider .ui-range {
+  position: relative;
+  height: 44px;
+  margin: -8px 0;
+}
+/* Every slider row: name, an optional tag ("overrides tone"), the value at the end. */
+.ui-slider {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  column-gap: 8px;
+}
+.ui-slider__label {
+  grid-column: 1;
+}
+.ui-slider__value {
+  grid-column: 3;
+}

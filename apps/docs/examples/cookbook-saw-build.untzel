@@ -1,0 +1,13 @@
+// a 4-bar build: every saw(4) restarts with the section and rises exactly across it
+tempo 126
+key a minor
+
+kick: kick x... x... x... x...                         | drive saw(4) 0.1..0.6
+hat:  hat  x.x. x.x. x.x. x.x.                         | open saw(4) 0..0.9 | gain saw(4) 0.3..0.7
+roll: hat  x*4 x*4 x*4 x*4 / x*4 x*4 x*8 x*8           | decay 0.03 | gain saw(4) 0.1..0.8
+bass: bass a1 . a1 . a1 . a1 . a1 . a1 . a1 . a1 .     | cutoff saw(4) 200..4000 | duck 0.5
+
+section build kick hat roll bass
+section drop  kick hat bass
+
+song build 4, drop 8 | loop

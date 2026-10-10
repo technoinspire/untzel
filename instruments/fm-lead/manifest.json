@@ -1,0 +1,38 @@
+{
+  "name": "fm-lead",
+  "group": "leads",
+  "kind": "pitched",
+  "range": { "lowest": "c3", "highest": "c7" },
+  "engine": "fm",
+  "description": "FM lead, bright to flute",
+  "model": "OPAL F6",
+  "tags": ["fm", "lead", "flute", "digital"],
+  "voices": 1,
+  "allocation": "mono",
+  "steal": "oldest",
+  "costPerVoice": 2.05,
+  "patterns": [
+    { "name": "Rise", "text": "c4 ~ eb4 . g4 ~ ~ ." },
+    { "name": "Call", "text": "g4 . g4 bb4 c5 ~ g4 ." },
+    { "name": "Long notes", "text": "eb4 ~ ~ ~ ~ ~ ~ ~ / d4 ~ ~ ~ c4 ~ ~ ~" },
+    { "name": "Echo", "text": ". c5 . g4 . eb4 . c4" }
+  ],
+  "preview": "c4 ~ eb4 . g4 ~ ~ . / bb4 ~ g4 . eb4 ~ ~ .",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "brightness", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "feedback", "min": 0, "max": 1, "default": 0.2, "unit": "", "curve": "linear" },
+    { "name": "attack", "min": 0.001, "max": 2, "default": 0.01, "unit": "s", "curve": "exponential" },
+    { "name": "release", "min": 0.01, "max": 4, "default": 0.25, "unit": "s", "curve": "exponential" }
+  ],
+  "tone": [
+    { "parameter": "brightness", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "bright", "description": "Bright digital lead", "values": {} },
+    { "name": "brass", "description": "Brassy", "values": {"brightness": 0.7, "attack": 0.05} },
+    { "name": "flute", "description": "Breathy flute", "values": {"brightness": 0.15, "feedback": 0, "attack": 0.08} }
+  ],
+  "defaultPreset": "bright",
+  "scene": {"family": "ribbon", "variant": {"shape": "twin"}, "drive": "cutoff"}
+}

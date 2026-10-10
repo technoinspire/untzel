@@ -1,0 +1,54 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The attribution view, views/attribution.ts. */
+.ui-footer {
+  box-sizing: border-box;
+}
+
+/* The Attribution Phrase (CPAL-1.0 Exhibit B): always on screen, under
+   everything the app draws. --muted on --stage measures 8.3:1. */
+.ui-footer {
+  /* Over the fixed backdrop and every sheet or popover of the app: it is never covered. */
+  position: relative;
+  z-index: 60;
+  display: flex;
+  flex: none;
+  align-items: center;
+  height: var(--footer-h);
+  padding: 0 16px;
+  border-top: 1px solid var(--raised);
+  background: var(--stage);
+  font: 400 11px/14px var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+.ui-attribution__phrase {
+  margin: 0;
+  color: var(--muted);
+  white-space: nowrap;
+}
+/* 44 px high: the touch target, with the 22 px wordmark centred in it. */
+.ui-attribution__link {
+  display: flex;
+  flex: none;
+  align-items: center;
+  min-height: 44px;
+  border-radius: 4px;
+}
+/* The wordmark (viewBox 238 × 68) at 22 px: above the brand's 16 px minimum. */
+.ui-attribution__logo {
+  display: block;
+  height: 22px;
+  width: auto;
+  aspect-ratio: 238 / 68;
+}
+
+@media (min-width: 1200px) {
+  .ui-attribution__logo {
+    height: 28px;
+  }
+  .ui-footer {
+    padding: 0 32px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

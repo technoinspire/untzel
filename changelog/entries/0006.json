@@ -1,0 +1,16 @@
+{
+  "category": "new",
+  "date": "2026-10-03",
+  "refs": [
+    6
+  ],
+  "docs": "/docs/app/share-export",
+  "title": {
+    "en": "Share links, files and export",
+    "pt-BR": "Links, arquivos e export"
+  },
+  "body": {
+    "en": "Send a song as a link, save and open .untzel files, and export it as a video or an audio file.",
+    "pt-BR": "Mande a música como link, salve e abra arquivos .untzel e exporte em vídeo ou áudio."
+  }
+}

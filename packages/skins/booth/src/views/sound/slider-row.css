@@ -1,0 +1,15 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The slider row view, views/slider-row.ts. */
+.ui-slider__tone-role {
+  grid-column: 2;
+  justify-self: start;
+  padding: 1px 8px;
+  border-radius: 9px;
+  background: var(--raised);
+  font-size: 11px;
+  font-weight: 600;
+}
+.ui-slider__tone-role[hidden] {
+  display: none;
+}

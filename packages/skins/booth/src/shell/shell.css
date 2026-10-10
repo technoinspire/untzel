@@ -1,0 +1,377 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The app's layout: shell.ts and shell/ (state attributes on .ui-app, placement). */
+.ui-app {
+  box-sizing: border-box;
+}
+
+/* The app over its footer: the footer is outside .ui-app, so nothing the app
+   opens can cover the Attribution Phrase. --footer-h is the footer's height. */
+.ui-frame {
+  --footer-h: 28px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: var(--stage);
+}
+.ui-app {
+  position: relative;
+  flex: none;
+  height: calc(100dvh - var(--footer-h));
+  min-height: 640px;
+  overflow: hidden;
+  background: var(--stage);
+  color: var(--text);
+  font: 400 14px/1.3 var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.ui-stage {
+  position: absolute;
+  inset: 0 0 auto;
+  height: var(--stage-h);
+  overflow: hidden;
+  background: var(--stage);
+}
+
+.ui-stage > * {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ui-app[data-phase="running"][data-tab="song"] {
+  --stage-h: 178px;
+}
+
+.ui-app[data-phase="running"][data-layout="mobile"][data-code="shown"] {
+  --stage-h: 300px;
+}
+
+/* Controls hidden: the stage takes everything above the transport,
+   which docks at the bottom. Four attributes outrank every per-tab rule, here and in the
+   media queries below. */
+.ui-app[data-phase="running"][data-tab][data-collapsed="true"] {
+  --dock-bottom: 16px;
+  /* The range rows hide with the controls. */
+  --transport-h: 96px;
+  --stage-h: calc(100% - var(--dock-bottom) - var(--transport-h) - 4px);
+}
+
+.ui-app:not([data-phase="running"]) .ui-stage {
+  height: 100%;
+}
+
+/* Only while the toggle runs (shell.ts sets the attribute for 260 ms): switching tabs
+   also changes the stage height and stays still. Exponential ease-out from a state that
+   is already visible; nothing waits for it to exist. */
+.ui-app[data-transition="collapse"] .ui-stage {
+  transition: height 200ms var(--ease-out);
+}
+
+.ui-app[data-transition="collapse"] .ui-view {
+  transition: top 200ms var(--ease-out);
+}
+
+
+.ui-editing {
+  display: contents;
+}
+
+.ui-app[data-phase="running"] .ui-idle {
+  display: none;
+}
+
+.ui-app:not([data-phase="running"]) .ui-live {
+  display: none;
+}
+
+/* With the code sheet open, the transport docks under it, so Drop and Code stay in reach. */
+.ui-app[data-layout="mobile"][data-code="shown"][data-overlay="none"] .ui-transport {
+  top: calc(100% - var(--dock-bottom) - var(--transport-h));
+}
+
+.ui-view {
+  position: absolute;
+  inset: calc(var(--stage-h) + var(--transport-h) + 14px) 0 48px;
+  z-index: 1;
+}
+
+.ui-app:not([data-tab="tracks"]) .ui-view--tracks,
+.ui-app:not([data-tab="song"]) .ui-view--song {
+  display: none;
+}
+.ui-app[data-empty="true"] .ui-tracks,
+.ui-app[data-empty="true"] .ui-tracktable {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  /* The desktop puts the empty state where the table would be. */
+  .ui-app[data-layout][data-empty="true"] .ui-view--tracks {
+    display: block;
+  }
+}
+
+.ui-backdrop {
+  display: none;
+}
+
+.ui-app[data-overlay="library"] .ui-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: block;
+  background: rgb(11 11 12 / 55%);
+}
+
+/* The parts in playing order. No track × section
+   matrix; a part's tracks are edited in its editor. */
+.ui-view--song {
+  top: calc(var(--stage-h) + var(--transport-h) + 12px);
+}
+
+.ui-app[data-overlay="length"] .ui-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 22;
+  display: block;
+  background: rgb(11 11 12 / 55%);
+}
+.ui-app:is([data-overlay="tempo"], [data-overlay="key"]) .ui-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 22;
+  display: block;
+  background: rgb(11 11 12 / 55%);
+}
+/* The code is no tab any more: on a phone it covers the view of the tab under it,
+   which would otherwise show between the sheet and the docked transport. */
+.ui-app[data-layout="mobile"][data-code="shown"][data-overlay="none"] :is(.ui-view--tracks, .ui-view--song) {
+  visibility: hidden;
+}
+
+/* On the waiting screen under 1200 px the toast ("Midnight Coast deleted · Undo") sits
+   above the legal row, never on it: the copyright line is the attribution the license
+   requires, and the toast grows upwards, so a third line still clears it. The legal row is
+   60 px up and 16 px tall here, 52 px up from 700 px (views/idle-screen.css); the desktop's
+   toast is centred and never meets it (views/toast.css). */
+.ui-app:not([data-phase="running"]) > .ui-toast {
+  bottom: calc(60px + 16px + 8px);
+}
+
+@media (min-width: 700px) {
+  .ui-app:not([data-phase="running"]) > .ui-toast {
+    bottom: calc(52px + 16px + 8px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .ui-app:not([data-phase="running"]) > .ui-toast {
+    bottom: 24px;
+  }
+}
+
+/* Under 1200 px: a bottom sheet from 84 px down, the bar above it and the backdrop. */
+.ui-app[data-overlay="menu"] .ui-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: block;
+  background: rgb(11 11 12 / 55%);
+}
+
+@media (min-width: 1200px) {
+  /* A click outside the popover lands here and closes it, never on what is under it.
+     Under the top bar (25): the attribution is never covered, and its Menu button closes. */
+  .ui-app[data-overlay="menu"] .ui-backdrop {
+    position: fixed;
+    z-index: 24;
+    background: none;
+  }
+}
+
+/* With the controls hidden (the H key): the range keeps playing and the label says its bars. */
+.ui-app[data-collapsed="true"] .ui-transport__range {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  /* The Code sheet under 1200 px needs the height for the text and the terminal: the range
+     line steps aside while it is open, as with H; the label still says the range. The Code
+     sheet is `data-code="shown"` since it stopped being a panel; a selector on
+     `data-panel="code"` never matched, and the terminal's log shrank to one row at 390. */
+  .ui-app[data-code="shown"] .ui-transport__range {
+    display: none;
+  }
+  .ui-app[data-phase="running"][data-tab][data-code="shown"] {
+    --transport-h: 96px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1199px) {
+  .ui-app[data-phase="running"][data-tab][data-code="shown"] {
+    --transport-h: 56px;
+  }
+}
+
+@media (min-width: 700px) {
+  .ui-app[data-phase="running"][data-tab][data-collapsed="true"] {
+    --transport-h: 56px;
+  }
+
+  .ui-app[data-phase="running"][data-tab="song"] {
+    --stage-h: 230px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Short windows: the track table keeps
+     three whole rows, 20 + 24 + 3 × 48 + 2 × 2 + 54 + 4 px of slack (views/track/
+     track-table.css, track-table-row.css), and the stage gives up the rest. */
+  .ui-app {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    --stage-h: 430px;
+    --app-min-h: 600px;
+    --table-floor: 250px;
+    min-height: var(--app-min-h);
+  }
+
+  /* 430 px from about 860 px of window height up. The 6 px is the gap .ui-live pads under
+     the stage; --transport-block is the transport with its range strip, as drawn. */
+  .ui-app[data-phase="running"][data-tab] {
+    --stage-h: clamp(
+      160px,
+      max(100dvh - var(--footer-h), var(--app-min-h)) - 6px - var(--transport-block, 140px) - var(--table-floor),
+      430px
+    );
+  }
+
+  .ui-stage,
+  .ui-main {
+    grid-area: 1 / 1;
+  }
+
+
+  .ui-stage {
+    position: relative;
+    height: var(--stage-h);
+  }
+
+  .ui-app:not([data-phase="running"]) .ui-stage {
+    height: 100%;
+  }
+
+  .ui-frame {
+    --footer-h: 32px;
+  }
+
+  .ui-main {
+    position: relative;
+    z-index: 1;
+    min-height: 0;
+    height: calc(100dvh - var(--footer-h));
+  }
+
+  /* The column the transport measures (below): its width without the side panel. */
+  .ui-live {
+    container: live / inline-size;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: calc(var(--stage-h) + 6px) 32px 0;
+  }
+
+  /* Controls hidden: the left column is stage down to the transport, 24 px off the bottom.
+     --transport-block is the transport's drawn height (the shell measures it): 44 px in
+     one row, more when a wide Code panel or a narrow window makes it wrap. */
+  .ui-app[data-phase="running"][data-tab][data-collapsed="true"] {
+    --stage-h: calc(max(100dvh - var(--footer-h), var(--app-min-h)) - 30px - var(--transport-block, 44px));
+  }
+
+  .ui-app[data-transition="collapse"] .ui-live {
+    transition: padding-top 200ms var(--ease-out);
+  }
+
+  .ui-view {
+    position: static;
+  }
+
+  /* Song mode: the parts on the left, the tracks on the right. Loop
+     mode has no arrangement at all: the table takes the column. */
+  /* 420 px since the play range: each part row also holds To here, the bracket
+     button and the part's Play, and the part's name must stay readable. */
+  .ui-app[data-mode="song"] .ui-editing:not([hidden]) {
+    display: grid;
+    grid-template-columns: 420px minmax(0, 1fr);
+    column-gap: 32px;
+    flex: 1;
+    min-height: 0;
+    margin-top: 14px;
+  }
+
+  /* Same specificity as the mobile tab rule, later in the file. */
+  .ui-app[data-layout][data-mode="song"] .ui-view--song {
+    display: block;
+    min-height: 0;
+  }
+
+  .ui-app[data-layout]:not([data-mode="song"]) .ui-view--song {
+    display: none;
+  }
+
+  .ui-app[data-mode="song"] .ui-tracktable {
+    margin-top: 0;
+  }
+
+  .ui-app[data-layout] .ui-view--tracks,
+  .ui-backdrop,
+  .ui-app[data-overlay="library"] .ui-backdrop {
+    display: none;
+  }
+
+  /* The length picker on the desktop: a popover next to its chip; a click outside closes
+     it (transparent backdrop under it). Placed by length-picker.ts through two vars. */
+  .ui-app[data-overlay="length"] .ui-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 35;
+    display: block;
+    background: none;
+  }
+
+  .ui-app:is([data-overlay="tempo"], [data-overlay="key"]) .ui-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 35;
+    display: block;
+    background: none;
+  }
+
+  .ui-app[data-mode="song"]:not([data-panel="none"]) .ui-table__mini .ui-mini__cell[data-cell="hold"] {
+    margin-left: -3px;
+  }
+
+  /* Code is wider than the other panels, and the divider moves it:
+     clamp(480px, 40vw, 720px) until the person drags it. The code lies over Track or
+     Part, so it is data-code, not a panel. */
+  .ui-app[data-code="shown"] .ui-panel {
+    width: var(--code-panel-w, clamp(480px, 40vw, 720px));
+  }
+}
+
+/* A sheet that reaches the foot of the screen below 1200 px (the menu, the detail,
+   Projects…) ends its scrolling body above the toast while one shows: the list scrolls in
+   what is left and no item sits under "kick deleted · Undo" (measured at 390 over
+   "Export video or audio…"). The toast keeps its place: the
+   menu starts under the top bar, so there is no room above the sheet without covering the
+   bar and its brand. The toast is 56 px high for one or two lines, 8 px over --dock-bottom,
+   and keeps 8 px from the list. Code docks above the transport and the popovers do not
+   reach the foot. */
+@media (max-width: 1199px) {
+  .ui-app:has(> .ui-toast:not([hidden])) .ui-sheet:not(.ui-sheet--code, .ui-sheet--popover) > .ui-sheet__body {
+    margin-bottom: calc(var(--dock-bottom) + 8px + 56px + 8px);
+  }
+}

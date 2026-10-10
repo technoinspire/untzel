@@ -1,0 +1,48 @@
+{
+  "name": "piano",
+  "group": "keys",
+  "kind": "chord",
+  "range": { "lowest": "a0", "highest": "c8" },
+  "engine": "modal",
+  "description": "Modeled grand piano, no samples",
+  "model": "AURA Grand",
+  "tags": ["piano", "acoustic", "keys", "grand"],
+  "voices": 16,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 2.12,
+  "patterns": [
+    { "name": "Held", "text": "Cm7 ~ ~ ~" },
+    { "name": "House chords", "text": ". Cm7 . . Cm7 . . . / . Abmaj7 . . Abmaj7 . . ." },
+    { "name": "Stabs", "text": "Cm7 . . . . . Cm7 ." },
+    { "name": "Progression", "text": "Cm7 ~ ~ ~ / Fm7 ~ ~ ~ / Abmaj7 ~ ~ ~ / Gm7 ~ ~ ~" },
+    { "name": "Arp", "text": "c4 eb4 g4 bb4 c5 bb4 g4 eb4" }
+  ],
+  "preview": "c3+eb3+g3 ~ ~ . bb3 . g3 . / Abmaj7 ~ ~ ~ ~ ~ . .",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "hardness", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "brightness", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.5, "max": 12, "default": 5, "unit": "s", "curve": "exponential" },
+    { "name": "release", "min": 0.05, "max": 2, "default": 0.3, "unit": "s", "curve": "exponential" },
+    { "name": "detune", "min": 0, "max": 1, "default": 0.3, "unit": "", "curve": "linear" },
+    { "name": "body", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "noise", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "samples" },
+    { "name": "level", "min": 0.05, "max": 8, "default": 1.128, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "brightness", "from": 0.1, "to": 0.9 },
+    { "parameter": "hardness", "from": 0.1, "to": 0.9 }
+  ],
+  "presets": [
+    { "name": "grand", "description": "Balanced concert grand, open and long", "values": {} },
+    { "name": "bright", "description": "Hard hammers, bright attack", "values": {"hardness": 0.95, "brightness": 1, "decay": 1.5, "body": 0.25, "level": 1.03} },
+    { "name": "felt", "description": "Soft felt, muffled, with the thump of the hammer", "values": {"hardness": 0.05, "brightness": 0.1, "noise": 0.8, "release": 0.6, "decay": 3.5, "level": 1.281} },
+    { "name": "upright", "description": "Short and boxy, a strong second partial", "values": {"decay": 0.7, "body": 1, "hardness": 0.6, "brightness": 0.3, "detune": 0.5, "level": 1.401} },
+    { "name": "honky", "description": "Out-of-tune saloon, beating string pairs", "values": {"detune": 0.7, "hardness": 0.3, "body": 0.2, "decay": 1.8, "brightness": 0.7, "noise": 0.1, "level": 1.309} },
+    { "name": "house", "description": "House: bright, short, chorused stab piano", "values": {"hardness": 1, "brightness": 1, "decay": 0.6, "release": 0.12, "body": 0, "detune": 0, "noise": 0.5, "level": 1.189} }
+  ],
+  "defaultPreset": "grand",
+  "scene": {"family": "bars", "variant": {"shape": "keyboard"}, "drive": "pitch"}
+}

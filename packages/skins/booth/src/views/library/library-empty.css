@@ -1,0 +1,35 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The library empty view, views/library-empty.ts. */
+.ui-library__suggestions .ui-pill--chip {
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1.5px var(--raised);
+}
+
+.ui-library__suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ui-library__empty {
+  display: grid;
+  gap: 12px;
+  padding: 18px 0;
+}
+
+.ui-library__nothing {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ui-library__lead {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.ui-library__hint {
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 13px;
+}

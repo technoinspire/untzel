@@ -1,0 +1,42 @@
+# Monthly, grouped dependency updates. The cooldown waits 7 days after a release
+# before proposing it, and every update still goes through ci-ok and the review.
+# Risk: Dependabot may not support pnpm 12 yet. If the npm ecosystem fails, remove it here
+# and record the reason in the pull request.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    labels: [dependencies]
+    rebase-strategy: disabled
+    groups:
+      npm:
+        patterns: ["*"]
+  - package-ecosystem: cargo
+    directory: /
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    labels: [dependencies]
+    rebase-strategy: disabled
+    groups:
+      cargo:
+        patterns: ["*"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    labels: [dependencies]
+    rebase-strategy: disabled
+    groups:
+      github-actions:
+        patterns: ["*"]

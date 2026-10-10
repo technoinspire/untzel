@@ -1,0 +1,39 @@
+{
+  "name": "djembe",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "modal",
+  "description": "Goblet hand drum: bass, tone and slap",
+  "model": "TERRA Hands",
+  "tags": ["djembe", "hand", "afro", "drum"],
+  "voices": 4,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 0.95,
+  "patterns": [
+    { "name": "Groove", "text": "x..x ..x. x.x. ..x." },
+    { "name": "Call", "text": "x.x. .xx. x.x. .x.x" },
+    { "name": "Answer", "text": "..x. x..x ..x. x.xx" },
+    { "name": "Roll", "text": "x... x.x. x... xx.x" }
+  ],
+  "preview": "x..x ..x. x.x. .xx.",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "tune", "min": 0, "max": 1, "default": 0.45, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.05, "max": 2, "default": 0.35, "unit": "s", "curve": "exponential" },
+    { "name": "bend", "min": 0, "max": 1, "default": 0.05, "unit": "", "curve": "linear" },
+    { "name": "hardness", "min": 0, "max": 1, "default": 0.55, "unit": "", "curve": "linear" },
+    { "name": "slap", "min": 0, "max": 1, "default": 0.25, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "tune", "from": 0, "to": 1 }
+  ],
+  "toneLevelDb": 9.87,
+  "presets": [
+    { "name": "tone", "description": "Open tone at the edge, a touch of slap", "values": {} },
+    { "name": "bass", "description": "Deep bass in the middle", "values": {"tune": 0.1, "hardness": 0.3, "decay": 0.5, "slap": 0} },
+    { "name": "slap", "description": "Sharp slap", "values": {"hardness": 0.95, "decay": 0.12, "slap": 1} }
+  ],
+  "defaultPreset": "tone",
+  "scene": {"family": "ripple", "variant": {"shape": "core"}, "drive": "velocity"}
+}

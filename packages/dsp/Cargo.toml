@@ -1,0 +1,21 @@
+[package]
+name = "untzel-dsp"
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.99.0"
+license = "CPAL-1.0"
+publish = false
+description = "Untzel DSP engine, compiled to wasm32-unknown-unknown with a raw C ABI and no imports."
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+# serde and serde_json run only at build time (build.rs reads instruments/*/manifest.json)
+# and in native tests. Nothing ships in the WASM.
+[build-dependencies]
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.151"
+
+[dev-dependencies]
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.151"

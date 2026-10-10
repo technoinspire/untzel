@@ -1,0 +1,160 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The export preview view, views/export-preview.ts. */
+/* What the file contains: the light in the format's ratio
+   with the brand mark, and the 2 s closing card beside it. Every position is a custom
+   property set by export-preview.ts from @untzel/export's brandLayout;
+   export.browser.ts measures them against the file. Only the preview's size is here. */
+.ui-preview {
+  --frame-ratio: 0.5625;
+  --frame-w: 210px;
+  --card-w: 84px;
+  display: grid;
+  justify-items: center;
+  margin: 16px auto 0;
+}
+.ui-preview__drawn {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px;
+}
+.ui-preview__frame,
+.ui-preview__card-frame {
+  position: relative;
+  display: block;
+  aspect-ratio: var(--frame-ratio);
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 2px var(--raised);
+  container-type: inline-size;
+}
+.ui-preview__frame {
+  width: var(--frame-w);
+  background: var(--stage);
+}
+.ui-preview__card {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+.ui-preview__card-frame {
+  width: var(--card-w);
+  border-radius: 8px;
+  background: var(--stage);
+}
+.ui-preview__card-length {
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.ui-preview__art {
+  position: absolute;
+  inset: 0;
+}
+/* The scene's still, drawn by the stage the way the file draws it: the frame's
+   own ratio, so it fills the frame. Until it arrives the frame is the bare stage. */
+.ui-preview__still {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ui-preview__still[hidden] {
+  display: none;
+}
+.ui-preview__wave {
+  display: none;
+  position: absolute;
+  inset: 30% 16px auto;
+  height: 120px;
+  align-items: center;
+  gap: 2px;
+}
+.ui-preview__wave-bar {
+  flex: 1;
+  height: calc(var(--level) * 100%);
+  border-radius: 1px;
+  background: var(--flare);
+}
+/* The mark's layer covers the frame, so its parts keep the frame's coordinates and the
+   16:9 glow can be cut out of the rings' disc the way drawBrandMark cuts it (RingsClearance
+   of brandLayout): nothing inside --rings-inner, whole again at --rings-outer. Without a
+   clearance (the story) both radii are 0 and the mask is whole. */
+.ui-preview__mark {
+  position: absolute;
+  inset: 0;
+  mask-image: radial-gradient(circle at var(--rings-x) var(--rings-y), transparent var(--rings-inner), #000 var(--rings-outer));
+}
+.ui-preview__scrim {
+  position: absolute;
+  left: var(--scrim-left);
+  top: var(--scrim-top);
+  width: var(--scrim-width);
+  height: var(--scrim-height);
+}
+/* The file's glow (brand-mark.ts GLOW_SPAN 1.8 × 1.6, GLOW_SOLID): drawn past the zone by a
+   pseudo-element, so the zone's own box stays where the file's is. A `scale` on the zone
+   itself drew the same glow but moved its measured box (export.browser.ts). Solid to 75 % of
+   the ellipse, faded to nothing at its edge. No box. */
+.ui-preview__scrim::before {
+  content: "";
+  position: absolute;
+  inset: -30% -40%;
+  background: radial-gradient(closest-side, rgb(11 11 12 / 60%) 75%, rgb(11 11 12 / 0%) 100%);
+}
+.ui-preview__mark-logo {
+  position: absolute;
+  left: var(--mark-logo-left);
+  top: var(--mark-logo-top);
+  width: var(--mark-logo-width);
+  height: auto;
+  aspect-ratio: 880 / 136;
+}
+/* Text boxes at line-height 1: the top is the baseline less the face's ascent; each
+   line is centred on its own axis (the mark's, in the 16:9 corner, or the frame's). */
+.ui-preview__mark-url,
+.ui-preview__card-url {
+  position: absolute;
+  translate: -50% 0;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.ui-preview__mark-url {
+  left: var(--mark-url-center);
+  top: var(--mark-url-top);
+  font-size: var(--mark-url-size);
+}
+.ui-preview__card-logo {
+  position: absolute;
+  left: var(--card-logo-left);
+  top: var(--card-logo-top);
+  width: var(--card-logo-width);
+  height: auto;
+  aspect-ratio: 880 / 136;
+}
+.ui-preview__card-url {
+  left: var(--card-url-center);
+  top: var(--card-url-top);
+  font-size: var(--card-url-size);
+}
+/* Done: the file itself, in its own ratio, waiting for play. */
+.ui-preview__file {
+  display: block;
+  width: 100%;
+}
+.ui-preview__player--video {
+  display: block;
+  width: min(100%, var(--frame-w) * 1.4);
+  aspect-ratio: var(--frame-ratio);
+  margin: 0 auto;
+  border-radius: 12px;
+  background: var(--stage);
+}
+.ui-preview__player--audio {
+  display: block;
+  width: 100%;
+}

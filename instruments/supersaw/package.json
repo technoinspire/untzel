@@ -1,0 +1,9 @@
+{
+  "name": "@untzel/instrument-supersaw",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "exports": {
+    "./manifest.json": "./manifest.json"
+  }
+}

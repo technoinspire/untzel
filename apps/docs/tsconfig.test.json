@@ -1,0 +1,28 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": ".",
+    "outDir": "../../.cache/tsc/docs-test",
+    "tsBuildInfoFile": "../../.cache/tsc/docs-test.tsbuildinfo"
+  },
+  "include": [
+    "src/**/*.test.ts",
+    "tests",
+    "playwright.config.ts"
+  ],
+  "references": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../web/tsconfig.test.json"
+    }
+  ]
+}

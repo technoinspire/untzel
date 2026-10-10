@@ -1,0 +1,16 @@
+{
+  "category": "new",
+  "date": "2026-10-05",
+  "refs": [
+    30
+  ],
+  "docs": "/docs/app/share-export",
+  "title": {
+    "en": "Listen before you render",
+    "pt-BR": "Ouça antes de renderizar"
+  },
+  "body": {
+    "en": "Play the export range from the export sheet before rendering it.",
+    "pt-BR": "Toque o trecho do export na própria folha de exportação antes de renderizar."
+  }
+}

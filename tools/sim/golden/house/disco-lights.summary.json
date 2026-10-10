@@ -1,0 +1,113 @@
+{
+  "template": "house/disco-lights",
+  "runs": {
+    "loop": {
+      "bars": 16,
+      "events": 934,
+      "eventsPerTrack": {
+        "kick": 65,
+        "clap": 32,
+        "hat": 222,
+        "ohat": 64,
+        "shaker": 206,
+        "conga": 87,
+        "bell": 0,
+        "block": 0,
+        "bass": 129,
+        "guitar": 97,
+        "brass": 32,
+        "strings": 0,
+        "run": 0,
+        "keys": 0,
+        "voice": 0,
+        "rise": 0,
+        "riser": 0,
+        "down": 0,
+        "crash": 0
+      },
+      "songEnded": false,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -16.43,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": null,
+          "clap": null,
+          "hat": null,
+          "ohat": null,
+          "shaker": null,
+          "conga": null,
+          "bell": null,
+          "block": null,
+          "bass": null,
+          "guitar": null,
+          "brass": null,
+          "strings": null,
+          "run": null,
+          "keys": null,
+          "voice": null,
+          "rise": null,
+          "riser": null,
+          "down": null,
+          "crash": null
+        }
+      }
+    },
+    "song": {
+      "bars": 177,
+      "events": 9475,
+      "eventsPerTrack": {
+        "kick": 640,
+        "clap": 256,
+        "hat": 2205,
+        "ohat": 448,
+        "shaker": 2153,
+        "conga": 893,
+        "bell": 160,
+        "block": 60,
+        "bass": 896,
+        "guitar": 960,
+        "brass": 224,
+        "strings": 96,
+        "run": 192,
+        "keys": 144,
+        "voice": 120,
+        "rise": 16,
+        "riser": 2,
+        "down": 2,
+        "crash": 8
+      },
+      "songEnded": true,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -16.74,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": null,
+          "clap": null,
+          "hat": null,
+          "ohat": null,
+          "shaker": null,
+          "conga": null,
+          "bell": null,
+          "block": null,
+          "bass": null,
+          "guitar": null,
+          "brass": null,
+          "strings": null,
+          "run": null,
+          "keys": null,
+          "voice": null,
+          "rise": null,
+          "riser": null,
+          "down": null,
+          "crash": null
+        }
+      }
+    }
+  }
+}

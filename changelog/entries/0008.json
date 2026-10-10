@@ -1,0 +1,17 @@
+{
+  "category": "new",
+  "date": "2026-10-04",
+  "refs": [
+    8,
+    9
+  ],
+  "docs": "/docs/instruments",
+  "title": {
+    "en": "Instrument library, bars and the note picker",
+    "pt-BR": "Biblioteca de instrumentos, compassos e o seletor de notas"
+  },
+  "body": {
+    "en": "Browse every instrument in a library, pick notes on a keyboard, and arrange the song by bars.",
+    "pt-BR": "Navegue por todos os instrumentos numa biblioteca, escolha notas num teclado e monte a música por compassos."
+  }
+}

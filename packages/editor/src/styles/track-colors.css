@@ -1,0 +1,107 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+
+/* ------------------------------------------------------ track colors */
+
+/* The palette --u-track-0 … --u-track-7 is one set of tokens with the tiles' dots
+   (packages/skins/booth, :root). */
+
+/* The name, the section members and the gutter bar share the track's color. An
+   unnamed track's instrument word is its name: the color wins over the instrument's. */
+.u-track-name.u-track-0,
+.u-track-name.u-track-0 *,
+.u-track-member.u-track-0,
+.u-track-member.u-track-0 * {
+  color: var(--u-track-0);
+}
+
+.u-trackbar.u-track-0 {
+  box-shadow: inset 3px 0 var(--u-track-0);
+}
+
+.u-track-name.u-track-1,
+.u-track-name.u-track-1 *,
+.u-track-member.u-track-1,
+.u-track-member.u-track-1 * {
+  color: var(--u-track-1);
+}
+
+.u-trackbar.u-track-1 {
+  box-shadow: inset 3px 0 var(--u-track-1);
+}
+
+.u-track-name.u-track-2,
+.u-track-name.u-track-2 *,
+.u-track-member.u-track-2,
+.u-track-member.u-track-2 * {
+  color: var(--u-track-2);
+}
+
+.u-trackbar.u-track-2 {
+  box-shadow: inset 3px 0 var(--u-track-2);
+}
+
+.u-track-name.u-track-3,
+.u-track-name.u-track-3 *,
+.u-track-member.u-track-3,
+.u-track-member.u-track-3 * {
+  color: var(--u-track-3);
+}
+
+.u-trackbar.u-track-3 {
+  box-shadow: inset 3px 0 var(--u-track-3);
+}
+
+.u-track-name.u-track-4,
+.u-track-name.u-track-4 *,
+.u-track-member.u-track-4,
+.u-track-member.u-track-4 * {
+  color: var(--u-track-4);
+}
+
+.u-trackbar.u-track-4 {
+  box-shadow: inset 3px 0 var(--u-track-4);
+}
+
+.u-track-name.u-track-5,
+.u-track-name.u-track-5 *,
+.u-track-member.u-track-5,
+.u-track-member.u-track-5 * {
+  color: var(--u-track-5);
+}
+
+.u-trackbar.u-track-5 {
+  box-shadow: inset 3px 0 var(--u-track-5);
+}
+
+.u-track-name.u-track-6,
+.u-track-name.u-track-6 *,
+.u-track-member.u-track-6,
+.u-track-member.u-track-6 * {
+  color: var(--u-track-6);
+}
+
+.u-trackbar.u-track-6 {
+  box-shadow: inset 3px 0 var(--u-track-6);
+}
+
+.u-track-name.u-track-7,
+.u-track-name.u-track-7 *,
+.u-track-member.u-track-7,
+.u-track-member.u-track-7 * {
+  color: var(--u-track-7);
+}
+
+.u-trackbar.u-track-7 {
+  box-shadow: inset 3px 0 var(--u-track-7);
+}
+
+.u-track-name,
+.u-track-name * {
+  font-weight: 600;
+}
+
+.u-track-gutter .cm-gutterElement {
+  width: 3px;
+  margin-right: 9px;
+}

@@ -1,0 +1,57 @@
+{
+ "format": 1,
+ "instrument": "woodblock",
+ "version": 1,
+ "sampleRate": 48000,
+ "frames": 55330,
+ "audio": {
+  "file": "pack.opus",
+  "codec": "opus",
+  "bitrate": "64k",
+  "bytes": 7985,
+  "sha256": "495170c909ce0f3d274005ac6f368f58dda166d02e6c6cf28ffa0e8c5eedc16e"
+ },
+ "license": {
+  "id": "CC0-1.0",
+  "name": "Creative Commons Zero 1.0 Universal",
+  "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "changes": "Cut at the onset, mixed to mono, resampled to 48 kHz, levelled, looped (sustained notes) or faded into silence (one-shots) and encoded as Opus (tools/samples/build.py)."
+ },
+ "source": {
+  "dataset": "Versilian Community Sample Library",
+  "author": "Versilian Studios LLC",
+  "record": "https://github.com/sgossner/VCSL",
+  "instrument": "VCSL percussion",
+  "files": [
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Woodblock/wood_click_ff.wav",
+   "https://raw.githubusercontent.com/sgossner/VCSL/master/Idiophones/Struck%20Idiophones/Woodblock/wood_click_mp.wav"
+  ],
+  "notes": [
+   "position 0 = mezzo-piano stroke, 1 = fortissimo."
+  ]
+ },
+ "zones": [
+  {
+   "take": "wood_click_mp.wav",
+   "position": 0.0,
+   "root": 72.0,
+   "lowest": 0.0,
+   "highest": 128.0,
+   "pan": 0.0,
+   "start": 1024,
+   "loopStart": 24834,
+   "loopEnd": 26882
+  },
+  {
+   "take": "wood_click_ff.wav",
+   "position": 1.0,
+   "root": 72.0,
+   "lowest": 0.0,
+   "highest": 128.0,
+   "pan": 0.0,
+   "start": 27906,
+   "loopStart": 52258,
+   "loopEnd": 54306
+  }
+ ]
+}

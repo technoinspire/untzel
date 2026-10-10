@@ -1,0 +1,40 @@
+// template: Midnight Bloom
+// order: 1
+// default: true
+title "Midnight Bloom"
+tempo 124
+key a minor
+
+kick:   kick       boom    x... x... x... x... | gain 0.9
+sub:    sub        warm    a1 . . . a1 . . . / f1 . . . f1 . . . / d1 . . . d1 . . . / e1 . . . e1 . . .   | duck 0.6
+bass:   bass       rolling . a2 a2 a2 . a2 c3 a2 / . f2 f2 f2 . f2 a2 f2 / . d2 d2 d2 . d2 f2 d2 / . e2 e2 e2 . g2 e2 b2   | duck 0.5 | comp 0.3 | pan 0.1 | gain 1.48
+hat:    hat        tight   . x x?0.6 x . x x?0.6 x . x x?0.6 x . x x?0.7 x     | gain 0.6 | swing 0.1 | pan -0.15
+ohat:   hat        open    ..x. ..x. ..x. ..x. | pan 0.15 | gain 0.85
+shaker: shaker     bright  x x?0.7 x x?0.8 x x?0.7 x x?0.8 x x?0.7 x x?0.8 x x?0.7 X x?0.8   | swing 0.16 | gain 0.34 | pan 0.3
+conga:  conga      open    . . x . x . . x . . x . x . x?0.4 x?0.5               | swing 0.16 | pan -0.35 | reverb room | gain 0.75
+rim:    rim        click   .... ..x. .... .x.x                                   | pan 0.4 | delay 3/16 | gain 1
+perc:   perc       ping    .... .... ..x. .x..                                   | pan -0.2 | delay 1/8 | reverb room
+clap:   clap       tight   .... x... .... x...                                   | reverb room | gain 1
+pad:    pad        noir    Am9 ~ ~ ~ / Fmaj9 ~ ~ ~ / Dm9 ~ ~ ~ / Em7 ~ ~ ~       | voicing spread | brightness sine(16) 0.3..0.7 | duck 0.5 | reverb hall | gain 0.48
+pluck:  pluck      muted   Am9 ~ ~ ~ / Fmaj9 ~ ~ ~ / Dm9 ~ ~ ~ / Em7 ~ ~ ~       | arp updown | arp-rate 1/16 | arp-octaves 2 | highpass 300 | delay 3/16 | gain 0.6
+keys:   epiano     soft    . Am7 . . Am7 . . . / . Fmaj7 . . Fmaj7 . . . / . Dm7 . . Dm7 . . . / . Em7 . . Em7! . . .   | voicing open | chorus 0.25 | reverb wide | gain 0.5
+lead:   lead       noir    e4 ~ ~ . c4 ~ d4 ~ / a3 ~ ~ ~ ~ ~ . . / c4 ~ ~ . d4 ~ e4 ~ / g4 ~ ~ ~ e4 ~ ~ .   | legato | glide 0.08 | delay 1/4 | reverb plate | gain 0.53
+answer: square     hollow  . . e5 . . . c5 . / . . a4 . . . . . / . . d5 . . . f5 . / . . e5 . . . b4 .   | delay 3/16 | reverb hall | pan -0.25 | gain 0.4
+choir:  choir      monk    Am ~ ~ ~ / F ~ ~ ~ / Dm ~ ~ ~ / Em ~ ~ ~              | vowel sine(8) 0.2..0.6 | eq-high 3 | reverb hall | gain 0.5
+rise:   noise      white   x~~~ ~~~~ ~~~~ ~~~~                                   | cutoff saw(8) 300..9000 | gain saw(8) 0.15..0.5
+riser:  riser      noise   x... / .... / .... / .... / .... / .... / .... / ....   | length 15.5 | gain 0.6
+down:   downlifter noise   x~~~ ~~~~ ~~~~ ~~~~ / .... / .... / .... / .... / .... / .... / ....   | reverb wide | gain 0.8
+impact: impact     deep    x... / .... / .... / .... / .... / .... / .... / ....   | reverb sea | gain 0.9
+
+section intro   kick hat shaker conga rim pad
+section groove  kick sub bass hat ohat shaker conga rim perc clap pad keys | loop
+section build   kick sub hat ohat shaker conga perc clap pad pluck rise
+section break   pad pluck keys choir down
+section lift    hat pad pluck choir riser
+section drop    kick sub bass hat ohat shaker conga rim perc clap pad pluck lead answer choir impact
+section groove2 kick sub bass hat ohat shaker conga rim perc clap keys pluck
+section break2  pad keys choir lead down
+section drop2   kick sub bass hat ohat shaker conga rim perc clap pad pluck keys lead answer choir impact
+section outro   kick hat shaker conga rim pad
+
+song intro 16, groove 32, build 8, break 16, lift 8, drop 32, groove2 16, break2 16, lift 8, drop2 32, outro 16

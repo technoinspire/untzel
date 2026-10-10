@@ -1,0 +1,26 @@
+{
+  "name": "@untzel/language",
+  "version": "0.0.0",
+  "license": "CPAL-1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./limits": "./src/limits.ts",
+    "./rules": "./src/rules.ts"
+  },
+  "scripts": {
+    "generate": "mkdir -p src/generated && lezer-generator src/untzel.grammar --typeScript --output src/generated/parser.ts"
+  },
+  "dependencies": {
+    "@lezer/common": "1.5.3",
+    "@lezer/highlight": "1.2.5",
+    "@lezer/lr": "1.4.10",
+    "@untzel/core": "workspace:*",
+    "@untzel/i18n": "workspace:*"
+  },
+  "devDependencies": {
+    "@lezer/generator": "1.8.1",
+    "@untzel/instrument-index": "workspace:*"
+  }
+}

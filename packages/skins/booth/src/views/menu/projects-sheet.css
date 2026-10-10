@@ -1,0 +1,53 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The projects sheet view, views/projects-sheet.ts. */
+.ui-sheet--projects .ui-sheet__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  padding: 0 16px 24px;
+}
+
+.ui-projects__new {
+  display: inline-flex;
+  align-self: start;
+  align-items: center;
+  gap: 8px;
+}
+
+.ui-projects__search {
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--edge);
+  border-radius: 12px;
+  background: var(--stage);
+  color: var(--text);
+  font: inherit;
+}
+
+.ui-projects__search[hidden] {
+  display: none;
+}
+
+.ui-projects__list {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ui-projects__empty,
+.ui-projects__note {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+  max-width: 62ch;
+}
+
+.ui-projects__empty[hidden] {
+  display: none;
+}

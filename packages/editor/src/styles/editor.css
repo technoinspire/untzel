@@ -1,0 +1,122 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+
+/* Untzel editor chrome around CodeMirror. Tokens come from the controls styles (tokens.css, :root). */
+
+@import "./language.css";
+@import "./track-colors.css";
+@import "./code-layout.css";
+@import "./code-area.css";
+@import "./command-log.css";
+@import "./command-line.css";
+
+.untzel-editor {
+  --untzel-code-size: 12.5px;
+  --untzel-code-line: 21px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 16px 0 14px;
+}
+
+.untzel-editor .cm-editor {
+  flex: 1;
+  min-height: 0;
+}
+
+/* The list scrolls past 40% of the editor: two errors once took the whole
+   editor at 390 (the code at 0 px) and covered Commands. A min-height on the code would
+   instead overlap Commands when the command line takes the phone's sheet. */
+.untzel-editor__problems {
+  max-block-size: min(40%, 220px);
+  overflow-y: auto;
+  position: sticky;
+  bottom: 8px;
+  display: grid;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.untzel-editor__problem {
+  position: relative;
+  padding: 7px 12px 7px 16px;
+  border-radius: 10px;
+  background: var(--raised, #26282d);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.untzel-editor__problem::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--ember, #c52d1f);
+}
+
+/* A warning: the current text plays, so the bar is the quiet one (6.0:1 on raised). */
+.untzel-editor__problem--warning::before {
+  background: var(--muted, #aaa5a1);
+}
+
+.untzel-editor__message {
+  margin: 0;
+  color: var(--text, #fff);
+}
+
+.untzel-editor__keeps {
+  margin: 0;
+  color: var(--muted, #aaa5a1);
+}
+
+/* Quick fixes: the fix in flare, Ignore outlined. */
+.untzel-editor__fixes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.untzel-editor__fix,
+.untzel-editor__ignore {
+  min-width: 96px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 22px;
+  font: 600 13px/1 var(--font-sans);
+}
+
+.untzel-editor__fix {
+  background: var(--flare, #f65d00);
+  color: var(--stage, #0b0b0c); /* 6.07 */
+}
+
+.untzel-editor__ignore {
+  border: 1.5px solid var(--muted, #aaa5a1);
+  background: transparent;
+  color: var(--text, #fff);
+  font-weight: 400;
+}
+
+.untzel-editor__fix:focus-visible,
+.untzel-editor__ignore:focus-visible {
+  outline: 2px solid var(--text, #fff);
+  outline-offset: 3px;
+}
+
+.untzel-editor__notice {
+  margin: 8px 0 0;
+  color: var(--muted, #aaa5a1);
+  font-size: 12px;
+}
+
+/* The fix buttons keep 44 px on the desktop too: a target, not a chip. */
+@media (min-width: 1200px) {
+  .untzel-editor {
+    --untzel-code-size: 13px;
+    --untzel-code-line: 26px;
+    padding: 0;
+  }
+}

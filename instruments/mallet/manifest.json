@@ -1,0 +1,43 @@
+{
+  "name": "mallet",
+  "group": "plucks",
+  "kind": "chord",
+  "range": { "lowest": "c2", "highest": "c7" },
+  "engine": "modal",
+  "description": "Marimba, vibes and wood",
+  "model": "LUMA Mallets",
+  "tags": ["mallet", "marimba", "vibes", "wood"],
+  "voices": 8,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 0.62,
+  "patterns": [
+    { "name": "Arp", "text": "c4 . eb4 . g4 . eb4 ." },
+    { "name": "Offbeat", "text": ". c4 . eb4 . g4 . eb4" },
+    { "name": "Long notes", "text": "c4 ~ ~ ~ g3 ~ ~ ~" },
+    { "name": "Run", "text": "c4 eb4 g4 c5 g4 eb4 c4 g3" }
+  ],
+  "preview": "c4 . eb4 . g4 . bb4 g4 / ab3 . c4 . eb4 . c4 .",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "hardness", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "brightness", "min": 0, "max": 1, "default": 0.65, "unit": "", "curve": "linear" },
+    { "name": "decay", "min": 0.1, "max": 12, "default": 1.0, "unit": "s", "curve": "exponential" },
+    { "name": "tune", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "material", "choices": ["wood", "metal", "hollow"], "default": "wood" },
+    { "name": "tremolo", "min": 0, "max": 1, "default": 0, "unit": "", "curve": "linear" },
+    { "name": "source", "choices": ["synth", "samples"], "default": "samples" },
+    { "name": "level", "min": 0.05, "max": 8, "default": 1.567, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "hardness", "from": 0, "to": 1 }
+  ],
+  "toneLevelDb": 1.0,
+  "presets": [
+    { "name": "marimba", "description": "Wooden marimba", "values": {} },
+    { "name": "vibes", "description": "Vibraphone: metal bars, soft mallets, motor tremolo", "values": {"material": "metal", "decay": 9, "hardness": 0.35, "brightness": 1, "tremolo": 0.35, "level": 0.869} },
+    { "name": "wood", "description": "Short, dry hollow bar", "values": {"material": "hollow", "decay": 0.45, "hardness": 0.85, "brightness": 0.65, "level": 2.283} }
+  ],
+  "defaultPreset": "marimba",
+  "scene": {"family": "bars", "variant": {"shape": "marimba"}, "drive": "pitch"}
+}

@@ -1,0 +1,69 @@
+// SPDX-License-Identifier: CPAL-1.0
+// Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md.
+
+// Normative Lezer grammar of the Untzel language. The conformance test checks that
+// the reference examples of the language analyze without errors.
+
+@top Source { (Line? newline)* Line? }
+
+Line { TitleStatement | TempoStatement | KeyStatement | SwingStatement | LoopStatement | Track | SectionDecl | SongDecl }
+
+TitleStatement { kw<"title"> String }
+TempoStatement { kw<"tempo"> Number }
+KeyStatement { kw<"key"> Tonic Name }
+SwingStatement { kw<"swing"> Number }
+LoopStatement { kw<"loop"> Number }
+
+Track { (TrackName ":")? InstrumentName Preset? Pattern? ("|" Modifier)* }
+
+Preset { PresetName }
+TrackName { Name }
+InstrumentName { Name }
+
+SectionDecl { kw<"section"> Name Name+ ("|" Modifier)* }
+SongDecl { kw<"song"> Part ("," Part)* ("|" kw<"loop">)? }
+Part { Name Number }
+
+Pattern { Bar ("/" Bar)* }
+Bar { Element+ }
+Element { Atom Accent? Probability? Repeat? }
+
+Accent { "!" }
+Probability { "?" Number? }
+Repeat { "*" Number }
+Atom { Hits | Note | Stack | Chord | Sustain | Group }
+
+Stack { Note ("+" Note)+ }
+Group { "[" Element+ "]" }
+
+Modifier { ModifierName Value? }
+ModifierName { Name | kw<"swing"> | kw<"tempo"> }
+Value { Number | Signal Range? | Division | Name }
+Signal { SignalShape "(" (Number | Division) ")" }
+SignalShape { kw<"sine"> | kw<"tri"> | kw<"saw"> | kw<"square"> | kw<"rand"> | kw<"env"> }
+Range { Number ".." Number }
+Division { Number "/" Number }
+
+kw<term> { @extend[@name={term}]<Name, term> }
+
+@skip { space | Comment }
+
+@tokens {
+  space { $[ \t]+ }
+  newline { "\r"? "\n" }
+  Comment { "//" ![\n]* }
+  Number { "-"? @digit+ ("." @digit+)? }
+  // The song title: one line, \" and \\ are the only escapes.
+  String { '"' (![\\\n"] | "\\" $["\\])* '"' }
+  Name { $[a-z] $[a-z0-9_\-]* }
+  Hits { $[xX.] $[xX.~]* }
+  Sustain { "~" }
+  Note { $[a-g] $[b#]? @digit }
+  Tonic { $[a-g] $[b#]? }
+  // A preset never starts with "x" (a hit) nor reads like a note or a tonic.
+  PresetName { $[h-wyz] $[a-z0-9\-]* | $[a-g] $[ac-z\-] $[a-z0-9\-]* | $[a-g] "b" $[a-z\-] $[a-z0-9\-]* }
+  Chord { $[A-G] $[b#]? ("maj7" | "m7" | "m" | "7" | "sus2" | "sus4" | "dim" | "6" | "m6" | "9"
+          | "m9" | "maj9" | "add9" | "madd9" | "aug" | "dim7" | "m7b5" | "7sus4" | "11" | "m11" | "13")? }
+  @precedence { Comment, "/" }
+  ":" "|" "," "/" "?" "*" "[" "]" "(" ")" ".." "!" "+"
+}

@@ -1,0 +1,207 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+
+/* The command line: bar line, hint, chips and the prompt. */
+
+/* ----------------------------------------------------- command line */
+
+.ut-bottom {
+  display: grid;
+  gap: 8px;
+  padding-top: 4px;
+  background: var(--stage, #0b0b0c);
+  translate: 0 calc(-1 * var(--ut-lift, 0px));
+}
+
+/* A preview holds the line (no chips, the focus on Apply): its room goes to the diff. */
+.ut-terminal:has(.ut-preview--open) .ut-bottom {
+  display: none;
+}
+
+/* The bar line: 1 px at rest; 2 px flare for a bar when a command lands on it. */
+.ut-beat {
+  height: 2px;
+  margin: 0 2px;
+  border-top: 1px solid var(--raised, #26282d);
+}
+
+.ut-beat--lit {
+  border-top: 2px solid var(--flare, #f65d00);
+  border-radius: 1px;
+}
+
+.ut-beat--pulse {
+  animation: ut-beat-pulse 600ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+@keyframes ut-beat-pulse {
+  from {
+    box-shadow: 0 -2px 0 2px rgb(246 93 0 / 45%);
+  }
+
+  to {
+    box-shadow: 0 0 0 0 rgb(246 93 0 / 0%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ut-beat--pulse {
+    animation: none;
+  }
+}
+
+/* The menu's Reduced motion, the page's one source. */
+:root[data-motion="reduced"] .ut-beat--pulse {
+  animation: none;
+}
+
+/* Hint and chips are fixed-height rows, so the line under them never grows past its
+   pane: the field stays at the bottom and only the log gives up room. A long hint ends
+   in an ellipsis; the hint's title and the field's description carry the whole text,
+   and help <command> explains it. */
+.ut-hint {
+  height: 16px;
+  margin: 0 2px;
+  overflow: hidden;
+  color: var(--muted, #aaa5a1);
+  font: 400 12px/16px var(--font-sans);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ut-chips {
+  display: flex;
+  flex: none;
+  gap: 8px;
+  height: 50px;
+  overflow-x: auto;
+  padding: 3px 2px;
+  scrollbar-width: none;
+}
+
+
+.ut-chip {
+  flex: none;
+  min-width: 52px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1.5px solid var(--raised, #26282d);
+  border-radius: 22px;
+  background: var(--surface, #161719);
+  color: var(--text, #fff);
+  font: 400 13px/1 var(--font-mono);
+}
+
+.ut-chip--active,
+.ut-chip--suggestion {
+  border: 2px solid var(--flare, #f65d00);
+  padding: 0 13.5px;
+  font-weight: 600;
+}
+
+.ut-chip--suggestion {
+  margin-top: 4px;
+}
+
+.ut-prompt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 0 0 14px;
+  border-radius: 12px;
+  background: var(--raised, #26282d);
+}
+
+.ut-prompt:focus-within {
+  outline: 2px solid var(--text, #fff);
+  outline-offset: 3px;
+}
+
+.ut-field {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.ut-field__input,
+.ut-field__ghost {
+  width: 100%;
+  margin: 0;
+  padding: 12px 0;
+  border: 0;
+  font: 400 13px/20px var(--font-mono);
+  letter-spacing: 0;
+}
+
+.ut-field__input {
+  position: relative;
+  background: transparent;
+  color: var(--text, #fff);
+  caret-color: var(--flare, #f65d00);
+}
+
+/* The ring sits around the whole line (.ut-prompt:focus-within). */
+.ut-field__input:focus-visible,
+.ut-field__input:focus {
+  outline: none;
+}
+
+.ut-field__input::placeholder {
+  color: var(--muted, #aaa5a1);
+  font-family: var(--font-sans);
+  opacity: 1;
+}
+
+.ut-field__ghost {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  color: var(--muted, #aaa5a1);
+  white-space: pre;
+  pointer-events: none;
+}
+
+.ut-field__typed {
+  visibility: hidden;
+}
+
+.ut-run {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background: var(--surface, #161719);
+  color: var(--text, #fff);
+}
+
+.ut-run-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* -------------------------------------------------------- Code sheet */
+
+/* The Code sheet: 130 px from the bar line to the field, so the log keeps three rows at
+   the default split (styles/code-area.css). */
+@media (max-width: 1199px) {
+  .ut-bottom {
+    gap: 6px;
+    padding-top: 0;
+  }
+}
+
+/* ----------------------------------------------------------- desktop */
+
+/* The chips keep their 44 px on the desktop too (they were 32 px). */
+@media (min-width: 1200px) {
+  .ut-run {
+    display: none;
+  }
+
+  .ut-prompt {
+    padding-right: 14px;
+  }
+}

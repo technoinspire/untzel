@@ -1,0 +1,1786 @@
+{
+ "format": 1,
+ "instrument": "choir",
+ "version": 1,
+ "sampleRate": 48000,
+ "frames": 3028823,
+ "audio": {
+  "file": "pack.opus",
+  "codec": "opus",
+  "bitrate": "64k",
+  "bytes": 622562,
+  "sha256": "183a6b3add2e45445e399bdd8466ee85058b4dd450884bac0ebded79a2d2fea3"
+ },
+ "license": {
+  "id": "CC-BY-4.0",
+  "name": "Creative Commons Attribution 4.0 International",
+  "url": "https://creativecommons.org/licenses/by/4.0/",
+  "changes": "Held notes cut from the straight long tones, moved to each zone root by pitch-synchronous overlap-add (and resampling past 7 semitones), summed into ensembles for the choir, band-limited to 16 kHz, levelled, looped with a baked crossfade and encoded as Opus."
+ },
+ "source": {
+  "dataset": "VocalSet",
+  "recordVersion": "1.2",
+  "archive": "VocalSet11.zip",
+  "record": "https://zenodo.org/records/1442513",
+  "doi": "10.5281/zenodo.1442513",
+  "citation": "Julia Wilkins, Prem Seetharaman, Alison Wahl and Bryan Pardo. VocalSet: A Singing Voice Dataset. In Proceedings of the 19th International Society for Music Information Retrieval Conference (ISMIR), Paris, 2018. Dataset: https://doi.org/10.5281/zenodo.1442513 (Zenodo record 1442513, version 1.2, archive VocalSet11.zip).",
+  "singers": "20 professional singers, anonymous in the dataset (ids f1–f9, m1–m11)",
+  "files": [
+   {
+    "file": "FULL/female2/long_tones/straight/f2_long_straight_a.wav",
+    "singer": "f2",
+    "sha256": "2ec3b7655fc7e9500d74fb21fc9c38c35153fd8bd548bfe654f10f2dd7b0ef2e"
+   },
+   {
+    "file": "FULL/female2/long_tones/straight/f2_long_straight_u.wav",
+    "singer": "f2",
+    "sha256": "4824d66bfc3e0b618e40fd9fdbad4c3551ad4daec51daba84936a48982da2caa"
+   },
+   {
+    "file": "FULL/female3/long_tones/straight/f3_long_straight_a.wav",
+    "singer": "f3",
+    "sha256": "01953e7b2f44625e3ca42452620570d5f2c59158d64e4766c8f03ea80b0f5818"
+   },
+   {
+    "file": "FULL/female3/long_tones/straight/f3_long_straight_u.wav",
+    "singer": "f3",
+    "sha256": "87f40b6115eac0770d49019a74ee56b2a477dcf09647a30b712f7deb5cdecb5c"
+   },
+   {
+    "file": "FULL/female4/long_tones/straight/f4_long_straight_a.wav",
+    "singer": "f4",
+    "sha256": "4491c79131c68b10ec77aacf015339c1fa8bb795d3810e4383adbf8aa2679e73"
+   },
+   {
+    "file": "FULL/female4/long_tones/straight/f4_long_straight_u.wav",
+    "singer": "f4",
+    "sha256": "233bd9345d28c272ef1cdd39a4c10c09c27caf196b012eb9e01a308a79791fd3"
+   },
+   {
+    "file": "FULL/female5/long_tones/straight/f5_long_straight_a.wav",
+    "singer": "f5",
+    "sha256": "90161b7728264d0141612025f39c4ee07e48bdf78469e8fda40ac290d1f0da11"
+   },
+   {
+    "file": "FULL/female5/long_tones/straight/f5_long_straight_u.wav",
+    "singer": "f5",
+    "sha256": "d6cf7a184f0aaad8d964191f4a6bce2b8631f31a7da2b33943847ca5205cc69d"
+   },
+   {
+    "file": "FULL/female6/long_tones/straight/f6_long_straight_a.wav",
+    "singer": "f6",
+    "sha256": "3df1274d60014e38960eb59b21ac4bb2b56613275ec52cfbe0f3ffd4772cde1b"
+   },
+   {
+    "file": "FULL/female6/long_tones/straight/f6_long_straight_u.wav",
+    "singer": "f6",
+    "sha256": "53d1b61b1770467168d5883b5e0e74ca1c91fc599288149458a884a0313f1595"
+   },
+   {
+    "file": "FULL/female7/long_tones/straight/f7_long_straight_a.wav",
+    "singer": "f7",
+    "sha256": "021213b137928620abd7bfe7f888421976ee0a411036768d334723ec955262df"
+   },
+   {
+    "file": "FULL/female8/long_tones/straight/f8_long_straight_a.wav",
+    "singer": "f8",
+    "sha256": "4878a0446f28957dc908a096af6ffe44d6d7a5ab6680282992396f1afe9093d8"
+   },
+   {
+    "file": "FULL/female8/long_tones/straight/f8_long_straight_u.wav",
+    "singer": "f8",
+    "sha256": "5d33137547b96a05e1a94755627782a087a1d48666f85db498c0040569b1ed58"
+   },
+   {
+    "file": "FULL/female9/long_tones/straight/f9_long_straight_a.wav",
+    "singer": "f9",
+    "sha256": "e6d393abeb0d6473b5b425b0b5c7b2d4f47647ea2d7772d811f34088329d6f03"
+   },
+   {
+    "file": "FULL/female9/long_tones/straight/f9_long_straight_u.wav",
+    "singer": "f9",
+    "sha256": "859eb618d4f267df25588392dba14ed57c5799c6228cf9d0ff913f01e151db0f"
+   },
+   {
+    "file": "FULL/male1/long_tones/straight/m1_long_straight_a.wav",
+    "singer": "m1",
+    "sha256": "27abc074bca36086b1abc0093e920bc750e30ac37a52bd22ae9de1e89620dd72"
+   },
+   {
+    "file": "FULL/male1/long_tones/straight/m1_long_straight_u.wav",
+    "singer": "m1",
+    "sha256": "533177fc95db9c7272195d310b20603f7cd7a895bb1d3ca0acd9b27afeb4fc25"
+   },
+   {
+    "file": "FULL/male2/long_tones/straight/m2_long_straight_u.wav",
+    "singer": "m2",
+    "sha256": "1da7e550015119636d15c09585fb59aae00471145e161e1c0da4b6273c22c3a7"
+   },
+   {
+    "file": "FULL/male3/long_tones/straight/m3_long_straight_a.wav",
+    "singer": "m3",
+    "sha256": "0220658c4ac8b96392c2bbcc3348fa757ed6264185610d31daef87ec0399cf4f"
+   },
+   {
+    "file": "FULL/male3/long_tones/straight/m3_long_straight_u.wav",
+    "singer": "m3",
+    "sha256": "46ea405124a2763cc1acfa92a00878fc5ee8f1bb9b00f592b1ca2c2e4d053f7f"
+   },
+   {
+    "file": "FULL/male4/long_tones/straight/m4_long_straight_a.wav",
+    "singer": "m4",
+    "sha256": "09eb6dd466b2b9c13cf2a39e4710359b9e1d3aafb43521b59335b92c36245872"
+   },
+   {
+    "file": "FULL/male4/long_tones/straight/m4_long_straight_u.wav",
+    "singer": "m4",
+    "sha256": "5807c32d2e062a6ea0228ecd979394b2a3b275676d440af23699806bce7cdd73"
+   },
+   {
+    "file": "FULL/male5/long_tones/straight/m5_long_straight_a.wav",
+    "singer": "m5",
+    "sha256": "ebb017565075909e2f5ed3f71b32c5ccb9d02711752c3d185ef8bc71522c3868"
+   },
+   {
+    "file": "FULL/male5/long_tones/straight/m5_long_straight_u.wav",
+    "singer": "m5",
+    "sha256": "1a70e04780c3530a730cbf1e14b7235f8ed6f853cf0e687e5ebbb94ebcd2b23b"
+   },
+   {
+    "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+    "singer": "m6",
+    "sha256": "0b131c19f7fba2dd377ad68b245d453bdb2eba51c912a0dc20880860c46c42c6"
+   },
+   {
+    "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+    "singer": "m6",
+    "sha256": "98e026f84c2e863da1e83e70a7668d29df9412aa705afc42eadc434516a36c49"
+   },
+   {
+    "file": "FULL/male7/long_tones/straight/m7_long_straight_a.wav",
+    "singer": "m7",
+    "sha256": "819b8636a513565497f83302a2acd089adad9a3475e485478084498cf49f81ab"
+   },
+   {
+    "file": "FULL/male7/long_tones/straight/m7_long_straight_u.wav",
+    "singer": "m7",
+    "sha256": "f3bcc0d68880771b165e9c520b0d2163144e6f901dc730ebbc17301c9785192d"
+   },
+   {
+    "file": "FULL/male8/long_tones/straight/m8_long_straight_a.wav",
+    "singer": "m8",
+    "sha256": "9adce8c9c6d3bc93c1c8f3d4604d2007e5a9f0c83b0670e4be29570ef1d35628"
+   },
+   {
+    "file": "FULL/male8/long_tones/straight/m8_long_straight_u.wav",
+    "singer": "m8",
+    "sha256": "ca73572a042309cd874f41762ed39c24e08ea569c72bbcb51793a63d537c8321"
+   },
+   {
+    "file": "FULL/male9/long_tones/straight/m9_long_straight_a.wav",
+    "singer": "m9",
+    "sha256": "93aef9fb38d3ab55f9d2b367a23aa9309de349e0c83f9eaff9b5b1b15e25f91a"
+   },
+   {
+    "file": "FULL/male9/long_tones/straight/m9_long_straight_u.wav",
+    "singer": "m9",
+    "sha256": "1023faa16b533a5c52989e00803e7ba180673040d29f164768c90d144ae0b76d"
+   }
+  ]
+ },
+ "zones": [
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 36.0,
+   "lowest": 0.0,
+   "highest": 38.0,
+   "pan": -0.55,
+   "start": 1024,
+   "loopStart": 15445,
+   "loopEnd": 57424,
+   "singers": [
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_a.wav",
+     "heldMidi": 47.79,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 48.38,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 36.0,
+   "lowest": 0.0,
+   "highest": 38.0,
+   "pan": 0.55,
+   "start": 58448,
+   "loopStart": 72872,
+   "loopEnd": 115288,
+   "singers": [
+    {
+     "singer": "m5",
+     "file": "FULL/male5/long_tones/straight/m5_long_straight_a.wav",
+     "heldMidi": 47.82,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 40.0,
+   "lowest": 38.0,
+   "highest": 42.0,
+   "pan": -0.55,
+   "start": 116312,
+   "loopStart": 130664,
+   "loopEnd": 172978,
+   "singers": [
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_a.wav",
+     "heldMidi": 47.79,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 48.38,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 40.0,
+   "lowest": 38.0,
+   "highest": 42.0,
+   "pan": 0.55,
+   "start": 174002,
+   "loopStart": 188436,
+   "loopEnd": 230799,
+   "singers": [
+    {
+     "singer": "m5",
+     "file": "FULL/male5/long_tones/straight/m5_long_straight_a.wav",
+     "heldMidi": 47.82,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 44.0,
+   "lowest": 42.0,
+   "highest": 46.0,
+   "pan": -0.55,
+   "start": 231823,
+   "loopStart": 246179,
+   "loopEnd": 288528,
+   "singers": [
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_a.wav",
+     "heldMidi": 47.79,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 48.38,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 44.0,
+   "lowest": 42.0,
+   "highest": 46.0,
+   "pan": 0.55,
+   "start": 289552,
+   "loopStart": 303983,
+   "loopEnd": 346359,
+   "singers": [
+    {
+     "singer": "m5",
+     "file": "FULL/male5/long_tones/straight/m5_long_straight_a.wav",
+     "heldMidi": 47.82,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 48.0,
+   "lowest": 46.0,
+   "highest": 50.0,
+   "pan": -0.55,
+   "start": 347383,
+   "loopStart": 361770,
+   "loopEnd": 404465,
+   "singers": [
+    {
+     "singer": "m5",
+     "file": "FULL/male5/long_tones/straight/m5_long_straight_a.wav",
+     "heldMidi": 47.82,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 48.38,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 48.0,
+   "lowest": 46.0,
+   "highest": 50.0,
+   "pan": 0.55,
+   "start": 405489,
+   "loopStart": 419888,
+   "loopEnd": 462426,
+   "singers": [
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_a.wav",
+     "heldMidi": 47.79,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m7",
+     "file": "FULL/male7/long_tones/straight/m7_long_straight_a.wav",
+     "heldMidi": 59.94,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 52.0,
+   "lowest": 50.0,
+   "highest": 54.0,
+   "pan": -0.55,
+   "start": 463450,
+   "loopStart": 477850,
+   "loopEnd": 520570,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 48.38,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_a.wav",
+     "heldMidi": 47.79,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 52.0,
+   "lowest": 50.0,
+   "highest": 54.0,
+   "pan": 0.55,
+   "start": 521594,
+   "loopStart": 536016,
+   "loopEnd": 578639,
+   "singers": [
+    {
+     "singer": "m5",
+     "file": "FULL/male5/long_tones/straight/m5_long_straight_a.wav",
+     "heldMidi": 47.82,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m7",
+     "file": "FULL/male7/long_tones/straight/m7_long_straight_a.wav",
+     "heldMidi": 59.94,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 56.0,
+   "lowest": 54.0,
+   "highest": 58.0,
+   "pan": -0.55,
+   "start": 579663,
+   "loopStart": 594061,
+   "loopEnd": 637014,
+   "singers": [
+    {
+     "singer": "m7",
+     "file": "FULL/male7/long_tones/straight/m7_long_straight_a.wav",
+     "heldMidi": 59.94,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m4",
+     "file": "FULL/male4/long_tones/straight/m4_long_straight_a.wav",
+     "heldMidi": 60.03,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 56.0,
+   "lowest": 54.0,
+   "highest": 58.0,
+   "pan": 0.55,
+   "start": 638038,
+   "loopStart": 652463,
+   "loopEnd": 695293,
+   "singers": [
+    {
+     "singer": "f4",
+     "file": "FULL/female4/long_tones/straight/f4_long_straight_a.wav",
+     "heldMidi": 60.0,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 60.16,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 60.0,
+   "lowest": 58.0,
+   "highest": 62.0,
+   "pan": -0.55,
+   "start": 696317,
+   "loopStart": 710701,
+   "loopEnd": 753625,
+   "singers": [
+    {
+     "singer": "f4",
+     "file": "FULL/female4/long_tones/straight/f4_long_straight_a.wav",
+     "heldMidi": 60.0,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m7",
+     "file": "FULL/male7/long_tones/straight/m7_long_straight_a.wav",
+     "heldMidi": 59.94,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "m1",
+     "file": "FULL/male1/long_tones/straight/m1_long_straight_a.wav",
+     "heldMidi": 64.49,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 60.0,
+   "lowest": 58.0,
+   "highest": 62.0,
+   "pan": 0.55,
+   "start": 754649,
+   "loopStart": 769072,
+   "loopEnd": 812035,
+   "singers": [
+    {
+     "singer": "m4",
+     "file": "FULL/male4/long_tones/straight/m4_long_straight_a.wav",
+     "heldMidi": 60.03,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 60.16,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "m3",
+     "file": "FULL/male3/long_tones/straight/m3_long_straight_a.wav",
+     "heldMidi": 64.81,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 64.0,
+   "lowest": 62.0,
+   "highest": 66.0,
+   "pan": -0.55,
+   "start": 813059,
+   "loopStart": 827439,
+   "loopEnd": 870365,
+   "singers": [
+    {
+     "singer": "m1",
+     "file": "FULL/male1/long_tones/straight/m1_long_straight_a.wav",
+     "heldMidi": 64.49,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_a.wav",
+     "heldMidi": 64.83,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "m4",
+     "file": "FULL/male4/long_tones/straight/m4_long_straight_a.wav",
+     "heldMidi": 60.03,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 64.0,
+   "lowest": 62.0,
+   "highest": 66.0,
+   "pan": 0.55,
+   "start": 871389,
+   "loopStart": 885770,
+   "loopEnd": 928690,
+   "singers": [
+    {
+     "singer": "m3",
+     "file": "FULL/male3/long_tones/straight/m3_long_straight_a.wav",
+     "heldMidi": 64.81,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 65.27,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "f4",
+     "file": "FULL/female4/long_tones/straight/f4_long_straight_a.wav",
+     "heldMidi": 60.0,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 68.0,
+   "lowest": 66.0,
+   "highest": 70.0,
+   "pan": -0.55,
+   "start": 929714,
+   "loopStart": 944086,
+   "loopEnd": 987115,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_a.wav",
+     "heldMidi": 65.27,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m3",
+     "file": "FULL/male3/long_tones/straight/m3_long_straight_a.wav",
+     "heldMidi": 64.81,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "f4",
+     "file": "FULL/female4/long_tones/straight/f4_long_straight_a.wav",
+     "heldMidi": 72.03,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 68.0,
+   "lowest": 66.0,
+   "highest": 70.0,
+   "pan": 0.55,
+   "start": 988139,
+   "loopStart": 1002541,
+   "loopEnd": 1045535,
+   "singers": [
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_a.wav",
+     "heldMidi": 64.83,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m1",
+     "file": "FULL/male1/long_tones/straight/m1_long_straight_a.wav",
+     "heldMidi": 64.49,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "f2",
+     "file": "FULL/female2/long_tones/straight/f2_long_straight_a.wav",
+     "heldMidi": 72.04,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 72.0,
+   "lowest": 70.0,
+   "highest": 74.0,
+   "pan": -0.55,
+   "start": 1046559,
+   "loopStart": 1060958,
+   "loopEnd": 1103992,
+   "singers": [
+    {
+     "singer": "f4",
+     "file": "FULL/female4/long_tones/straight/f4_long_straight_a.wav",
+     "heldMidi": 72.03,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "f7",
+     "file": "FULL/female7/long_tones/straight/f7_long_straight_a.wav",
+     "heldMidi": 72.07,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "f5",
+     "file": "FULL/female5/long_tones/straight/f5_long_straight_a.wav",
+     "heldMidi": 72.22,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 72.0,
+   "lowest": 70.0,
+   "highest": 74.0,
+   "pan": 0.55,
+   "start": 1105016,
+   "loopStart": 1119412,
+   "loopEnd": 1162467,
+   "singers": [
+    {
+     "singer": "f2",
+     "file": "FULL/female2/long_tones/straight/f2_long_straight_a.wav",
+     "heldMidi": 72.04,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_a.wav",
+     "heldMidi": 71.88,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "f6",
+     "file": "FULL/female6/long_tones/straight/f6_long_straight_a.wav",
+     "heldMidi": 72.23,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 76.0,
+   "lowest": 74.0,
+   "highest": 78.0,
+   "pan": -0.55,
+   "start": 1163491,
+   "loopStart": 1177881,
+   "loopEnd": 1220997,
+   "singers": [
+    {
+     "singer": "m7",
+     "file": "FULL/male7/long_tones/straight/m7_long_straight_a.wav",
+     "heldMidi": 76.99,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "f5",
+     "file": "FULL/female5/long_tones/straight/f5_long_straight_a.wav",
+     "heldMidi": 77.17,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_a.wav",
+     "heldMidi": 77.41,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 76.0,
+   "lowest": 74.0,
+   "highest": 78.0,
+   "pan": 0.55,
+   "start": 1222021,
+   "loopStart": 1236435,
+   "loopEnd": 1279492,
+   "singers": [
+    {
+     "singer": "f4",
+     "file": "FULL/female4/long_tones/straight/f4_long_straight_a.wav",
+     "heldMidi": 77.1,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "f2",
+     "file": "FULL/female2/long_tones/straight/f2_long_straight_a.wav",
+     "heldMidi": 77.31,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "f6",
+     "file": "FULL/female6/long_tones/straight/f6_long_straight_a.wav",
+     "heldMidi": 77.44,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 80.0,
+   "lowest": 78.0,
+   "highest": 82.0,
+   "pan": -0.55,
+   "start": 1280516,
+   "loopStart": 1294929,
+   "loopEnd": 1338064,
+   "singers": [
+    {
+     "singer": "f9",
+     "file": "FULL/female9/long_tones/straight/f9_long_straight_a.wav",
+     "heldMidi": 77.53,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "f6",
+     "file": "FULL/female6/long_tones/straight/f6_long_straight_a.wav",
+     "heldMidi": 77.44,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "f2",
+     "file": "FULL/female2/long_tones/straight/f2_long_straight_a.wav",
+     "heldMidi": 77.31,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 80.0,
+   "lowest": 78.0,
+   "highest": 82.0,
+   "pan": 0.55,
+   "start": 1339088,
+   "loopStart": 1353482,
+   "loopEnd": 1396598,
+   "singers": [
+    {
+     "singer": "f3",
+     "file": "FULL/female3/long_tones/straight/f3_long_straight_a.wav",
+     "heldMidi": 77.53,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_a.wav",
+     "heldMidi": 77.41,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "f5",
+     "file": "FULL/female5/long_tones/straight/f5_long_straight_a.wav",
+     "heldMidi": 77.17,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 84.0,
+   "lowest": 82.0,
+   "highest": 127.0,
+   "pan": -0.55,
+   "start": 1397622,
+   "loopStart": 1412027,
+   "loopEnd": 1455175,
+   "singers": [
+    {
+     "singer": "m9",
+     "file": "FULL/male9/long_tones/straight/m9_long_straight_a.wav",
+     "heldMidi": 83.9,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "f3",
+     "file": "FULL/female3/long_tones/straight/f3_long_straight_a.wav",
+     "heldMidi": 77.53,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_a.wav",
+     "heldMidi": 77.41,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "aah",
+   "position": 0.0,
+   "root": 84.0,
+   "lowest": 82.0,
+   "highest": 127.0,
+   "pan": 0.55,
+   "start": 1456199,
+   "loopStart": 1470599,
+   "loopEnd": 1513725,
+   "singers": [
+    {
+     "singer": "f9",
+     "file": "FULL/female9/long_tones/straight/f9_long_straight_a.wav",
+     "heldMidi": 84.39,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "f6",
+     "file": "FULL/female6/long_tones/straight/f6_long_straight_a.wav",
+     "heldMidi": 77.44,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "f2",
+     "file": "FULL/female2/long_tones/straight/f2_long_straight_a.wav",
+     "heldMidi": 77.31,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 36.0,
+   "lowest": 0.0,
+   "highest": 38.0,
+   "pan": -0.55,
+   "start": 1514749,
+   "loopStart": 1529183,
+   "loopEnd": 1571169,
+   "singers": [
+    {
+     "singer": "m7",
+     "file": "FULL/male7/long_tones/straight/m7_long_straight_u.wav",
+     "heldMidi": 47.54,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_u.wav",
+     "heldMidi": 47.92,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 36.0,
+   "lowest": 0.0,
+   "highest": 38.0,
+   "pan": 0.55,
+   "start": 1572193,
+   "loopStart": 1586608,
+   "loopEnd": 1628448,
+   "singers": [
+    {
+     "singer": "m3",
+     "file": "FULL/male3/long_tones/straight/m3_long_straight_u.wav",
+     "heldMidi": 47.57,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 48.44,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 40.0,
+   "lowest": 38.0,
+   "highest": 42.0,
+   "pan": -0.55,
+   "start": 1629472,
+   "loopStart": 1643862,
+   "loopEnd": 1686448,
+   "singers": [
+    {
+     "singer": "m7",
+     "file": "FULL/male7/long_tones/straight/m7_long_straight_u.wav",
+     "heldMidi": 47.54,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_u.wav",
+     "heldMidi": 47.92,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 40.0,
+   "lowest": 38.0,
+   "highest": 42.0,
+   "pan": 0.55,
+   "start": 1687472,
+   "loopStart": 1701840,
+   "loopEnd": 1743971,
+   "singers": [
+    {
+     "singer": "m3",
+     "file": "FULL/male3/long_tones/straight/m3_long_straight_u.wav",
+     "heldMidi": 47.57,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 48.44,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 44.0,
+   "lowest": 42.0,
+   "highest": 46.0,
+   "pan": -0.55,
+   "start": 1744995,
+   "loopStart": 1759387,
+   "loopEnd": 1802005,
+   "singers": [
+    {
+     "singer": "m7",
+     "file": "FULL/male7/long_tones/straight/m7_long_straight_u.wav",
+     "heldMidi": 47.54,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_u.wav",
+     "heldMidi": 47.92,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 44.0,
+   "lowest": 42.0,
+   "highest": 46.0,
+   "pan": 0.55,
+   "start": 1803029,
+   "loopStart": 1817441,
+   "loopEnd": 1859926,
+   "singers": [
+    {
+     "singer": "m3",
+     "file": "FULL/male3/long_tones/straight/m3_long_straight_u.wav",
+     "heldMidi": 47.57,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 48.44,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 48.0,
+   "lowest": 46.0,
+   "highest": 50.0,
+   "pan": -0.55,
+   "start": 1860950,
+   "loopStart": 1875386,
+   "loopEnd": 1917999,
+   "singers": [
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_u.wav",
+     "heldMidi": 47.92,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 48.44,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 48.0,
+   "lowest": 46.0,
+   "highest": 50.0,
+   "pan": 0.55,
+   "start": 1919023,
+   "loopStart": 1933361,
+   "loopEnd": 1976267,
+   "singers": [
+    {
+     "singer": "m3",
+     "file": "FULL/male3/long_tones/straight/m3_long_straight_u.wav",
+     "heldMidi": 47.57,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m7",
+     "file": "FULL/male7/long_tones/straight/m7_long_straight_u.wav",
+     "heldMidi": 47.54,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 52.0,
+   "lowest": 50.0,
+   "highest": 54.0,
+   "pan": -0.55,
+   "start": 1977291,
+   "loopStart": 1991609,
+   "loopEnd": 2034422,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 48.44,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m3",
+     "file": "FULL/male3/long_tones/straight/m3_long_straight_u.wav",
+     "heldMidi": 47.57,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 52.0,
+   "lowest": 50.0,
+   "highest": 54.0,
+   "pan": 0.55,
+   "start": 2035446,
+   "loopStart": 2049798,
+   "loopEnd": 2092704,
+   "singers": [
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_u.wav",
+     "heldMidi": 47.92,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m7",
+     "file": "FULL/male7/long_tones/straight/m7_long_straight_u.wav",
+     "heldMidi": 47.54,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 56.0,
+   "lowest": 54.0,
+   "highest": 58.0,
+   "pan": -0.55,
+   "start": 2093728,
+   "loopStart": 2108125,
+   "loopEnd": 2150894,
+   "singers": [
+    {
+     "singer": "m3",
+     "file": "FULL/male3/long_tones/straight/m3_long_straight_u.wav",
+     "heldMidi": 59.61,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_u.wav",
+     "heldMidi": 59.91,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "m4",
+     "file": "FULL/male4/long_tones/straight/m4_long_straight_u.wav",
+     "heldMidi": 60.07,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 56.0,
+   "lowest": 54.0,
+   "highest": 58.0,
+   "pan": 0.55,
+   "start": 2151918,
+   "loopStart": 2166285,
+   "loopEnd": 2209080,
+   "singers": [
+    {
+     "singer": "m1",
+     "file": "FULL/male1/long_tones/straight/m1_long_straight_u.wav",
+     "heldMidi": 59.8,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "f4",
+     "file": "FULL/female4/long_tones/straight/f4_long_straight_u.wav",
+     "heldMidi": 60.04,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "m5",
+     "file": "FULL/male5/long_tones/straight/m5_long_straight_u.wav",
+     "heldMidi": 60.22,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 60.0,
+   "lowest": 58.0,
+   "highest": 62.0,
+   "pan": -0.55,
+   "start": 2210104,
+   "loopStart": 2224511,
+   "loopEnd": 2267462,
+   "singers": [
+    {
+     "singer": "f4",
+     "file": "FULL/female4/long_tones/straight/f4_long_straight_u.wav",
+     "heldMidi": 60.04,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_u.wav",
+     "heldMidi": 59.91,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "m5",
+     "file": "FULL/male5/long_tones/straight/m5_long_straight_u.wav",
+     "heldMidi": 60.22,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 60.0,
+   "lowest": 58.0,
+   "highest": 62.0,
+   "pan": 0.55,
+   "start": 2268486,
+   "loopStart": 2282912,
+   "loopEnd": 2325793,
+   "singers": [
+    {
+     "singer": "m4",
+     "file": "FULL/male4/long_tones/straight/m4_long_straight_u.wav",
+     "heldMidi": 60.07,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m1",
+     "file": "FULL/male1/long_tones/straight/m1_long_straight_u.wav",
+     "heldMidi": 59.8,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "m3",
+     "file": "FULL/male3/long_tones/straight/m3_long_straight_u.wav",
+     "heldMidi": 59.61,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 64.0,
+   "lowest": 62.0,
+   "highest": 66.0,
+   "pan": -0.55,
+   "start": 2326817,
+   "loopStart": 2341271,
+   "loopEnd": 2384294,
+   "singers": [
+    {
+     "singer": "m2",
+     "file": "FULL/male2/long_tones/straight/m2_long_straight_u.wav",
+     "heldMidi": 64.69,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m1",
+     "file": "FULL/male1/long_tones/straight/m1_long_straight_u.wav",
+     "heldMidi": 64.87,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_u.wav",
+     "heldMidi": 64.97,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 64.0,
+   "lowest": 62.0,
+   "highest": 66.0,
+   "pan": 0.55,
+   "start": 2385318,
+   "loopStart": 2399731,
+   "loopEnd": 2442731,
+   "singers": [
+    {
+     "singer": "m3",
+     "file": "FULL/male3/long_tones/straight/m3_long_straight_u.wav",
+     "heldMidi": 64.77,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m7",
+     "file": "FULL/male7/long_tones/straight/m7_long_straight_u.wav",
+     "heldMidi": 64.88,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "m5",
+     "file": "FULL/male5/long_tones/straight/m5_long_straight_u.wav",
+     "heldMidi": 65.3,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 68.0,
+   "lowest": 66.0,
+   "highest": 70.0,
+   "pan": -0.55,
+   "start": 2443755,
+   "loopStart": 2458178,
+   "loopEnd": 2501177,
+   "singers": [
+    {
+     "singer": "m6",
+     "file": "FULL/male6/long_tones/straight/m6_long_straight_u.wav",
+     "heldMidi": 65.3,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "m8",
+     "file": "FULL/male8/long_tones/straight/m8_long_straight_u.wav",
+     "heldMidi": 64.97,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "m1",
+     "file": "FULL/male1/long_tones/straight/m1_long_straight_u.wav",
+     "heldMidi": 64.87,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 68.0,
+   "lowest": 66.0,
+   "highest": 70.0,
+   "pan": 0.55,
+   "start": 2502201,
+   "loopStart": 2516615,
+   "loopEnd": 2559573,
+   "singers": [
+    {
+     "singer": "m5",
+     "file": "FULL/male5/long_tones/straight/m5_long_straight_u.wav",
+     "heldMidi": 65.3,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m7",
+     "file": "FULL/male7/long_tones/straight/m7_long_straight_u.wav",
+     "heldMidi": 64.88,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "m3",
+     "file": "FULL/male3/long_tones/straight/m3_long_straight_u.wav",
+     "heldMidi": 64.77,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 72.0,
+   "lowest": 70.0,
+   "highest": 74.0,
+   "pan": -0.55,
+   "start": 2560597,
+   "loopStart": 2575016,
+   "loopEnd": 2618123,
+   "singers": [
+    {
+     "singer": "f4",
+     "file": "FULL/female4/long_tones/straight/f4_long_straight_u.wav",
+     "heldMidi": 72.25,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_u.wav",
+     "heldMidi": 72.27,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "f2",
+     "file": "FULL/female2/long_tones/straight/f2_long_straight_u.wav",
+     "heldMidi": 72.45,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 72.0,
+   "lowest": 70.0,
+   "highest": 74.0,
+   "pan": 0.55,
+   "start": 2619147,
+   "loopStart": 2633540,
+   "loopEnd": 2676637,
+   "singers": [
+    {
+     "singer": "f5",
+     "file": "FULL/female5/long_tones/straight/f5_long_straight_u.wav",
+     "heldMidi": 72.25,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "m9",
+     "file": "FULL/male9/long_tones/straight/m9_long_straight_u.wav",
+     "heldMidi": 71.71,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "f6",
+     "file": "FULL/female6/long_tones/straight/f6_long_straight_u.wav",
+     "heldMidi": 72.52,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 76.0,
+   "lowest": 74.0,
+   "highest": 78.0,
+   "pan": -0.55,
+   "start": 2677661,
+   "loopStart": 2692027,
+   "loopEnd": 2735138,
+   "singers": [
+    {
+     "singer": "f5",
+     "file": "FULL/female5/long_tones/straight/f5_long_straight_u.wav",
+     "heldMidi": 76.97,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "f6",
+     "file": "FULL/female6/long_tones/straight/f6_long_straight_u.wav",
+     "heldMidi": 77.41,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "f2",
+     "file": "FULL/female2/long_tones/straight/f2_long_straight_u.wav",
+     "heldMidi": 77.48,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 76.0,
+   "lowest": 74.0,
+   "highest": 78.0,
+   "pan": 0.55,
+   "start": 2736162,
+   "loopStart": 2750572,
+   "loopEnd": 2793636,
+   "singers": [
+    {
+     "singer": "f4",
+     "file": "FULL/female4/long_tones/straight/f4_long_straight_u.wav",
+     "heldMidi": 77.22,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_u.wav",
+     "heldMidi": 77.44,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "f9",
+     "file": "FULL/female9/long_tones/straight/f9_long_straight_u.wav",
+     "heldMidi": 77.54,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 80.0,
+   "lowest": 78.0,
+   "highest": 82.0,
+   "pan": -0.55,
+   "start": 2794660,
+   "loopStart": 2809079,
+   "loopEnd": 2852183,
+   "singers": [
+    {
+     "singer": "f3",
+     "file": "FULL/female3/long_tones/straight/f3_long_straight_u.wav",
+     "heldMidi": 77.6,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "f2",
+     "file": "FULL/female2/long_tones/straight/f2_long_straight_u.wav",
+     "heldMidi": 77.48,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "f6",
+     "file": "FULL/female6/long_tones/straight/f6_long_straight_u.wav",
+     "heldMidi": 77.41,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 80.0,
+   "lowest": 78.0,
+   "highest": 82.0,
+   "pan": 0.55,
+   "start": 2853207,
+   "loopStart": 2867611,
+   "loopEnd": 2910697,
+   "singers": [
+    {
+     "singer": "f9",
+     "file": "FULL/female9/long_tones/straight/f9_long_straight_u.wav",
+     "heldMidi": 77.54,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_u.wav",
+     "heldMidi": 77.44,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "f4",
+     "file": "FULL/female4/long_tones/straight/f4_long_straight_u.wav",
+     "heldMidi": 77.22,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 84.0,
+   "lowest": 82.0,
+   "highest": 127.0,
+   "pan": -0.55,
+   "start": 2911721,
+   "loopStart": 2926122,
+   "loopEnd": 2969266,
+   "singers": [
+    {
+     "singer": "f3",
+     "file": "FULL/female3/long_tones/straight/f3_long_straight_u.wav",
+     "heldMidi": 77.6,
+     "delayMs": 0.0,
+     "detuneCents": -5.0
+    },
+    {
+     "singer": "f2",
+     "file": "FULL/female2/long_tones/straight/f2_long_straight_u.wav",
+     "heldMidi": 77.48,
+     "delayMs": 23.0,
+     "detuneCents": -2.0
+    },
+    {
+     "singer": "f6",
+     "file": "FULL/female6/long_tones/straight/f6_long_straight_u.wav",
+     "heldMidi": 77.41,
+     "delayMs": 31.0,
+     "detuneCents": -7.0
+    }
+   ]
+  },
+  {
+   "vowel": "ooh",
+   "position": 1.0,
+   "root": 84.0,
+   "lowest": 82.0,
+   "highest": 127.0,
+   "pan": 0.55,
+   "start": 2970290,
+   "loopStart": 2984673,
+   "loopEnd": 3027799,
+   "singers": [
+    {
+     "singer": "f9",
+     "file": "FULL/female9/long_tones/straight/f9_long_straight_u.wav",
+     "heldMidi": 77.54,
+     "delayMs": 11.0,
+     "detuneCents": 6.0
+    },
+    {
+     "singer": "f8",
+     "file": "FULL/female8/long_tones/straight/f8_long_straight_u.wav",
+     "heldMidi": 77.44,
+     "delayMs": 7.0,
+     "detuneCents": 4.0
+    },
+    {
+     "singer": "f4",
+     "file": "FULL/female4/long_tones/straight/f4_long_straight_u.wav",
+     "heldMidi": 77.22,
+     "delayMs": 17.0,
+     "detuneCents": 3.0
+    }
+   ]
+  }
+ ]
+}

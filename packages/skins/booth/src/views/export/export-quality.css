@@ -1,0 +1,20 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* The export quality view, views/export-quality.ts. */
+.ui-export__quality {
+  display: grid;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.ui-export__qualities {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 8px;
+}
+
+.ui-export__note {
+  color: var(--muted);
+  font-size: 13px;
+}

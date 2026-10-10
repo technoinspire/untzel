@@ -1,0 +1,16 @@
+{
+  "category": "new",
+  "date": "2026-10-04",
+  "refs": [
+    22
+  ],
+  "docs": "/docs/app/projects",
+  "title": {
+    "en": "Projects and the song title",
+    "pt-BR": "Projetos e o título da música"
+  },
+  "body": {
+    "en": "A project menu and library keep your songs, and the song title you write appears in every export.",
+    "pt-BR": "Um menu e uma biblioteca de projetos guardam suas músicas, e o título que você escreve aparece em todo export."
+  }
+}

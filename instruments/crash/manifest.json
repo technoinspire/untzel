@@ -1,0 +1,35 @@
+{
+  "name": "crash",
+  "group": "drums",
+  "kind": "drum",
+  "engine": "percussion",
+  "description": "Crash cymbal",
+  "model": "VOLTA K9",
+  "tags": ["crash", "cymbal", "metal"],
+  "voices": 2,
+  "allocation": "poly",
+  "steal": "released-quietest",
+  "costPerVoice": 2.46,
+  "patterns": [
+    { "name": "Downbeat", "text": "x... .... .... ...." },
+    { "name": "Half", "text": "x... .... x... ...." },
+    { "name": "Push", "text": ".... .... .... ..x." },
+    { "name": "Two bars", "text": "x... .... .... .... / .... .... .... ...." }
+  ],
+  "preview": "x... .... .... ....",
+  "defaultDuck": 0,
+  "parameters": [
+    { "name": "decay", "min": 0.2, "max": 8, "default": 1.8, "unit": "s", "curve": "exponential" },
+    { "name": "color", "min": 0, "max": 1, "default": 0.5, "unit": "", "curve": "linear" },
+    { "name": "size", "min": 0, "max": 1, "default": 0.6, "unit": "", "curve": "linear" }
+  ],
+  "tone": [
+    { "parameter": "color", "from": 0, "to": 1 }
+  ],
+  "presets": [
+    { "name": "wide", "description": "Big open crash", "values": {} },
+    { "name": "short", "description": "Choked crash", "values": {"decay": 0.6, "size": 0.4} }
+  ],
+  "defaultPreset": "wide",
+  "scene": {"family": "burst", "variant": {"shape": "halo", "density": 3}, "drive": "envelope"}
+}

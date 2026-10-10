@@ -1,0 +1,86 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* Prose: the reading column. */
+/* Prose: a 68ch reading column; code and tables may use the wider content column. */
+.prose {
+  max-width: 56rem;
+  overflow-wrap: break-word;
+}
+
+.prose > :is(p, ul, ol, dl, h1, h2, h3, .status-line) {
+  max-width: 68ch;
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  scroll-margin-top: 16px;
+}
+
+.prose h1 {
+  margin: 0 0 24px;
+  font-size: var(--step-3);
+}
+
+.prose h2 {
+  margin: 48px 0 16px;
+  font-size: var(--step-2);
+}
+
+.prose h3 {
+  margin: 32px 0 12px;
+  font-size: var(--step-1);
+}
+
+.prose h2 code,
+.prose h3 code {
+  font-size: 0.9em;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose dl {
+  margin: 0 0 16px;
+}
+
+.prose li + li {
+  margin-top: 6px;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+.caption {
+  margin: 16px 0 8px;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--mono);
+}
+
+:not(pre) > code,
+kbd {
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: var(--raised);
+  font-size: 0.875em;
+}
+
+kbd {
+  white-space: nowrap;
+}
+
+samp {
+  font-size: 0.875em;
+}

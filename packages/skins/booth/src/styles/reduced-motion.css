@@ -1,0 +1,21 @@
+/* SPDX-License-Identifier: CPAL-1.0 */
+/* Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md. */
+/* ------------------------------------------------- reduced motion */
+/* The page publishes the effective choice (the menu's Reduced motion, else the system's
+   prefers-reduced-motion) as data-motion on the root before the first paint.
+   One source: the sheet's drag reads the same attribute. */
+:root[data-motion="reduced"] .ui-tile.is-hinted,
+:root[data-motion="reduced"] .ui-library__playing .ui-icon__fill {
+  animation: none;
+}
+:root[data-motion="reduced"] .ui-sheet,
+:root[data-motion="reduced"] .ui-menu-popover,
+:root[data-motion="reduced"] .ui-toast,
+:root[data-motion="reduced"] .ui-app[data-transition="collapse"] :is(.ui-stage, .ui-transport, .ui-view, .ui-live) {
+  transition: none;
+}
+@starting-style {
+  :root[data-motion="reduced"] .ui-sheet {
+    translate: none;
+  }
+}

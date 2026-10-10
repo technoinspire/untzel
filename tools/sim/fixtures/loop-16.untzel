@@ -1,0 +1,11 @@
+// loop-16: a 16-bar loop, set by the `loop <bars>` line after the tempo and the key.
+// pnpm sim tools/sim/fixtures/loop-16.untzel --bars 32
+tempo 124
+key c minor
+loop 16
+
+kick:  kick  x... x... x... x...
+hat:   hat   ..x. ..x. ..x. ..xx          | swing 0.1
+ride:  hat   x.x. x.x. x.x. x.x.          | open 0.6 | gain 0.4 | pan -0.3
+sub:   bass  c1 . . c1 . . c1 . / c1 . . c1 . . g1 . / ab1 . . ab1 . . ab1 . / bb1 . . bb1 . . f1 .  | cutoff 180
+bass:  bass  . c2 . c2 . c2 . eb2 / . c2 . c2 . c2 . g2 / . ab1 . ab1 . c2 . eb2 / . bb1 . bb1 . d2 . f2 / . c2 . c2 . c2 . eb2 / . c2 . c2 . c2 . g2 / . ab1 . ab1 . c2 . eb2 / . bb1 . bb1 . d2 . f2 / . c2 . eb2 . g2 . c3 / . c2 . c2 . c2 . g2 / . ab1 . ab1 . c2 . eb2 / . bb1 . bb1 . d2 . f2 / . c2 . c2 . c2 . eb2 / . c2 . c2 . c2 . g2 / . ab1 . ab1 . c2 . eb2 / . bb1 . bb1 . d2 . bb2  | cutoff saw(16) 300..2400 | pan 0.2

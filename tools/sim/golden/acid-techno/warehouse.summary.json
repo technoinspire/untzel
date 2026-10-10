@@ -1,0 +1,93 @@
+{
+  "template": "acid-techno/warehouse",
+  "runs": {
+    "loop": {
+      "bars": 16,
+      "events": 599,
+      "eventsPerTrack": {
+        "kick": 65,
+        "rumble": 64,
+        "acid": 105,
+        "hat": 140,
+        "ohat": 64,
+        "clap": 32,
+        "snare": 0,
+        "ride": 129,
+        "stab": 0,
+        "lead": 0,
+        "chip": 0,
+        "rise": 0,
+        "crash": 0,
+        "impact": 0
+      },
+      "songEnded": false,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -14.62,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": -18.43,
+          "rumble": -17.79,
+          "acid": -21.96,
+          "hat": -43.86,
+          "ohat": -37.97,
+          "clap": -39.67,
+          "snare": -240,
+          "ride": -28.3,
+          "stab": -240,
+          "lead": -240,
+          "chip": -240,
+          "rise": -240,
+          "crash": -240,
+          "impact": -240
+        }
+      }
+    },
+    "song": {
+      "bars": 145,
+      "events": 4414,
+      "eventsPerTrack": {
+        "kick": 512,
+        "rumble": 320,
+        "acid": 728,
+        "hat": 1106,
+        "ohat": 320,
+        "clap": 192,
+        "snare": 96,
+        "ride": 896,
+        "stab": 64,
+        "lead": 96,
+        "chip": 60,
+        "rise": 16,
+        "crash": 4,
+        "impact": 4
+      },
+      "songEnded": true,
+      "sound": {
+        "peakDbfs": -1,
+        "rmsDbfs": -15.46,
+        "nonFinite": 0,
+        "clippedSamples": 0,
+        "kickDriftSamples": 0,
+        "trackRmsDbfs": {
+          "kick": -18.97,
+          "rumble": -20.37,
+          "acid": -23.23,
+          "hat": -44.45,
+          "ohat": -40.56,
+          "clap": -41.46,
+          "snare": -34.89,
+          "ride": -29.43,
+          "stab": -39.2,
+          "lead": -26.1,
+          "chip": -39.05,
+          "rise": -38.04,
+          "crash": -51.69,
+          "impact": -37.9
+        }
+      }
+    }
+  }
+}
