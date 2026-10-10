@@ -65,9 +65,9 @@ The sound is made on your device. There is no account, no server and no tracking
 
 ## Play
 
-Untzel needs nothing installed. Open **[untzel.com](https://untzel.com)**, the home of the
-project. The hosted app opens from there at launch, at app.untzel.com; until then, run it
-from a [local copy](#local-development). Tap **Tap to play**: browsers only allow sound after
+Untzel needs nothing installed. Open **[app.untzel.com](https://app.untzel.com)**, or start from
+**[untzel.com](https://untzel.com)**, the home of the project. To run your own copy, see
+[local development](#local-development). Tap **Tap to play**: browsers only allow sound after
 a gesture, and that first tap is the only step before the music.
 
 Supported browsers: current Chrome, Edge and Samsung Internet, Safari 26 on macOS and iOS,
