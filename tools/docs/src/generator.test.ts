@@ -178,10 +178,10 @@ describe("links", () => {
     expect(render("# T {#t}\n\n[s](start.md)\n", "en/language/").html).toContain('href="../../en/"');
   });
 
-  it("rejects unknown pages, http and the private repository", () => {
+  it("rejects unknown pages and http, and accepts a link to the repository", () => {
     expect(render("# T {#t}\n\n[x](nowhere.md)\n").errors).toEqual(["test.md:3: link to unknown page nowhere.md"]);
     expect(render("# T {#t}\n\n[x](http://example.com)\n").errors[0]).toContain("use page.md#id or an https URL");
-    expect(render("# T {#t}\n\n[x](https://github.com/techno-inspire/untzel)\n").errors[0]).toContain("the repository is private");
+    expect(render("# T {#t}\n\n[x](https://github.com/technoinspire/untzel)\n").errors).toEqual([]);
   });
 
   it("links every page to the app on its own origin, app.untzel.com", () => {
@@ -302,15 +302,12 @@ describe("output checks", () => {
     ]);
   });
 
-  it("forbids a data: URL that loads something and a link to Techno Inspire's GitHub, not the words", () => {
+  it("forbids a data: URL that loads something, not the words, and accepts a link to the repository", () => {
     const folder = mkdtempSync(join(tmpdir(), "untzel-docs-forbidden-"));
     try {
       writeFileSync(join(folder, "quoted.html"), "<pre>img-src 'self' data: blob:</pre><a href=\"https://github.com/sgossner/VCSL\">VCSL</a>");
       writeFileSync(join(folder, "loads.html"), '<img src="data:image/png;base64,AA"><a href="https://github.com/technoinspire/untzel">repo</a>');
-      expect(checkForbidden(folder, ["quoted.html", "loads.html"])).toEqual([
-        "loads.html: a data: URL",
-        "loads.html: a link to Techno Inspire's GitHub (the repository is private)",
-      ]);
+      expect(checkForbidden(folder, ["quoted.html", "loads.html"])).toEqual(["loads.html: a data: URL"]);
     } finally {
       rmSync(folder, { recursive: true, force: true });
     }

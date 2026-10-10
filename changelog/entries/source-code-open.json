@@ -1,0 +1,12 @@
+{
+  "category": "new",
+  "docs": "/docs/developers",
+  "title": {
+    "en": "The source code is open",
+    "pt-BR": "O código é aberto"
+  },
+  "body": {
+    "en": "Read, change and build on Untzel on GitHub, under the CPAL-1.0 license.",
+    "pt-BR": "Leia, mude e crie em cima do Untzel no GitHub, sob a licença CPAL-1.0."
+  }
+}

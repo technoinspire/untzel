@@ -1,10 +1,10 @@
 # For developers {#developers}
 
-How Untzel is built, for people who want to understand it, extend it or embed it. The design is documented; the source code is not public yet.
+How Untzel is built, for people who want to understand it, extend it or embed it. The design is documented and the source code is open.
 
 ## The source code {#source}
 
-The repository is private while the first version is finished. The source code will be published later, under the license below. Until then this page describes the architecture, the instrument contract and the rules every contribution will follow.
+The source code is on GitHub at [technoinspire/untzel](https://github.com/technoinspire/untzel), under the license below. To contribute, read the [contributing guide](https://github.com/technoinspire/untzel/blob/main/CONTRIBUTING.md) and the [Contributor License Agreement](https://github.com/technoinspire/untzel/blob/main/CLA.md). This page describes the architecture, the instrument contract and the rules every contribution follows.
 
 ## Packages and the dependency rule {#packages}
 
@@ -54,7 +54,7 @@ The manifest is the only source of each parameter: the analyzer validates agains
 
 ## Local harness {#harness}
 
-Every change is verified locally before it is reported. The commands, for contributors with access to the source:
+Every change is verified locally before it is reported. The commands, for contributors:
 
 ```sh
 pnpm check          # types, unit tests, Rust tests, layer rules, license headers, docs
