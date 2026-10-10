@@ -2,7 +2,9 @@
 // Copyright (c) 2026 Techno Inspire. See LICENSE and ATTRIBUTION.md.
 
 // Tile gesture, as a pure state machine:
-// tap toggles, vertical drag moves tone, hold solos while held.
+// tap toggles, vertical drag moves tone, hold solos while held. On a touch screen a
+// vertical drag scrolls the grid instead: the tiles cover it, and a finger that cannot
+// scroll the list over them cannot reach the tracks below. Tone stays in the track detail.
 
 export const HOLD_MS = 350;
 /** Movement before a press becomes a drag, in CSS pixels. */
@@ -16,26 +18,35 @@ export type GestureEffect =
   | { readonly kind: "tone"; readonly tone: number }
   | { readonly kind: "solo"; readonly isSoloed: boolean };
 
-type Phase = "idle" | "pressed" | "dragging" | "holding";
+type Phase = "idle" | "pressed" | "dragging" | "holding" | "scrolling";
 
 export class TileGesture {
   #phase: Phase = "idle";
   #startY = 0;
   #startTone = 0;
+  #dragsTone = true;
 
   get isActive(): boolean {
     return this.#phase !== "idle";
   }
+  /** Still a press: neither a drag nor a scroll yet, so a hold can still solo. */
+  get isPressed(): boolean {
+    return this.#phase === "pressed";
+  }
 
-  down(y: number, tone: number): GestureEffect {
+  /** dragsTone is false for touch, where a vertical drag belongs to the scroll. */
+  down(y: number, tone: number, dragsTone = true): GestureEffect {
     this.#phase = "pressed";
     this.#startY = y;
     this.#startTone = tone;
+    this.#dragsTone = dragsTone;
     return { kind: "none" };
   }
 
   move(y: number): GestureEffect {
-    if (this.#phase === "pressed" && Math.abs(y - this.#startY) > DRAG_SLOP_PX) this.#phase = "dragging";
+    if (this.#phase === "pressed" && Math.abs(y - this.#startY) > DRAG_SLOP_PX) {
+      this.#phase = this.#dragsTone ? "dragging" : "scrolling";
+    }
     if (this.#phase !== "dragging") return { kind: "none" };
     const tone = clamp01(this.#startTone + (this.#startY - y) / TONE_RANGE_PX);
     return { kind: "tone", tone };

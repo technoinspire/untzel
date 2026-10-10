@@ -1,0 +1,12 @@
+{
+  "category": "fixed",
+  "docs": "/docs/app",
+  "title": {
+    "en": "The tracks scroll on a phone",
+    "pt-BR": "As faixas rolam no celular"
+  },
+  "body": {
+    "en": "A finger drag over the tiles scrolls the list instead of changing the tone, the stage gives the tracks at least two rows on short screens, phones from 360 px wide show two columns, and a playing song uses less of the phone's processor.",
+    "pt-BR": "Arrastar o dedo sobre os blocos rola a lista em vez de mudar o tone, o palco deixa pelo menos duas fileiras de faixas em telas baixas, celulares a partir de 360 px mostram duas colunas, e uma música tocando usa menos do processador do celular."
+  }
+}

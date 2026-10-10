@@ -81,6 +81,24 @@ describe("TileGesture", () => {
     expect(gesture.up()).toEqual({ kind: "solo", isSoloed: false });
   });
 
+  it("a touch drag scrolls: no tone, no toggle and no solo", () => {
+    const gesture = new TileGesture();
+    gesture.down(300, 0.5, false);
+    expect(gesture.move(300 - TONE_RANGE_PX / 2)).toEqual({ kind: "none" });
+    expect(gesture.isPressed).toBe(false);
+    expect(gesture.hold()).toEqual({ kind: "none" });
+    expect(gesture.up()).toEqual({ kind: "none" });
+  });
+  it("a touch tap still toggles and a touch hold still solos", () => {
+    const tap = new TileGesture();
+    tap.down(100, 0.5, false);
+    expect(tap.move(100 + DRAG_SLOP_PX / 2)).toEqual({ kind: "none" });
+    expect(tap.up()).toEqual({ kind: "toggle" });
+    const hold = new TileGesture();
+    hold.down(100, 0.5, false);
+    expect(hold.hold()).toEqual({ kind: "solo", isSoloed: true });
+    expect(hold.cancel()).toEqual({ kind: "solo", isSoloed: false });
+  });
   it("a hold after a drag started does nothing", () => {
     const gesture = new TileGesture();
     gesture.down(0, 0);

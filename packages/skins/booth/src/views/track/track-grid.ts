@@ -109,13 +109,13 @@ function bindGesture(main: HTMLButtonElement, name: string, intents: TrackIntent
   main.addEventListener("pointerdown", (event) => {
     if (event.button !== 0) return;
     main.setPointerCapture(event.pointerId);
-    apply(gesture.down(event.clientY, current()?.tone ?? 0));
+    apply(gesture.down(event.clientY, current()?.tone ?? 0, event.pointerType !== "touch"));
     holdTimer = window.setTimeout(() => apply(gesture.hold()), HOLD_MS);
   });
   main.addEventListener("pointermove", (event) => {
     if (!gesture.isActive) return;
     const effect = gesture.move(event.clientY);
-    if (effect.kind === "tone") clearHold();
+    if (effect.kind === "tone" || !gesture.isPressed) clearHold();
     apply(effect);
   });
   main.addEventListener("pointerup", () => {
