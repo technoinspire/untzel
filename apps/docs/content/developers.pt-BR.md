@@ -1,10 +1,10 @@
 # Para desenvolvedores {#developers}
 
-Como o Untzel é construído, para quem quer entendê-lo, estendê-lo ou incorporá-lo. O desenho está documentado; o código-fonte ainda não é público.
+Como o Untzel é construído, para quem quer entendê-lo, estendê-lo ou incorporá-lo. O desenho está documentado e o código-fonte é aberto.
 
 ## O código-fonte {#source}
 
-O repositório é privado enquanto a primeira versão é terminada. O código-fonte será publicado depois, sob a licença abaixo. Até lá, esta página descreve a arquitetura, o contrato de instrumento e as regras que toda contribuição vai seguir.
+O código-fonte está no GitHub, em [technoinspire/untzel](https://github.com/technoinspire/untzel), sob a licença abaixo. Para contribuir, leia o [guia de contribuição](https://github.com/technoinspire/untzel/blob/main/CONTRIBUTING.md) e o [acordo de contribuição (CLA)](https://github.com/technoinspire/untzel/blob/main/CLA.md). Esta página descreve a arquitetura, o contrato de instrumento e as regras que toda contribuição segue.
 
 ## Pacotes e a regra de dependência {#packages}
 

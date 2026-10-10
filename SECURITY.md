@@ -4,7 +4,7 @@
 
 | Version | Supported |
 |---|---|
-| The latest release (served at app.untzel.com after launch) | yes |
+| The latest release (served at app.untzel.com) | yes |
 | `main` | yes |
 | Older releases | no: update to the latest release |
 
@@ -22,7 +22,7 @@ Please include:
 - the steps to reproduce it, ideally with an Untzel text, a share link or a file that shows
   it;
 - the browser, its version and the operating system;
-- what you tested: the hosted app with the date (after launch), a release tag, or the commit of a local copy
+- what you tested: the hosted app with the date, a release tag, or the commit of a local copy
   (`git rev-parse HEAD`);
 - whether the problem is already public anywhere.
 

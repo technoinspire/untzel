@@ -25,9 +25,6 @@ const FORBIDDEN: readonly (readonly [RegExp, string, RegExp])[] = [
   [/(?:\b(?:src|href|srcset|poster)=["']?|url\(\s*["']?)data:/i, "a data: URL", /\.html$/],
   [/\bdata:/, "a data: URL", /\.(css|js)$/],
   [/http:\/\//, "an http: URL", /\.(html|css|js|json|txt)$/],
-  // Untzel's own repositories are private; third-party sources on GitHub (the recorded
-  // instruments of credits.json) are public and their credit links to them.
-  [/github\.com[/:]technoinspire\b/i, "a link to Techno Inspire's GitHub (the repository is private)", /\.(html|css|js|json|txt|xml)$/],
 ];
 
 export function checkForbidden(root: string, files: readonly string[]): string[] {

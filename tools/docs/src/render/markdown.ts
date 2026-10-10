@@ -107,8 +107,7 @@ function rewriteLink(token: Token, env: PageEnv, line: number | undefined): void
     return;
   }
   if (ANCHOR.test(href)) return;
-  if (!href.startsWith("https://")) return fail(env, line, `link ${href}: use page.md#id or an https URL`);
-  if (/^https:\/\/([^/]+\.)?github\.com(\/|$)/.test(href)) fail(env, line, `link ${href}: the repository is private`);
+  if (!href.startsWith("https://")) fail(env, line, `link ${href}: use page.md#id or an https URL`);
 }
 
 function links(state: StateCore): void {
