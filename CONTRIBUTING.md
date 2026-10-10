@@ -32,7 +32,7 @@ contribution is made under the [Untzel Contributor License Agreement](CLA.md). I
 license; it does not take your copyright away.
 
 To accept it, check the CLA line at the end of the pull request template. The `cla` check
-confirms it. The agreement is a draft: external contributions are merged once it is final.
+confirms it; a pull request without it is not merged.
 
 ## Development setup
 
