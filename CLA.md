@@ -1,11 +1,11 @@
 # Untzel Contributor License Agreement, version 1.0
 
-> **Status: draft, pending legal review.**
-> No external contribution is merged before the review is done. The text may still change;
-> if it does, the version number changes too.
+> **Status: in effect since October 10, 2026.**
+> If the text ever changes, the version number changes too, and a new pull request accepts the
+> new version.
 
 Thank you for your interest in contributing to Untzel, by Techno Inspire ("We" or "Us").
-"We" and "Us" mean Techno Inspire (the exact legal name is confirmed by the legal review).
+"We" and "Us" mean Techno Inspire.
 
 This contributor agreement ("Agreement") documents the rights granted by contributors to Us.
 To make this document effective, accept it by checking, in the description of your pull
@@ -130,7 +130,7 @@ EQUITABLE THEORY (CONTRACT, TORT OR OTHERWISE) UPON WHICH THE CLAIM IS BASED.
 ## 6. Miscellaneous
 
 6.1 This Agreement will be governed by and construed in accordance with the laws of the
-Federative Republic of Brazil (to be confirmed by the legal review) excluding its conflicts of
+Federative Republic of Brazil excluding its conflicts of
 law provisions. Under certain circumstances, the governing law in this section might be
 superseded by the United Nations Convention on Contracts for the International Sale of Goods
 ("UN Convention") and the parties intend to avoid the application of the UN Convention to this
