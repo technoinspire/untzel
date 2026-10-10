@@ -86,6 +86,12 @@ describe("setTrackModifier", () => {
     expect(text(setTrackModifier("kick x...", "kick", "free", null))).toBe("kick x... | free");
   });
 
+  it("refuses a value longer than any modifier value before matching it", () => {
+    const value = `sine(8) 1${".".repeat(5_000)}`;
+    const started = performance.now();
+    expect(setTrackModifier("kick x...", "kick", "cutoff", value)).toEqual({ ok: false, reason: "INVALID_VALUE" });
+    expect(performance.now() - started).toBeLessThan(50);
+  });
   it("never lets a value add another modifier or line", () => {
     for (const value of ["1 | mute", "1\nhat x...", "1 // hi", ""]) {
       expect(setTrackModifier(SONG, "kick", "gain", value)).toEqual({ ok: false, reason: "INVALID_VALUE" });

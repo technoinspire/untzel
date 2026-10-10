@@ -13,6 +13,11 @@ updates:
     open-pull-requests-limit: 5
     labels: [dependencies]
     rebase-strategy: disabled
+    # @types/node follows the Node major of .nvmrc: a newer major describes APIs the
+    # runtime does not have. It moves with .nvmrc, by hand.
+    ignore:
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     groups:
       npm:
         patterns: ["*"]
