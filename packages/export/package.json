@@ -21,7 +21,7 @@
     "@untzel/light": "workspace:*",
     "@untzel/scene": "workspace:*",
     "@untzel/session": "workspace:*",
-    "mediabunny": "1.61.0"
+    "mediabunny": "1.61.1"
   },
   "devDependencies": {
     "@untzel/instrument-index": "workspace:*",
