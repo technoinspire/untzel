@@ -169,7 +169,7 @@ Each track is a tile with its name, its instrument, a 16-step preview and an adj
 | Gesture on a tile | What happens | When |
 |---|---|---|
 | tap | turns the track on or off | on the next bar; a ring fills until then |
-| drag up or down | moves the track's `tone` | immediately |
+| drag up or down | with a mouse or a pen, moves the track's `tone`; with a finger, scrolls the tracks (the tone is in the track detail) | immediately |
 | hold | solo while you hold | immediately |
 | adjust button | opens the track detail | |
 

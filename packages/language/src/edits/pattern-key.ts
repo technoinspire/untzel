@@ -46,6 +46,20 @@ function noteInKey(text: string, shift: number): string | null {
  */
 export function patternInKey(text: string, kind: InstrumentKind, key: Key | null): string | null {
   const shift = key === null ? 0 : transposeFromC(key.tonic);
+  // Pure in (text, kind, shift): the track controls ask it for every manifest pattern of
+  // every track on each frame of a playing song, and parsing each time took an eighth of
+  // a phone's main thread. The manifests are fixed, so the cache stays small.
+  const cacheKey = `${kind}|${shift}|${text}`;
+  const cached = KEYED.get(cacheKey);
+  if (cached !== undefined) return cached;
+  const result = movePattern(text, kind, shift);
+  if (KEYED.size >= KEYED_LIMIT) KEYED.clear();
+  KEYED.set(cacheKey, result);
+  return result;
+}
+const KEYED = new Map<string, string | null>();
+const KEYED_LIMIT = 2048;
+function movePattern(text: string, kind: InstrumentKind, shift: number): string | null {
   const tree = parser.parse(`${PROBE}${text}`);
   let isBroken = false;
   const changes: TextChange[] = [];

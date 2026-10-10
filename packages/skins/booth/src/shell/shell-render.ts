@@ -90,7 +90,9 @@ export function createShellRender(options: ShellRenderOptions): (view: UntzelVie
     sheets.tempoEditor.update(view.transport);
     sheets.keyPicker.update(view.transport);
     tracks.grid.update(view);
-    tracks.table.update(view, state.ui.panel === "track" ? state.ui.selectedTrack : null);
+    // The table is display: none under 1200 px (track-table.css), and its rows were a fifth
+    // of a phone's frame. Crossing the width redraws (layout-listeners.ts), so it catches up then.
+    if (isDesktop) tracks.table.update(view, state.ui.panel === "track" ? state.ui.selectedTrack : null);
     const openPart = state.ui.panel === "part" ? (state.ui.selectedPart ?? view.song.currentPart ?? 0) : null;
     song.list.update(view, openPart);
     tracks.detail.update(view, state.ui.selectedTrack ?? view.tracks[0]?.name ?? null, isDesktop, lengthOpen("pattern"));

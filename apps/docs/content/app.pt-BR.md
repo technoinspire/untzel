@@ -58,7 +58,7 @@ Cada faixa é um bloco com o nome, o instrumento, uma miniatura de 16 passos e u
 | Gesto no bloco | O que acontece | Quando |
 |---|---|---|
 | toque | liga ou desliga a faixa | no próximo compasso; um anel enche até lá |
-| arrastar para cima ou para baixo | move o `tone` da faixa | na hora |
+| arrastar para cima ou para baixo | com mouse ou caneta, move o `tone` da faixa; com o dedo, rola as faixas (o tone fica no detalhe da faixa) | na hora |
 | segurar | solo enquanto segura | na hora |
 | botão de ajuste | abre o detalhe da faixa | |
 

@@ -49,6 +49,17 @@
   --stage-h: 300px;
 }
 
+/* A phone with the browser bars showing has about 640 px for the app: a 300 px stage
+   left the track grid 64 px, less than one tile. The stage gives up height first, so the
+   grid always keeps two rows of tiles (2 × 76 + 10 + 10 px), and reaches 300 px again
+   from about 800 px of height. 14 and 48 px are the gap above the view and the tab bar
+   under it. Three attributes: the collapsed and the Code rules above still win. */
+@media (max-width: 699px) {
+  .ui-app[data-phase="running"][data-tab="tracks"] {
+    --stage-h: clamp(140px, 100% - var(--transport-h) - 14px - 48px - 172px, 300px);
+  }
+}
+
 /* Controls hidden: the stage takes everything above the transport,
    which docks at the bottom. Four attributes outrank every per-tab rule, here and in the
    media queries below. */

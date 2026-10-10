@@ -13,9 +13,11 @@
   scrollbar-width: none;
 }
 
+/* Two columns from 360 px: 171 px left the 360–389 px phones (Galaxy S21 Ultra: 384) with a
+   single column and half the tracks in view. The name and the caption end in an ellipsis. */
 .ui-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(171px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
   gap: 10px 16px;
 }
 
@@ -73,7 +75,9 @@
   padding: 12px 56px 0 14px;
   border-radius: inherit;
   text-align: left;
-  touch-action: none;
+  /* A vertical finger drag scrolls the grid (behavior/gestures/tile-gesture.ts); a mouse
+     or pen drag still moves tone. */
+  touch-action: pan-y;
   user-select: none;
 }
 
@@ -81,18 +85,26 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  max-width: 100%;
   height: 20px;
 }
 
 .ui-tile__name {
+  min-width: 0;
+  overflow: hidden;
   font-size: 15px;
   font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .ui-tile__caption {
+  max-width: 100%;
   margin-top: 3px;
+  overflow: hidden;
   color: var(--muted);
   font-size: 12px;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
