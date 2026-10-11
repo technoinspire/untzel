@@ -2402,6 +2402,23 @@ song build 4, drop 8 | loop
 
 Try `build 8` with `saw(8)` for a longer build.
 
+### Two-step drum & bass
+
+At 174 BPM the kick plays only twice a bar, on the first step and just before the second snare, and the snare lands on beats two and four: the two-step. The hats keep the full speed while the reese holds each note for half a bar or more, so the bass feels half as fast as the drums. `sine(8)` opens and closes its filter over eight bars, and the last snare of the bar, `x?0.5`, plays about half the time.
+
+```untzel
+// drum & bass at 174 BPM: a two-step break under a long reese that feels half as fast
+tempo 174
+key f minor
+
+kick:  kick  x... .... ..x. ....                                  | decay 0.3 | drive 0.3
+snare: snare .... x... .... x..x?0.5                              | tune 0.4 | snap 0.8
+hat:   hat   x.x. x.x. x.x. x.x.                                  | decay 0.03 | gain 0.35 | pan 0.25
+reese: reese f1 ~ ~ ~ ~ ~ ~ ~ ab1 ~ ~ ~ c2 ~ ab1 ~ / f1 ~ ~ ~ ~ ~ ~ ~ eb1 ~ ~ ~ ~ ~ ~ ~ | cutoff sine(8) 250..1400 | detune 0.8 | duck 0.5
+```
+
+Try `detune 0.4` for a narrower reese, or move the second kick to `...x` for a different turn.
+
 ### A whole song with sections
 
 The groove of the first recipe as a song: an intro, a build, a drop, a break, another build and drop, and an outro. Sections choose which tracks play; the song decides how many bars each lasts. Switch the transport to `Song` to hear it from the start.

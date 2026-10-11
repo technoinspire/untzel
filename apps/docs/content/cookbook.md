@@ -34,6 +34,14 @@ In a song, a signal starts again at the start of each section, so `saw(4)` in a 
 
 Try `build 8` with `saw(8)` for a longer build.
 
+## Two-step drum & bass {#drum-and-bass}
+
+At 174 BPM the kick plays only twice a bar, on the first step and just before the second snare, and the snare lands on beats two and four: the two-step. The hats keep the full speed while the reese holds each note for half a bar or more, so the bass feels half as fast as the drums. `sine(8)` opens and closes its filter over eight bars, and the last snare of the bar, `x?0.5`, plays about half the time.
+
+{{example cookbook-drum-and-bass}}
+
+Try `detune 0.4` for a narrower reese, or move the second kick to `...x` for a different turn.
+
 ## A whole song with sections {#full-song}
 
 The groove of the first recipe as a song: an intro, a build, a drop, a break, another build and drop, and an outro. Sections choose which tracks play; the song decides how many bars each lasts. Switch the transport to `Song` to hear it from the start.
