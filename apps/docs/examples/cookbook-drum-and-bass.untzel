@@ -1,0 +1,8 @@
+// drum & bass at 174 BPM: a two-step break under a long reese that feels half as fast
+tempo 174
+key f minor
+
+kick:  kick  x... .... ..x. ....                                  | decay 0.3 | drive 0.3
+snare: snare .... x... .... x..x?0.5                              | tune 0.4 | snap 0.8 | gain 1.6
+hat:   hat   x.x. x.x. x.x. x.x.                                  | decay 0.06 | gain 0.8 | pan 0.25
+reese: reese f1 ~ ~ ~ ~ ~ ~ ~ ab1 ~ ~ ~ c2 ~ ab1 ~ / f1 ~ ~ ~ ~ ~ ~ ~ eb1 ~ ~ ~ ~ ~ ~ ~ | cutoff sine(8) 250..1400 | detune 0.8 | duck 0.5

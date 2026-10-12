@@ -34,6 +34,14 @@ Numa música, o sinal recomeça no início de cada seção, então `saw(4)` numa
 
 Experimente `build 8` com `saw(8)` para uma subida mais longa.
 
+## Drum & bass two-step {#drum-and-bass}
+
+A 174 BPM o bumbo toca só duas vezes por compasso, no primeiro passo e logo antes da segunda caixa, e a caixa cai nos tempos dois e quatro: é o two-step. Os hats seguem na velocidade cheia enquanto o reese segura cada nota por meio compasso ou mais, então o baixo parece duas vezes mais lento que a bateria. `sine(8)` abre e fecha o filtro dele ao longo de oito compassos, e a última caixa do compasso, `x?0.5`, toca mais ou menos metade das vezes.
+
+{{example cookbook-drum-and-bass}}
+
+Experimente `detune 0.4` para um reese mais estreito, ou leve o segundo bumbo para `...x` para outra virada.
+
 ## Uma música inteira com seções {#full-song}
 
 O groove da primeira receita como música: introdução, subida, drop, pausa, outra subida e outro drop, e final. As seções escolhem quais faixas tocam; a linha `song` decide quantos compassos cada uma dura. Ponha o transporte em `Song` para ouvir do começo.
