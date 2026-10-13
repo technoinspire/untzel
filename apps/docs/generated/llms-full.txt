@@ -12,6 +12,8 @@ Every sound you hear is one line of a small text language. The track tiles, the 
 
 The sound is made on your device: a sound engine written in Rust runs as WebAssembly inside the browser's audio thread, and the light on the stage follows the same events the engine plays. Nothing is streamed and you need no account.
 
+Untzel is open source: the code, the language and every instrument are on GitHub at [technoinspire/untzel](https://github.com/technoinspire/untzel), under CPAL-1.0.
+
 The text is analyzed, never executed. There is no JavaScript inside it, no functions and no imports, so it is safe to paste text that someone else wrote, or that an assistant wrote for you ([Using AI](https://untzel.com/docs/en/ai/)).
 
 ### Tap to play

@@ -20,8 +20,8 @@ readonly ORG=technoinspire
 readonly TEAM=maintainers
 readonly CHECKS_APP_ID=15368 # github-actions, which reports ci-ok and cla
 readonly ADMIN_ROLE_ID=5     # the admin repository role, as rulesets name it
-readonly DESCRIPTION="Untzel is an audiovisual instrument for the browser: every line of code is a layer of sound and a layer of light. Any style, any melody, any rhythm."
-readonly TOPICS=(live-coding music music-programming creative-coding audiovisual audio web-audio webassembly rust typescript synthesizer sequencer visualizer webgl browser)
+readonly DESCRIPTION="Live coding music in the browser: every line of code is a layer of sound and a layer of light. An open-source audiovisual instrument for any style, any melody, any rhythm."
+readonly TOPICS=(live-coding music music-programming creative-coding audiovisual audio web-audio webassembly rust typescript synthesizer sequencer visualizer webgl browser music-production drum-machine generative-music algorave electronic-music)
 readonly RULESETS=("main: integrity" "main: review" "release tags")
 ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 readonly ROOT

@@ -6,7 +6,7 @@
 </h1>
 
 <p align="center">
-  An audiovisual instrument for the browser: every line of code is a layer of sound and a layer of light.
+  A live coding music instrument for the browser: every line of code is a layer of sound and a layer of light.
   Any style, any melody, any rhythm.
 </p>
 
@@ -30,7 +30,7 @@
 
 ## What is Untzel
 
-Untzel is a music instrument that runs in your browser, on a phone or a computer. You tap
+Untzel is an open-source live coding music instrument that runs in your browser, on a phone or a computer. You tap
 once and a loop starts; then you change it with your fingers or by editing a short text, and
 the music never stops while you do.
 
