@@ -8,6 +8,8 @@ Cada som que você ouve é uma linha de uma pequena linguagem de texto. Os bloco
 
 O som é feito no seu aparelho: um motor de som escrito em Rust roda como WebAssembly dentro da thread de áudio do navegador, e a luz do palco segue os mesmos eventos que o motor toca. Nada é transmitido pela rede e não é preciso conta.
 
+O Untzel é de código aberto: o código, a linguagem e todos os instrumentos estão no GitHub, em [technoinspire/untzel](https://github.com/technoinspire/untzel), sob CPAL-1.0.
+
 O texto é analisado, nunca executado. Não há JavaScript dentro dele, nem funções, nem importações, então é seguro colar um texto que outra pessoa escreveu, ou que um assistente escreveu para você ([Usar IA](ai.md)).
 
 ## Tocar para começar {#tap-to-play}
