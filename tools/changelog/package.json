@@ -5,6 +5,6 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "vite": "8.3.2"
+    "vite": "8.3.3"
   }
 }

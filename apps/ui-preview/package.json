@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.63.0",
-    "vite": "8.3.2"
+    "vite": "8.3.3"
   },
   "exports": {
     "./mount": "./src/mount.ts",
