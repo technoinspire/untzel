@@ -13,9 +13,9 @@
     "generate": "mkdir -p src/generated && lezer-generator src/untzel.grammar --typeScript --output src/generated/parser.ts"
   },
   "dependencies": {
-    "@lezer/common": "1.5.3",
+    "@lezer/common": "1.5.4",
     "@lezer/highlight": "1.2.5",
-    "@lezer/lr": "1.4.10",
+    "@lezer/lr": "1.4.11",
     "@untzel/core": "workspace:*",
     "@untzel/i18n": "workspace:*"
   },

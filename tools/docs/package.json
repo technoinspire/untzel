@@ -14,8 +14,8 @@
     "@untzel/skin-booth": "workspace:*",
     "@untzel/skin-contract": "workspace:*",
     "@untzel/templates": "workspace:*",
-    "dependency-cruiser": "18.5.0",
-    "markdown-it": "15.0.2",
-    "vite": "8.3.2"
+    "dependency-cruiser": "18.7.0",
+    "markdown-it": "15.0.3",
+    "vite": "8.3.5"
   }
 }
